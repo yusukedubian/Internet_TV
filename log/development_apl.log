@@ -1,0 +1,536 @@
+[2011/05/28 14:11:04.000638][  4026][#<Thread:0xb62baa00>][APLLOG][ INFO][                 common_log.rb:4]>Processing WelcomeController#index (for 127.0.0.1 at 2011-05-28 14:11:04) [GET]
+[2011/05/28 14:11:04.000638][  4026][#<Thread:0xb62baa00>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:04.000638][  4026][#<Thread:0xb62baa00>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"welcome"}
+[2011/05/28 14:11:04.000641][  4026][#<Thread:0xb62baa00>][APLLOG][DEBUG][         welcome_controller.rb:6]>START WelcomeController#index
+[2011/05/28 14:11:04.000645][  4026][#<Thread:0xb62baa00>][APLLOG][DEBUG][        welcome_controller.rb:14]>END   WelcomeController#index
+[2011/05/28 14:11:04.000657][  4026][#<Thread:0xb62baa00>][APLLOG][ INFO][                common_log.rb:30]>Rendering welcome/index ()
+[2011/05/28 14:11:07.000300][  4026][#<Thread:0xb6688c54>][APLLOG][ INFO][                 common_log.rb:4]>Processing ChannelsController#index (for 127.0.0.1 at 2011-05-28 14:11:07) [GET]
+[2011/05/28 14:11:07.000301][  4026][#<Thread:0xb6688c54>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:07.000301][  4026][#<Thread:0xb6688c54>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"channels"}
+[2011/05/28 14:11:07.000302][  4026][#<Thread:0xb6688c54>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/session/new
+[2011/05/28 14:11:07.000302][  4026][#<Thread:0xb6688c54>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /session/new
+[2011/05/28 14:11:07.000453][  4026][#<Thread:0xb629a8f4>][APLLOG][ INFO][                 common_log.rb:4]>Processing SessionsController#new (for 127.0.0.1 at 2011-05-28 14:11:07) [GET]
+[2011/05/28 14:11:07.000453][  4026][#<Thread:0xb629a8f4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:07.000454][  4026][#<Thread:0xb629a8f4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"new", "controller"=>"sessions"}
+[2011/05/28 14:11:07.000456][  4026][#<Thread:0xb629a8f4>][APLLOG][DEBUG][       sessions_controller.rb:11]>START SessionsController#new
+[2011/05/28 14:11:07.000457][  4026][#<Thread:0xb629a8f4>][APLLOG][DEBUG][       sessions_controller.rb:12]>END   SessionsController#new
+[2011/05/28 14:11:07.000498][  4026][#<Thread:0xb629a8f4>][APLLOG][ INFO][                common_log.rb:30]>Rendering sessions/new ()
+[2011/05/28 14:11:12.000421][  4026][#<Thread:0xb6347978>][APLLOG][ INFO][                 common_log.rb:4]>Processing SessionsController#create (for 127.0.0.1 at 2011-05-28 14:11:12) [POST]
+[2011/05/28 14:11:12.000421][  4026][#<Thread:0xb6347978>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:12.000422][  4026][#<Thread:0xb6347978>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"commit"=>"ログイ\343\203\263", "action"=>"create", "authenticity_token"=>"de98892d15c27d5c7458e5cd4fb1de5c960b6784", "controller"=>"sessions", "login"=>"admin", "password"=>"[FILTERED]"}
+[2011/05/28 14:11:12.000424][  4026][#<Thread:0xb6347978>][APLLOG][DEBUG][       sessions_controller.rb:16]>START SessionsController#create
+[2011/05/28 14:11:12.000463][  4026][#<Thread:0xb6347978>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels
+[2011/05/28 14:11:12.000463][  4026][#<Thread:0xb6347978>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels
+[2011/05/28 14:11:12.000481][  4026][#<Thread:0xb6347978>][APLLOG][DEBUG][       sessions_controller.rb:30]>END   SessionsController#create
+[2011/05/28 14:11:12.000630][  4026][#<Thread:0xb63c3690>][APLLOG][ INFO][                 common_log.rb:4]>Processing ChannelsController#index (for 127.0.0.1 at 2011-05-28 14:11:12) [GET]
+[2011/05/28 14:11:12.000631][  4026][#<Thread:0xb63c3690>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:12.000631][  4026][#<Thread:0xb63c3690>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"channels"}
+[2011/05/28 14:11:12.000685][  4026][#<Thread:0xb63c3690>][APLLOG][DEBUG][       channels_controller.rb:12]>START ChannelsController#index
+[2011/05/28 14:11:12.000705][  4026][#<Thread:0xb63c3690>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels/1/pages/1/edit
+[2011/05/28 14:11:12.000705][  4026][#<Thread:0xb63c3690>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels/1/pages/1/edit
+[2011/05/28 14:11:12.000705][  4026][#<Thread:0xb63c3690>][APLLOG][DEBUG][       channels_controller.rb:79]>END   ChannelsController#index
+[2011/05/28 14:11:12.000883][  4026][#<Thread:0xb643bbcc>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#edit (for 127.0.0.1 at 2011-05-28 14:11:12) [GET]
+[2011/05/28 14:11:12.000884][  4026][#<Thread:0xb643bbcc>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:12.000884][  4026][#<Thread:0xb643bbcc>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:11:12.000900][  4026][#<Thread:0xb643bbcc>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:11:12.000921][  4026][#<Thread:0xb643bbcc>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:11:12.000924][  4026][#<Thread:0xb643bbcc>][APLLOG][DEBUG][          pages_controller.rb:57]>START PagesController#edit
+[2011/05/28 14:11:12.000989][  4026][#<Thread:0xb643bbcc>][APLLOG][DEBUG][          pages_controller.rb:98]>END   PagesController#edit
+[2011/05/28 14:11:13.000054][  4026][#<Thread:0xb643bbcc>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/edit ()
+[2011/05/28 14:11:13.000244][  4026][#<Thread:0xb6283b54>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#layout (for 127.0.0.1 at 2011-05-28 14:11:13) [GET]
+[2011/05/28 14:11:13.000246][  4026][#<Thread:0xb6283b54>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:13.000248][  4026][#<Thread:0xb6283b54>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"layout", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:11:13.000266][  4026][#<Thread:0xb6283b54>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:11:13.000302][  4026][#<Thread:0xb6283b54>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:11:13.000309][  4026][#<Thread:0xb6283b54>][APLLOG][DEBUG][         pages_controller.rb:240]>START PagesController#layout
+[2011/05/28 14:11:13.000330][  4026][#<Thread:0xb6283b54>][APLLOG][DEBUG][         pages_controller.rb:244]>END   PagesController#layout
+[2011/05/28 14:11:13.000357][  4026][#<Thread:0xb6283b54>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/layout ()
+[2011/05/28 14:11:14.000010][  4026][#<Thread:0xb61c40c4>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:11:14) [GET]
+[2011/05/28 14:11:14.000011][  4026][#<Thread:0xb61c40c4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:14.000011][  4026][#<Thread:0xb61c40c4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"1306563073"=>nil, "action"=>"index", "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:11:14.000051][  4026][#<Thread:0xb61c40c4>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:11:17.000219][  4026][#<Thread:0xb61e2c90>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#addplayer (for 127.0.0.1 at 2011-05-28 14:11:17) [GET]
+[2011/05/28 14:11:17.000219][  4026][#<Thread:0xb61e2c90>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:17.000220][  4026][#<Thread:0xb61e2c90>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"player_no"=>"6", "channel_id"=>"1", "action"=>"addplayer", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:11:17.000235][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:11:17.000257][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:11:17.000260][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:420]>START PagesController#addplayer
+[2011/05/28 14:11:17.000644][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][              video_player.rb:18]>START Players::Video_player#default
+[2011/05/28 14:11:17.000645][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][              video_player.rb:54]>END   Players::Video_player#default
+[2011/05/28 14:11:17.000646][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:901]>START PagesController#set_content
+[2011/05/28 14:11:17.000646][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:908]>END   PagesController#set_content
+[2011/05/28 14:11:17.000717][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][      contents_controller.rb:295]>START ContentsController#make_player
+[2011/05/28 14:11:17.000720][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][              video_player.rb:59]>START Players::Video_player#set_content
+[2011/05/28 14:11:17.000722][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][              video_player.rb:67]>END   Players::Video_player#set_content
+[2011/05/28 14:11:17.000726][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][             video_player.rb:153]>START Players::Video_player#get_html
+[2011/05/28 14:11:17.000727][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][             video_player.rb:483]>START   Players::Video_player#create_embed_tag_html
+[2011/05/28 14:11:17.000727][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][             video_player.rb:495]>END   Players::Video_player#create_embed_tag_html
+[2011/05/28 14:11:17.000727][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][             video_player.rb:162]>END   Players::Video_player#get_html
+[2011/05/28 14:11:17.000727][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][      contents_controller.rb:318]>END   ContentsController#make_player
+[2011/05/28 14:11:17.000728][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:297]>START PagesController#make_page
+[2011/05/28 14:11:17.000734][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:416]>END   PagesController#make_page
+[2011/05/28 14:11:17.000734][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:502]>START PagesController#layout_html
+[2011/05/28 14:11:17.000735][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:610]>START PagesController#player_list
+[2011/05/28 14:11:17.000735][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:681]>END   PagesController#layout_html
+[2011/05/28 14:11:17.000735][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:605]>END   PagesController#layout_html
+[2011/05/28 14:11:17.000735][  4026][#<Thread:0xb61e2c90>][APLLOG][DEBUG][         pages_controller.rb:496]>END   PagesController#addplayer
+[2011/05/28 14:11:17.000736][  4026][#<Thread:0xb61e2c90>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/addplayer ()
+[2011/05/28 14:11:17.000939][  4026][#<Thread:0xb6a438e4>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#up_down_ref (for 127.0.0.1 at 2011-05-28 14:11:17) [GET]
+[2011/05/28 14:11:17.000939][  4026][#<Thread:0xb6a438e4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:17.000940][  4026][#<Thread:0xb6a438e4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"up_down_ref", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:11:17.000957][  4026][#<Thread:0xb6a438e4>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:11:17.000980][  4026][#<Thread:0xb6a438e4>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:11:17.000983][  4026][#<Thread:0xb6a438e4>][APLLOG][DEBUG][         pages_controller.rb:686]>START PagesController#up_down_ref
+[2011/05/28 14:11:17.000991][  4026][#<Thread:0xb6a438e4>][APLLOG][DEBUG][         pages_controller.rb:749]>END   PagesController#up_down_ref
+[2011/05/28 14:11:17.000992][  4026][#<Thread:0xb6a438e4>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/up_down_ref ()
+[2011/05/28 14:11:18.000158][  4026][#<Thread:0xb694459c>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#layout (for 127.0.0.1 at 2011-05-28 14:11:18) [GET]
+[2011/05/28 14:11:18.000158][  4026][#<Thread:0xb694459c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:18.000159][  4026][#<Thread:0xb694459c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"layout", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:11:18.000173][  4026][#<Thread:0xb694459c>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:11:18.000194][  4026][#<Thread:0xb694459c>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:11:18.000196][  4026][#<Thread:0xb694459c>][APLLOG][DEBUG][         pages_controller.rb:240]>START PagesController#layout
+[2011/05/28 14:11:18.000205][  4026][#<Thread:0xb694459c>][APLLOG][DEBUG][         pages_controller.rb:244]>END   PagesController#layout
+[2011/05/28 14:11:18.000230][  4026][#<Thread:0xb694459c>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/layout ()
+[2011/05/28 14:11:18.000429][  4026][#<Thread:0xb6a7fe0c>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:11:18) [GET]
+[2011/05/28 14:11:18.000430][  4026][#<Thread:0xb6a7fe0c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:18.000430][  4026][#<Thread:0xb6a7fe0c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "gallary.png"], "1306563078"=>nil, "controller"=>"file_publisher/contents"}
+[2011/05/28 14:11:18.000463][  4026][#<Thread:0xb6a7fe0c>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:11:20.000493][  4026][#<Thread:0xb6b01308>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#playpage (for 127.0.0.1 at 2011-05-28 14:11:20) [GET]
+[2011/05/28 14:11:20.000493][  4026][#<Thread:0xb6b01308>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:20.000493][  4026][#<Thread:0xb6b01308>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"playpage", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:11:20.000508][  4026][#<Thread:0xb6b01308>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:11:20.000529][  4026][#<Thread:0xb6b01308>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:11:20.000531][  4026][#<Thread:0xb6b01308>][APLLOG][DEBUG][         pages_controller.rb:286]>START PagesController#playpage
+[2011/05/28 14:11:20.000552][  4026][#<Thread:0xb6b01308>][APLLOG][DEBUG][         pages_controller.rb:291]>END   PagesController#playpage
+[2011/05/28 14:11:20.000556][  4026][#<Thread:0xb6b01308>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/users_contents/0/1/1/1/preview.html
+[2011/05/28 14:11:20.000556][  4026][#<Thread:0xb6b01308>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /users_contents/0/1/1/1/preview.html
+[2011/05/28 14:11:20.000747][  4026][#<Thread:0xb6a227c0>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:11:20) [GET]
+[2011/05/28 14:11:20.000747][  4026][#<Thread:0xb6a227c0>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:20.000748][  4026][#<Thread:0xb6a227c0>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "preview.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:11:20.000782][  4026][#<Thread:0xb6a227c0>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:11:20.000964][  4026][#<Thread:0xb5fff8d8>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:11:20) [GET]
+[2011/05/28 14:11:20.000964][  4026][#<Thread:0xb5fff8d8>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:20.000964][  4026][#<Thread:0xb5fff8d8>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "index.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:11:20.000999][  4026][#<Thread:0xb5fff8d8>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:11:21.000156][  4026][#<Thread:0xb5feb824>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:11:21) [GET]
+[2011/05/28 14:11:21.000156][  4026][#<Thread:0xb5feb824>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:11:21.000156][  4026][#<Thread:0xb5feb824>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563077"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:11:21.000191][  4026][#<Thread:0xb5feb824>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:12:28.000549][  4026][#<Thread:0xb6011bc8>][APLLOG][ INFO][                 common_log.rb:4]>Processing ContentsController#edit (for 127.0.0.1 at 2011-05-28 14:12:28) [GET]
+[2011/05/28 14:12:28.000550][  4026][#<Thread:0xb6011bc8>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:12:28.000550][  4026][#<Thread:0xb6011bc8>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "page_id"=>"1", "id"=>"1", "controller"=>"contents"}
+[2011/05/28 14:12:28.000565][  4026][#<Thread:0xb6011bc8>][APLLOG][DEBUG][      contents_controller.rb:427]>START ContentsController#find_pages
+[2011/05/28 14:12:28.000585][  4026][#<Thread:0xb6011bc8>][APLLOG][DEBUG][      contents_controller.rb:434]>END   ContentsController#find_pages
+[2011/05/28 14:12:28.000587][  4026][#<Thread:0xb6011bc8>][APLLOG][DEBUG][       contents_controller.rb:10]>START ContentsController#edit
+[2011/05/28 14:12:28.000644][  4026][#<Thread:0xb6011bc8>][APLLOG][DEBUG][       contents_controller.rb:16]>END   ContentsController#edit
+[2011/05/28 14:12:28.000681][  4026][#<Thread:0xb6011bc8>][APLLOG][ INFO][                common_log.rb:30]>Rendering contents/edit ()
+[2011/05/28 14:14:07.000602][  4026][#<Thread:0xb5f316cc>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:14:07) [GET]
+[2011/05/28 14:14:07.000603][  4026][#<Thread:0xb5f316cc>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:07.000603][  4026][#<Thread:0xb5f316cc>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "preview.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:14:07.000637][  4026][#<Thread:0xb5f316cc>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:14:07.000932][  4026][#<Thread:0xb5f63ab4>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:14:07) [GET]
+[2011/05/28 14:14:07.000933][  4026][#<Thread:0xb5f63ab4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:07.000933][  4026][#<Thread:0xb5f63ab4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "index.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:14:07.000966][  4026][#<Thread:0xb5f63ab4>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:14:08.000130][  4026][#<Thread:0xb5f258b8>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:14:08) [GET]
+[2011/05/28 14:14:08.000130][  4026][#<Thread:0xb5f258b8>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:08.000130][  4026][#<Thread:0xb5f258b8>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563077"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:14:08.000164][  4026][#<Thread:0xb5f258b8>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:14:23.000607][  4026][#<Thread:0xb5f9ecf4>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#edit (for 127.0.0.1 at 2011-05-28 14:14:23) [GET]
+[2011/05/28 14:14:23.000608][  4026][#<Thread:0xb5f9ecf4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:23.000608][  4026][#<Thread:0xb5f9ecf4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:14:23.000622][  4026][#<Thread:0xb5f9ecf4>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:14:23.000649][  4026][#<Thread:0xb5f9ecf4>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:14:23.000655][  4026][#<Thread:0xb5f9ecf4>][APLLOG][DEBUG][          pages_controller.rb:57]>START PagesController#edit
+[2011/05/28 14:14:23.000671][  4026][#<Thread:0xb5f9ecf4>][APLLOG][DEBUG][          pages_controller.rb:98]>END   PagesController#edit
+[2011/05/28 14:14:23.000723][  4026][#<Thread:0xb5f9ecf4>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/edit ()
+[2011/05/28 14:14:23.000934][  4026][#<Thread:0xb61836f0>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#layout (for 127.0.0.1 at 2011-05-28 14:14:23) [GET]
+[2011/05/28 14:14:23.000937][  4026][#<Thread:0xb61836f0>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:23.000938][  4026][#<Thread:0xb61836f0>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"layout", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:14:23.000960][  4026][#<Thread:0xb61836f0>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:14:24.000082][  4026][#<Thread:0xb61836f0>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:14:24.000089][  4026][#<Thread:0xb61836f0>][APLLOG][DEBUG][         pages_controller.rb:240]>START PagesController#layout
+[2011/05/28 14:14:24.000102][  4026][#<Thread:0xb61836f0>][APLLOG][DEBUG][         pages_controller.rb:244]>END   PagesController#layout
+[2011/05/28 14:14:24.000127][  4026][#<Thread:0xb61836f0>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/layout ()
+[2011/05/28 14:14:24.000305][  4026][#<Thread:0xb602c630>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:14:24) [GET]
+[2011/05/28 14:14:24.000305][  4026][#<Thread:0xb602c630>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:24.000305][  4026][#<Thread:0xb602c630>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563264"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:14:24.000339][  4026][#<Thread:0xb602c630>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:14:27.000393][  4026][#<Thread:0xb6053f64>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#playpage (for 127.0.0.1 at 2011-05-28 14:14:27) [GET]
+[2011/05/28 14:14:27.000393][  4026][#<Thread:0xb6053f64>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:27.000394][  4026][#<Thread:0xb6053f64>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"playpage", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:14:27.000410][  4026][#<Thread:0xb6053f64>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:14:27.000433][  4026][#<Thread:0xb6053f64>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:14:27.000435][  4026][#<Thread:0xb6053f64>][APLLOG][DEBUG][         pages_controller.rb:286]>START PagesController#playpage
+[2011/05/28 14:14:27.000459][  4026][#<Thread:0xb6053f64>][APLLOG][DEBUG][         pages_controller.rb:291]>END   PagesController#playpage
+[2011/05/28 14:14:27.000464][  4026][#<Thread:0xb6053f64>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/users_contents/0/1/1/1/preview.html
+[2011/05/28 14:14:27.000465][  4026][#<Thread:0xb6053f64>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /users_contents/0/1/1/1/preview.html
+[2011/05/28 14:14:27.000619][  4026][#<Thread:0xb600b5c0>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:14:27) [GET]
+[2011/05/28 14:14:27.000619][  4026][#<Thread:0xb600b5c0>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:27.000620][  4026][#<Thread:0xb600b5c0>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "preview.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:14:27.000656][  4026][#<Thread:0xb600b5c0>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:14:27.000816][  4026][#<Thread:0xb603acbc>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:14:27) [GET]
+[2011/05/28 14:14:27.000816][  4026][#<Thread:0xb603acbc>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:27.000817][  4026][#<Thread:0xb603acbc>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "index.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:14:27.000852][  4026][#<Thread:0xb603acbc>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:14:27.000945][  4026][#<Thread:0xb60234e0>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:14:27) [GET]
+[2011/05/28 14:14:27.000945][  4026][#<Thread:0xb60234e0>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:14:27.000945][  4026][#<Thread:0xb60234e0>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563077"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:14:28.000057][  4026][#<Thread:0xb60234e0>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:15:09.000120][  4026][#<Thread:0xb60c2e8c>][APLLOG][ INFO][                 common_log.rb:4]>Processing ContentsController#edit (for 127.0.0.1 at 2011-05-28 14:15:09) [GET]
+[2011/05/28 14:15:09.000120][  4026][#<Thread:0xb60c2e8c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:09.000121][  4026][#<Thread:0xb60c2e8c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "page_id"=>"1", "id"=>"1", "controller"=>"contents"}
+[2011/05/28 14:15:09.000210][  4026][#<Thread:0xb60c2e8c>][APLLOG][DEBUG][      contents_controller.rb:427]>START ContentsController#find_pages
+[2011/05/28 14:15:09.000233][  4026][#<Thread:0xb60c2e8c>][APLLOG][DEBUG][      contents_controller.rb:434]>END   ContentsController#find_pages
+[2011/05/28 14:15:09.000236][  4026][#<Thread:0xb60c2e8c>][APLLOG][DEBUG][       contents_controller.rb:10]>START ContentsController#edit
+[2011/05/28 14:15:09.000270][  4026][#<Thread:0xb60c2e8c>][APLLOG][DEBUG][       contents_controller.rb:16]>END   ContentsController#edit
+[2011/05/28 14:15:09.000294][  4026][#<Thread:0xb60c2e8c>][APLLOG][ INFO][                common_log.rb:30]>Rendering contents/edit ()
+[2011/05/28 14:15:49.000903][  4026][#<Thread:0xb5fe9d94>][APLLOG][ INFO][                 common_log.rb:4]>Processing ContentsController#update (for 127.0.0.1 at 2011-05-28 14:15:49) [POST]
+[2011/05/28 14:15:49.000903][  4026][#<Thread:0xb5fe9d94>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:49.000904][  4026][#<Thread:0xb5fe9d94>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"commit"=>"確定して戻\343\202\213", "contents_setting"=>{"embed_tag"=>"<object style='margin:0px;' width='650' height='400'><param name='movie' value='http://www.youtube.com/v/ojCKdPl35AQ?fs=1&amp;hl=ja_JP&amp;rel=0'></param><param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='always'></param><embed src='http://www.youtube.com/v/ojCKdPl35AQ?fs=1&amp;hl=ja_JP&amp;rel=0&autoplay=1' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' width='640' height='390'></embed></object>", "local_url"=>"localhost:3001", "keyword"=>"テレ\343\203\223", "video_set_type"=>"video_upload"}, "submit"=>{"flag"=>"return"}, "channel_id"=>"1", "action"=>"update", "page_id"=>"1", "authenticity_token"=>"de98892d15c27d5c7458e5cd4fb1de5c960b6784", "id"=>"1", "player_id"=>"104332051", "controller"=>"contents", "contents_upload"=>{"video_file_mp4"=>#<File:/tmp/CGI20110528-4026-1yiek6r-0>, "video_file_ogv"=>"", "video_file_webm"=>""}, "contents"=>{"x_pos"=>"5", "y_pos"=>"5", "line_type"=>"normal", "line_width"=>"5", "line_color"=>"#38382e", "height"=>"400", "width"=>"650"}}
+[2011/05/28 14:15:49.000918][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][      contents_controller.rb:427]>START ContentsController#find_pages
+[2011/05/28 14:15:49.000938][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][      contents_controller.rb:434]>END   ContentsController#find_pages
+[2011/05/28 14:15:49.000941][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][       contents_controller.rb:28]>START ContentsController#update
+[2011/05/28 14:15:49.000964][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][              video_player.rb:72]>START Players::Video_player#validate
+[2011/05/28 14:15:49.000964][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][             video_player.rb:139]>END   Players::Video_player#validate
+[2011/05/28 14:15:50.000052][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:48]>START User#login_check
+[2011/05/28 14:15:50.000055][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:52]>END   User#login_check
+[2011/05/28 14:15:50.000055][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:64]>START User#login_length_check
+[2011/05/28 14:15:50.000055][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:68]>END   User#login_length_check
+[2011/05/28 14:15:50.000056][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:84]>START User#password_check
+[2011/05/28 14:15:50.000056][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:96]>END   User#password_check
+[2011/05/28 14:15:50.000056][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:56]>START User#login_length_check
+[2011/05/28 14:15:50.000056][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:60]>END   User#login_length_check
+[2011/05/28 14:15:50.000057][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:72]>START User#email_length_check
+[2011/05/28 14:15:50.000057][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:74]>END   User#email_length_check
+[2011/05/28 14:15:50.000057][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:78]>START User#user_name_length_check
+[2011/05/28 14:15:50.000057][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][                      user.rb:80]>END   User#user_name_length_check
+[2011/05/28 14:15:50.000222][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][              video_player.rb:59]>START Players::Video_player#set_content
+[2011/05/28 14:15:50.000224][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][              video_player.rb:67]>END   Players::Video_player#set_content
+[2011/05/28 14:15:50.000224][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][      contents_controller.rb:295]>START ContentsController#make_player
+[2011/05/28 14:15:50.000225][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][              video_player.rb:59]>START Players::Video_player#set_content
+[2011/05/28 14:15:50.000225][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][              video_player.rb:67]>END   Players::Video_player#set_content
+[2011/05/28 14:15:50.000232][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][             video_player.rb:153]>START Players::Video_player#get_html
+[2011/05/28 14:15:50.000232][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][             video_player.rb:169]>START Players::Video_player#create_video_upload_html
+[2011/05/28 14:15:50.000404][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][             video_player.rb:213]>END   Players::Video_player#create_video_upload_html
+[2011/05/28 14:15:50.000404][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][             video_player.rb:162]>END   Players::Video_player#get_html
+[2011/05/28 14:15:50.000405][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][      contents_controller.rb:318]>END   ContentsController#make_player
+[2011/05/28 14:15:50.000411][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][         pages_controller.rb:297]>START PagesController#make_page
+[2011/05/28 14:15:50.000417][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][         pages_controller.rb:416]>END   PagesController#make_page
+[2011/05/28 14:15:50.000425][  4026][#<Thread:0xb5fe9d94>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels/1/pages/1/edit
+[2011/05/28 14:15:50.000425][  4026][#<Thread:0xb5fe9d94>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels/1/pages/1/edit
+[2011/05/28 14:15:50.000425][  4026][#<Thread:0xb5fe9d94>][APLLOG][DEBUG][      contents_controller.rb:291]>END   ContentsController#update
+[2011/05/28 14:15:50.000521][  4026][#<Thread:0xb5fea3d4>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#edit (for 127.0.0.1 at 2011-05-28 14:15:50) [GET]
+[2011/05/28 14:15:50.000522][  4026][#<Thread:0xb5fea3d4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:50.000522][  4026][#<Thread:0xb5fea3d4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:15:50.000536][  4026][#<Thread:0xb5fea3d4>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:15:50.000557][  4026][#<Thread:0xb5fea3d4>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:15:50.000559][  4026][#<Thread:0xb5fea3d4>][APLLOG][DEBUG][          pages_controller.rb:57]>START PagesController#edit
+[2011/05/28 14:15:50.000573][  4026][#<Thread:0xb5fea3d4>][APLLOG][DEBUG][          pages_controller.rb:98]>END   PagesController#edit
+[2011/05/28 14:15:50.000621][  4026][#<Thread:0xb5fea3d4>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/edit ()
+[2011/05/28 14:15:50.000866][  4026][#<Thread:0xb5c42b64>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#layout (for 127.0.0.1 at 2011-05-28 14:15:50) [GET]
+[2011/05/28 14:15:50.000867][  4026][#<Thread:0xb5c42b64>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:50.000868][  4026][#<Thread:0xb5c42b64>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"layout", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:15:50.000883][  4026][#<Thread:0xb5c42b64>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:15:50.000913][  4026][#<Thread:0xb5c42b64>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:15:50.000920][  4026][#<Thread:0xb5c42b64>][APLLOG][DEBUG][         pages_controller.rb:240]>START PagesController#layout
+[2011/05/28 14:15:50.000949][  4026][#<Thread:0xb5c42b64>][APLLOG][DEBUG][         pages_controller.rb:244]>END   PagesController#layout
+[2011/05/28 14:15:50.000982][  4026][#<Thread:0xb5c42b64>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/layout ()
+[2011/05/28 14:15:51.000192][  4026][#<Thread:0xb5d14f4c>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:15:51) [GET]
+[2011/05/28 14:15:51.000192][  4026][#<Thread:0xb5d14f4c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:51.000193][  4026][#<Thread:0xb5d14f4c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563350"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:15:51.000226][  4026][#<Thread:0xb5d14f4c>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:15:53.000717][  4026][#<Thread:0xb5e2934c>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#playpage (for 127.0.0.1 at 2011-05-28 14:15:53) [GET]
+[2011/05/28 14:15:53.000717][  4026][#<Thread:0xb5e2934c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:53.000718][  4026][#<Thread:0xb5e2934c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"playpage", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:15:53.000731][  4026][#<Thread:0xb5e2934c>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:15:53.000847][  4026][#<Thread:0xb5e2934c>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:15:53.000850][  4026][#<Thread:0xb5e2934c>][APLLOG][DEBUG][         pages_controller.rb:286]>START PagesController#playpage
+[2011/05/28 14:15:53.000874][  4026][#<Thread:0xb5e2934c>][APLLOG][DEBUG][         pages_controller.rb:291]>END   PagesController#playpage
+[2011/05/28 14:15:53.000878][  4026][#<Thread:0xb5e2934c>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/users_contents/0/1/1/1/preview.html
+[2011/05/28 14:15:53.000878][  4026][#<Thread:0xb5e2934c>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /users_contents/0/1/1/1/preview.html
+[2011/05/28 14:15:53.000971][  4026][#<Thread:0xb6020560>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:15:53) [GET]
+[2011/05/28 14:15:53.000971][  4026][#<Thread:0xb6020560>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:53.000972][  4026][#<Thread:0xb6020560>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "preview.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:15:54.000005][  4026][#<Thread:0xb6020560>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:15:54.000203][  4026][#<Thread:0xb5d096c4>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:15:54) [GET]
+[2011/05/28 14:15:54.000203][  4026][#<Thread:0xb5d096c4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:54.000203][  4026][#<Thread:0xb5d096c4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "index.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:15:54.000247][  4026][#<Thread:0xb5d096c4>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:15:54.000332][  4026][#<Thread:0xb5d078ec>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:15:54) [GET]
+[2011/05/28 14:15:54.000332][  4026][#<Thread:0xb5d078ec>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:54.000332][  4026][#<Thread:0xb5d078ec>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563350"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:15:54.000364][  4026][#<Thread:0xb5d078ec>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:15:54.000727][  4026][#<Thread:0xb5c4dd84>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:15:54) [GET]
+[2011/05/28 14:15:54.000728][  4026][#<Thread:0xb5c4dd84>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:54.000728][  4026][#<Thread:0xb5c4dd84>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:15:54.000916][  4026][#<Thread:0xb5c4dd84>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:15:55.000126][  4026][#<Thread:0xb6182624>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:15:55) [GET]
+[2011/05/28 14:15:55.000126][  4026][#<Thread:0xb6182624>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:15:55.000127][  4026][#<Thread:0xb6182624>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:15:55.000316][  4026][#<Thread:0xb6182624>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:18:21.000952][  4026][#<Thread:0xb617e3f8>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:21) [GET]
+[2011/05/28 14:18:21.000953][  4026][#<Thread:0xb617e3f8>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:21.000953][  4026][#<Thread:0xb617e3f8>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "preview.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:21.000985][  4026][#<Thread:0xb617e3f8>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:18:22.000104][  4026][#<Thread:0xb5cf78ac>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:22) [GET]
+[2011/05/28 14:18:22.000105][  4026][#<Thread:0xb5cf78ac>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:22.000105][  4026][#<Thread:0xb5cf78ac>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "index.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:22.000138][  4026][#<Thread:0xb5cf78ac>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:18:22.000341][  4026][#<Thread:0xb5ce2b64>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:22) [GET]
+[2011/05/28 14:18:22.000341][  4026][#<Thread:0xb5ce2b64>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:22.000341][  4026][#<Thread:0xb5ce2b64>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563350"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:22.000374][  4026][#<Thread:0xb5ce2b64>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:18:22.000460][  4026][#<Thread:0xb5f5e348>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:22) [GET]
+[2011/05/28 14:18:22.000460][  4026][#<Thread:0xb5f5e348>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:22.000461][  4026][#<Thread:0xb5f5e348>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:22.000623][  4026][#<Thread:0xb5f5e348>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:18:22.000881][  4026][#<Thread:0xb61826c4>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:22) [GET]
+[2011/05/28 14:18:22.000881][  4026][#<Thread:0xb61826c4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:22.000881][  4026][#<Thread:0xb61826c4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:23.000018][  4026][#<Thread:0xb61826c4>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:18:39.000503][  4026][#<Thread:0xb618048c>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:39) [GET]
+[2011/05/28 14:18:39.000503][  4026][#<Thread:0xb618048c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:39.000503][  4026][#<Thread:0xb618048c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "preview.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:39.000536][  4026][#<Thread:0xb618048c>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:18:39.000657][  4026][#<Thread:0xb5cb26bc>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:39) [GET]
+[2011/05/28 14:18:39.000658][  4026][#<Thread:0xb5cb26bc>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:39.000658][  4026][#<Thread:0xb5cb26bc>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "index.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:39.000691][  4026][#<Thread:0xb5cb26bc>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:18:39.000779][  4026][#<Thread:0xb5ca7014>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:39) [GET]
+[2011/05/28 14:18:39.000780][  4026][#<Thread:0xb5ca7014>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:39.000780][  4026][#<Thread:0xb5ca7014>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563350"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:39.000813][  4026][#<Thread:0xb5ca7014>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:18:40.000038][  4026][#<Thread:0xb596c048>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:40) [GET]
+[2011/05/28 14:18:40.000039][  4026][#<Thread:0xb596c048>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:40.000039][  4026][#<Thread:0xb596c048>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:40.000096][  4026][#<Thread:0xb596c048>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:18:40.000313][  4026][#<Thread:0xb61852e8>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:18:40) [GET]
+[2011/05/28 14:18:40.000313][  4026][#<Thread:0xb61852e8>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:18:40.000313][  4026][#<Thread:0xb61852e8>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:18:40.000367][  4026][#<Thread:0xb61852e8>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:37:19.000743][  4026][#<Thread:0xb612eb64>][APLLOG][ INFO][                 common_log.rb:4]>Processing ContentsController#edit (for 127.0.0.1 at 2011-05-28 14:37:19) [GET]
+[2011/05/28 14:37:19.000743][  4026][#<Thread:0xb612eb64>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:37:19.000744][  4026][#<Thread:0xb612eb64>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "page_id"=>"1", "id"=>"1", "controller"=>"contents"}
+[2011/05/28 14:37:19.000757][  4026][#<Thread:0xb612eb64>][APLLOG][DEBUG][      contents_controller.rb:427]>START ContentsController#find_pages
+[2011/05/28 14:37:19.000776][  4026][#<Thread:0xb612eb64>][APLLOG][DEBUG][      contents_controller.rb:434]>END   ContentsController#find_pages
+[2011/05/28 14:37:19.000778][  4026][#<Thread:0xb612eb64>][APLLOG][DEBUG][       contents_controller.rb:10]>START ContentsController#edit
+[2011/05/28 14:37:19.000808][  4026][#<Thread:0xb612eb64>][APLLOG][DEBUG][       contents_controller.rb:16]>END   ContentsController#edit
+[2011/05/28 14:37:19.000827][  4026][#<Thread:0xb612eb64>][APLLOG][ INFO][                common_log.rb:30]>Rendering contents/edit ()
+[2011/05/28 14:38:03.000544][  4026][#<Thread:0xb5b69508>][APLLOG][ INFO][                 common_log.rb:4]>Processing WelcomeController#index (for 127.0.0.1 at 2011-05-28 14:38:03) [GET]
+[2011/05/28 14:38:03.000544][  4026][#<Thread:0xb5b69508>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:03.000544][  4026][#<Thread:0xb5b69508>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"welcome"}
+[2011/05/28 14:38:03.000546][  4026][#<Thread:0xb5b69508>][APLLOG][DEBUG][         welcome_controller.rb:6]>START WelcomeController#index
+[2011/05/28 14:38:03.000550][  4026][#<Thread:0xb5b69508>][APLLOG][DEBUG][        welcome_controller.rb:14]>END   WelcomeController#index
+[2011/05/28 14:38:03.000559][  4026][#<Thread:0xb5b69508>][APLLOG][ INFO][                common_log.rb:30]>Rendering welcome/index ()
+[2011/05/28 14:38:05.000875][  4026][#<Thread:0xb59b5b08>][APLLOG][ INFO][                 common_log.rb:4]>Processing ChannelsController#index (for 127.0.0.1 at 2011-05-28 14:38:05) [GET]
+[2011/05/28 14:38:05.000875][  4026][#<Thread:0xb59b5b08>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:05.000876][  4026][#<Thread:0xb59b5b08>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"channels"}
+[2011/05/28 14:38:05.000877][  4026][#<Thread:0xb59b5b08>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/session/new
+[2011/05/28 14:38:05.000877][  4026][#<Thread:0xb59b5b08>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /session/new
+[2011/05/28 14:38:05.000964][  4026][#<Thread:0xb5837290>][APLLOG][ INFO][                 common_log.rb:4]>Processing SessionsController#new (for 127.0.0.1 at 2011-05-28 14:38:05) [GET]
+[2011/05/28 14:38:05.000964][  4026][#<Thread:0xb5837290>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:05.000965][  4026][#<Thread:0xb5837290>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"new", "controller"=>"sessions"}
+[2011/05/28 14:38:05.000967][  4026][#<Thread:0xb5837290>][APLLOG][DEBUG][       sessions_controller.rb:11]>START SessionsController#new
+[2011/05/28 14:38:05.000967][  4026][#<Thread:0xb5837290>][APLLOG][DEBUG][       sessions_controller.rb:12]>END   SessionsController#new
+[2011/05/28 14:38:05.000973][  4026][#<Thread:0xb5837290>][APLLOG][ INFO][                common_log.rb:30]>Rendering sessions/new ()
+[2011/05/28 14:38:10.000147][  4026][#<Thread:0xb56b91fc>][APLLOG][ INFO][                 common_log.rb:4]>Processing SessionsController#create (for 127.0.0.1 at 2011-05-28 14:38:10) [POST]
+[2011/05/28 14:38:10.000147][  4026][#<Thread:0xb56b91fc>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:10.000148][  4026][#<Thread:0xb56b91fc>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"commit"=>"ログイ\343\203\263", "action"=>"create", "authenticity_token"=>"b4c05cce9bc10f9d1a6e2834d7f66350f33dc374", "controller"=>"sessions", "login"=>"admin", "password"=>"[FILTERED]"}
+[2011/05/28 14:38:10.000150][  4026][#<Thread:0xb56b91fc>][APLLOG][DEBUG][       sessions_controller.rb:16]>START SessionsController#create
+[2011/05/28 14:38:10.000167][  4026][#<Thread:0xb56b91fc>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels
+[2011/05/28 14:38:10.000167][  4026][#<Thread:0xb56b91fc>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels
+[2011/05/28 14:38:10.000174][  4026][#<Thread:0xb56b91fc>][APLLOG][DEBUG][       sessions_controller.rb:30]>END   SessionsController#create
+[2011/05/28 14:38:10.000418][  4026][#<Thread:0xb5d59df4>][APLLOG][ INFO][                 common_log.rb:4]>Processing ChannelsController#index (for 127.0.0.1 at 2011-05-28 14:38:10) [GET]
+[2011/05/28 14:38:10.000419][  4026][#<Thread:0xb5d59df4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:10.000419][  4026][#<Thread:0xb5d59df4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"channels"}
+[2011/05/28 14:38:10.000450][  4026][#<Thread:0xb5d59df4>][APLLOG][DEBUG][       channels_controller.rb:12]>START ChannelsController#index
+[2011/05/28 14:38:10.000461][  4026][#<Thread:0xb5d59df4>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels/1/pages/1/edit
+[2011/05/28 14:38:10.000461][  4026][#<Thread:0xb5d59df4>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels/1/pages/1/edit
+[2011/05/28 14:38:10.000462][  4026][#<Thread:0xb5d59df4>][APLLOG][DEBUG][       channels_controller.rb:79]>END   ChannelsController#index
+[2011/05/28 14:38:10.000550][  4026][#<Thread:0xb5c37ea8>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#edit (for 127.0.0.1 at 2011-05-28 14:38:10) [GET]
+[2011/05/28 14:38:10.000550][  4026][#<Thread:0xb5c37ea8>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:10.000550][  4026][#<Thread:0xb5c37ea8>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:38:10.000564][  4026][#<Thread:0xb5c37ea8>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:38:10.000584][  4026][#<Thread:0xb5c37ea8>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:38:10.000586][  4026][#<Thread:0xb5c37ea8>][APLLOG][DEBUG][          pages_controller.rb:57]>START PagesController#edit
+[2011/05/28 14:38:10.000600][  4026][#<Thread:0xb5c37ea8>][APLLOG][DEBUG][          pages_controller.rb:98]>END   PagesController#edit
+[2011/05/28 14:38:10.000648][  4026][#<Thread:0xb5c37ea8>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/edit ()
+[2011/05/28 14:38:10.000845][  4026][#<Thread:0xb59221b4>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#layout (for 127.0.0.1 at 2011-05-28 14:38:10) [GET]
+[2011/05/28 14:38:10.000846][  4026][#<Thread:0xb59221b4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:10.000846][  4026][#<Thread:0xb59221b4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"layout", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:38:10.000859][  4026][#<Thread:0xb59221b4>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:38:10.000879][  4026][#<Thread:0xb59221b4>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:38:10.000881][  4026][#<Thread:0xb59221b4>][APLLOG][DEBUG][         pages_controller.rb:240]>START PagesController#layout
+[2011/05/28 14:38:10.000889][  4026][#<Thread:0xb59221b4>][APLLOG][DEBUG][         pages_controller.rb:244]>END   PagesController#layout
+[2011/05/28 14:38:10.000913][  4026][#<Thread:0xb59221b4>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/layout ()
+[2011/05/28 14:38:11.000169][  4026][#<Thread:0xb5685140>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:38:11) [GET]
+[2011/05/28 14:38:11.000170][  4026][#<Thread:0xb5685140>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:11.000171][  4026][#<Thread:0xb5685140>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"1306564690"=>nil, "action"=>"index", "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:38:11.000342][  4026][#<Thread:0xb5685140>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:38:16.000440][  4026][#<Thread:0xb6047264>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#playpage (for 127.0.0.1 at 2011-05-28 14:38:16) [GET]
+[2011/05/28 14:38:16.000441][  4026][#<Thread:0xb6047264>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:16.000441][  4026][#<Thread:0xb6047264>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"playpage", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:38:16.000455][  4026][#<Thread:0xb6047264>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:38:16.000477][  4026][#<Thread:0xb6047264>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:38:16.000480][  4026][#<Thread:0xb6047264>][APLLOG][DEBUG][         pages_controller.rb:286]>START PagesController#playpage
+[2011/05/28 14:38:16.000501][  4026][#<Thread:0xb6047264>][APLLOG][DEBUG][         pages_controller.rb:291]>END   PagesController#playpage
+[2011/05/28 14:38:16.000505][  4026][#<Thread:0xb6047264>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/users_contents/0/1/1/1/preview.html
+[2011/05/28 14:38:16.000505][  4026][#<Thread:0xb6047264>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /users_contents/0/1/1/1/preview.html
+[2011/05/28 14:38:16.000775][  4026][#<Thread:0xb5b61754>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:38:16) [GET]
+[2011/05/28 14:38:16.000775][  4026][#<Thread:0xb5b61754>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:16.000776][  4026][#<Thread:0xb5b61754>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "preview.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:38:16.000809][  4026][#<Thread:0xb5b61754>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:38:16.000916][  4026][#<Thread:0xb5957fbc>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:38:16) [GET]
+[2011/05/28 14:38:16.000917][  4026][#<Thread:0xb5957fbc>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:16.000917][  4026][#<Thread:0xb5957fbc>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "index.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:38:16.000950][  4026][#<Thread:0xb5957fbc>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:38:17.000032][  4026][#<Thread:0xb594f074>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:38:17) [GET]
+[2011/05/28 14:38:17.000032][  4026][#<Thread:0xb594f074>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:17.000032][  4026][#<Thread:0xb594f074>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306563350"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:38:17.000066][  4026][#<Thread:0xb594f074>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:38:17.000304][  4026][#<Thread:0xb650c81c>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:38:17) [GET]
+[2011/05/28 14:38:17.000304][  4026][#<Thread:0xb650c81c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 721d0e6efd620f47ea20878279098f2f
+[2011/05/28 14:38:17.000304][  4026][#<Thread:0xb650c81c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:38:17.000362][  4026][#<Thread:0xb650c81c>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:38:27.000846][  4026][#<Thread:0xb5dbc120>][APLLOG][ INFO][                 common_log.rb:4]>Processing ContentsController#preview (for 127.0.0.1 at 2011-05-28 14:38:27) [GET]
+[2011/05/28 14:38:27.000847][  4026][#<Thread:0xb5dbc120>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:38:27.000847][  4026][#<Thread:0xb5dbc120>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "from"=>"contents", "action"=>"preview", "page_id"=>"1", "id"=>"1", "controller"=>"contents"}
+[2011/05/28 14:38:27.000847][  4026][#<Thread:0xb5dbc120>][APLLOG][DEBUG][      contents_controller.rb:427]>START ContentsController#find_pages
+[2011/05/28 14:38:27.000868][  4026][#<Thread:0xb5dbc120>][APLLOG][DEBUG][      contents_controller.rb:434]>END   ContentsController#find_pages
+[2011/05/28 14:38:27.000872][  4026][#<Thread:0xb5dbc120>][APLLOG][DEBUG][      contents_controller.rb:322]>START ContentsController#preview
+[2011/05/28 14:38:27.000911][  4026][#<Thread:0xb5dbc120>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/users_contents/0/1/1/1/1/index.html
+[2011/05/28 14:38:27.000912][  4026][#<Thread:0xb5dbc120>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /users_contents/0/1/1/1/1/index.html
+[2011/05/28 14:38:27.000912][  4026][#<Thread:0xb5dbc120>][APLLOG][DEBUG][      contents_controller.rb:333]>END   ContentsController#preview
+[2011/05/28 14:38:28.000000][  4026][#<Thread:0xb5bad17c>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:38:27) [GET]
+[2011/05/28 14:38:28.000000][  4026][#<Thread:0xb5bad17c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:38:28.000000][  4026][#<Thread:0xb5bad17c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "index.html"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:38:28.000040][  4026][#<Thread:0xb5bad17c>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:38:28.000136][  4026][#<Thread:0xb5981a60>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:38:28) [GET]
+[2011/05/28 14:38:28.000136][  4026][#<Thread:0xb5981a60>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:38:28.000137][  4026][#<Thread:0xb5981a60>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:38:28.000323][  4026][#<Thread:0xb5981a60>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:38:28.000562][  4026][#<Thread:0xb6166294>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:38:28) [GET]
+[2011/05/28 14:38:28.000562][  4026][#<Thread:0xb6166294>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: a6cf15ea2753783ef1237925e8427ff8
+[2011/05/28 14:38:28.000562][  4026][#<Thread:0xb6166294>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "1", "vasdaq-it_full.mp4"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:38:28.000620][  4026][#<Thread:0xb6166294>][APLLOG][ INFO][                common_log.rb:30]>Rendering file_publisher/contents/index ()
+[2011/05/28 14:47:46.000340][  2615][#<Thread:0xb63118b4>][APLLOG][ INFO][                 common_log.rb:4]>Processing WelcomeController#index (for 127.0.0.1 at 2011-05-28 14:47:46) [GET]
+[2011/05/28 14:47:46.000380][  2615][#<Thread:0xb63118b4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:47:46.000380][  2615][#<Thread:0xb63118b4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"welcome"}
+[2011/05/28 14:47:46.000386][  2615][#<Thread:0xb63118b4>][APLLOG][DEBUG][         welcome_controller.rb:6]>START WelcomeController#index
+[2011/05/28 14:47:46.000434][  2615][#<Thread:0xb63118b4>][APLLOG][DEBUG][        welcome_controller.rb:14]>END   WelcomeController#index
+[2011/05/28 14:47:46.000484][  2615][#<Thread:0xb63118b4>][APLLOG][ INFO][                common_log.rb:30]>Rendering welcome/index ()
+[2011/05/28 14:47:50.000442][  2615][#<Thread:0xb66d7cb4>][APLLOG][ INFO][                 common_log.rb:4]>Processing ChannelsController#index (for 127.0.0.1 at 2011-05-28 14:47:50) [GET]
+[2011/05/28 14:47:50.000442][  2615][#<Thread:0xb66d7cb4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:47:50.000443][  2615][#<Thread:0xb66d7cb4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"channels"}
+[2011/05/28 14:47:50.000444][  2615][#<Thread:0xb66d7cb4>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/session/new
+[2011/05/28 14:47:50.000444][  2615][#<Thread:0xb66d7cb4>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /session/new
+[2011/05/28 14:47:50.000597][  2615][#<Thread:0xb62ecd20>][APLLOG][ INFO][                 common_log.rb:4]>Processing SessionsController#new (for 127.0.0.1 at 2011-05-28 14:47:50) [GET]
+[2011/05/28 14:47:50.000598][  2615][#<Thread:0xb62ecd20>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:47:50.000598][  2615][#<Thread:0xb62ecd20>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"new", "controller"=>"sessions"}
+[2011/05/28 14:47:50.000600][  2615][#<Thread:0xb62ecd20>][APLLOG][DEBUG][       sessions_controller.rb:11]>START SessionsController#new
+[2011/05/28 14:47:50.000601][  2615][#<Thread:0xb62ecd20>][APLLOG][DEBUG][       sessions_controller.rb:12]>END   SessionsController#new
+[2011/05/28 14:47:50.000607][  2615][#<Thread:0xb62ecd20>][APLLOG][ INFO][                common_log.rb:30]>Rendering sessions/new ()
+[2011/05/28 14:47:54.000233][  2615][#<Thread:0xb63bd9c0>][APLLOG][ INFO][                 common_log.rb:4]>Processing SessionsController#create (for 127.0.0.1 at 2011-05-28 14:47:54) [POST]
+[2011/05/28 14:47:54.000233][  2615][#<Thread:0xb63bd9c0>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:47:54.000233][  2615][#<Thread:0xb63bd9c0>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"commit"=>"ログイ\343\203\263", "action"=>"create", "authenticity_token"=>"c8415c0e225e858532e31ce1cf9647ddcdcc9191", "controller"=>"sessions", "login"=>"admin", "password"=>"[FILTERED]"}
+[2011/05/28 14:47:54.000236][  2615][#<Thread:0xb63bd9c0>][APLLOG][DEBUG][       sessions_controller.rb:16]>START SessionsController#create
+[2011/05/28 14:47:54.000295][  2615][#<Thread:0xb63bd9c0>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels
+[2011/05/28 14:47:54.000296][  2615][#<Thread:0xb63bd9c0>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels
+[2011/05/28 14:47:54.000313][  2615][#<Thread:0xb63bd9c0>][APLLOG][DEBUG][       sessions_controller.rb:30]>END   SessionsController#create
+[2011/05/28 14:47:54.000461][  2615][#<Thread:0xb6464568>][APLLOG][ INFO][                 common_log.rb:4]>Processing ChannelsController#index (for 127.0.0.1 at 2011-05-28 14:47:54) [GET]
+[2011/05/28 14:47:54.000461][  2615][#<Thread:0xb6464568>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:47:54.000461][  2615][#<Thread:0xb6464568>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"channels"}
+[2011/05/28 14:47:54.000543][  2615][#<Thread:0xb6464568>][APLLOG][DEBUG][       channels_controller.rb:12]>START ChannelsController#index
+[2011/05/28 14:47:54.000558][  2615][#<Thread:0xb6464568>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels/1/pages/1/edit
+[2011/05/28 14:47:54.000558][  2615][#<Thread:0xb6464568>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels/1/pages/1/edit
+[2011/05/28 14:47:54.000558][  2615][#<Thread:0xb6464568>][APLLOG][DEBUG][       channels_controller.rb:79]>END   ChannelsController#index
+[2011/05/28 14:47:54.000707][  2615][#<Thread:0xb650060c>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#edit (for 127.0.0.1 at 2011-05-28 14:47:54) [GET]
+[2011/05/28 14:47:54.000707][  2615][#<Thread:0xb650060c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:47:54.000708][  2615][#<Thread:0xb650060c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:47:54.000779][  2615][#<Thread:0xb650060c>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:47:54.000800][  2615][#<Thread:0xb650060c>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:47:54.000803][  2615][#<Thread:0xb650060c>][APLLOG][DEBUG][          pages_controller.rb:57]>START PagesController#edit
+[2011/05/28 14:47:54.000879][  2615][#<Thread:0xb650060c>][APLLOG][DEBUG][          pages_controller.rb:98]>END   PagesController#edit
+[2011/05/28 14:47:54.000970][  2615][#<Thread:0xb650060c>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/edit ()
+[2011/05/28 14:47:55.000165][  2615][#<Thread:0xb62d2d6c>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#layout (for 127.0.0.1 at 2011-05-28 14:47:55) [GET]
+[2011/05/28 14:47:55.000166][  2615][#<Thread:0xb62d2d6c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:47:55.000166][  2615][#<Thread:0xb62d2d6c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"layout", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 14:47:55.000180][  2615][#<Thread:0xb62d2d6c>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 14:47:55.000214][  2615][#<Thread:0xb62d2d6c>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 14:47:55.000219][  2615][#<Thread:0xb62d2d6c>][APLLOG][DEBUG][         pages_controller.rb:240]>START PagesController#layout
+[2011/05/28 14:47:55.000238][  2615][#<Thread:0xb62d2d6c>][APLLOG][DEBUG][         pages_controller.rb:244]>END   PagesController#layout
+[2011/05/28 14:47:55.000272][  2615][#<Thread:0xb62d2d6c>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/layout ()
+[2011/05/28 14:47:55.000635][  2615][#<Thread:0xb62f2540>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 14:47:55) [GET]
+[2011/05/28 14:47:55.000636][  2615][#<Thread:0xb62f2540>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:47:55.000636][  2615][#<Thread:0xb62f2540>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "1306565275"=>nil, "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents"}
+[2011/05/28 14:47:55.000687][  2615][#<Thread:0xb62f2540>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 14:48:03.000422][  2615][#<Thread:0xb624a8f4>][APLLOG][ INFO][                 common_log.rb:4]>Processing ContentsController#edit (for 127.0.0.1 at 2011-05-28 14:48:03) [GET]
+[2011/05/28 14:48:03.000422][  2615][#<Thread:0xb624a8f4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: bcc6521be5cf83b20046cbc26998a82e
+[2011/05/28 14:48:03.000422][  2615][#<Thread:0xb624a8f4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "page_id"=>"1", "id"=>"1", "controller"=>"contents"}
+[2011/05/28 14:48:03.000436][  2615][#<Thread:0xb624a8f4>][APLLOG][DEBUG][      contents_controller.rb:427]>START ContentsController#find_pages
+[2011/05/28 14:48:03.000458][  2615][#<Thread:0xb624a8f4>][APLLOG][DEBUG][      contents_controller.rb:434]>END   ContentsController#find_pages
+[2011/05/28 14:48:03.000461][  2615][#<Thread:0xb624a8f4>][APLLOG][DEBUG][       contents_controller.rb:10]>START ContentsController#edit
+[2011/05/28 14:48:03.000577][  2615][#<Thread:0xb624a8f4>][APLLOG][DEBUG][       contents_controller.rb:16]>END   ContentsController#edit
+[2011/05/28 14:48:03.000689][  2615][#<Thread:0xb624a8f4>][APLLOG][ INFO][                common_log.rb:30]>Rendering contents/edit ()
+[2011/05/28 15:09:07.000088][  2592][#<Thread:0xb63171c4>][APLLOG][ INFO][                 common_log.rb:4]>Processing WelcomeController#index (for 127.0.0.1 at 2011-05-28 15:09:07) [GET]
+[2011/05/28 15:09:07.000121][  2592][#<Thread:0xb63171c4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:09:07.000122][  2592][#<Thread:0xb63171c4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"welcome"}
+[2011/05/28 15:09:07.000125][  2592][#<Thread:0xb63171c4>][APLLOG][DEBUG][         welcome_controller.rb:6]>START WelcomeController#index
+[2011/05/28 15:09:07.000177][  2592][#<Thread:0xb63171c4>][APLLOG][DEBUG][        welcome_controller.rb:14]>END   WelcomeController#index
+[2011/05/28 15:09:07.000248][  2592][#<Thread:0xb63171c4>][APLLOG][ INFO][                common_log.rb:30]>Rendering welcome/index ()
+[2011/05/28 15:09:09.000730][  2592][#<Thread:0xb66f4bd4>][APLLOG][ INFO][                 common_log.rb:4]>Processing ChannelsController#index (for 127.0.0.1 at 2011-05-28 15:09:09) [GET]
+[2011/05/28 15:09:09.000730][  2592][#<Thread:0xb66f4bd4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:09:09.000731][  2592][#<Thread:0xb66f4bd4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"channels"}
+[2011/05/28 15:09:09.000731][  2592][#<Thread:0xb66f4bd4>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/session/new
+[2011/05/28 15:09:09.000732][  2592][#<Thread:0xb66f4bd4>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /session/new
+[2011/05/28 15:09:09.000888][  2592][#<Thread:0xb62fc130>][APLLOG][ INFO][                 common_log.rb:4]>Processing SessionsController#new (for 127.0.0.1 at 2011-05-28 15:09:09) [GET]
+[2011/05/28 15:09:09.000889][  2592][#<Thread:0xb62fc130>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:09:09.000889][  2592][#<Thread:0xb62fc130>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"new", "controller"=>"sessions"}
+[2011/05/28 15:09:09.000895][  2592][#<Thread:0xb62fc130>][APLLOG][DEBUG][       sessions_controller.rb:11]>START SessionsController#new
+[2011/05/28 15:09:09.000895][  2592][#<Thread:0xb62fc130>][APLLOG][DEBUG][       sessions_controller.rb:12]>END   SessionsController#new
+[2011/05/28 15:09:09.000920][  2592][#<Thread:0xb62fc130>][APLLOG][ INFO][                common_log.rb:30]>Rendering sessions/new ()
+[2011/05/28 15:09:13.000805][  2592][#<Thread:0xb63bacfc>][APLLOG][ INFO][                 common_log.rb:4]>Processing SessionsController#create (for 127.0.0.1 at 2011-05-28 15:09:13) [POST]
+[2011/05/28 15:09:13.000805][  2592][#<Thread:0xb63bacfc>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:09:13.000806][  2592][#<Thread:0xb63bacfc>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"commit"=>"ログイ\343\203\263", "action"=>"create", "authenticity_token"=>"d80ee55c40e1533be0843c2c7d0795f774d37142", "controller"=>"sessions", "login"=>"admin", "password"=>"[FILTERED]"}
+[2011/05/28 15:09:13.000808][  2592][#<Thread:0xb63bacfc>][APLLOG][DEBUG][       sessions_controller.rb:16]>START SessionsController#create
+[2011/05/28 15:09:13.000863][  2592][#<Thread:0xb63bacfc>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels
+[2011/05/28 15:09:13.000864][  2592][#<Thread:0xb63bacfc>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels
+[2011/05/28 15:09:13.000889][  2592][#<Thread:0xb63bacfc>][APLLOG][DEBUG][       sessions_controller.rb:30]>END   SessionsController#create
+[2011/05/28 15:09:14.000043][  2592][#<Thread:0xb6464054>][APLLOG][ INFO][                 common_log.rb:4]>Processing ChannelsController#index (for 127.0.0.1 at 2011-05-28 15:09:14) [GET]
+[2011/05/28 15:09:14.000044][  2592][#<Thread:0xb6464054>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:09:14.000044][  2592][#<Thread:0xb6464054>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"channels"}
+[2011/05/28 15:09:14.000109][  2592][#<Thread:0xb6464054>][APLLOG][DEBUG][       channels_controller.rb:12]>START ChannelsController#index
+[2011/05/28 15:09:14.000121][  2592][#<Thread:0xb6464054>][APLLOG][ INFO][                common_log.rb:11]>Redirected to http://localhost:3001/channels/1/pages/1/edit
+[2011/05/28 15:09:14.000121][  2592][#<Thread:0xb6464054>][APLLOG][ INFO][                common_log.rb:11]>Redirected to /channels/1/pages/1/edit
+[2011/05/28 15:09:14.000122][  2592][#<Thread:0xb6464054>][APLLOG][DEBUG][       channels_controller.rb:79]>END   ChannelsController#index
+[2011/05/28 15:09:14.000315][  2592][#<Thread:0xb651b484>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#edit (for 127.0.0.1 at 2011-05-28 15:09:14) [GET]
+[2011/05/28 15:09:14.000316][  2592][#<Thread:0xb651b484>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:09:14.000316][  2592][#<Thread:0xb651b484>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"edit", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 15:09:14.000393][  2592][#<Thread:0xb651b484>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 15:09:14.000415][  2592][#<Thread:0xb651b484>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 15:09:14.000419][  2592][#<Thread:0xb651b484>][APLLOG][DEBUG][          pages_controller.rb:57]>START PagesController#edit
+[2011/05/28 15:09:14.000509][  2592][#<Thread:0xb651b484>][APLLOG][DEBUG][          pages_controller.rb:98]>END   PagesController#edit
+[2011/05/28 15:09:14.000598][  2592][#<Thread:0xb651b484>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/edit ()
+[2011/05/28 15:09:14.000792][  2592][#<Thread:0xb62dbfd4>][APLLOG][ INFO][                 common_log.rb:4]>Processing PagesController#layout (for 127.0.0.1 at 2011-05-28 15:09:14) [GET]
+[2011/05/28 15:09:14.000793][  2592][#<Thread:0xb62dbfd4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:09:14.000794][  2592][#<Thread:0xb62dbfd4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"channel_id"=>"1", "action"=>"layout", "id"=>"1", "controller"=>"pages"}
+[2011/05/28 15:09:14.000808][  2592][#<Thread:0xb62dbfd4>][APLLOG][DEBUG][         pages_controller.rb:914]>START PagesController#find_channels
+[2011/05/28 15:09:14.000829][  2592][#<Thread:0xb62dbfd4>][APLLOG][DEBUG][         pages_controller.rb:916]>END   PagesController#find_channels
+[2011/05/28 15:09:14.000832][  2592][#<Thread:0xb62dbfd4>][APLLOG][DEBUG][         pages_controller.rb:240]>START PagesController#layout
+[2011/05/28 15:09:14.000841][  2592][#<Thread:0xb62dbfd4>][APLLOG][DEBUG][         pages_controller.rb:244]>END   PagesController#layout
+[2011/05/28 15:09:14.000897][  2592][#<Thread:0xb62dbfd4>][APLLOG][ INFO][                common_log.rb:30]>Rendering pages/layout ()
+[2011/05/28 15:09:15.000309][  2592][#<Thread:0xb6230c9c>][APLLOG][ INFO][                 common_log.rb:4]>Processing FilePublisher::ContentsController#index (for 127.0.0.1 at 2011-05-28 15:09:15) [GET]
+[2011/05/28 15:09:15.000309][  2592][#<Thread:0xb6230c9c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:09:15.000309][  2592][#<Thread:0xb6230c9c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "path"=>["0", "1", "1", "1", "gallary.png"], "controller"=>"file_publisher/contents", "1306566554"=>nil}
+[2011/05/28 15:09:15.000351][  2592][#<Thread:0xb6230c9c>][APLLOG][ INFO][                common_log.rb:30]>Rendering /home/yusuke/Aptana Studio Workspace/VASDAQTV_SALES/public/404.html (404 Not Found)
+[2011/05/28 15:26:49.000766][  2592][#<Thread:0xb621c3b4>][APLLOG][ INFO][                 common_log.rb:4]>Processing WelcomeController#index (for 127.0.0.1 at 2011-05-28 15:26:49) [GET]
+[2011/05/28 15:26:49.000766][  2592][#<Thread:0xb621c3b4>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:26:49.000767][  2592][#<Thread:0xb621c3b4>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"index", "controller"=>"welcome"}
+[2011/05/28 15:26:49.000770][  2592][#<Thread:0xb621c3b4>][APLLOG][DEBUG][         welcome_controller.rb:6]>START WelcomeController#index
+[2011/05/28 15:26:49.000774][  2592][#<Thread:0xb621c3b4>][APLLOG][DEBUG][        welcome_controller.rb:14]>END   WelcomeController#index
+[2011/05/28 15:26:49.000799][  2592][#<Thread:0xb621c3b4>][APLLOG][ INFO][                common_log.rb:30]>Rendering welcome/index ()
+[2011/05/28 15:26:52.000038][  2592][#<Thread:0xb6261a7c>][APLLOG][ INFO][                 common_log.rb:4]>Processing WelcomeController#opensource_project (for 127.0.0.1 at 2011-05-28 15:26:52) [GET]
+[2011/05/28 15:26:52.000038][  2592][#<Thread:0xb6261a7c>][APLLOG][ INFO][                 common_log.rb:5]>Session ID: 84ef5b3c01e894f210e9ce463ffce880
+[2011/05/28 15:26:52.000039][  2592][#<Thread:0xb6261a7c>][APLLOG][ INFO][                 common_log.rb:6]>Parameters: {"action"=>"opensource_project", "controller"=>"welcome"}
+[2011/05/28 15:26:52.000111][  2592][#<Thread:0xb6261a7c>][APLLOG][ INFO][                common_log.rb:30]>Rendering welcome/opensource_project ()

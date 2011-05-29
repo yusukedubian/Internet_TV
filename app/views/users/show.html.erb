@@ -1,0 +1,7 @@
+<div class="signup">
+<h3><%= _("User: ") + h(@user.login) %></h3>
+
+<p><%= _("Updated on: ") + @user.updated_at.to_s(:ja) %></p>
+
+<p><%= link_to _("Home"), root_path %></p>
+</div>

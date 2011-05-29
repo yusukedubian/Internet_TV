@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-style-type" content="text/css">
+<meta http-equiv="content-script-type" content="text/javascript"><!-- for Google AJAX Feed API -->
+<script src="http://www.google.com/jsapi?key=ABQIAAAAchJu3eoh_0uOR8f6we34GxTo28GlTqNFgyQcy9PXdEU-Yu69IBQwQeIQ8fP1McR1t1ufhnHEOFC56Q" type="text/javascript"></script>
+
+<style type="text/css">
+body{
+	color:#FFFFFF;
+	font-size:10.5px;
+}
+table{
+	padding:0px;
+	margin:0px;
+}
+img{
+	width:100%;
+}
+#feed {
+}
+</style>
+
+<script type="text/javascript">
+
+google.load('feeds', '1');
+
+// idと地域名を関連付ける配列
+var area = new Array();
+area["4"] = "札幌";
+area["11"] = "東京";
+area["20"] = "名古屋";
+area["25"] = "大阪";
+area["50"] = "福岡";
+
+/**
+ * 初期化処理
+ * 天気情報のRSSを取得して、HTML形式に変換します。
+ */
+function initialize() {
+  var feed = new google.feeds.Feed("http://weather.livedoor.com/forecast/rss/index.xml");
+  feed.setResultFormat(google.feeds.Feed.XML_FORMAT);
+  feed.setNumEntries(6);
+  
+  feed.load(function(result) {
+    if (!result.error) {
+      var items = result.xmlDocument.getElementsByTagName("item");
+      convert(items);
+    }
+  });
+}
+
+/**
+ * HTML変換処理
+ * itemノードの内容からHTMLを生成します。
+ */
+function convert(items) {
+  var container = document.getElementById("feed");
+  
+  var weather_table = document.createElement("table");
+  weather_table.setAttribute("border", "0");
+  
+  for (var i = 0; i < items.length; i++) {
+    var lwwsElement = google.feeds.getElementsByTagNameNS(items[i], "http://weather.livedoor.com/ns/rss/2.0", "lwws")[0];
+    
+    if (lwwsElement != null) {
+      var id = lwwsElement.attributes.id.value;
+      var telop = getNodeValue(items[i], "telop");
+      var image_url = getNodeValue(items[i], "url");
+      var description = getNodeValue(items[i], "description");
+      
+      var tr = document.createElement("tr");
+      
+      tr.appendChild(createTextElement(area[id], "td"));
+      tr.appendChild(createTextElement(telop, "td"));
+      tr.appendChild(createImageElement(image_url, "td"));
+obj =document.createElement("td");
+obj.appendChild(createTextElement(description, "marquee"));
+      tr.appendChild(obj);
+      //tr.appendChild(createTextElement(description, "td")); 
+ 
+      weather_table.appendChild(tr);
+    }
+  }
+  
+  container.appendChild(weather_table);
+}
+
+/**
+ * ノード値取得
+ */
+function getNodeValue(node, nodeName) {
+  return node.getElementsByTagName(nodeName)[0].firstChild.nodeValue;
+}
+
+/**
+ * テキストを持つエレメントの生成
+ */
+function createTextElement(text, tagName) {
+  var element = document.createElement(tagName);
+  element.appendChild(document.createTextNode(text));
+  
+  return element;
+}
+
+/**
+ * imgを持つエレメントの生成
+ */
+function createImageElement(url, tagName) {
+  var element = document.createElement(tagName);
+  var imageElement = document.createElement("img");
+  imageElement.setAttribute("src", url);
+  element.appendChild(imageElement)
+  
+  return element;
+}
+
+google.setOnLoadCallback(initialize);
+
+</script>
+
+<title>天気予報を表示してみる サンプル 2</title>
+</head>
+<body>
+
+<div id="feed" />
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>VASDAQ.TV</title>
+
+<link href="./qa.css" media="screen" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./jquery-1.5.1.js"></script>
+<script type="text/javascript" src="./farbtastic.js"></script>
+<script type="application/javascript">
+<!--
+
+
+function checkIsNumber(value){
+  return (value.match(/[0-9]+/g) == value);
+}
+//postJSON Request type: POST
+$.extend({
+  "postJSON" : function (url, data, url1, success, error) {
+    error = error || function() {}; 
+      return $.ajax({
+        url : url,
+        data : {'data' : data, 'url' : url1},
+        dataType : 'jsonp',
+        type : 'POST',
+        success : success,
+        error : error
+    });
+  }
+});
+
+var sv;
+var db;
+var name;
+
+function newDoc(){
+  if($("#width").val() == null || $("#width").val() == ""){
+    //必須チェック
+    alert("横サイズは必須です。");
+    return null;
+  }else if(!checkIsNumber($("#width").val())){
+    //数字チェック
+    alert("横サイズは数字入力です。");
+    return null;
+  }
+  if($("#height").val() == null || $("#height").val() == ""){
+    //必須チェック
+    alert("縦サイズは必須です。");
+    return null;
+  }else if(!checkIsNumber($("#height").val())){
+    //数字チェック
+    alert("縦サイズは数字入力です。");
+    return null;
+  }
+  if($("#sv").val() == null || $("#sv").val() == ""){
+    //必須チェック
+    alert("サーバアドレスは必須です。");
+    return null;
+  }
+  if($("#db").val() == null || $("#db").val() == ""){
+    //必須チェック
+    alert("データベース名は必須です。");
+    return null;
+  }
+  if($("#qChange").val == null || $("#qChange").val == ""){
+    //必須チェック
+    alert("質問切替え時間は必須です。");
+    return null;
+  }else if(!checkIsNumber($("#qChange").val())){
+    //数字チェック
+    alert("質問切替え時間は数字入力です。");
+    return null;
+  }
+  if($("#aChange").val == null || $("#aChange").val == ""){
+    //必須チェック
+    alert("回答切替え時間は必須です。");
+    return null;
+  }else if(!checkIsNumber($("#aChange").val())){
+    //数字チェック
+    alert("回答切替え時間は数字入力です。");
+    return null;
+  }
+
+
+  var hash = {};
+  hash["name"] = $("#name").val();
+  //設定項目設定
+  var property = {};
+  property["height"] = $("#height").val();
+  property["width"] = $("#width").val();
+  property["name"] = $("#name").val();
+  property["qabg"] = $("#qabg").val();
+  property["qafontbg"] = $("#qafontbg").val();
+  property["qafonts"] = $("#qafonts").val();
+  property["qChange"] = $("#qChange").val();
+  property["aChange"] = $("#aChange").val();
+
+  
+
+  hash["property"] = property;
+  //質問設定
+  var qanda = [];
+  qa_size = $('.qa_list').size();
+  if(qa_size == 0){
+    alert("質問と回答が入力されていません。");
+    return;
+  }
+  for(i=1; i<= parseInt(qa_size); i=i+1){
+	var qa = {};
+	if (i == parseInt(qa_size)){
+		qa["question"] = document.getElementById("q_"+i).value;
+		qa["answer"] = document.getElementById("a_"+i).value;
+	}
+	else{
+		qa["question"] = document.getElementById("q_"+i).value;
+		qa["answer"] = document.getElementById("a_"+i).value;
+	}
+	qanda.push(qa);
+  }
+  hash["qanda"] = qanda;
+  proxy = $("#proxy").val(); 
+  url = 'http://' + $("#sv").val() +'/' + $("#db").val();
+  if(proxy == null || proxy == ""){
+    proxy = url;
+  }
+  $.postJSON(
+    proxy,
+    JSON.stringify(hash), url,  
+	function(data, text_status){
+widget  = '<iframe src="' ;
+widget += $("#qag").val();
+widget += '?sv=' + $("#sv").val() + '&db=' + $("#db").val() + '&key=' + data.id + '"';
+widget += ' height=100% width=100%></iframe>';
+
+		//widget = "<pre>";
+		//widget += "&lt;script src='http://www.vasdaq.tv/qanda'/>";
+		//widget += "&lt;\/script>";
+		//widget += "</pre>";
+		//document.getElementById("widget_url").innerHTML = widget;
+         $("#widget_url").val(widget);
+        $(".qa_list").remove();
+	},
+    function(data, text_status, error_thrown){
+      alert("送信に失敗しました" + JSON.stringify(data) + '!!!status:' + text_status);
+    }
+  );
+
+}
+
+function add_qanda(){
+  if($("#question").val() == "" || $("#answer").val() == ""){
+    alert("質問、又は回答を入力してください");
+    return null;
+  }
+
+
+  var obj = $("#ol_qanda").children();
+  
+  var ch_qa_size = $('.qa_list').size()+1;
+  var element = document.createElement('li');
+  element.setAttribute ('classname','qa_list'); //IE
+  element.setAttribute ('class','qa_list');
+  element.id = "qanda[" + obj.length + "]";
+  element.innerHTML = '<span class="qdata">' + $("#question").val() + '</span><br><span class="adata">' + $("#answer").val() + '</span>'
+  element.innerHTML += '<input type="hidden" id="q_'+ch_qa_size+'" value='+$("#question").val()+' />';
+  element.innerHTML += '<input type="hidden" id="a_'+ch_qa_size+'" value='+$("#answer").val()+' />';
+  $("#question").text("");
+  $("#answer").text("");
+  var objBody = document.getElementById("ol_qanda"); 
+  objBody.appendChild(element); 
+}
+
+-->
+</script>
+</head>
+<body >
+
+<div class="qasetting">
+	<h1>Q&Aウィジェット</h1>
+	<div id="your_screen"><h4>最大ページ幅：<span id="screen_w"></span>px　最大ページ高さ：<span id="screen_h"></span>px</h4></div>	
+	<table height="50px">
+		<tr>
+			<td width="80px">
+				横サイズ<font color=red>*</font>
+			</td>
+			<td width="110px">
+				<input id="width" maxlength="6" name="contents[width]" size="6" type="text" value="" />px
+			</td>
+			<td width="80px">
+				縦サイズ<font color=red>*</font>
+			</td>
+			<td width="110px">
+				<input id="height" maxlength="6" name="contents[height]" size="6" type="text" value="" />px
+			</td>
+		</tr>
+	</table>
+
+	<h6></h6>
+	<div class="box_left">プロキシサーバー:</div><div class="box_right"><input type="text" id="proxy" value="http://localhost:3001"></div><br>
+	<div class="box_left">サーバ アドレス<font color=red>*</font>:</div><div class="box_right"><input type="text" id="sv" value="localhost:5984"></div>
+	<div class="box_right">
+		<div id="picker" style="position:absolute; left:5px;"></div>
+	</div>
+	<br>
+	<div class="box_left">データベース名<font color=red>*</font>:</div><div class="box_right"><input type="text" id="db" value="relax_reader1"></div><br>
+    <div class="box_left">ガジェットURL<font color=red>*</font>:</div><div class="box_right"><input type="text" id="qag" ></div><br>
+	<div class="box_left">タイトル名:</div><div class="box_right"><input type="text" id="name"></div><br>	
+	<div class="box_left">背景色:</div>
+	<div class="box_right" style="width:200px;">
+		<input class="colorwell" id="qabg" maxlength="7" name="" onclick="picker('picker')" type="text" value="#123456" />
+	</div><br>
+	
+	<div class="box_left">フォント色:</div>
+	<div class="box_right">
+		<input class="colorwell" id="qafontbg" maxlength="7" name="" onclick="picker('picker')" type="text" value="#123456" />
+	</div><br>
+	
+	<div class="box_left">フォントサイズ:</div>
+	<div class="box_right">
+		<select id="qafonts" name="">
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="35">35</option>
+			<option value="40">40</option>
+			<option value="50">50</option>
+			<option value="55">55</option>
+			<option value="60">60</option>
+			<option value="100">100</option>
+		</select>
+	</div>
+   <br><br>
+      <div class="box_left">質問切替え時間:</div><div class="box_right"><input type="text" id="qChange" value="40">(秒)</div><br>
+      <div class="box_left">回答切替え時間:</div><div class="box_right"><input type="text" id="aChange" value="20">(秒)</div><br>		
+   <br><br>
+	<div id="qanda">
+		<div class="qbox"><div style="position:absolute; z-index:22px;"><font color="#f64c31">Question:</font><textarea id="question" class="qatextarea" onclick="writesize('question');" onblur="inisize('question');"></textarea></div></div>
+		<div class="abox"><div style="position:absolute; z-index:22px;"><font color="#075db6">Answer:</font><textarea id="answer" class="qatextarea" onclick="writesize('answer');" onblur="inisize('answer');"></textarea></div></div>
+		<div class="abox" style="margin-top:15px;"><input type="button" id="add_qanda" value="追加" onclick="add_qanda(this);"></div>
+		<ol id="ol_qanda" class="ol_qa">
+		</ol>
+	</div>
+	<div style="margin-top:5px;"><input type="button" id="new" value="新規" onclick="newDoc();"></div>
+	<br>
+	
+	<!-- widget URL -->
+	ウィジェットコード:<br>
+	<textarea id="widget_url" class="widget_url" rows="4" cols="40"></textarea>
+	
+	<div class="select">
+		<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:20px;">
+			<span class="bt1">
+				<img src="../../../../images/imagefile/open.png" onclick="layout_guide('on')" />
+			</span>
+			<span>Q&Aウィジェット 説明を開く</span>
+		</div>
+		<div id="layout_guide_off" class="layout_guide">
+			<span id="layout_guide_offbt" class="bt1">
+				<img src="../../../../images/imagefile/close.png" onclick="layout_guide('off')" />
+			</span>
+			<span>説明を閉じる</span>
+			<div style="clear:both;"></div>
+			<div class="guide_box">
+				<div class="qanda_guide_title">
+					Q&Aウィジェット
+				</div>
+			</div>
+			<div class="guide_box">
+				<div class="qanda_guide_text">
+					Q＆Aウィジェットでは、ウィジェットコードを生成します。<br>
+					新規ボタンをクリック後、ウィジェットコードに出力されたコードをコピーし、ウィジェットプレーヤ設定画面内のウィジェットコードに貼り付け生成することで、Q＆Aウィジェットを表示することができます。<br>
+					Q＆Aウィジェットを使用するには、ご使用のPCにcouchDBの環境を作ってください。<br>
+					Question/Answerの最大入力数は140文字までです。
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:history.back();">戻る</a>
+</div>
+
+<script type="text/javascript">
+	function layout_guide(str){
+		if (str == "on"){
+			document.getElementById("layout_guide_on").style.display = "none";
+			$("#layout_guide_offbt").fadeIn(1000);
+			$('#layout_guide_off').slideDown('slow');
+		}
+		else{
+			document.getElementById("layout_guide_offbt").style.display = "none";
+			$('#layout_guide_off').slideUp('slow')
+			$("#layout_guide_on").fadeIn(1000);
+		}
+	}
+	
+	function writesize(str){
+		document.getElementById(str).style.height = "130px";
+	}
+	
+	function inisize(str){
+		document.getElementById(str).style.height = "20px";
+	}
+	
+	function get_params(){
+        if(window.location.search){
+			 //チャンネル作成画面から来た場合は、画面サイズを渡しているため、表示
+           /* URLの「?」以降のパラメータを変数nに代入 */
+			var params=window.location.search.substring(1,window.location.search.length);
+			param = params.split("*");
+            /* テキストボックスにパラメータを表示 */
+			document.getElementById("screen_w").innerHTML = param[0];
+			document.getElementById("screen_h").innerHTML = param[1];
+        }
+		else{
+			//その他/リアルタイムWebウィジェットから来た場合は、画面サイズを渡していないため、非表示
+			document.getElementById("your_screen").style.display = "none";
+		}
+    }
+    /* オンロード時に実行 */
+    window.onload=get_params;
+</script>
+
+<script type="text/javascript" charset="utf-8">
+
+    tmp = location.href.lastIndexOf("/"); 
+    u = location.href.substr(0,tmp);
+    tmp = u.lastIndexOf("/"); 
+    u = u.substr(0,tmp);
+    document.getElementById("qag").value= u + "/QA/index.html";
+
+	jQuery(document).ready(function() {
+	 var f = $.farbtastic('#picker');
+	 var p = $('#picker').css('opacity', 0.25);
+	 var selected;
+	 $('.colorwell')
+	  .each(function () { f.linkTo(this); $(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      $(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    $(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+	});
+</script>
+
+</body>
+</html>

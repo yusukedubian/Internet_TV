@@ -1,0 +1,93 @@
+    <table height="64px">
+      <tr>
+        <td valign="top">
+          <table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+					<%=_("枠線タイプ")%>
+					<% if !@content.blank?%>
+						<% if @content.line_type == "gradation" %>
+						<%=radio_button_tag("contents[line_type]","normal",checked=false,options ={:onclick=>""})%><%="標準"%>
+						<%=radio_button_tag("contents[line_type]","gradation",checked=true,options ={:onclick=>""})%><%="グラデーション"%>
+						<%else%>
+						<%=radio_button_tag("contents[line_type]","normal",checked=true,options ={:onclick=>""})%><%="標準"%>
+						<%=radio_button_tag("contents[line_type]","gradation",checked=false,options ={:onclick=>""})%><%="グラデーション"%>
+						<%end%>
+					<%else%>
+						<%=radio_button_tag("contents[line_type]","normal",checked=true,options ={:onclick=>""})%><%="標準"%>
+						<%=radio_button_tag("contents[line_type]","gradation",checked=false,options ={:onclick=>""})%><%="グラデーション"%>
+					<%end%>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+				      <%=_("枠線サイズ")%>
+					<% if @content.blank? %>
+				    <%= select_tag("contents[line_width]", 
+				    options_for_select(line_width_for_select, ""
+				    ))
+				    %>
+							<% else %>
+				    <%= select_tag("contents[line_width]", 
+				    options_for_select(line_width_for_select, @content["line_width"].to_s
+				    ))
+				    %>
+				  <% end %>
+				  <%="px"%>
+				  <span style="float:right;"><%=_("枠線色")%></span>
+				</td>
+				<td valign="top">
+				  <div class="form-item">
+				    <% if @content.blank? %>
+				      <%= text_field_tag("contents[line_color]", "#123456",:class=>"colorwell_border",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+				    <% else %>
+				      <%= text_field_tag("contents[line_color]", @content["line_color"].to_s,:class=>"colorwell_border",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+				      <script>document.getElementById("contents[line_color]").value="<%= @content['line_color'] %>"</script>
+				    <% end %>
+				    </div>
+				</td>
+			</tr>
+			</table>
+      </td>
+<% if picker %>
+      <td>
+      		<div style="position:relative;">
+			<div id="picker_bg"></div>
+      		<div id="pickerx_border"></div>
+			<div id="picker_close"><a href="#" onclick="close_picker()">close</a></div>
+			</div>
+      </td>
+<% end %>
+    </tr>
+  </table>
+
+<% unless picker.blank? %>
+<script type="text/javascript" charset="utf-8">
+  jQuery(document).ready(function() {
+  	document.getElementById("pickerx_border").style.display = "none";
+   var f = jQuery.farbtastic('#pickerx_border');
+   var p = jQuery('#pickerx_border').css('opacity', 0.25);
+   var selected;
+   jQuery('.colorwell_border')
+    .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+    .focus(function() {
+      if (selected) {
+        jQuery(selected).css('opacity', 0.75).removeClass('colorwell_border');
+      }
+      f.linkTo(this);
+	  document.getElementById("picker_bg").style.display = "block";
+	  document.getElementById("pickerx_border").style.display = "block";
+	  document.getElementById("picker_close").style.display = "block";
+      p.css('opacity', 1);
+      //jQuery(selected = this).css('opacity', 1).addClass('colorwell_border');
+    });
+  });
+</script>
+<script>
+	function close_picker(){
+		document.getElementById("pickerx_border").style.display = "none";
+		document.getElementById("picker_close").style.display = "none";
+		document.getElementById("picker_bg").style.display = "none";
+	}
+</script>
+<% end %>

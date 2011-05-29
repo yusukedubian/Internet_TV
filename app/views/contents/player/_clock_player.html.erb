@@ -1,0 +1,82 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => false } %>
+
+<!--
+	<%#="Clock タイプ"%>
+	<%#= radio_button_tag ('contents_setting[clock_type]', "digital", checked = true,
+	options = {:onclick => "clocktype('digital');"})
+	%><%="デジタル"%>
+	<%#= radio_button_tag ('contents_setting[clock_type]', "analog", checked = false,
+	options = {:onclick => "clocktype('analog');"})
+	%><%="アナログ"%>
+-->
+	
+	<div id="digital" style="display:block;">
+		<table frame="void" rules="none">
+			<tr>
+				<td></td>
+				<td>
+					<%=_("背景色")%>
+				</td>
+				<td>
+					<%= text_field_tag("contents_setting[back_color]", settings["back_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+					<%if settings["back_color"] != nil %>
+						  <script>document.getElementById("contents_setting[back_color]").value="<%=settings['back_color']%>"</script>
+				  	<%end%>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<%=_("フォントサイズ")%>
+					<%= select_tag("contents_setting[font_size]", 
+						options_for_select(font_size_for_select, settings["font_size"]
+						))
+					%>	
+					<%="px"%>	  
+				</td>
+				<td valign="top">
+					<%=_("フォントカラー")%>
+				</td>
+				<td valign="top">
+				  	<%= text_field_tag("contents_setting[font_color]", settings["font_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+				  	<%if settings["font_color"] != nil %>
+						  <script>document.getElementById("contents_setting[font_color]").value="<%=settings['font_color']%>"</script>
+				  	<%end%>
+				</td>
+				<td>
+					<div id="picker" style="float: right;"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="analog" style="display:none;">
+		<table frame="box" rules="none" border="1" bordercolor="#ccc" style="margin:15px; padding:15px;">
+			<tr>
+				<td valign="top">
+					<%= radio_button_tag ('contents_setting[analogtype]', "white", checked = true)
+					%><%=_("ホワイトタイプ")%>
+					<%= radio_button_tag ('contents_setting[analogtype]', "black", checked = false)
+					%><%=_("ブラックタイプ")%>
+		
+				</td>
+			</tr>
+		</table>
+	</div>
+
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker');
+	 var p = jQuery('#picker').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+	});
+</script>

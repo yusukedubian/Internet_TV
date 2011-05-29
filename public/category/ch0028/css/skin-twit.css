@@ -1,0 +1,86 @@
+.jcarousel-skin-twit .jcarousel-container {
+}
+
+.jcarousel-skin-twit .jcarousel-container-horizontal {
+    width: 242px;
+    height:186px;
+}
+
+.jcarousel-skin-twit .jcarousel-container-vertical {
+    width: 242px;
+    height:186px;
+    padding: 0px 0px;
+}
+
+.jcarousel-skin-twit .jcarousel-clip-horizontal {
+    width:  242px;
+    height: 186px;
+}
+
+.jcarousel-skin-twit .jcarousel-clip-vertical {
+    width:  242px;
+    height: 186px;
+}
+
+.jcarousel-skin-twit .jcarousel-item {
+    width: 242px;
+    height:186px;
+}
+
+.jcarousel-skin-twit .jcarousel-item:hover {
+    border-color: #808080;
+}
+
+.jcarousel-skin-twit .jcarousel-item-horizontal {
+    margin-right: 0px;
+}
+
+.jcarousel-skin-twit .jcarousel-item-vertical {
+    margin-bottom: 0px;
+}
+
+.jcarousel-skin-twit .jcarousel-item-placeholder {
+}
+
+.twit {
+	display:inline;
+	float:right;
+	width:226px;
+	height:170px;
+	margin:8px 8px 8px 8px;
+  background:#D3D3D3;
+}
+
+.twit_nickname {
+	display:inline;
+	float:left;
+	width:226px;
+	height:20px;
+  font-weight:bold;
+	margin:0px 0px 0px 0px;
+}
+
+.twit_content {
+	display:inline;
+	float:left;
+  width:220px;
+  height:150px;
+	margin:0px 3px 0px 3px;
+}
+
+.twit_image {
+	display:inline;
+	float:left;
+  width:70px;
+  height:70px;
+	margin: 0px 0px 0px 0px;
+}
+
+.twit_text {
+	display:inline;
+	float:right;
+	width:134px;
+	height:150px;
+	font-size:11px;
+	margin: 0px 0px 0px 6px;
+}

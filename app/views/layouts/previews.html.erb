@@ -1,0 +1,84 @@
+<!--チャンネルインフォメーション-->
+<%
+	pageW = @channel["width"]
+    pageH = @channel["height"]
+
+	areaW = pageW + 70
+	areaL = -areaW/2
+	areaH = pageH + 35
+
+	pagesW = pageW + 4
+	pagesL = -pagesW/2
+	pagesH = pageH + 2
+%>
+<!--チャンネルインフォメーションここまで-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<%if @page_switch == "on"%>  
+  <meta http-equiv='refresh' content='<%=@switchtime%>;URL=<%=channel_page_previews_path(params[:channel_id],@nextpage)%>'/>
+<%end%>
+  <title>VASDAQ.TV</title>
+  <style type="text/css">
+<!--
+body {
+	color:#FFFFFF;
+	background-color:<%= @channel["background"]%>;
+	font-family:Verdana, _("ＭＳ Ｐゴシック"), sans-serif;
+	font-size:70%;
+}
+#Area {
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	height:<%= areaH.to_s%>px;
+	width: <%= areaW.to_s%>px;  margin-left: <%= areaL.to_s%>px;
+	<%
+		if @page["background"] != nil
+	%>
+			background-color:<%= @page["background"]%>;
+	<%	
+		end
+		if @page["backgroundfile"] != nil
+	%>
+			background-image:url(<%= @page["backgroundfile"]%>);  
+	<%			
+		end		
+	%>	
+	<% if @page["background_display_type"] == 0%>
+		background-position:center center;background-repeat:no-repeat;
+	<% end%>	
+	<% if @page["background_display_type"] == 1%>
+	<% end%>	
+	<% if @page["background_display_type"] == 2%>
+		
+	<% end%>		
+}
+#Page{
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	height:<%= pagesH%>px;
+	width: <%= pagesW%>px;  margin-left: <%= pagesL%>px;
+	background-repeat: no-repeat;
+	background-position:top center;
+}
+
+-->
+</style>
+</head>
+<body>
+<!-- Area -->
+<div id="Box">
+	<div id="Area">
+		<div id="Page">
+			<%= yield  %>
+		</div>
+	</div>
+</div>
+</body>
+</html>

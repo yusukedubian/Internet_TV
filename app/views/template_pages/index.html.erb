@@ -1,0 +1,367 @@
+<%= javascript_include_tag 'easySlider1.5' %>
+<script type="text/javascript">
+    $(function() {
+        $("#demomenu  ul").lavaLamp({
+            fx    : "backout", 
+            speed : 500,
+            click : function(event, menuItem) {
+                //li要素がクリックされたときの動作 
+            }
+        });
+    });
+</script>
+<!-- slider jQuery -->	
+	 <script type="text/javascript">
+	    $(document).ready(function(){
+		$("#slider").easySlider();
+	 });
+	 </script>
+<!-- slider button -->
+<script>
+	$document.ready(function(){
+		$("#slider").easySlider({
+			prevText: 'Previous Slide',
+			nextText: 'Next Slide',
+			orientation: 'vertical'
+		});
+	});
+</script>
+	
+<table height="100%" width="100%">
+<tr><td align="center"><h1>Template</h1></td></tr>
+<tr><td align="center">
+		 <div id="slider" style="border:1px solid #ccc;">
+			<ul>
+				<li><div style="float:left;padding-left:10px;padding-top:10px;"><img width="200px" height="180px" src="/images/imagefile/template1.png"></div>
+					<div style="width:500px;height:180px;padding-left:10px; padding-top:20px;float:left;">
+						<table frame="border" rules="all" style="border:1px solid #ffcc66;">
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("説明")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%=_("Newsページ :気になるニュースをリアルタイムに取得して表示します。")%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("プレーヤ")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="1.Rss 2.Rss 3.Rss 4.Clock"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("ページ数")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="１"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("画面サイズ")%>(<%=_("px")%>)
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="800×600"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("追加")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%= link_to("template1>>", channel_page_template_page_path(@page.channel_id,@page.id,1)) %>
+							</td>
+						</tr>
+						</table>
+												
+					</div>
+					
+					<div style="padding-left:10px;float:left;padding-top:10px;"><img width="200px" height="180px" src="/images/imagefile/template2.png"></div>
+					<div style="width:500px; padding-left:10px; padding-top:20px;float:left;">
+						<table frame="border" rules="all" style="border:1px solid #ffcc66;">
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("説明")%>
+							</td>
+							<td bgcolor="#ffffcc" width="300px" align="left">
+								<%=_("企業用ページ：　支店の状況確認、テレビ会議、営業報告などを表示します。")%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("プレーヤ")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="1.Camera 2.Yamlmail 3.Camera 4.Yamlmail"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("ページ数")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="１"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("画面サイズ")%>(<%=_("px")%>)
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="800×600"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("追加")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%= link_to("template2>>", channel_page_template_page_path(@page.channel_id,@page.id,2)) %>
+							</td>
+						</tr>
+						</table>
+					</div>
+				</li>
+				<li><div style="float:left;padding-left:10px;padding-top:10px;"><img width="200px" height="180px" src="/images/imagefile/template3.png"></div>
+					<div style="width:500px;height:180px;padding-left:10px; padding-top:20px;float:left;">
+						<table frame="border" rules="all" style="border:1px solid #ffcc66;">
+							<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("説明")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%=_("企業用ページ：会社概要や商品説明を表示します。")%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("プレーヤ")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								1.Fixtext 2.Fixtext 3.Clock 4.Fiximage 5.Fiximage
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("ページ数")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								１
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("画面サイズ")%>(<%=_("px")%>)
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								800×600
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("追加")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%= link_to("template3>>", channel_page_template_page_path(@page.channel_id,@page.id,3)) %>
+							</td>
+						</tr>
+						</table>
+												
+					</div>
+					
+					<div style="padding-left:10px;float:left;padding-top:10px;"><img width="200px" height="180px" src="/images/imagefile/template4.png"></div>
+					<div style="width:500px; padding-left:10px; padding-top:20px; float:left;">
+						<table frame="border" rules="all" style="border:1px solid #ffcc66;">
+						<tr>
+						<td bgcolor="#ffff99" width="100px" align="center">
+							<%=_("説明")%>
+						</td>
+						<td bgcolor="#ffffcc" width="300px" align="left">
+							<%=_("料理ページ：　自分で作った料理のレシピや調理手順などを表示します。")%>
+						</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("プレーヤ")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="1.Picture 2.Fixtext 3.Fixtext 4.Picture"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("ページ数")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="１"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("画面サイズ")%>(<%=_("px")%>)
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="800×600"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("追加")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%= link_to("template4>>", channel_page_template_page_path(@page.channel_id,@page.id,4)) %>
+							</td>
+						</tr>
+						</table>
+					</div>
+				</li>
+				
+				<li><div style="float:left;padding-left:10px;padding-top:10px;"><img width="200px" height="180px" src="/images/imagefile/template5.png"></div>
+					<div style="width:500px;height:180px;padding-left:10px; padding-top:20px;float:left;">
+						<table frame="border" rules="all" style="border:1px solid #ffcc66;">
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("説明")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%=_("観光地紹介ページ：四季の風景を表示します。")%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("プレーヤ")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="1.Fiximage 2.Fiximage 3.Fiximage 4.Fiximage 5.Fixtext"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("ページ数")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="１"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("画面サイズ")%>(<%=_("px")%>)
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="800×600"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("追加")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%= link_to("template5>>", channel_page_template_page_path(@page.channel_id,@page.id,5)) %>
+							</td>
+						</tr>
+						</table>
+					</div>
+									
+					<div style="padding-left:10px;float:left;padding-top:10px;"><img width="200px" height="180px" src="/images/imagefile/template6.png"></div>
+					<div style="width:500px; padding-left:10px; padding-top:20px;float:left;">
+						<table frame="border" rules="all" style="border:1px solid #ffcc66;">
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("説明")%>
+							</td>
+							<td bgcolor="#ffffcc" width="300px" align="left">
+								<%=_("企業用ページ：2社の業務値、財務値、財務指標値を表示します。")%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("プレーヤ")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="1.Xbrl 2.Xbrl 3.Clock 4.Fixtext"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("ページ数")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="１"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("画面サイズ")%>(<%=_("px")%>)
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%="800×600"%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("追加")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%= link_to("template6>>", channel_page_template_page_path(@page.channel_id,@page.id,6)) %>
+							</td>
+						</tr>
+						</table>
+					</div>
+				</li>
+				
+				<li><div style="float:left;padding-left:10px;padding-top:10px;"><img width="200px" height="180px" src="/images/imagefile/template7.png"></div>
+					<div style="width:500px; height:180px;padding-left:10px; padding-top:20px;float:left;">
+						<table border bordercolor="#ffcc66">
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("説明")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%=_("アルバム用ページ：お気に入りの画像やカメラで撮影したものなど表示します。")%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("プレーヤ")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								1.Picture 2.Picture 3.Picture 4.Picture 5.Picture 6.Picture
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("ページ数")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%=_("１")%>
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("画面サイズ")%>(<%=_("px")%>)
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								800×600
+							</td>
+						</tr>
+						<tr>
+							<td bgcolor="#ffff99" width="100px" align="center">
+								<%=_("追加")%>
+							</td>
+							<td bgcolor="#ffffcc" width="400px" align="left">
+								<%= link_to("template7>>", channel_page_template_page_path(@page.channel_id,@page.id,7)) %>
+							</td>
+						</tr>
+						</table>
+												
+					</div>
+				</li>
+			</ul>
+		</div>						
+	</td></tr>
+	<tr><td td align="center"><%= link_to _("戻 る"), edit_channel_page_path(params[:channel_id],params[:page_id]) %></td></tr>
+	
+</table>

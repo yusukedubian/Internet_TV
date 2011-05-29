@@ -1,0 +1,94 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link href="qa.css" media="screen" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+<!--
+
+function query() 
+{ 
+    var vars = [], hash; 
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&'); 
+    for(var i = 0; i < hashes.length; i++) { 
+        hash = hashes[i].split('='); 
+        vars.push(hash[0]); 
+        vars[hash[0]] = hash[1]; 
+    } 
+    return vars; 
+}
+
+//ドキュメント一覧取得
+function k_dbinfo(){
+/* URLのクエリパラメータに
+sv	couchDBが存在するサーバーのアドレス
+db	DBの名称
+key	レコードのキーの指定
+*/
+  var gtjdat = 'http://' + query()["sv"] + '/' + query()["db"] +"/" + query()["key"] + '/?callback=?';
+  $.getJSON(gtjdat, function(data){
+    atime = data.property.aChange * 1000;
+    if(atime == ""|| atime == undefined){
+      atime = 10000;
+    }
+
+    $("#name").text(data.property.name);
+    $("#name").attr("style","color:" + data.property.qafontbg + ";font-size:" + data.property.qafonts);   
+    $("#question").text(data.qanda[index].question);
+    $("#question").attr("style","color:" + data.property.qafontbg + ";font-size:" + data.property.qafonts);
+    $("#answer").text(data.qanda[index].answer);
+    $("#answer").attr("style","display:none;" + "color:" + data.property.qafontbg + ";font-size:" + data.property.qafonts);
+    $("body").css({backgroundColor: data.property.qabg});
+    var timerId = setInterval(function(){$("#answer").attr("style","display:inline;" + "color:" + data.property.qafontbg + ";font-size:" + data.property.qafonts);clearInterval(timerId);}, atime);
+
+    if(data.qanda.length <= (index+1)){
+      index = 0;
+    }else{
+      index++;
+	 }
+  });
+return index;
+}
+
+var index = 0;
+index = k_dbinfo();
+var gtjdat = 'http://' + query()["sv"] + '/' + query()["db"] +"/" + query()["key"] + '/?callback=?';
+  $.getJSON(gtjdat, function(data){
+    qtime = data.property.qChange * 1000;
+    atime = data.property.aChange * 1000;
+    if(qtime == ""|| qtime == undefined){
+      qtime = 10000;
+    }
+    if(atime == ""|| atime == undefined){
+      atime = 10000;
+    }
+
+    setInterval(function(){index = k_dbinfo();}, atime + qtime );
+  });
+-->
+</script>
+</head>
+<body style='margin:0px;padding:0px;'>
+
+<div class="title_name"><div class="content_name" id="name"></div></div>
+<div class="title">
+	<div class="content"><span class="qatitle"><img src="./Q.png"/></span><br>
+		<div id="question">
+		</div> 
+	</div>
+</div>
+
+<div class="title">
+	<div class="content">
+<span class="qatitle"><img src="./A.png"/> </span><br>
+		<div id="answer"></div>
+	</div>
+</div>
+
+<!--
+http://www.freeiconsweb.com/search-icons.asp?find=answer
+140文字固定の高さ
+index1.html?sv=192.168.1.100:5984&db=relax_reader&key=c564bb0f205699b1279a2911fe0007da
+-->
+
+</body>
+</html>

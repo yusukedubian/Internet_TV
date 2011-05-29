@@ -1,0 +1,36 @@
+<div id="Area">
+	<h1><%=_("プレーヤ情報表示")%></h1>
+	<div class="flap"></div>
+	
+	<h3><b><%=_("基本情報")%></b></h3>
+	<dl>
+		<dt class="company_title">会社ID</dt>
+		<dd class="company_content"><%=@company_code%></dd>
+		<dt class="company_title">会社名</dt>
+		<dd class="company_content-right"><%=@company_name%></dd>
+	</dl>
+	<div class="flap"></div>
+	
+	<h3><b><%=_("プレーヤ利用情報")%></b></h3>
+	<div><%=_("<b>設定済みプレーヤ</b>")%></div>
+	<div style="margin-top:15px;">
+		<select id="" name="" class="" size="11">
+<%
+test = ""
+if @access_players.empty?%>
+	<option value=""><%="プレーヤが設定されていません。"%></option>
+<%
+else
+	@access_players.each{|access_player|%>
+	<option value="<%=access_player%>"><%=access_player%></option>
+<%
+}
+end%>
+		</select>
+	</div>
+	<div class="flap"></div>
+	
+	<div style="float:left; padding-right:5px;"><%= button_to ("編　集",edit_player_info_path(params[:id]),{:method => :get})%></div>
+	<div><button>戻　る</button></div>
+
+</div>

@@ -1,0 +1,34 @@
+.gundam_entry {
+  display:inline;
+	float:left;
+	width:195px;
+	height:120px;
+	margin: 0px 10px 0px 16px;
+	background:#F5F5F5;
+}
+
+.gundam_entry_title {
+  display:inline;
+	float:left;
+	width:187px;
+	height:60px;
+	margin-top:4px;
+	margin-left:4px;
+	margin-right:4px;
+	text-align:center;
+	font-size:11px;
+	font-weight:bold;
+}
+
+.gundam_entry_contentSnippet {
+	display:inline;
+	float:left;
+	width:187px;
+	height: 60px;
+	margin-top:4px;
+	margin-left:4px;
+	margin-right:4px;
+	text-align:center;
+	font-weight:bold;
+	font-size:10px;
+}

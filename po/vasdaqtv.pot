@@ -1,0 +1,2929 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vasdaqtv 1.0.0\n"
+"POT-Creation-Date: 2010-04-26 17:41+0900\n"
+"PO-Revision-Date: 2010-04-26 17:41+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/controllers/users_controller.rb:38
+msgid "サンプル"
+msgstr ""
+
+#: app/controllers/users_controller.rb:38
+msgid "サンプルです。"
+msgstr ""
+
+#: app/controllers/users_controller.rb:39
+msgid "YAML Mail"
+msgstr ""
+
+#: app/controllers/users_controller.rb:39
+msgid "YAML Mailプレーヤー用の入力フォームです。"
+msgstr ""
+
+#: app/controllers/users_controller.rb:117
+msgid "%{user_login} disabled"
+msgstr ""
+
+#: app/controllers/users_controller.rb:119
+msgid "There was a problem disabling this user."
+msgstr ""
+
+#: app/controllers/users_controller.rb:128
+msgid "%{user_login} enabled"
+msgstr ""
+
+#: app/controllers/users_controller.rb:130
+msgid "There was a problem enabling this user."
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:527 app/views/users/input_email_address.html.erb:10
+#: app/views/yamlmails/index.html.erb:47
+msgid "送信"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:946 app/helpers/yaml_db_forms_helper.rb:144
+msgid "テキストボックス"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:946 app/helpers/yaml_db_forms_helper.rb:144
+msgid "ラジオボタン"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:946 app/helpers/yaml_db_forms_helper.rb:145
+msgid "選択リスト"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:947 app/helpers/yaml_db_forms_helper.rb:144
+msgid "チェックボックス"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:947
+msgid "_テキストエリア"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:947
+msgid "フォーム"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:948 app/views/channels/edit.html.erb:179
+#: app/views/channels/edit.html.erb:246 app/views/channels/index.html.erb:79
+#: app/views/mypages/delete_confirm.html.erb:29 app/views/mypages/index.html.erb:39
+#: app/views/mypages/search.html.erb:44 app/views/pages/index.html.erb:124
+#: app/views/search_engine/index.html.erb:37 app/views/template_pages/index.html.erb:40
+#: app/views/template_pages/index.html.erb:87 app/views/template_pages/index.html.erb:133
+#: app/views/template_pages/index.html.erb:180 app/views/template_pages/index.html.erb:227
+#: app/views/template_pages/index.html.erb:273 app/views/template_pages/index.html.erb:320
+#: app/views/users/_new_help.html.erb:4 app/views/user_property/_edit_help.html.erb:4
+#: app/views/user_property/_google_api_help.html.erb:4 app/views/user_property/_yaml_mail_help.html.erb:4
+#: app/views/yamlmails/_index_help.html.erb:4 app/views/yaml_db_forms/_form_help.html.erb:7
+#: app/views/yaml_db_forms/_index_help.html.erb:7 app/views/yaml_db_forms/_input_help.html.erb:7
+msgid "説明"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:948
+msgid "データベースのテーブル名"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:948
+msgid "ボタン名"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:949
+msgid "項目"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:949
+msgid "データベースのカラム名"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:949
+msgid "オプション"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:950 app/views/yaml_db_forms/_check_option.html.erb:15
+#: app/views/yaml_db_forms/_form_help.html.erb:136 app/views/yaml_db_forms/_radio_option_update.html.erb:4
+msgid "初期状態のチェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:950
+msgid "データベースへの書込み値"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:950 app/views/yaml_db_forms/_form_help.html.erb:180
+#: app/views/yaml_db_forms/_list_option_update.html.erb:4
+msgid "初期選択"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:951
+msgid "高さ"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:951
+msgid "横幅"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:951 app/views/yaml_db_forms/_form_help.html.erb:103
+#: app/views/yaml_db_forms/_textarea_option.html.erb:27 app/views/yaml_db_forms/_text_option.html.erb:16
+msgid "入力可能な最大文字数"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:952
+msgid "入力値チェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:952 app/helpers/yaml_db_forms_helper.rb:151
+msgid "空白チェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:952 app/helpers/yaml_db_forms_helper.rb:151
+msgid "整数チェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:953
+msgid "小数点数チェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:953 app/helpers/yaml_db_forms_helper.rb:152
+msgid "アルファベットチェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:953 app/helpers/yaml_db_forms_helper.rb:152
+msgid "全角文字チェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:954 app/helpers/yaml_db_forms_helper.rb:152
+msgid "半角文字チェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:954 app/helpers/yaml_db_forms_helper.rb:153
+msgid "範囲チェック"
+msgstr ""
+
+#: app/controllers/yaml_db_forms_controller.rb:954 app/helpers/yaml_db_forms_helper.rb:153
+msgid "禁止文字チェック"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:8
+msgid "スクロール"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:8
+msgid "点滅"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:8
+msgid "スクロール点滅"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:8
+msgid "何もしない"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:12
+msgid "上"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:12
+msgid "左"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:16
+msgid "速い"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:16
+msgid "普通"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:16
+msgid "遅い"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:20
+msgid "1 行"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:20
+msgid "2 行"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:20
+msgid "3 行"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:24
+msgid "今日"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:24
+msgid "日 "
+msgstr ""
+
+#: app/helpers/contents_helper.rb:24
+msgid "週 "
+msgstr ""
+
+#: app/helpers/contents_helper.rb:24
+msgid "月 "
+msgstr ""
+
+#: app/helpers/contents_helper.rb:28
+msgid "１日分"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:28
+msgid "１週間分"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:28
+msgid "１ヶ月分"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:37
+msgid "赤"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:37
+msgid "緑"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:37
+msgid "青"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:37
+msgid "黄"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:38
+msgid "紫"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:38
+msgid "灰"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:38
+msgid "水色"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:38
+msgid "ピンク"
+msgstr ""
+
+#: app/helpers/contents_helper.rb:38
+msgid "オレンジ色"
+msgstr ""
+
+#: app/helpers/yaml_db_forms_helper.rb:145
+msgid "テキストエリア"
+msgstr ""
+
+#: app/helpers/yaml_db_forms_helper.rb:151
+msgid "少数点数チェック"
+msgstr ""
+
+#: app/models/acceptance.rb:-
+msgid "acceptance"
+msgstr ""
+
+#: app/models/acceptance.rb:-
+msgid "Acceptance|User"
+msgstr ""
+
+#: app/models/acceptance.rb:-
+msgid "Acceptance|Content"
+msgstr ""
+
+#: app/models/acceptance.rb:-
+msgid "Acceptance|Acceptance master"
+msgstr ""
+
+#: app/models/acceptance.rb:-
+msgid "Acceptance|Created at"
+msgstr ""
+
+#: app/models/acceptance.rb:-
+msgid "Acceptance|Updated at"
+msgstr ""
+
+#: app/models/acceptance_master.rb:-
+msgid "acceptance master"
+msgstr ""
+
+#: app/models/acceptance_master.rb:-
+msgid "AcceptanceMaster|Name"
+msgstr ""
+
+#: app/models/acceptance_master.rb:-
+msgid "AcceptanceMaster|Content type"
+msgstr ""
+
+#: app/models/acceptance_master.rb:-
+msgid "AcceptanceMaster|Table name"
+msgstr ""
+
+#: app/models/acceptance_master.rb:-
+msgid "AcceptanceMaster|Created at"
+msgstr ""
+
+#: app/models/acceptance_master.rb:-
+msgid "AcceptanceMaster|Updated at"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "channel"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|User"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Channels type"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Channel no"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Name"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Category"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Background"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Public flag"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Width"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Height"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Create type"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Description"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Link info"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Other info"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Thumbnail filename"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Created at"
+msgstr ""
+
+#: app/models/channel.rb:-
+msgid "Channel|Updated at"
+msgstr ""
+
+#: app/models/channel.rb:27
+msgid "チャンネルを新規作成することが出来ませんでした。"
+msgstr ""
+
+#: app/models/channels_type.rb:-
+msgid "channels type"
+msgstr ""
+
+#: app/models/channels_type.rb:-
+msgid "ChannelsType|Name"
+msgstr ""
+
+#: app/models/channels_type.rb:-
+msgid "ChannelsType|Channels type"
+msgstr ""
+
+#: app/models/channels_type.rb:-
+msgid "ChannelsType|Created at"
+msgstr ""
+
+#: app/models/channels_type.rb:-
+msgid "ChannelsType|Updated at"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "content"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|Player"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|Page"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|Width"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|Height"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|X pos"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|Y pos"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|Contents seq"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|Created at"
+msgstr ""
+
+#: app/models/content.rb:-
+msgid "Content|Updated at"
+msgstr ""
+
+#: app/models/contents_properties.rb:-
+msgid "contents property"
+msgstr ""
+
+#: app/models/contents_properties.rb:-
+msgid "contentsproperty"
+msgstr ""
+
+#: app/models/contents_properties.rb:-
+msgid "ContentsProperties|Content"
+msgstr ""
+
+#: app/models/contents_properties.rb:-
+msgid "ContentsProperties|Property key"
+msgstr ""
+
+#: app/models/contents_properties.rb:-
+msgid "ContentsProperties|Property value"
+msgstr ""
+
+#: app/models/contents_properties.rb:-
+msgid "ContentsProperties|Created at"
+msgstr ""
+
+#: app/models/contents_properties.rb:-
+msgid "ContentsProperties|Updated at"
+msgstr ""
+
+#: app/models/message.rb:-
+msgid "message"
+msgstr ""
+
+#: app/models/message.rb:-
+msgid "Message|Message code"
+msgstr ""
+
+#: app/models/message.rb:-
+msgid "Message|Message str"
+msgstr ""
+
+#: app/models/message.rb:-
+msgid "Message|Created at"
+msgstr ""
+
+#: app/models/message.rb:-
+msgid "Message|Updated at"
+msgstr ""
+
+#: app/models/mypage.rb:-
+msgid "mypage"
+msgstr ""
+
+#: app/models/mypage.rb:-
+msgid "Mypage|User"
+msgstr ""
+
+#: app/models/mypage.rb:-
+msgid "Mypage|Channel"
+msgstr ""
+
+#: app/models/mypage.rb:-
+msgid "Mypage|Created at"
+msgstr ""
+
+#: app/models/mypage.rb:-
+msgid "Mypage|Updated at"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "page"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Channel"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Page no"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Name"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Category"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Switchtime"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Background"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Backgroundfile"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Background display type"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Created at"
+msgstr ""
+
+#: app/models/page.rb:-
+msgid "Page|Updated at"
+msgstr ""
+
+#: app/models/page.rb:21
+msgid "ページ切替は0以上の4桁以内の数字で入力してください。"
+msgstr ""
+
+#: app/models/permission.rb:-
+msgid "permission"
+msgstr ""
+
+#: app/models/permission.rb:-
+msgid "Permission|User"
+msgstr ""
+
+#: app/models/permission.rb:-
+msgid "Permission|Role"
+msgstr ""
+
+#: app/models/permission.rb:-
+msgid "Permission|Created at"
+msgstr ""
+
+#: app/models/permission.rb:-
+msgid "Permission|Updated at"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "player"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Player no"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Name"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Guide text"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Playerclass"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Playerview"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Runtime get type"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Runtime create type"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Runtime config table"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Created at"
+msgstr ""
+
+#: app/models/player.rb:-
+msgid "Player|Updated at"
+msgstr ""
+
+#: app/models/role.rb:-
+msgid "role"
+msgstr ""
+
+#: app/models/role.rb:-
+msgid "Role|Name"
+msgstr ""
+
+#: app/models/role.rb:-
+msgid "Role|Created at"
+msgstr ""
+
+#: app/models/role.rb:-
+msgid "Role|Updated at"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "runtime config mail"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Content"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Channel no"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Page no"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Control no"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Subject"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Base date unit"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Base date"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Extract period unit"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Extract period"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Created at"
+msgstr ""
+
+#: app/models/runtime_config_mail.rb:-
+msgid "RuntimeConfigMail|Updated at"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "runtime config rss"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "RuntimeConfigRss|Content"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "RuntimeConfigRss|Channel no"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "RuntimeConfigRss|Page no"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "RuntimeConfigRss|Control no"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "RuntimeConfigRss|Line no"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "RuntimeConfigRss|Rss site url"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "RuntimeConfigRss|Created at"
+msgstr ""
+
+#: app/models/runtime_config_rss.rb:-
+msgid "RuntimeConfigRss|Updated at"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "runtime data mail"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|User"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Mail recieved"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Send date"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Mail from"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Mail to"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Mail cc"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Subject"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Body"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Created at"
+msgstr ""
+
+#: app/models/runtime_data_mail.rb:-
+msgid "RuntimeDataMail|Updated at"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "template content"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|Player"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|Template page"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|Width"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|Height"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|X pos"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|Y pos"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|Contents seq"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|Created at"
+msgstr ""
+
+#: app/models/template_content.rb:-
+msgid "TemplateContent|Updated at"
+msgstr ""
+
+#: app/models/template_content_property.rb:-
+msgid "template content property"
+msgstr ""
+
+#: app/models/template_content_property.rb:-
+msgid "TemplateContentProperty|Template content"
+msgstr ""
+
+#: app/models/template_content_property.rb:-
+msgid "TemplateContentProperty|Property key"
+msgstr ""
+
+#: app/models/template_content_property.rb:-
+msgid "TemplateContentProperty|Property value"
+msgstr ""
+
+#: app/models/template_content_property.rb:-
+msgid "TemplateContentProperty|Created at"
+msgstr ""
+
+#: app/models/template_content_property.rb:-
+msgid "TemplateContentProperty|Updated at"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "template page"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Template page no"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Name"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Category"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Switchtime"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Background"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Backgroundfile"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Width"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Height"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Description"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Link info"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Other info"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Thumbnail filename"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Created at"
+msgstr ""
+
+#: app/models/template_page.rb:-
+msgid "TemplatePage|Updated at"
+msgstr ""
+
+#: app/models/user.rb:4
+msgid "User|login"
+msgstr ""
+
+#: app/models/user.rb:5
+msgid "User|email"
+msgstr ""
+
+#: app/models/user.rb:6
+msgid "User|user_name"
+msgstr ""
+
+#: app/models/user.rb:7
+msgid "User|Password"
+msgstr ""
+
+#: app/models/user.rb:8
+msgid "User|Password confirmation"
+msgstr ""
+
+#: app/models/user.rb:9
+msgid "User|Old password"
+msgstr ""
+
+#: app/models/user.rb:10
+msgid "%{fn} doesn't match confirmation"
+msgstr ""
+
+#: app/models/user_mailer.rb:4
+msgid "アカウントのアクティベートについて。"
+msgstr ""
+
+#: app/models/user_mailer.rb:10
+msgid "アクティベートされました。"
+msgstr ""
+
+#: app/models/user_mailer.rb:16
+msgid "パスワードを変更してください。"
+msgstr ""
+
+#: app/models/user_mailer.rb:24
+msgid "[VASDAQ.TVからのお知らせ] "
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "user property"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|User"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Email"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Domain"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Smtp address"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Pop3 address"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Smtp port"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Pop3 port"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Authentication"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Auth user name"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Auth password"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Google key"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Created at"
+msgstr ""
+
+#: app/models/user_property.rb:-
+msgid "UserProperty|Updated at"
+msgstr ""
+
+#: app/models/yaml_db_form.rb:-
+msgid "yaml db form"
+msgstr ""
+
+#: app/models/yaml_db_form.rb:-
+msgid "YamlDbForm|User"
+msgstr ""
+
+#: app/models/yaml_db_form.rb:-
+msgid "YamlDbForm|File path"
+msgstr ""
+
+#: app/models/yaml_db_form.rb:-
+msgid "YamlDbForm|Form name"
+msgstr ""
+
+#: app/models/yaml_db_form.rb:-
+msgid "YamlDbForm|Form desc"
+msgstr ""
+
+#: app/models/yaml_db_form.rb:-
+msgid "YamlDbForm|Created at"
+msgstr ""
+
+#: app/models/yaml_db_form.rb:-
+msgid "YamlDbForm|Updated at"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:20 app/views/channels/index.html.erb:3 app/views/pages/edit.html.erb:4
+#: app/views/pages/index.html.erb:4
+msgid "設定手順"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:26 app/views/channels/index.html.erb:9
+#: app/views/channels/index.html.erb:29 app/views/channels/index.html.erb:84
+#: app/views/pages/edit.html.erb:10 app/views/pages/index.html.erb:10
+msgid "チャンネル選択"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:29 app/views/channels/edit.html.erb:50
+#: app/views/channels/edit.html.erb:252 app/views/channels/index.html.erb:12
+#: app/views/pages/edit.html.erb:13 app/views/pages/index.html.erb:13
+msgid "チャンネル設定"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:33 app/views/channels/edit.html.erb:35
+#: app/views/channels/edit.html.erb:259 app/views/channels/edit.html.erb:261
+#: app/views/channels/index.html.erb:15 app/views/pages/edit.html.erb:16 app/views/pages/index.html.erb:16
+#: app/views/pages/index.html.erb:70 app/views/pages/index.html.erb:130
+msgid "ページ選択"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:39 app/views/channels/index.html.erb:18
+msgid "ページ＋プレイヤー設定"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:42 app/views/channels/index.html.erb:21
+#: app/views/pages/edit.html.erb:28 app/views/pages/index.html.erb:22
+msgid "ページを表示"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:122 app/views/channels/edit.html.erb:125
+msgid "チャンネル"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:122
+msgid "設定画面"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:125
+msgid "のデータを"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:125 app/views/mypages/delete_confirm.html.erb:87
+#: app/views/mypages/index.html.erb:46 app/views/pages/edit.html.erb:627
+#: app/views/yaml_db_forms/index.html.erb:94 app/views/yaml_db_forms/_index_help.html.erb:100
+msgid "削除"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:125 app/views/pages/edit.html.erb:153
+msgid "本当に削除しますか？"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:137
+msgid "チャンネル名"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:140 app/views/contents/player/_clock_player.html.erb:12
+#: app/views/contents/player/_fix_text_player.html.erb:22 app/views/contents/player/_rss_player.html.erb:19
+#: app/views/contents/player/_yaml_mail_player.html.erb:51 app/views/pages/edit.html.erb:183 app/views/pages/edit.html.erb:191
+#: app/views/pages/edit.html.erb:199
+msgid "背景色"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:144 app/views/pages/edit.html.erb:170
+msgid "カテゴリー"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:151
+msgid "ページ幅"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:155
+msgid "画面解像度 幅　"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:165
+msgid "ページ高さ"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:169
+msgid "画面解像度 高さ"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:186 app/views/mypages/delete_confirm.html.erb:62
+#: app/views/mypages/index.html.erb:77 app/views/mypages/search.html.erb:88
+#: app/views/search_engine/index.html.erb:69
+msgid "リンク先情報"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:193 app/views/mypages/delete_confirm.html.erb:71
+#: app/views/mypages/index.html.erb:86 app/views/mypages/search.html.erb:97
+#: app/views/search_engine/index.html.erb:78
+msgid "その他情報"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:200
+msgid "サムネイル"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:204
+msgid "公開する"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:212
+msgid "ページを公開する際には利用規約に同意下さい"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:217
+msgid "チャンネル情報を保存"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:220
+msgid "ページ選択＞＞"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:255
+msgid "チャンネル設定、各項目を設定してください。"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:257
+msgid "マークがついているものは必須項目です。<br>設定終了後、「チャンネル情報を保存」ボタンを押してください。保存後、「"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:263
+msgid "」へ進んでください。"
+msgstr ""
+
+#: app/views/channels/edit.html.erb:264
+msgid "※必須項目を入力し、「チャンネル情報を保存」をクリックして保存してください。保存しないと、ページ選択へ進むことはできません。"
+msgstr ""
+
+#: app/views/channels/index.html.erb:86
+msgid "設定するチャンネルを選択してください。<br>\n						全12チャンネル、各チャンネルは１０枚のページから構成されています。チャンネルはリモコンで切り替える事が出来ます。\n					"
+msgstr ""
+
+#: app/views/channels/index.html.erb:97
+msgid "設定済み"
+msgstr ""
+
+#: app/views/channels/index.html.erb:100
+msgid "未設定"
+msgstr ""
+
+#: app/views/channels/index.html.erb:106
+msgid "選択中のアイコン"
+msgstr ""
+
+#: app/views/channels/taggings.html.erb:9
+msgid "submit"
+msgstr ""
+
+#: app/views/channels/taggings.html.erb:11
+msgid "cancel"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:6 app/views/contents/new.html.erb:3
+msgid "最大ページ幅："
+msgstr ""
+
+#: app/views/contents/edit.html.erb:6
+msgid "　最大ページ高さ："
+msgstr ""
+
+#: app/views/contents/edit.html.erb:10
+msgid "保存されました。"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:26 app/views/contents/new.html.erb:9
+msgid "横サイズ"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:29 app/views/contents/edit.html.erb:35
+#: app/views/contents/edit.html.erb:43 app/views/contents/edit.html.erb:49
+#: app/views/contents/new.html.erb:12 app/views/contents/new.html.erb:18
+#: app/views/contents/new.html.erb:26 app/views/contents/new.html.erb:32
+#: app/views/contents/player/_yaml_mail_player.html.erb:66 app/views/mypages/delete_confirm.html.erb:46
+#: app/views/mypages/index.html.erb:61 app/views/mypages/search.html.erb:72
+#: app/views/search_engine/index.html.erb:53 app/views/template_pages/index.html.erb:64
+#: app/views/template_pages/index.html.erb:111 app/views/template_pages/index.html.erb:157
+#: app/views/template_pages/index.html.erb:204 app/views/template_pages/index.html.erb:251
+#: app/views/template_pages/index.html.erb:297 app/views/template_pages/index.html.erb:344
+msgid "px"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:32 app/views/contents/new.html.erb:15
+msgid "縦サイズ"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:40 app/views/contents/new.html.erb:23
+msgid "位置　Top"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:46 app/views/contents/new.html.erb:29
+msgid "位置　Left"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:60 app/views/contents/new.html.erb:42
+msgid "確　定"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:65 app/views/contents/new.html.erb:47
+#: app/views/template_pages/index.html.erb:365
+msgid "戻 る"
+msgstr ""
+
+#: app/views/contents/edit.html.erb:69
+msgid "プレビュー"
+msgstr ""
+
+#: app/views/contents/new.html.erb:3
+msgid "最大ページ高さ："
+msgstr ""
+
+#: app/views/contents/player/_camera_player.html.erb:17
+msgid "アカウントコード"
+msgstr ""
+
+#: app/views/contents/player/_clock_player.html.erb:24 app/views/contents/player/_fix_text_player.html.erb:33
+#: app/views/contents/player/_rss_player.html.erb:29 app/views/contents/player/_string_player.html.erb:38
+#: app/views/contents/player/_twitter_player.html.erb:61 app/views/contents/player/_yaml_mail_player.html.erb:61
+msgid "フォントサイズ"
+msgstr ""
+
+#: app/views/contents/player/_clock_player.html.erb:32 app/views/contents/player/_fix_text_player.html.erb:41
+#: app/views/contents/player/_twitter_player.html.erb:71 app/views/contents/player/_yaml_mail_player.html.erb:80
+msgid "フォントカラー"
+msgstr ""
+
+#: app/views/contents/player/_clock_player.html.erb:51
+msgid "ホワイトタイプ"
+msgstr ""
+
+#: app/views/contents/player/_clock_player.html.erb:53
+msgid "ブラックタイプ"
+msgstr ""
+
+#: app/views/contents/player/_edinet_player.html.erb:1
+msgid "※横400px、縦460px以下に設定した場合、全ての情報が表示されません。"
+msgstr ""
+
+#: app/views/contents/player/_edinet_player.html.erb:4
+msgid "EDINETからダウンロードしたXBRLファイルを選択して下さい。HTML形式に変換します。"
+msgstr ""
+
+#: app/views/contents/player/_fix_image_player.html.erb:4
+msgid "イメージファイル"
+msgstr ""
+
+#: app/views/contents/player/_fix_text_player.html.erb:7 app/views/contents/player/_string_player.html.erb:7
+#: app/views/contents/player/_string_player.html.erb:16 app/views/yamlmails/index.html.erb:38
+#: app/views/yamlmails/_index_help.html.erb:31
+msgid "本文"
+msgstr ""
+
+#: app/views/contents/player/_fix_text_player.html.erb:53
+msgid "表示タイプ"
+msgstr ""
+
+#: app/views/contents/player/_fix_text_player.html.erb:67 app/views/contents/player/_rss_player.html.erb:81
+#: app/views/contents/player/_string_player.html.erb:57 app/views/contents/player/_twitter_player.html.erb:98
+#: app/views/contents/player/_yaml_mail_player.html.erb:68
+msgid "スクロール方向"
+msgstr ""
+
+#: app/views/contents/player/_fix_text_player.html.erb:74 app/views/contents/player/_rss_player.html.erb:91
+#: app/views/contents/player/_string_player.html.erb:64 app/views/contents/player/_twitter_player.html.erb:108
+#: app/views/contents/player/_yaml_mail_player.html.erb:73
+msgid "スクロール速度"
+msgstr ""
+
+#: app/views/contents/player/_flash_player.html.erb:5 app/views/contents/player/_picture_player.html.erb:99
+msgid "ファイルパス"
+msgstr ""
+
+#: app/views/contents/player/_flash_player.html.erb:23
+msgid "※<b>FlashURLには、youtubeやニコニコ動画などの動画共有サイト等で閲覧できる動画（Flash Videoファイル）の埋め込み用URLを入力してください。</b>"
+msgstr ""
+
+#: app/views/contents/player/_flash_player.html.erb:28
+msgid "　　<b>ファイルパスには、拡張子がswfのファイルを選択し、アップロードしてください。</b>"
+msgstr ""
+
+#: app/views/contents/player/_picture_player.html.erb:71
+msgid "画像切替タイム(ms)"
+msgstr ""
+
+#: app/views/contents/player/_picture_player.html.erb:77
+msgid "エフェクトタイム(ms)"
+msgstr ""
+
+#: app/views/contents/player/_picture_player.html.erb:83
+msgid "エフェクト"
+msgstr ""
+
+#: app/views/contents/player/_picture_player.html.erb:120
+msgid "削除しますか？"
+msgstr ""
+
+#: app/views/contents/player/_rss_player.html.erb:5
+msgid "Rssタイトル"
+msgstr ""
+
+#: app/views/contents/player/_rss_player.html.erb:40
+msgid "本文フォントカラー"
+msgstr ""
+
+#: app/views/contents/player/_rss_player.html.erb:55
+msgid "タイトルフォントカラー"
+msgstr ""
+
+#: app/views/contents/player/_rss_player.html.erb:69 app/views/contents/player/_twitter_player.html.erb:86
+msgid "タイトル背景色"
+msgstr ""
+
+#: app/views/contents/player/_rss_player.html.erb:108
+msgid "※　「設定」→「アカウント設定」内　Google API Key　の設定をしないとＲＳＳは表示されません。"
+msgstr ""
+
+#: app/views/contents/player/_string_player.html.erb:6 app/views/contents/player/_string_player.html.erb:13
+msgid "Rss"
+msgstr ""
+
+#: app/views/contents/player/_string_player.html.erb:45
+msgid "フォント色"
+msgstr ""
+
+#: app/views/contents/player/_string_player.html.erb:75
+msgid "※表示できる情報量が最大8000pixで表現できる量を超えると、最後までテキストが表示されません。"
+msgstr ""
+
+#: app/views/contents/player/_string_player.html.erb:76
+msgid "フォントサイズ２０を指定した場合、表示できるテキストは約７６０文字までです。"
+msgstr ""
+
+#: app/views/contents/player/_twitter_player.html.erb:36
+msgid "タイトル"
+msgstr ""
+
+#: app/views/contents/player/_twitter_player.html.erb:36
+msgid "表示数"
+msgstr ""
+
+#: app/views/contents/player/_twitter_player.html.erb:36
+msgid "切り替え時間(秒)"
+msgstr ""
+
+#: app/views/contents/player/_twitter_player.html.erb:47
+msgid "キーワード検索"
+msgstr ""
+
+#: app/views/contents/player/_video_player.html.erb:17
+msgid "検索キーワード"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:6
+msgid "データ取得基準日"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:15
+msgid "前"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:39
+msgid "表示する"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:41
+msgid "件名検索"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:98
+msgid "※<b>トップメニューの「設定」⇒「アカウント設定」⇒「YAMLメール」の設定をしてください。設定しないと表示されません。"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:99
+msgid "　設定が終わりましたら、設定したメールアドレスにトップメニューの「YAMLメール」もしくは、お使いの電子メールから送信してください。"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:101
+msgid "　電子メールから送信する場合は、下記メール本文のフォーマットを使用し送信してください。"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:108
+msgid "「件名検索」に設定したものを、入力してください。"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:111
+msgid "メール本文"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:112
+msgid "title: 〇〇〇<br>body: 〇〇〇<br>"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:118
+msgid "　title:とbody:の横には半角スペースを入れてください。<br>　〇部分は全角入力モードで入力してください。半角モードの場合、予期せぬ表示になる場合があります。"
+msgstr ""
+
+#: app/views/contents/player/_yaml_mail_player.html.erb:119
+msgid "　トップメニューの「YAMLメール」から送信する場合は、上記フォーマットは必要ありません。"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:3
+msgid "VASDAQ.TV"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:4
+msgid "チャンネル作成"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:5 app/views/user_property/edit.html.erb:9
+#: app/views/yamlmails/index.html.erb:4 app/views/yaml_db_forms/edit.html.erb:7
+#: app/views/yaml_db_forms/index.html.erb:6 app/views/yaml_db_forms/input.html.erb:22
+#: app/views/yaml_db_forms/new.html.erb:7
+msgid "YAMLメール"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:12
+msgid "その他 ▼"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:14
+msgid "チャンネル作成Ｐｒｏ"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:15
+msgid "モバイルソリューション"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:16
+msgid "プレーヤ一覧"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:24
+msgid "ログアウト"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:26 app/views/sessions/new.html.erb:12 app/views/users/new.html.erb:4
+msgid "ログイン"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:35
+msgid "設定 ▼"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:37 app/views/mypages/search.html.erb:2
+msgid "マイページ設定"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:39 app/views/user_property/edit.html.erb:4
+msgid "アカウント設定"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:49
+msgid "さん"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:51
+msgid "ゲスト"
+msgstr ""
+
+#: app/views/layouts/_menu.html.erb:53 app/views/mypages/delete_confirm.html.erb:2
+#: app/views/mypages/index.html.erb:2
+msgid "マイページ"
+msgstr ""
+
+#: app/views/mypages/delete_confirm.html.erb:5 app/views/mypages/index.html.erb:8
+msgid "マイページが登録されていません。"
+msgstr ""
+
+#: app/views/mypages/delete_confirm.html.erb:7
+msgid "マイページを本当に削除しますか？"
+msgstr ""
+
+#: app/views/mypages/delete_confirm.html.erb:37 app/views/mypages/index.html.erb:52
+#: app/views/mypages/search.html.erb:63 app/views/search_engine/index.html.erb:44
+#: app/views/template_pages/index.html.erb:56 app/views/template_pages/index.html.erb:103
+#: app/views/template_pages/index.html.erb:149 app/views/template_pages/index.html.erb:196
+#: app/views/template_pages/index.html.erb:243 app/views/template_pages/index.html.erb:289
+#: app/views/template_pages/index.html.erb:336
+msgid "ページ数"
+msgstr ""
+
+#: app/views/mypages/delete_confirm.html.erb:46 app/views/mypages/index.html.erb:61
+#: app/views/mypages/search.html.erb:72 app/views/search_engine/index.html.erb:53
+#: app/views/template_pages/index.html.erb:64 app/views/template_pages/index.html.erb:111
+#: app/views/template_pages/index.html.erb:157 app/views/template_pages/index.html.erb:204
+#: app/views/template_pages/index.html.erb:251 app/views/template_pages/index.html.erb:297
+#: app/views/template_pages/index.html.erb:344
+msgid "画面サイズ"
+msgstr ""
+
+#: app/views/mypages/delete_confirm.html.erb:54 app/views/mypages/index.html.erb:69
+#: app/views/mypages/search.html.erb:80 app/views/search_engine/index.html.erb:61
+msgid "作成者"
+msgstr ""
+
+#: app/views/mypages/delete_confirm.html.erb:92 app/views/users/input_email_address.html.erb:15
+#: app/views/users/new.html.erb:18
+msgid "キャンセル"
+msgstr ""
+
+#: app/views/mypages/index.html.erb:4
+msgid "マイページの一覧です。最大２０チャンネル登録しておく事ができます。"
+msgstr ""
+
+#: app/views/mypages/index.html.erb:5
+msgid "チャンネルをマイページから削除したい場合は[削除]をクリックして下さい。"
+msgstr ""
+
+#: app/views/mypages/search.html.erb:4
+msgid "お好きなチャンネルを探して下さい。[登録]を押すとマイページに登録する事ができます。"
+msgstr ""
+
+#: app/views/mypages/search.html.erb:8 app/views/welcome/index.html.erb:10
+msgid "検索"
+msgstr ""
+
+#: app/views/mypages/search.html.erb:13 app/views/search_engine/index.html.erb:5
+msgid "検索条件に該当するチャンネルは見つかりませんでした。"
+msgstr ""
+
+#: app/views/mypages/search.html.erb:51
+msgid "マイページ登録済み"
+msgstr ""
+
+#: app/views/mypages/search.html.erb:56
+msgid "登録"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:19 app/views/pages/index.html.erb:19
+msgid "ページ＋プレーヤー設定"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:26 app/views/pages/edit.html.erb:604
+msgid "ページを表示＞＞"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:44 app/views/pages/index.html.erb:40
+msgid "チャンネル 設定内容"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:48 app/views/pages/index.html.erb:44
+msgid "現在のチャンネルは<b>%dCh</b> です"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:54 app/views/pages/index.html.erb:50
+msgid "チャンネル名 "
+msgstr ""
+
+#: app/views/pages/edit.html.erb:55 app/views/pages/index.html.erb:51
+msgid "背景色 "
+msgstr ""
+
+#: app/views/pages/edit.html.erb:61 app/views/pages/index.html.erb:57
+msgid "category"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:71 app/views/pages/edit.html.erb:647
+msgid "ページ設定"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:149
+msgid "ページ　%d 設定画面"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:152
+msgid "ページ%dのデータを"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:153
+msgid "削 除"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:157
+msgid "ページ名"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:163
+msgid "ページ切替"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:166
+msgid "秒"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:176
+msgid "背景設定"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:185 app/views/pages/edit.html.erb:193 app/views/pages/edit.html.erb:201
+msgid "背景画像"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:222
+msgid "ページ情報を保存"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:232
+msgid "テンプレート追加>>"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:235
+msgid "ページ情報を戻す"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:291
+msgid "お好きなWEBサイトやブログの更新情報を、指定した周期で取得します。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:295 app/views/pages/edit.html.erb:311 app/views/pages/edit.html.erb:326
+#: app/views/pages/edit.html.erb:341 app/views/pages/edit.html.erb:357 app/views/pages/edit.html.erb:372
+#: app/views/pages/edit.html.erb:387 app/views/pages/edit.html.erb:402 app/views/pages/edit.html.erb:417
+#: app/views/pages/edit.html.erb:432 app/views/pages/edit.html.erb:447 app/views/pages/edit.html.erb:462
+msgid "プレーヤー追加>>"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:306
+msgid "メールに簡単なタグを付ければ タイトルごとに分けたり、内容分析し表示することができます。\n											業務報告等、情報の管理に適しています。指定した周期で更新可能です。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:322
+msgid "入力したテキストを、スクロール、点滅等、自由に表示させる事が出来ます。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:337
+msgid "お気に入りの画像をアップロードして表示出来ます。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:353
+msgid "お好みのカラー、サイズに合わせて時刻を表示します。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:368
+msgid "webカメラの映像を表示します。離れた拠点間の見える化が可能です。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:383
+msgid "Youtube等の動画を、URLを指定し表示します。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:398
+msgid "お好きなFlash素材を表示します"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:413
+msgid "EDINETのXbrlファイルの内容を分析し、業務値、財務値、財務指標値を表示します。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:428
+msgid "お好きな画像（jpg,gifファイル）をアップロードし、指定の時間毎にエフェクト表示します。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:443
+msgid "お好きなテキストやRSSを文字を電光掲示板風に表示することが出来ます。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:458
+msgid "Twitterから気になるつぶやきをみることが出来ます。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:473
+msgid "表形式で表示することができます。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:488
+msgid "グラフを描画することができます。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:524
+msgid "表示方法 :"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:527
+msgid "中央表示"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:528
+msgid "並べて表示"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:529
+msgid "ページ全画面表示"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:601 app/views/pages/edit.html.erb:677
+msgid "レイアウト設定"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:608
+msgid "プレーヤー一覧"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:640
+msgid "&nbsp;説明"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:650
+msgid "ページ設定、各項目を設定してください。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:652
+msgid "マークがついているものは必須項目です。設定を保存後、プレーヤー、テンプレートを追加してください。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:653
+msgid "「ページ切替」は１～１０ページまでの画面を切替える時間指定ができます。<br>「背景設定」はページの背景色もしくは画像を指定することができます。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:654
+msgid "※必須項目を入力し、「ページ情報を保存」をクリックして保存してください。保存しないと、プレーヤー追加、テンプレート追加へ進むことはできません。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:659
+msgid "プレーヤー設定"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:662
+msgid "各ページ内に表示するコンテンツです。プレーヤー一覧から選択し、プレーヤー追加をクリックしてください。<br>ページ情報を保存後に設定可能です。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:667
+msgid "テンプレート設定"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:670
+msgid "あらかじめプレーヤー、レイアウトを設定したテンプレートページを選ぶことが出来ます。<br>\n								表示する内容やサイズ、表示位置などは、選択後自由に編集可能です。\n							"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:680
+msgid "プレーヤーのサイズ、位置をマウスでドラッグし変更することが出来ます。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:681
+msgid "位置の変更をしたいプレーヤーを一度クリックしてからドラッグし調整してください。"
+msgstr ""
+
+#: app/views/pages/edit.html.erb:682
+msgid "サイズ変更は"
+msgstr ""
+
+#: app/views/pages/index.html.erb:133
+msgid "設定するページを選択してください。"
+msgstr ""
+
+#: app/views/pages/index.html.erb:134
+msgid "1つのチャンネル内には１０ページがあり、設定した時間で切替表示を行います。"
+msgstr ""
+
+#: app/views/pages/layout.html.erb:109
+msgid "ページ"
+msgstr ""
+
+#: app/views/pages/layout.html.erb:109 app/views/pages/layout.html.erb:118
+msgid "横サイズ："
+msgstr ""
+
+#: app/views/pages/layout.html.erb:112 app/views/pages/layout.html.erb:120
+msgid "縦サイズ："
+msgstr ""
+
+#: app/views/pages/layout.html.erb:118 app/views/template_pages/index.html.erb:48
+#: app/views/template_pages/index.html.erb:95 app/views/template_pages/index.html.erb:141
+#: app/views/template_pages/index.html.erb:188 app/views/template_pages/index.html.erb:235
+#: app/views/template_pages/index.html.erb:281 app/views/template_pages/index.html.erb:328
+msgid "プレーヤー"
+msgstr ""
+
+#: app/views/pages/layout.html.erb:123
+msgid "レイアウトを保存"
+msgstr ""
+
+#: app/views/pages/layout.html.erb:124
+msgid "レイアウトを戻す"
+msgstr ""
+
+#: app/views/permissions/edit.html.erb:15 app/views/roles/edit.html.erb:5
+msgid "Update"
+msgstr ""
+
+#: app/views/permissions/edit.html.erb:19 app/views/roles/edit.html.erb:9 app/views/roles/index.html.erb:18
+msgid "Show"
+msgstr ""
+
+#: app/views/permissions/edit.html.erb:20 app/views/permissions/index.html.erb:17
+#: app/views/permissions/new.html.erb:19 app/views/permissions/show.html.erb:13
+#: app/views/roles/edit.html.erb:10 app/views/roles/new.html.erb:9 app/views/roles/show.html.erb:10
+msgid "Back"
+msgstr ""
+
+#: app/views/permissions/index.html.erb:3
+msgid "Roles for %{user_login}"
+msgstr ""
+
+#: app/views/permissions/index.html.erb:6
+msgid "Roles assigned"
+msgstr ""
+
+#: app/views/permissions/index.html.erb:12
+msgid "Roles available"
+msgstr ""
+
+#: app/views/permissions/new.html.erb:15 app/views/roles/new.html.erb:5
+msgid "Create"
+msgstr ""
+
+#: app/views/permissions/show.html.erb:12 app/views/roles/index.html.erb:19 app/views/roles/show.html.erb:9
+msgid "Edit"
+msgstr ""
+
+#: app/views/roles/index.html.erb:20
+msgid "Destroy"
+msgstr ""
+
+#: app/views/roles/index.html.erb:20
+msgid "Are you sure?"
+msgstr ""
+
+#: app/views/roles/index.html.erb:25
+msgid "New role"
+msgstr ""
+
+#: app/views/roles/_form.html.erb:1
+msgid "name"
+msgstr ""
+
+#: app/views/roles/_role.html.erb:4
+msgid "remove role"
+msgstr ""
+
+#: app/views/roles/_role.html.erb:6
+msgid "assign role"
+msgstr ""
+
+#: app/views/search_engine/index.html.erb:2
+msgid "検索結果"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:2
+msgid "VASDAQ.TVにログイン"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:6 app/views/users/new.html.erb:8
+#: app/views/users/_new_help.html.erb:18
+msgid "ログインID"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:9 app/views/users/new.html.erb:12
+#: app/views/users/_new_help.html.erb:30 app/views/user_property/_yaml_mail.html.erb:36
+#: app/views/user_property/_yaml_mail_help.html.erb:60
+msgid "パスワード"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:13
+msgid "サインアップ >>"
+msgstr ""
+
+#: app/views/sessions/new.html.erb:14
+msgid "パスワードを忘れた方はこちら >>"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:43
+msgid "Newsページ :気になるニュースをリアルタイムに取得して表示します。"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:72 app/views/template_pages/index.html.erb:119
+#: app/views/template_pages/index.html.erb:165 app/views/template_pages/index.html.erb:212
+#: app/views/template_pages/index.html.erb:259 app/views/template_pages/index.html.erb:305
+#: app/views/template_pages/index.html.erb:352
+msgid "追加"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:90
+msgid "企業用ページ：　支店の状況確認、テレビ会議、営業報告などを表示します。"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:136
+msgid "企業用ページ：会社概要や商品説明を表示します。"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:183
+msgid "料理ページ：　自分で作った料理のレシピや調理手順などを表示します。"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:230
+msgid "観光地紹介ページ：四季の風景を表示します。"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:276
+msgid "企業用ページ：2社の業務値、財務値、財務指標値を表示します。"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:323
+msgid "アルバム用ページ：お気に入りの画像やカメラで撮影したものなど表示します。"
+msgstr ""
+
+#: app/views/template_pages/index.html.erb:339
+msgid "１"
+msgstr ""
+
+#: app/views/users/edit.html.erb:2
+msgid "Edit Your Account"
+msgstr ""
+
+#: app/views/users/edit.html.erb:8
+msgid "Cancel"
+msgstr ""
+
+#: app/views/users/edit.html.erb:9
+msgid "Save"
+msgstr ""
+
+#: app/views/users/index.html.erb:2
+msgid "All Users"
+msgstr ""
+
+#: app/views/users/index.html.erb:26
+msgid "disable"
+msgstr ""
+
+#: app/views/users/index.html.erb:28
+msgid "enable"
+msgstr ""
+
+#: app/views/users/index.html.erb:31
+msgid "edit roles"
+msgstr ""
+
+#: app/views/users/input_email_address.html.erb:2
+msgid "パスワードを忘れた場合"
+msgstr ""
+
+#: app/views/users/input_email_address.html.erb:7 app/views/users/new.html.erb:10
+#: app/views/users/_new_help.html.erb:22 app/views/user_property/_edit_help.html.erb:18
+#: app/views/user_property/_mail_address.html.erb:10
+msgid "メールアドレス"
+msgstr ""
+
+#: app/views/users/new.html.erb:2
+msgid "新規アカウント作成"
+msgstr ""
+
+#: app/views/users/new.html.erb:4
+msgid "既にアカウントをお持ちの方はこちら =>"
+msgstr ""
+
+#: app/views/users/new.html.erb:6 app/views/users/_new_help.html.erb:13
+#: app/views/user_property/_edit_help.html.erb:13 app/views/user_property/_user_name.html.erb:10
+msgid "ニックネーム"
+msgstr ""
+
+#: app/views/users/new.html.erb:6
+msgid "(1～20文字以内)"
+msgstr ""
+
+#: app/views/users/new.html.erb:8
+msgid "(3～40文字以内)"
+msgstr ""
+
+#: app/views/users/new.html.erb:12 app/views/users/new.html.erb:14
+msgid "(6～40桁以内)"
+msgstr ""
+
+#: app/views/users/new.html.erb:14 app/views/users/_new_help.html.erb:37
+msgid "パスワード再入力"
+msgstr ""
+
+#: app/views/users/new.html.erb:19
+msgid "サインアップ"
+msgstr ""
+
+#: app/views/users/show.html.erb:2
+msgid "User: "
+msgstr ""
+
+#: app/views/users/show.html.erb:4
+msgid "Updated on: "
+msgstr ""
+
+#: app/views/users/show.html.erb:6
+msgid "Home"
+msgstr ""
+
+#: app/views/users/_new_help.html.erb:15
+msgid "チャンネル公開時に使用される名前です。"
+msgstr ""
+
+#: app/views/users/_new_help.html.erb:15 app/views/users/_new_help.html.erb:26
+#: app/views/users/_new_help.html.erb:33
+msgid "登録後の変更ができます。"
+msgstr ""
+
+#: app/views/users/_new_help.html.erb:19
+msgid "ログイン時に使用するIDです。<br/>登録後の変更はできません。"
+msgstr ""
+
+#: app/views/users/_new_help.html.erb:24
+msgid "[VASDAQ.TV]からのお知らせを受けとるためのメールアドレスです。<br/>"
+msgstr ""
+
+#: app/views/users/_new_help.html.erb:25
+msgid "また、YAMLメールの送信時の送り元として使われるメールアドレスです。<br/>"
+msgstr ""
+
+#: app/views/users/_new_help.html.erb:32
+msgid "ログイン時に使用するパスワードです。<br/>"
+msgstr ""
+
+#: app/views/users/_new_help.html.erb:39
+msgid "確認のためもう一度パスワードを入力してください。"
+msgstr ""
+
+#: app/views/user_mailer/activation.html.erb:1
+msgid "さん, VASDAQ.TVのアカウントがアクティベートされました。下記URLからアクセス可能です。"
+msgstr ""
+
+#: app/views/user_mailer/change_password_notification.html.erb:1
+msgid "下記URLからログインし、必ず「アカウント設定」からパスワードを変更してください。"
+msgstr ""
+
+#: app/views/user_mailer/signup_notification.html.erb:1
+msgid "VASDAQ.TVのアカウントが作成されました。"
+msgstr ""
+
+#: app/views/user_mailer/signup_notification.html.erb:3 app/views/user_property/_login_name.html.erb:9
+msgid "ログイン名"
+msgstr ""
+
+#: app/views/user_mailer/signup_notification.html.erb:6
+msgid "下記URLからアクセスしていただき、24時間以内にアカウントのアクティベートを行ってください。"
+msgstr ""
+
+#: app/views/user_mailer/signup_notification.html.erb:7
+msgid "約1日過ぎた場合には、再度登録を行っていただき、再登録をお願い致します。"
+msgstr ""
+
+#: app/views/user_property/edit.html.erb:8
+msgid "ユーザー"
+msgstr ""
+
+#: app/views/user_property/edit.html.erb:10
+msgid "Google Key"
+msgstr ""
+
+#: app/views/user_property/_edit_help.html.erb:15
+msgid "チャンネル公開時に表示される作成者の名前です。"
+msgstr ""
+
+#: app/views/user_property/_edit_help.html.erb:20
+msgid "[VASDAQ.TV]からのお知らせをお送りするためのメールアドレスです。"
+msgstr ""
+
+#: app/views/user_property/_edit_help.html.erb:24 app/views/user_property/_password.html.erb:10
+msgid "新パスワード"
+msgstr ""
+
+#: app/views/user_property/_edit_help.html.erb:26
+msgid "ログイン時に使用するパスワードを変更できます。"
+msgstr ""
+
+#: app/views/user_property/_edit_help.html.erb:30
+msgid "設定ボタン"
+msgstr ""
+
+#: app/views/user_property/_edit_help.html.erb:32
+msgid "ニックネーム・パスワード・メールアドレス、<br>それぞれの変更を適応させたい場所の設定ボタンを押下すると反映されます。"
+msgstr ""
+
+#: app/views/user_property/_edit_help.html.erb:37
+msgid "マークがついているものは必須項目です。"
+msgstr ""
+
+#: app/views/user_property/_google_api_help.html.erb:12 app/views/user_property/_google_api_key.html.erb:10
+msgid "Google API Key"
+msgstr ""
+
+#: app/views/user_property/_google_api_help.html.erb:14
+msgid "RSSのサービスを利用する際に必要なKEYです。<br>"
+msgstr ""
+
+#: app/views/user_property/_google_api_help.html.erb:15
+msgid "利用者ごとに取得する必要があります。"
+msgstr ""
+
+#: app/views/user_property/_google_api_help.html.erb:19
+msgid "取得方法"
+msgstr ""
+
+#: app/views/user_property/_google_api_help.html.erb:21
+msgid "GoogleのAPI keyは設置するサイトのURLを入力することで取得できます。<br>"
+msgstr ""
+
+#: app/views/user_property/_google_api_help.html.erb:22
+msgid "下記のURLから取得してください。 <br>"
+msgstr ""
+
+#: app/views/user_property/_google_api_key.html.erb:4
+msgid "Google API Key設定"
+msgstr ""
+
+#: app/views/user_property/_google_api_key.html.erb:15 app/views/user_property/_mail_address.html.erb:15
+#: app/views/user_property/_password.html.erb:19 app/views/user_property/_user_name.html.erb:15
+#: app/views/user_property/_yaml_mail.html.erb:68
+msgid "設定"
+msgstr ""
+
+#: app/views/user_property/_google_api_key.html.erb:16 app/views/user_property/_login_name.html.erb:15
+#: app/views/user_property/_mail_address.html.erb:16 app/views/user_property/_password.html.erb:20
+#: app/views/user_property/_user_name.html.erb:16 app/views/user_property/_yaml_mail.html.erb:69
+#: app/views/yamlmails/index.html.erb:49 app/views/yaml_db_forms/edit.html.erb:38
+#: app/views/yaml_db_forms/index.html.erb:120 app/views/yaml_db_forms/new.html.erb:38
+#: app/views/yaml_db_forms/_input_user_form.html.erb:42
+msgid "VASDAQ.TVトップへ"
+msgstr ""
+
+#: app/views/user_property/_login_name.html.erb:4
+msgid "ログイン名確認"
+msgstr ""
+
+#: app/views/user_property/_mail_address.html.erb:4
+msgid "メールアドレス設定変更"
+msgstr ""
+
+#: app/views/user_property/_password.html.erb:4
+msgid "パスワード設定変更"
+msgstr ""
+
+#: app/views/user_property/_password.html.erb:14
+msgid "確認パスワード"
+msgstr ""
+
+#: app/views/user_property/_user_name.html.erb:4
+msgid "ニックネーム設定変更"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:4
+msgid "YAMLメール設定"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:10 app/views/user_property/_yaml_mail_help.html.erb:12
+msgid "YAMLメールアドレス"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:13 app/views/user_property/_yaml_mail_help.html.erb:19
+msgid "ドメイン名"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:17 app/views/user_property/_yaml_mail_help.html.erb:26
+msgid "送信サーバー（SMTP）"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:20 app/views/user_property/_yaml_mail.html.erb:28
+#: app/views/user_property/_yaml_mail_help.html.erb:43
+msgid "ポート番号"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:25 app/views/user_property/_yaml_mail_help.html.erb:34
+msgid "受信サーバー（POP）"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:33 app/views/user_property/_yaml_mail_help.html.erb:54
+msgid "アカウント名"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:40 app/views/user_property/_yaml_mail_help.html.erb:50
+msgid "認証方式"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:59
+msgid "PLAIN"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:60
+msgid "LOGIN"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:61
+msgid "CRAM-MD5"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:62
+msgid "POP before SMTP"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail.html.erb:74
+msgid "※ 認証にSSLを使用するメールアカウントは使用できません。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:14
+msgid "YAMLメーラーおよびYAMLプレーヤーで使用するメールアドレスを設定して下さい。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:15
+msgid "送信者のアドレスとして使用されます。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:21
+msgid "YAMLメールアドレスの＠マーク以降の部分を入力してください。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:22
+msgid "(例:○○.co.jp)"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:28
+msgid "SMTPサーバーとは、電子メールの送信するためのサーバで、送信プロトコル(通信規約)であるSMTPに対応しているものです。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:29 app/views/user_property/_yaml_mail_help.html.erb:37
+msgid "詳細はご利用されるプロバイダーまたはメールアカウント提供業者にご確認ください。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:30
+msgid "ここにはSMTPサーバ名を入力してください。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:36
+msgid "POPサーバーとは、一般的に利用されるメール受信プロトコルのPOP（Post Office Protocol）に対応した受信サーバーです。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:38
+msgid "ここにはPOPサーバ名を入力してください。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:39
+msgid "<span style='color:red'>※ここで設定したサーバーはYamlMailプレーヤーがメールを受信するのに使用されている為、メールが自動的に削除される場合があります。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:45
+msgid "POP・SMTPそれぞれのポート番号を入力してください。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:46
+msgid "通常はPOP 110、SMTP 25 ですが、OB25P対策をされているプロバイダーについてはお客様が契約している先にお問い合わせください。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:51
+msgid "メールの送受信の際の認証方式を選んでください。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:56
+msgid "メールを取得するアカウント名を入力してください。"
+msgstr ""
+
+#: app/views/user_property/_yaml_mail_help.html.erb:61
+msgid "メールを取得するパスワードを入力してください。"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:19
+msgid "ニュース・天気"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:21
+msgid "ファイナンス"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:23
+msgid "ビジネス"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:25
+msgid "コラボレーション"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:27
+msgid "デジタルサイネージ"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:32
+msgid "ライフ・衣食住"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:34
+msgid "趣味・スポーツ"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:36
+msgid "エンタメ・ゲーム"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:38
+msgid "教育・キッズ"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:40
+msgid "エリア情報"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:54
+msgid "広告掲載"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:55
+msgid "ビジネスソリューション"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:56
+msgid "VASDAQ.TVについて"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:57
+msgid "オープンソースプロジェクト"
+msgstr ""
+
+#: app/views/welcome/index.html.erb:58
+msgid "ご利用にあたって"
+msgstr ""
+
+#: app/views/yamlmails/index.html.erb:11 app/views/yaml_db_forms/index.html.erb:18
+#: app/views/yaml_db_forms/_index_help.html.erb:26
+msgid "フリーフォーマット"
+msgstr ""
+
+#: app/views/yamlmails/index.html.erb:18 app/views/yamlmails/_index_help.html.erb:13
+#: app/views/yaml_db_forms/_input_help.html.erb:17
+msgid "To"
+msgstr ""
+
+#: app/views/yamlmails/index.html.erb:23 app/views/yamlmails/_index_help.html.erb:14
+#: app/views/yaml_db_forms/_input_help.html.erb:18
+msgid "Cc"
+msgstr ""
+
+#: app/views/yamlmails/index.html.erb:28 app/views/yamlmails/_index_help.html.erb:15
+#: app/views/yaml_db_forms/_input_help.html.erb:19
+msgid "Bcc"
+msgstr ""
+
+#: app/views/yamlmails/index.html.erb:33 app/views/yamlmails/_index_help.html.erb:23
+#: app/views/yaml_db_forms/_input_help.html.erb:27
+msgid "件名"
+msgstr ""
+
+#: app/views/yamlmails/index.html.erb:46
+msgid "YAML構文チェック"
+msgstr ""
+
+#: app/views/yamlmails/index.html.erb:48 app/views/yaml_db_forms/edit.html.erb:35
+#: app/views/yaml_db_forms/new.html.erb:35 app/views/yaml_db_forms/_input_user_form.html.erb:41
+msgid "戻る"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:18 app/views/yaml_db_forms/_input_help.html.erb:22
+msgid "メール送信先アドレスを指定して下さい。"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:26 app/views/yaml_db_forms/_input_help.html.erb:30
+msgid "メールの件名を指定して下さい。"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:34
+msgid "メールの本文です。"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:35
+msgid "YAML構文に準拠した記述を行って下さい。"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:40
+msgid "YAML構文チェックボタン"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:43
+msgid "メール本文がYAML構文に準拠しているかのチェックを行います。"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:44
+msgid "※メールの送信は行いません。"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:49 app/views/yaml_db_forms/_input_help.html.erb:49
+msgid "送信ボタン"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:52
+msgid "指定された宛先へメール送信を行います。"
+msgstr ""
+
+#: app/views/yamlmails/_index_help.html.erb:53
+msgid "※メール本文のYAML構文チェックも行います。"
+msgstr ""
+
+#: app/views/yaml_db_forms/edit.html.erb:20
+msgid "YAMLフォーム編集"
+msgstr ""
+
+#: app/views/yaml_db_forms/edit.html.erb:32 app/views/yaml_db_forms/new.html.erb:32
+msgid "保存"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:28
+msgid "この機能を使用したい方はこちら >>"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:40 app/views/yaml_db_forms/_index_help.html.erb:34
+msgid "YAMLフォーム"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:50
+msgid "No"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:53 app/views/yaml_db_forms/_form.html.erb:4
+#: app/views/yaml_db_forms/_form_help.html.erb:17 app/views/yaml_db_forms/_index_help.html.erb:42
+msgid "フォームの名前"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:56 app/views/yaml_db_forms/_form.html.erb:15
+#: app/views/yaml_db_forms/_form_help.html.erb:25 app/views/yaml_db_forms/_index_help.html.erb:50
+msgid "フォームの説明"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:60 app/views/yaml_db_forms/_index_help.html.erb:59
+msgid "更新時刻"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:63 app/views/yaml_db_forms/_index_help.html.erb:67
+msgid "作成時刻"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:67 app/views/yaml_db_forms/_index_help.html.erb:76
+msgid "オペレーション"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:92 app/views/yaml_db_forms/_index_help.html.erb:84
+msgid "入力と送信"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:93 app/views/yaml_db_forms/_index_help.html.erb:92
+msgid "編集"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:94
+msgid "削除しますがよろしいですか？"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:108 app/views/yaml_db_forms/_index_help.html.erb:109
+msgid "アップロード"
+msgstr ""
+
+#: app/views/yaml_db_forms/index.html.erb:117 app/views/yaml_db_forms/_index_help.html.erb:122
+msgid "新規作成"
+msgstr ""
+
+#: app/views/yaml_db_forms/new.html.erb:20
+msgid "YAMLフォーム新規作成"
+msgstr ""
+
+#: app/views/yaml_db_forms/_check_option.html.erb:4 app/views/yaml_db_forms/_form_help.html.erb:82
+msgid "メールの本文に載せる値"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form.html.erb:25 app/views/yaml_db_forms/_form_help.html.erb:33
+msgid "メールの本文に載せるフォーム名"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form.html.erb:36 app/views/yaml_db_forms/_form_help.html.erb:41
+msgid "フォームの項目数"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:20
+msgid "フォームに付ける名称を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:28
+msgid "フォームについての説明を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:36
+msgid "送信メールの本文中に記載するフォームの名前を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:44
+msgid "フォームに配置したい数を選択してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:49 app/views/yaml_db_forms/_items_update.html.erb:10
+msgid "項目の名前"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:52
+msgid "項目に付ける名称を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:57 app/views/yaml_db_forms/_items_update.html.erb:19
+msgid "項目の種別"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:60
+msgid "使用したい項目の種類を選択してください。<br>"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:61
+msgid "「テキストボックス」「チェックボックス」「ラジオボタン」「選択リスト」「テキストエリア」が選択できます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:66 app/views/yaml_db_forms/_items_update.html.erb:42
+msgid "項目の説明"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:69
+msgid "項目についての説明を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:74 app/views/yaml_db_forms/_items_update.html.erb:55
+msgid "メールの本文に載せる項目名"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:77
+msgid "送信メールの本文中に記載する項目の名前を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:85
+msgid "送信メールの本文中に記載する項目の値を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:90 app/views/yaml_db_forms/_text_option.html.erb:5
+msgid "テキストボックスの横幅"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:93
+msgid "利用したい「テキストボックス」「テキストエリア」の横幅を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:98 app/views/yaml_db_forms/_textarea_option.html.erb:16
+msgid "テキストエリアの横幅"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:106
+msgid "「テキストボックス」「テキストエリア」に入力することができる、最大文字数を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:111 app/views/yaml_db_forms/_textarea_option.html.erb:38
+#: app/views/yaml_db_forms/_text_option.html.erb:26
+msgid "入力値チェック処理の数"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:114
+msgid "メール送信前に「テキストボックス」「テキストエリア」の入力値をチェックする処理の回数を選択してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:119
+msgid "入力値チェック処理"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:122
+msgid "実行したい入力値のチェック処理を選択してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:123
+msgid "・「空白チェック」「整数チェック」「小数点数チェック」「アルファベットチェック」「全角文字チェック」「半角文字チェック」「範囲チェック」「禁止文字チェック」が選択できます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:124
+msgid "・「空白チェック」は、入力値が「空」の場合、エラーメッセージを表示します。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:125
+msgid "・「整数チェック」は、入力値が「整数以外」の場合、エラーメッセージを表示します。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:126
+msgid "・「小数点数チェック」は、入力値が「小数点数以外」の場合、エラーメッセージを表示します。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:127
+msgid "・「アルファベットチェック」は、入力値が「アルファベット（大文字、小文字）以外」の場合、エラーメッセージを表示します。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:128
+msgid "・「全角文字チェック」は、入力値が「全角文字」の場合、エラーメッセージを表示します。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:129
+msgid "・「半角文字チェック」は、入力値が「半角文字」の場合、エラーメッセージを表示します。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:130
+msgid "・「範囲チェック」は、入力値が「最小値～最大値の範囲外」の場合、エラーメッセージを表示します。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:131
+msgid "・「禁止文字チェック」は、入力値に「禁止文字」が含まれていた場合、エラーメッセージを表示します。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:139
+msgid "「チェックボックス」の場合は、表示される際のチェック状態（ON、OFF）を指定してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:140
+msgid "「ラジオボタン」の場合は、表示される際の初期チェック位置（どのラジオボタンにチェックをつけるか）を指定してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:145 app/views/yaml_db_forms/_form_help.html.erb:153
+#: app/views/yaml_db_forms/_radio_option.html.erb:5
+msgid "ラジオボタンの数"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:148
+msgid "利用したいラジオボタンの数を選択してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:156
+msgid "利用したい「ラジオボタン」「選択リスト」の数を選択してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:161 app/views/yaml_db_forms/_list_option.html.erb:5
+msgid "リストの数"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:166
+msgid "ラジオボタンの名前"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:169
+msgid "各「ラジオボタン」「選択リスト」に付ける名称を入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:174
+msgid "リストの名前"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:183
+msgid "表示される際の初期選択状態（選択したい番号）を選択してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:188 app/views/yaml_db_forms/_textarea_option.html.erb:5
+msgid "テキストエリアの高さ"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:191
+msgid "利用したい「テキストエリア」の高さを入力してください。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:196 app/views/yaml_db_forms/_items_update.html.erb:32
+msgid "詳細設定を開く"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:199
+msgid "各項目の詳細設定の表示／非表示を切り替えることができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:204
+msgid "詳細設定を閉じる"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:209
+msgid "項目の並べ替え"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:212
+msgid "各項目をドラッグアンドドロップすると、項目の並び順を変更することができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:217
+msgid "保存ボタン"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:220
+msgid "設定内容を保存することができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_form_help.html.erb:227
+msgid "<font color=red>*</font>マークがついているものは必須項目です。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:17
+msgid "YAML"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:20
+msgid "構造化データやオブジェクトを文字列にシリアライズ（直列化）するためのデータ形式の一種です。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:21
+msgid "YAML Ain't a Markup Language（YAMLはマークアップ言語ではない）の頭文字をとってYAMLと呼ばれています。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:29
+msgid "自由なフォーマットのYAML構文のメールを作成し、送信することができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:37
+msgid "作成した入力フォームを使用して、YAML構文のメールを送信することができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:45
+msgid "フォームにつけられた名称です。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:53
+msgid "フォームについての説明です。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:62
+msgid "フォームのデーターが更新された最終時刻です。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:70
+msgid "フォームのデーターが作成された時刻です。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:79
+msgid "「YAMLフォーム」のオペレーションを行うことができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:87
+msgid "入力フォームにデータを入力して、そのデータをYAML構文でメール送信することができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:95
+msgid "GUI操作で「YAMLフォーム」を編集することができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:103
+msgid "「YAMLフォーム」を削除することができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:104
+msgid "※一度削除したファイルは復元することができません。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:112
+msgid "作成した「YAMLフォーム定義ファイル」をアップロードすることができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:117
+msgid "※アップロードできるファイルは「YAMLフォーム定義」に準じたフォーマットを使用して下さい。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_index_help.html.erb:125
+msgid "GUI操作で「YAMLフォーム」を作成することができます。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_input_help.html.erb:52
+msgid "メール送信を行います。"
+msgstr ""
+
+#: app/views/yaml_db_forms/_input_mail_info.html.erb:4
+msgid "To:"
+msgstr ""
+
+#: app/views/yaml_db_forms/_input_mail_info.html.erb:14
+msgid "Cc:"
+msgstr ""
+
+#: app/views/yaml_db_forms/_input_mail_info.html.erb:24
+msgid "Bcc:"
+msgstr ""
+
+#: app/views/yaml_db_forms/_input_mail_info.html.erb:34
+msgid "件名:"
+msgstr ""
+
+#: app/views/yaml_db_forms/_list_option_update.html.erb:20
+msgid "リストの名前 "
+msgstr ""
+
+#: app/views/yaml_db_forms/_list_option_update.html.erb:30 app/views/yaml_db_forms/_radio_option_update.html.erb:30
+msgid "メールの本文に載せる値 "
+msgstr ""
+
+#: app/views/yaml_db_forms/_radio_option_update.html.erb:20
+msgid "ラジオボタンの名前 "
+msgstr ""
+
+#: app/views/yaml_db_forms/_textarea_option_update.html.erb:8 app/views/yaml_db_forms/_text_option_update.html.erb:8
+msgid "入力値チェック処理 "
+msgstr ""
+
+#: app/views/yaml_db_forms/_textarea_validate_option_update.html.erb:3 app/views/yaml_db_forms/_text_validate_option_update.html.erb:3
+msgid "最小値"
+msgstr ""
+
+#: app/views/yaml_db_forms/_textarea_validate_option_update.html.erb:9 app/views/yaml_db_forms/_text_validate_option_update.html.erb:9
+msgid "最大値"
+msgstr ""
+
+#: app/views/yaml_db_forms/_textarea_validate_option_update.html.erb:16 app/views/yaml_db_forms/_text_validate_option_update.html.erb:16
+msgid "禁止文字"
+msgstr ""
+
+#: lib/authenticated_system.rb:60
+msgid "この操作を行うことが出来ませんでした。"
+msgstr ""
+
+#: lib/authenticated_system.rb:91
+msgid "An account is logged in now. Please logout at once."
+msgstr ""
+
+#: lib/players/edinet_player.rb:144 lib/players/edinet_player.rb:171 lib/players/edinet_player.rb:202
+#: lib/players/edinet_player.rb:228 lib/players/edinet_player.rb:259 lib/players/edinet_player.rb:285
+#: lib/players/edinet_player.rb:316 lib/players/edinet_player.rb:342 lib/players/edinet_player.rb:374
+#: lib/players/edinet_player.rb:400 lib/players/edinet_player.rb:432 lib/players/edinet_player.rb:458
+#: lib/players/edinet_player.rb:490 lib/players/edinet_player.rb:516 lib/players/edinet_player.rb:547
+#: lib/players/edinet_player.rb:573
+msgid "単独"
+msgstr ""
+
+#: lib/players/edinet_player.rb:148 lib/players/edinet_player.rb:162 lib/players/edinet_player.rb:175
+#: lib/players/edinet_player.rb:188 lib/players/edinet_player.rb:206 lib/players/edinet_player.rb:219
+#: lib/players/edinet_player.rb:232 lib/players/edinet_player.rb:245 lib/players/edinet_player.rb:263
+#: lib/players/edinet_player.rb:276 lib/players/edinet_player.rb:289 lib/players/edinet_player.rb:302
+#: lib/players/edinet_player.rb:320 lib/players/edinet_player.rb:333 lib/players/edinet_player.rb:346
+#: lib/players/edinet_player.rb:360 lib/players/edinet_player.rb:378 lib/players/edinet_player.rb:391
+#: lib/players/edinet_player.rb:404 lib/players/edinet_player.rb:418 lib/players/edinet_player.rb:436
+#: lib/players/edinet_player.rb:449 lib/players/edinet_player.rb:462 lib/players/edinet_player.rb:476
+#: lib/players/edinet_player.rb:494 lib/players/edinet_player.rb:507 lib/players/edinet_player.rb:520
+#: lib/players/edinet_player.rb:533 lib/players/edinet_player.rb:551 lib/players/edinet_player.rb:564
+#: lib/players/edinet_player.rb:577 lib/players/edinet_player.rb:590
+msgid "百万円"
+msgstr ""
+
+#: lib/players/edinet_player.rb:151 lib/players/edinet_player.rb:165 lib/players/edinet_player.rb:178
+#: lib/players/edinet_player.rb:191 lib/players/edinet_player.rb:209 lib/players/edinet_player.rb:222
+#: lib/players/edinet_player.rb:235 lib/players/edinet_player.rb:248 lib/players/edinet_player.rb:266
+#: lib/players/edinet_player.rb:279 lib/players/edinet_player.rb:292 lib/players/edinet_player.rb:305
+#: lib/players/edinet_player.rb:323 lib/players/edinet_player.rb:336 lib/players/edinet_player.rb:349
+#: lib/players/edinet_player.rb:363 lib/players/edinet_player.rb:381 lib/players/edinet_player.rb:394
+#: lib/players/edinet_player.rb:407 lib/players/edinet_player.rb:421 lib/players/edinet_player.rb:439
+#: lib/players/edinet_player.rb:452 lib/players/edinet_player.rb:465 lib/players/edinet_player.rb:479
+#: lib/players/edinet_player.rb:497 lib/players/edinet_player.rb:510 lib/players/edinet_player.rb:523
+#: lib/players/edinet_player.rb:536 lib/players/edinet_player.rb:554 lib/players/edinet_player.rb:567
+#: lib/players/edinet_player.rb:580 lib/players/edinet_player.rb:593
+msgid "千円"
+msgstr ""
+
+#: lib/players/edinet_player.rb:153 lib/players/edinet_player.rb:167 lib/players/edinet_player.rb:180
+#: lib/players/edinet_player.rb:193 lib/players/edinet_player.rb:211 lib/players/edinet_player.rb:224
+#: lib/players/edinet_player.rb:237 lib/players/edinet_player.rb:250 lib/players/edinet_player.rb:268
+#: lib/players/edinet_player.rb:281 lib/players/edinet_player.rb:294 lib/players/edinet_player.rb:307
+#: lib/players/edinet_player.rb:325 lib/players/edinet_player.rb:338 lib/players/edinet_player.rb:351
+#: lib/players/edinet_player.rb:365 lib/players/edinet_player.rb:383 lib/players/edinet_player.rb:396
+#: lib/players/edinet_player.rb:409 lib/players/edinet_player.rb:423 lib/players/edinet_player.rb:441
+#: lib/players/edinet_player.rb:454 lib/players/edinet_player.rb:467 lib/players/edinet_player.rb:481
+#: lib/players/edinet_player.rb:499 lib/players/edinet_player.rb:512 lib/players/edinet_player.rb:525
+#: lib/players/edinet_player.rb:538 lib/players/edinet_player.rb:556 lib/players/edinet_player.rb:569
+#: lib/players/edinet_player.rb:582 lib/players/edinet_player.rb:595
+msgid "一円"
+msgstr ""
+
+#: lib/players/edinet_player.rb:158 lib/players/edinet_player.rb:184 lib/players/edinet_player.rb:215
+#: lib/players/edinet_player.rb:241 lib/players/edinet_player.rb:272 lib/players/edinet_player.rb:298
+#: lib/players/edinet_player.rb:329 lib/players/edinet_player.rb:356 lib/players/edinet_player.rb:387
+#: lib/players/edinet_player.rb:414 lib/players/edinet_player.rb:445 lib/players/edinet_player.rb:472
+#: lib/players/edinet_player.rb:503 lib/players/edinet_player.rb:529 lib/players/edinet_player.rb:560
+#: lib/players/edinet_player.rb:586
+msgid "連結"
+msgstr ""
+
+#: lib/players/twitter_player.rb:37
+msgid "切り替え時間（秒）が未入力です。"
+msgstr ""
+
+#: lib/players/twitter_player.rb:39
+msgid "切り替え時間(秒)が半角数値ではありません。半角数値で入力して下さい。"
+msgstr ""
+
+#: lib/players/twitter_player.rb:43
+msgid "表示数が未入力です。"
+msgstr ""
+
+#: lib/players/twitter_player.rb:45
+msgid "表示数が半角数値ではありません。半角数値で入力して下さい。"
+msgstr ""
+
+#: lib/players/twitter_player.rb:50
+msgid "タイトルが未入力です。"
+msgstr ""
+
+#: lib/players/twitter_player.rb:55
+msgid "キーワードが未入力です。"
+msgstr ""

@@ -1,0 +1,28 @@
+
+<div style="margin-left:75px;margin-top:75px;">
+<h1>プレビュー</h1>
+
+<table>
+	<tr>
+		<td colspan="3">期間</td>
+		
+		<td>本文</td>
+	</tr>
+	<tr>
+		<td>
+			<%= simple_time(@index_message.start_date)%>
+		</td>
+		<td>〜</td>
+		<td><%= simple_time(@index_message.end_date) %></td>
+		<td><%= @index_message.body%></td>
+	</tr>
+	
+</table>
+
+
+
+<%= link_to '編集', edit_index_message_path(@index_message) %> |
+<%= link_to '戻る', index_messages_path %>
+</div>
+
+

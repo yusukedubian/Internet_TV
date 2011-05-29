@@ -1,0 +1,172 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => false } %>
+
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker');
+	 var p = jQuery('#picker').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+  });
+
+</script>
+  <div>
+    <div id="customline" name="custom" style="display:block;">
+      <table>
+          <tr>
+            <td>
+              <%= _("メール件名") %><font color=red>*</font>
+            </td>
+            <td>
+              <%= text_field_tag("contents_setting[subject]", h(settings["subject"]),:size=>"40") %>
+            </td>
+          </tr>      	
+          <tr>
+            <td>
+              <%= _("表示列数(ヘッダ除く)") %><font color=red>*</font>
+            </td>
+            <td>
+              <%= text_field_tag("contents_setting[col]", h(settings["col"]), :maxlength => 3, :size=>6) %>
+            </td>
+          </tr> 		
+          <tr>
+            <td>
+              <%= _("枠線の太さ") %><font color=red>*</font>
+            </td>
+            <td>
+              <%= text_field_tag("contents_setting[border]", h(settings["border"]), :maxlength => 3, :size=>6) %>px
+            </td>
+          </tr>		
+      </table>
+	  </div>
+	  <br><br>
+	  <table>
+	  	<tr>
+	  		<td valign="top">
+          <table border="0" cellpadding="0" cellspacing="0">
+            <% [
+              {:prop => "font_color", :name => "フォントカラー"},
+              {:prop => "border_color", :name => "枠の色"},
+              {:prop => "row_color", :name => "ヘッダ行背景色"},
+              {:prop => "col_color", :name => "ヘッダ列背景色"},
+              {:prop => "back_color", :name => "背景色"}
+            ].each do |s| %>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <%= s[:name] %>
+                </td>
+                <td valign="top">
+                  <div class="form-item">
+                    <%= text_field_tag("contents_setting[#{s[:prop]}]", settings[s[:prop]],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+                  </div>
+                  <%if settings[s[:prop]] != nil %>
+                    <script>document.getElementById("contents_setting[<%= s[:prop] -%>]").value="<%= settings[s[:prop]] -%>"</script>
+                  <%end%>
+                </td>
+              </tr>
+            <% end %>
+			</table>
+			  </td>
+        <td>
+          <div id="picker" style="float: right;"></div>
+        </td>
+		  </tr>
+	  </table>
+	  <table>
+	  	<tr>
+	  		<td>
+	  			<%=_("※<b>メール件名にはメールサーバーから取得したいメールの件名を入力してください。</b>")%><br>
+				<%=_("※<b>トップメニューの「設定」⇒「アカウント設定」⇒「YAMLメール」の設定をしてください。設定しないと表示されません。")%><br>
+				<%=_("　設定が終わりましたら、設定したメールアドレスにトップメニューの「YAMLメール」もしくは、お使いの電子メールから送信してください。")%><br><br>
+				<%=_("　電子メールから送信する場合は、下記メール本文のフォーマットを使用し送信してください。</b>")%><br>
+	  		</td>
+	  	</tr>
+	  </table>
+	  
+	  <table frame="box" rules="all" border="1px" bordercolor="#cccccc" style="margin-left:22px;">
+		<tr>
+			<td width="70px" align="center"><b><%="件名"%></b></td>
+			<td><b><%=_("「メール件名」に設定したものを、入力してください。")%></b></td>
+		</tr>	  
+	  	<tr>
+	  		<td width="70px" align="center">
+	  			<b><%=_("メール本文")%></b>
+	  		</td>
+	  		<td align="left">
+	  			<b>
+	  			<%=_("format:<br>")%>
+				<%=_('&nbsp;&nbsp;style: "left"<br>')%>
+				<%=_("headers:<br>")%>
+				<%=_('&nbsp;&nbsp;- "列タイトル1"<br>')%>
+				<%=_('&nbsp;&nbsp;- "列タイトル2"<br>')%>	
+				<%=_('&nbsp;&nbsp;- "列タイトル3"<br>')%>	
+				<%=_("entries:<br>")%>
+				<%=_('&nbsp;&nbsp;- header: "行ヘッダ1"<br>')%>
+				<%=_("&nbsp;&nbsp;&nbsp;&nbsp;data:<br>")%>
+				<%=_('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "行1_1"<br>')%>
+				<%=_('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "行1_2"<br>')%>
+				<%=_('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "行1_3"<br>')%>
+				<%=_('&nbsp;&nbsp;- header: "行ヘッダ2"<br>')%>
+				<%=_("&nbsp;&nbsp;&nbsp;&nbsp;data:<br>")%>
+				<%=_('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "行2_1"<br>')%>
+				<%=_('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "行2_2"<br>')%>
+				<%=_('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- "行2_3"<br>')%>
+				</b>
+	  		</td>
+	  	</tr>
+	  </table><br>  
+	  
+	  <table>
+	  	<tr>
+	  		<td><%=_("<b>　メール本文の説明</b>")%><br></td>
+		</tr>
+	  </table>
+	  
+	  <table frame="box" rules="all" border="1px" bordercolor="#cccccc" style="margin-left:22px;">
+		<tr>
+			<td width="70px" align="center"><b><%="style"%></b></td>
+			<td>
+				<b><%=_("表示する際のスタイルを指定してください。<br>")%></b>
+				<b><%=_("「left」「center」「right」「comma」のいずれかを指定してください。<br>")%></b>
+				<%= _("　left：左寄せ<br>") %>
+				<%= _("　center：中央寄せ<br>") %>
+				<%= _("　right：右寄せ<br>") %>
+				<%= _("　comma：右寄せ、カンマ区切り<br>") %>
+				<b><%= _("※commaは、金額などを表示させたい時に使います。<br>") %>
+				<%= _('&nbsp;&nbsp;dataの値に"10000"を入力すると、表には"10,000"と右寄せで表示されます。') %></b>
+			</td>
+		</tr>
+		<tr>
+			<td width="70px" align="center"><b><%="headers"%></b></td>
+			<td>
+				<b><%=_("列のタイトルを指定してください。<br>")%></b>
+				<%=_("※<b>表示する列数分のタイトルを、配列で指定してください。</b>")%>				
+			</td>
+		</tr>
+		<tr>
+			<td width="70px" align="center"><b><%="header"%></b></td>
+			<td>
+				<b><%=_("行のタイトルを指定してください。")%></b>
+			</td>
+		</tr>
+		<tr>
+			<td width="70px" align="center"><b><%="data"%></b></td>
+			<td>
+				<b><%=_("表示するデータを指定してください。<br>")%></b>
+				<%=_("※<b>表示する列数分のデータを、配列で指定してください。</b>")%>
+			</td>
+		</tr>						
+	  </table>	  
+
+  </div>

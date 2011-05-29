@@ -1,0 +1,50 @@
+<?xml version='1.0'> 
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='ja' lang='ja'> 
+<head> 
+<meta http-equiv='Content-type' content='text/html; charset=utf-8' /> 
+<script type='text/javascript' src='http://www.google.com/jsapi?key=ABQIAAAAchJu3eoh_0uOR8f6we34GxTo28GlTqNFgyQcy9PXdEU-Yu69IBQwQeIQ8fP1McR1t1ufhnHEOFC56Q'></script> 
+<script type='text/javascript' src='../../../../../../javascripts/jquery-1.2.6.pack.js'></script><script type='text/javascript'> 
+google.load('feeds', '1');  
+</script> 
+</head> 
+<body style='margin:0px;'>
+<div style='background:#020f1d;'>
+<div style='background-color:#ffffff' width='100%'> 
+<font style='  font-size:20;  color:#000000;  '>ECO JAPAN</font> 
+</div> 
+<Marquee height='100%' width='100%' direction ='up' scrolldelay = '90' scrollamount='3'> 
+    <div id='663_1' style='WORD-WRAP:break-word;'>  
+    </div> 
+</Marquee> 
+<script type='text/javascript'> 
+update(); 
+setInterval('update()', 60000); 
+function update(){
+google.load('feeds', '1'); 
+var feed = new google.feeds.Feed('http://eco.nikkeibp.co.jp/rss/eco/eco.rdf'); 
+feed.setNumEntries(5); 
+feed.load(function(result){ 
+var temp = ''; 
+if (!result.error) 
+{ 
+for (var i = 0; i < result.feed.entries.length; i++) 
+{ 
+var entry = result.feed.entries[i]; 
+temp += '<font '; 
+temp += ' color="#dce0f9"'; 
+temp += 'style="font-size:20px;">&nbsp;'; 
+temp +=entry.title; 
+temp += '<br>'; 
+temp +=entry.content; 
+temp += '</font>'; 
+temp += '<br><br>'; 
+} 
+$("#663_1").html(temp); 
+} 
+}); 
+}
+</script> 
+
+</div>
+</body> 
+</html> 

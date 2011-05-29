@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【仓库管理用画面样本】</title>
+    <style type="text/css">
+        body{margin:0px; }
+        
+        #div_1{width:771px;
+height:585px; 
+background:url(picture/backcolor.jpg);
+        }
+        
+        #div_2{ background:#33cccc;width:739px;
+height:69px;border:1px solid orange;}
+        #div_2-2{width:735px;
+top:1px; background:url(picture/title.jpg);
+height:65px;border:1px solid orange;
+        }
+
+        #div_3{width:763px;
+height:493px; 
+        }
+        #div_4{width:242px;height:486px;
+float:left;
+        }
+        #div_5{width:490px;
+height:487px;
+float:left;
+        }
+        
+        #div_ru{width:487px;height:233px;border:0px;}
+        #div_chu{width:487px;height:229px;border:0px;}
+        
+        #div_kong{border-style: none;
+            border-color: inherit;
+            border-width: 0px;
+width:495px;
+            height:15px;    
+margin-left: 0px;
+        }
+        #div_kong2{border-style: none;
+            border-color: inherit;
+            border-width: 0px;width:238px;height:9px;}
+       #div_kong2-2{border-style: none;
+            border-color: inherit;
+            border-width: 0px;width:238px;height:9px;}
+        #div_kong3{border-style: none;
+            border-color: inherit;
+            border-width: 0px;
+            width:10px;height:489px;
+            float:left;
+        }
+        #div_kong4{border-style: none;
+            border-color: inherit;
+            border-width: 0px;width:764px; 
+height:11px;
+        }
+        #div_kong5{border-style: none;
+            border-color: inherit;
+            border-width: 0px;
+width:12px;
+            height:490px;    
+float:left;
+        }
+        #div_kong6{border-style: none;
+            border-color: inherit;
+            border-width: 0px;
+width:750px;
+height:10px;
+        }
+        #div_kong7{border-style: none;
+            border-color: inherit;
+            border-width: 0px;
+width:738px;
+            height:1px;
+        }
+        
+        #div_kongru{border-style: none;
+            border-color: inherit;
+            border-width: 0px;
+            width:484px;
+height:7px;
+}
+        
+        #div_6{width:240px;
+height:74px;
+border:1px solid #cccccc; background:black; }
+
+        #div_62{width:242px;height:165px;
+border:1px solid #cccccc; }
+        
+        #div_7{width:242px;height:214px;border:1px solid #cccccc; background:#003366;}
+        
+        #div_8{background:#cccccc;width:239px;
+height:23px; 
+border:1px solid orange;
+        }
+        #div_dz{background:#cccccc;width:240px;
+height:23px; 
+border:1px solid orange;
+        }
+
+        #div_dzinfo{width:237px;
+height:137px; 
+border:0px;
+        }
+
+        #div_10{background:#f8f8f8;width:240px;
+height:23px; 
+border:1px solid #003366;
+        }
+        
+        #div_12{width:485px;height:16px;}
+        #div_14{width:485px;height:16px;}
+       
+        #div_9{width:241px;
+height:77px;
+        }
+        #div_11{width:239px;
+height:189px ; 
+           
+        }
+        
+        #div_9-2{height: 164px; width: 264px; background:#f8f8f8;}
+        #div_11-2{height: 286px; width: 260px;background:#f8f8f8;}
+        
+        #div_13{width:485px;
+height:210px; 
+border:1px solid #cccccc;
+        }
+        #div_15{width:485px;
+height:210px;
+border:1px solid #cccccc;
+        }
+
+    </style>
+    <script type="text/javascript" language="javascript">
+       //取得当前时间(默认给违约的创建时间)  
+        window.onload =  getNowTime(){  
+           //取得当前时间 
+           var now= new Date();  
+           var year=now.getYear();  
+           var month=now.getMonth()+1;  
+           var day=now.getDate();  
+           var hour=now.getHours();  
+           var minute=now.getMinutes();   
+           var nowdate=year+"/"+month+"/"+day+"/"+hour+":"+minute;  
+           document.getElementById("div_kong6").value = nowdate;          
+       }  
+    </script>
+     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body>
+    
+    <div id='div_1' align="center">
+    <div id='div_kong6'></div>
+        <div id='div_2' align="center">
+            <div id='div_kong7'></div>
+            <div id='div_2-2'>
+                <font style="font-size:60px;color:#ffff00;">
+                    <marquee direction='left' 
+                            begavior='scroll' scrolldelay='100' scrolltop='0' scrollleft='0' 
+                        style="height: 63px; width: 729px;">
+                     18:30 VASDA快件货物到达
+                    </marquee></font>
+            </div>
+          </div>
+        <div id='div_kong4' align="center"></div>
+        <div id='div_3' align='center'>
+            <div id='div_kong5' align="left"></div>
+            <div id='div_4'>
+                <div id='div_6'>
+                <div id='div_8' align="left">&nbsp;&nbsp;<font style="color:#ffcc00;font-size:25; "><strong>现在状态</strong></font></div>
+                    <font style="font-size:40px;color:yellow;">等待到货</font>
+                </div>
+                <div id='div_kong2'></div>
+                <div id='div_62'>
+                    <div id='div_dz' align="left">&nbsp;&nbsp;<font style="color:#ffcc00; font-size:25; "><strong>各部门负责信息</strong></font></div>
+                    <div id='div_dzinfo' align="left">
+                        &nbsp;<font style="font-size:25px;color:#f8f8f8;"><marquee direction='up' begavior='scroll' 
+                            scrolldelay='200' scrolltop='0' scrollleft='0' 
+                                 style="height: 136px; width: 228px;">
+                            <dl>
+                                <dt><font style="color:Yellow;">仓库负责人：</font><font style="color:white;">柱子、<br/>&nbsp;&nbsp;马实惠</font></dt>
+                                <dt><font style="color:Yellow;">收货人：</font><font style="color:white;">王林、周如</font></dt>
+                                <dt><font style="color:Yellow;">商品检查人：</font><font style="color:white;">邀月、<br/>&nbsp;&nbsp;江湖</font></dt><br />
+                                <dt><font style="color:Yellow;">【运送公司】</font></dt>
+                                <dt><font style="color:Yellow;">公司名：</font><font style="color:white;">VASDA急便</font></dt>
+                                <dt><font style="color:Yellow;">配送车：</font><font style="color:white;">4t/<br/>&nbsp;&nbsp;皖Exxxx</font></dt>
+                                <dt><font style="color:Yellow;">运送：</font><font style="color:white;">王静、邵丁</font></dt>
+                            </dl></marquee></font></div>
+                </div>
+                <div id='div_kong2-2'></div>
+                <div id='div_7'>
+                    <div id='div_10' align="left">&nbsp;&nbsp;<font style="color:#003366;font-size:25; "><strong>必须检验事项</strong></font></div>
+                     <div id='div_11' align="left">
+                        <font style="font-size:18px;color:yellow;">
+                            <stronng ><ol>
+                                <li>到达产品与定货产品是否一致？</li><br />
+                                <li>是否有破损等？</li><br />
+                                <li>包装有无问题？</li><br />
+                                <li>有无危险产品？</li>
+                            </dir></stronng></font>
+                     </div>
+                </div>
+            </div>
+            <div id='div_kong3' ></div>
+            <div id='div_5'>
+                <div id='div_ru'>
+                     <div id='div_kongru'> </div>
+                    <div id='div_12' align="right">&nbsp;&nbsp;<font style="color:#f8f8f8;font-size:24;"><strong>２０１０年 ３月２１日１８点３０分预定的进货数据</strong></font></div>
+                    <div id='div_13'>
+                        <img src="picture/ru.jpg"  />
+                    </div> 
+                </div>
+                <div id='div_kong'> </div>
+                <div id='div_chu'>
+                    <div id='div_14' align="right">&nbsp;&nbsp;<font style="color:#f8f8f8;font-size:24;"><strong>　２０１０年 ３月２１日１６点～１７点的出库数据　</strong></font></div>
+                    <div id='div_15'>
+                        <img src="picture/chu.jpg"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

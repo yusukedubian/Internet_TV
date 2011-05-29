@@ -1,0 +1,14 @@
+<body style='margin:0px;'>
+<div style='width:100%; height:100%; background:#123456;'>
+<Marquee height='100%' Direction = 'up'  scrolldelay = '70' scrollamount='4' >
+    <div style='WORD-WRAP:break-word; width:363px;'>
+      <pre>
+        <Font style='font-size:30px; color:#000000;'>
+所属：VJ
+本日の一言報告：
+   railsの勉強中。。。        </font>
+      </pre>
+    </div>
+</Marquee>
+</div>
+</body>

@@ -1,0 +1,117 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => true } %>
+
+  <div>
+    <div id="customline" name="custom" style="display:block;">
+      <table>
+        <% [
+          {:prop => "subject", :name => "メール件名"},
+          {:prop => "title", :name => "グラフタイトル"},
+        ].each do |s| %>
+          <tr>
+            <td>
+              <%= s[:name] %><font color=red>*</font>
+            </td>
+            <td>
+              <%= text_field_tag("contents_setting[#{s[:prop]}]", h(settings[s[:prop]]),:size=>"40") %>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+          <td>
+            種類
+          </td>
+          <td>
+            <%= select_tag("contents_setting[renderer]", options_for_select([["円グラフ", "pie"], ["棒グラフ", "bar"], ["折れ線グラフ", "line"]], settings["renderer"])) %>
+          </td>
+        </tr>
+      </table>
+	  <table>
+	  	<tr>
+	  		<td>
+	  			<%=_("※<b>メール件名にはメールサーバーから取得したいメールの件名を入力してください。")%><br>
+				<%=_("　グラフタイトルには好きなタイトル名を入力してください。</b>")%><br>
+				<%=_("※<b>トップメニューの「設定」⇒「アカウント設定」⇒「YAMLメール」の設定をしてください。設定しないと表示されません。")%><br>
+				<%=_("　設定が終わりましたら、設定したメールアドレスにトップメニューの「YAMLメール」もしくは、お使いの電子メールから送信してください。")%><br><br>
+				<%=_("　電子メールから送信する場合は、下記メール本文のフォーマットを使用し送信してください。</b>")%><br>				
+	  		</td>
+	  	</tr>
+	  </table>
+	  
+	  <table frame="box" rules="all" border="1px" bordercolor="#cccccc" style="margin-left:22px;">
+		<tr>
+			<td width="70px" align="center"><b><%="件名"%></b></td>
+			<td><b><%=_("「メール件名」に設定したものを、入力してください。")%></b></td>
+		</tr>	  
+	  	<tr>
+	  		<td width="70px" align="center">
+	  			<b><%=_("メール本文")%></b>
+	  		</td>
+	  		<td align="left">
+	  			<b>
+	  			<%=_("format:<br>")%>
+				<%=_('&nbsp;&nbsp;legend: "n"<br>')%>
+				<%=_("&nbsp;&nbsp;ticks:&nbsp;&nbsp;<br>")%>
+				<%=_('&nbsp;&nbsp;&nbsp;&nbsp;- "ラベル1"<br>')%>
+				<%=_('&nbsp;&nbsp;&nbsp;&nbsp;- "ラベル2"<br>')%>
+				<%=_("entries:<br>")%>
+				<%=_('- label: "サンプル1"<br>')%>
+				<%=_("&nbsp;&nbsp;data:<br>")%>
+				<%=_("&nbsp;&nbsp;- 123<br>")%>
+				<%=_("&nbsp;&nbsp;- 456<br>")%>
+				<%=_('- label: "サンプル2"<br>')%>
+				<%=_("&nbsp;&nbsp;data:<br>")%>
+				<%=_("&nbsp;&nbsp;- 123<br>")%>
+				<%=_("&nbsp;&nbsp;- 456<br>")%>
+				</b>
+	  		</td>
+	  	</tr>
+	  </table><br>  
+	  
+	  <table>
+	  	<tr>
+	  		<td><%=_("<b>　メール本文の説明</b>")%><br></td>
+		</tr>
+	  </table>	  
+	  
+	  <table frame="box" rules="all" border="1px" bordercolor="#cccccc" style="margin-left:22px;">
+		<tr>
+			<td width="70px" align="center"><b><%="legend"%></b></td>
+			<td>
+				<b><%=_("凡例の表示位置(グラフを中心にした方角)を指定してください。<br>")%></b>
+				<b><%=_("「nw」「n」「ne」「e」「se」「s」「sw」「w」のいずれかを指定してください。<br>")%></b>
+				<%= _("　nw：左上<br>") %>
+				<%= _("　n：真上<br>") %>
+				<%= _("　ne：右上<br>") %>
+				<%= _("　e：右<br>") %>
+				<%= _("　se：右下<br>") %>
+				<%= _("　s：真下<br>") %>
+				<%= _("　sw：左下<br>") %>
+				<%= _("　w：左<br>") %>
+				<%=_("※<b>省略時は凡例は表示されません。</b>")%>
+			</td>
+		</tr>
+		<tr>
+			<td width="70px" align="center"><b><%="ticks"%></b></td>
+			<td>
+				<b><%=_("軸に表示される目盛名を指定してください。<br>")%></b>
+				<%=_("※<b>円グラフ、折れ線グラフを使用する場合は、指定不要です。</b><br>")%>
+				<%=_("※<b>表示する目盛数分の名称を、配列で指定してください。</b>")%>			
+			</td>
+		</tr>
+		<tr>
+			<td width="70px" align="center"><b><%="label"%></b></td>
+			<td>
+				<b><%=_("凡例に表示するグラフの名称を指定してください。")%></b>
+			</td>
+		</tr>
+		<tr>
+			<td width="70px" align="center"><b><%="data"%></b></td>
+			<td>
+				<b><%=_("表示するデーターを指定してください。<br>")%></b>
+				<%=_("※<b>表示する数分のデータを、配列で指定してください。</b><br>")%>
+				<%=_("※<b>円グラフを使用する場合は、２つ以上の指定はできません。</b>")%>
+			</td>
+		</tr>						
+	  </table>	  
+	  </div>
+  </div>

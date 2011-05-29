@@ -1,0 +1,141 @@
+<div class="account" style="margin-bottom:15px;">
+	<table>
+		<tr>
+			<td>
+				<%= image_tag("./imagefile/point.png")%>
+				<%= "&nbsp;" %>
+				<%= _("説明") %>
+			</td>
+		</tr>			
+	</table>
+	<table frame="void" rules="none">
+		<tr>
+			<td>
+				<table frame="border" rules="all" bordercolor="#cccccc" width="900px">
+					<tr>
+						<td align="center" width="130px">
+							<%= _("YAML") %>
+						</td>
+						<td>
+							<%= _("YAMLとは、文章に特別な意味を持たせる事が出来る構文です。") %><br>
+							<%= _("YAML Ain't a Markup Language（YAMLはマークアップ言語ではない）の頭文字をとってYAMLと呼ばれています。") %><a href="http://ja.wikipedia.org/wiki/YAML"><%= _(" YAMLとは？") %></a>
+						</td>
+					</tr>					
+					<tr>
+						<td align="center" width="130px">
+							<%= _("フリーフォーマット") %>
+						</td>
+						<td>
+							<%= _("定型フォームを作成しなくても、YAML構文のメールをテキスト形式で直接送信することができます。") %>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" width="130px">
+							<%= _("YAMLフォーム") %>
+						</td>
+						<td>
+							<%= _("作成した入力フォームを使用して、YAML構文のメールを送信することができます。") %>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" width="130px">
+							<%= _("フォームの名前") %>
+						</td>
+						<td>
+							<%= _("フォームにつけられた名称です。") %>
+						</td>
+					</tr>					
+					<tr>
+						<td align="center" width="130px">
+							<%= _("フォームの説明") %>
+						</td>
+						<td>
+							<%= _("フォームについての説明です。") %>
+						</td>
+					</tr>						
+<!--
+					<tr>
+						<td align="center" width="130px">
+							<%= _("更新時刻") %>
+						</td>
+						<td>
+							<%= _("フォームのデーターが更新された最終時刻です。") %>
+						</td>
+					</tr>					
+					<tr>
+						<td align="center" width="130px">
+							<%= _("作成時刻") %>
+						</td>
+						<td>
+							<%= _("フォームのデーターが作成された時刻です。") %>
+						</td>
+					</tr>
+-->			
+					<tr>
+						<td align="center" width="130px">
+							<%= _("オペレーション") %>
+						</td>
+						<td>
+							<%= _("「YAMLフォーム」のオペレーションを行うことができます。") %>
+						</td>
+					</tr>					
+					<tr>
+						<td align="center" width="130px">
+							<%= _("入力と送信") %>
+						</td>
+						<td>
+							<%= _("入力フォームにデータを入力して、そのデータをYAML構文でメール送信することができます。") %>
+						</td>
+					</tr>						
+					<tr>
+						<td align="center" width="130px">
+							<%= _("GUI編集") %>
+						</td>
+						<td>
+							<%= _("GUI操作で「YAMLフォーム」を編集することができます。") %>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" width="130px">
+							<%= _("テキスト編集") %>
+						</td>
+						<td>
+							<%= _("テキスト編集操作で「YAMLフォーム」を編集することができます。") %><br>
+							<%= _("※<b>上級者向けの機能です。</b>") %>
+						</td>
+					</tr>										
+					<tr>
+						<td align="center" width="130px">
+							<%= _("削除") %>
+						</td>
+						<td>
+							<%= _("「YAMLフォーム」を削除することができます。") %><br>
+							<%= _("※<b>一度削除したファイルは復元することができません。</b>") %>
+						</td>
+					</tr>	
+					<tr>
+						<td align="center" width="130px">
+							<%= _("アップロード") %>
+						</td>
+						<td>
+							<%= _("作成した「YAMLフォーム定義ファイル」をアップロードすることができます。") %><br>
+							<%= _("※<b>アップロードできるファイル数は「#{ConstYamlDbForm::FILE_COUNT_MAX} ファイル」までです。</b>") %><br>
+							<% size_min = ConstYamlDbForm::FILE_SIZE_MIN %>
+							<% size_max = (ConstYamlDbForm::FILE_SIZE_MAX / 1024) %>
+							<%= _("※<b>アップロードできるファイルサイズは「#{size_min} byte」から「#{size_max} Kbyte」までです。</b>") %><br>
+							<%= _("※<b>アップロードできるファイルは「YAMLフォーム定義」に準じたフォーマットを使用して下さい。</b>") %><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" width="130px">
+							<%= _("新規作成") %>
+						</td>
+						<td>
+							<%= _("GUI操作で「YAMLフォーム」を作成することができます。") %>
+						</td>
+					</tr>					
+				</table>
+			</td>
+		</tr>
+	</table>				
+</div>

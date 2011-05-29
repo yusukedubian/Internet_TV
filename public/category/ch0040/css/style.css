@@ -1,0 +1,351 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	text-align:center;
+	background: #141E2C;
+	color: #FFFFFF;
+	margin: 0;
+}
+
+
+p {
+  font-size: 12px;
+	margin: 2px 0;
+	clear: both;
+}
+
+ul, ol {
+	margin-left 0;
+}
+
+ul ul {
+	margin-bottom: 10px;
+}
+
+ul li{ 
+	list-style:none; 
+	display:block; 
+	padding-bottom:1px; 
+	margin-bottom:0px; 
+}
+
+a {
+	color:white
+}
+
+.clearfix:after {
+  content: ".";  /* 新しい要素を作る */
+  display: block;  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+/*  wrap  */
+#wrap {
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+}
+#wrap #head_ttlarea {
+	width:800px;
+	background:url(../images/ttl01.gif) no-repeat 0 0;
+	margin:0 0 4px 0;
+}
+#wrap #head_ttlarea h1 {
+	display: block;
+	height:41px;
+	width:280px;
+	margin:0 0 0 0;
+	text-indent:-9999px;
+	float:left;
+}
+#wrap #head_ttlarea .partsarea {
+	display: block;
+	margin:3px 10px 0 0;
+	width:500px;
+	float:right;
+	text-align:right;
+}
+
+/*  sub  */
+#wrap #sub {
+	width:280px;
+	height:547px;
+	float:left;
+}
+#wrap #sub #sub_in01 {
+	width:280px;
+	height:357px;
+	margin:0 0 3px 0;
+	background:url(../images/bg01.gif) no-repeat left bottom;
+}
+#wrap #sub .ttlarea {
+	width:280px;
+	height:41px;
+	background:url(../images/ttl02.gif) no-repeat 0 0;
+}
+#wrap #sub .ttlarea h2 {
+	display: block;
+	width:180px;
+	height:41px;
+	margin:0;
+	font-size:1px;
+	text-indent:-9999px;
+}
+#wrap #sub .ttlarea p {
+	display: block;
+	width:95px;
+	float:right;
+	margin:0;
+	padding:18px 0 0 0;
+	font-size:10px;
+	color:#ABB8C9;
+	line-height:1.1;
+}
+#wrap #sub #odekakearea{
+	padding:0 0 0 0;
+	margin:8px 10px 0 10px;
+	width:260px;
+	background-color:#383838;
+	min-height:150px;
+	height: auto !important;
+	height: 150px;
+}
+#wrap #sub #odekakearea p.bodyttl{
+	padding:0 0 0 19px;
+	margin:0 0 6px 0;
+	background:url(../images/icon01.gif) no-repeat 0 3px;
+	font-size:14px;
+	line-height:1.1;
+}
+#wrap #sub #odekakearea p.bodydate{
+	font-size:10px;
+	line-height:1.1;
+	color:#ABB8C9;
+	margin:0 0 6px 0;
+}
+#wrap #sub #odekakearea .bodytxt{
+	font-size:12px;
+	line-height:1.2;
+	color:#ABB8C9;
+	border-bottom:1px dotted #686868;
+	padding:0 0 0 0;
+	margin:0 0 10px 0;
+}
+#wrap #sub #odekakearea .bodytxt img{
+	margin:0 8px 5px 0;
+}
+#wrap #sub #odekakearea02{
+	padding:0 0 0 0;
+	margin:0 10px 0 10px;
+	width:260px;
+	background-color:#383838;
+}
+#wrap #sub #odekakearea02 p.bodyttl{
+	padding:0 0 0 19px;
+	margin:0 0 6px 0;
+	background:url(../images/icon01.gif) no-repeat 0 3px;
+	font-size:14px;
+	line-height:1.1;
+}
+#wrap #sub #odekakearea02 p.bodydate{
+	font-size:10px;
+	line-height:1.1;
+	color:#ABB8C9;
+	margin:0 0 6px 0;
+}
+#wrap #sub #odekakearea02 .bodytxt{
+	font-size:12px;
+	line-height:1.2;
+	color:#ABB8C9;
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+}
+#wrap #sub #odekakearea02 .bodytxt img{
+	margin:0 8px 5px 0;
+}
+
+
+
+
+/*  main  */
+#wrap #main {
+	width:510px;
+	float:right;
+}
+
+/*  main 国内新着ツアー  */
+#wrap #main #content01{
+	width:510px;
+}
+#wrap #main #content01 .ttlarea {
+	height:41px;
+	background:url(../images/ttl03.gif) no-repeat 0 0;
+	
+}
+#wrap #main #content01 .ttlarea h2 {
+	display: block;
+	width:180px;
+	height:41px;
+	margin:0;
+	font-size:1px;
+	text-indent:-9999px;
+}
+#wrap #main #content01 .ttlarea p {
+	display: block;
+	width:240px;
+	float:right;
+	margin:0;
+	padding:18px 10px 0 0;
+	font-size:10px;
+	color:#ABB8C9;
+	line-height:1.1;
+	text-align:right;
+}
+#wrap #main #content01 #con01 {
+	min-height:62px;
+	height: auto !important;
+	height: 62px;
+	padding:0 0 0 0 !important;
+	background:url(../images/bg02.gif) no-repeat left bottom;
+	background-color:#383838;
+	width:510px;
+}
+#wrap #main #content01 #con01 p {
+	margin:0 10px 0 10px;
+	padding:8px 0 10px 19px;
+	background:url(../images/icon01.gif) no-repeat 0 12px;
+	line-height:1.2;
+}
+
+/*  main 海外新着ツアー  */
+#wrap #main #content02{
+	width:510px;
+}
+#wrap #main #content02 .ttlarea {
+	height:45px;
+	background:url(../images/ttl04.gif) no-repeat 0 0;
+	
+}
+#wrap #main #content02 .ttlarea h2 {
+	display: block;
+	width:180px;
+	height:41px;
+	margin:0;
+	font-size:1px;
+	text-indent:-9999px;
+}
+#wrap #main #content02 .ttlarea p {
+	display: block;
+	width:240px;
+	float:right;
+	margin:0;
+	padding:18px 10px 0 0;
+	font-size:10px;
+	color:#ABB8C9;
+	line-height:1.1;
+	text-align:right;
+}
+#wrap #main #content02 #con02 {
+	min-height:62px;
+	height: auto !important;
+	height: 62px;
+	padding:0 0 0 0 !important;
+	background:url(../images/bg02.gif) no-repeat left bottom;
+	background-color:#383838;
+	width:510px;
+}
+#wrap #main #content02 #con02 p {
+	margin:0 10px 0 10px;
+	padding:8px 0 10px 19px;
+	background:url(../images/icon01.gif) no-repeat 0 12px;
+	line-height:1.2;
+}
+
+/*  main 新着旅行記  */
+#wrap #main #content03{
+	width:510px;
+}
+#wrap #main #content03 .ttlarea {
+	height:44px;
+	background:url(../images/ttl05.gif) no-repeat 0 0;
+	
+}
+#wrap #main #content03 .ttlarea h2 {
+	display: block;
+	width:180px;
+	height:44px;
+	margin:0;
+	font-size:1px;
+	text-indent:-9999px;
+}
+#wrap #main #content03 .ttlarea p {
+	display: block;
+	width:240px;
+	float:right;
+	margin:0;
+	padding:18px 10px 0 0;
+	font-size:10px;
+	color:#ABB8C9;
+	line-height:1.1;
+	text-align:right;
+}
+#wrap #main #content03 #content03_txt {
+	min-height:294px;
+	height: auto !important;
+	height: 294px;
+	margin:0;
+	padding:0 10px 0 10px;
+	background:url(../images/bg02.gif) no-repeat left bottom;
+}
+#wrap #main #content03 #content03_txt #con0301{
+	margin:0;
+	padding:0;
+	height: 275px;
+	width:240px;
+	float:left;
+	overflow:hidden;
+	background-color:#383838;
+}
+#wrap #main #content03 #content03_txt #con0302{
+	margin:0;
+	padding:0;
+	height: 275px;
+	width:240px;
+	float:right;
+	overflow:hidden;
+	background-color:#383838;
+}
+#wrap #main #content03 #content03_txt p.bodyttl{
+	margin:4px 0 8px 0 ;
+	padding:0 0 0 18px;
+	display:block;
+	background:url(../images/icon01.gif) no-repeat 0 5px;
+	line-height:1.2;
+	font-size:14px;
+}
+#wrap #main #content03 #content03_txt p.bodydate{
+	font-size:10px;
+	line-height:1.1;
+	color:#ABB8C9;
+	margin:0 0 6px 0;
+}
+#wrap #main #content03 #content03_txt .bodytxt{
+	font-size:12px;
+	line-height:1.2;
+	color:#ABB8C9;
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+}
+#wrap #main #content03 #content03_txt .bodytxt img{
+	margin:0 8px 5px 0;
+}
+
+
+#tenki{
+	padding:10px 0 0 3px;
+}
+

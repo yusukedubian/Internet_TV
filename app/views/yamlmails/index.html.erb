@@ -1,0 +1,74 @@
+<div class="container" id="container">
+	<div class="account_form" style="margin-bottom:15px;">
+		<table>
+			<tr>
+				<td>
+					<h2>
+						<b>
+							<%= _("フリーフォーマット") %>
+						</b>
+					</h2><br>
+				</td>
+			</tr>
+		</table>
+		
+		<form action="yamlcheck", method="post", name="yamlform">
+			<table>	
+				<tr>
+					<td><%= _("To")%></td>
+					<td><%= text_field_tag "mail_info[to]", @mailinfo["to"],
+								{:maxlength => "2000",:style => "width:500px;"} %></td>
+				</tr>
+				<tr>
+					<td><%= _("Cc")%></td>
+					<td><%= text_field_tag "mail_info[cc]", @mailinfo["cc"],
+								{:maxlength => "2000",:style => "width:500px;"} %></td>
+				</tr>
+				<tr>
+					<td><%= _("Bcc")%></td>
+					<td><%= text_field_tag "mail_info[bcc]", @mailinfo["bcc"],
+								{:maxlength => "2000",:style => "width:500px;"} %></td>
+				</tr>
+				<tr>
+					<td><%= _("件名")%></td>
+					<td><%= text_field_tag "mail_info[subject]", @mailinfo["subject"],
+								{:maxlength => "2000",:style => "width:500px;"} %></td>
+				</tr>
+				<tr>
+					<td><%= _("本文")%></td>
+					<td><%= text_area_tag "mail_info[body]", @mailinfo["body"],
+								{:onKeyUp => "limitChars(this, 64000)",:style => "width:500px; height:300px;"} %></td>
+				</tr>
+			</table><br>
+			<table>	
+				<tr>
+					<td>
+						<input type="button" name="button" value=<%= _("YAML構文チェック") %> onclick="do_submit('/yamlmails/yamlcheck/')">
+						<input type="button" name="button" value=<%=_("送信")%> onclick="do_submit('/yamlmails/yamlsend/')">
+						<a href="javascript:history.back();"><%="戻る"%></a>
+					</td>
+				</tr>
+			</table>
+		</form>	
+	</div>
+
+	<%= render :partial => 'index_help' %>
+<div>
+
+<style type="text/css">
+	div.container {list-style-type: none; margin:10px 0px 0px 10px;}
+</style>
+
+<script>
+	function do_submit(action) {
+		window.document.yamlform.action = action ;
+		document.yamlform.submit();
+	}
+	
+	function limitChars(target,maxlength) {
+    	if ( target.value.length > maxlength ) {
+			target.value = target.value.substr(0,maxlength);
+    	}
+	}
+</script>
+

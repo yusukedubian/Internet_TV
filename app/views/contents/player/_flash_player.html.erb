@@ -1,0 +1,87 @@
+<style type="text/css">
+    .flash_guide_text{
+            width:810px;
+            height:262px;
+            word-break:break-all
+    }
+    .flash_guide_title{
+            height:131px;
+            width:100px;
+            padding-top:131px;
+            text-align:center;
+    }
+</style>
+
+<table>
+	<tr>
+		<td>
+			<%=radio_button_tag("contents_setting[flashtype]","url",checked=true,options ={:onclick=>"flashtype('url');"})%><%="FlashURL"%>
+			<%=radio_button_tag("contents_setting[flashtype]","path",checked=false,options ={:onclick=>"flashtype('path');"})%><%=_("ファイルパス")%><font color=red>*</font>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="curl">
+				<%= text_field_tag("contents_setting[flash_url]", h(settings["flash_url"]),:size=>"60")%>
+			</div>
+			<div id="cpath" style="display:none;">
+				<%= file_field_tag("contents_upload[flash_path]", :size=>"60")%>
+			</div>
+		</td>
+	</tr>
+</table>
+<div class="select" style="margin:15px 0px 15px 0px;">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="flash_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="flash_guide_text">
+              <%="FLASHファイルを再生するプレーヤです。"%><br/><br/>
+              <%="《FlashURL》"%><br/>
+              <%="youtubeやニコニコ動画などの動画共有サイト等で閲覧出来る"%><br/>
+              <%="動画（Flash Videoファイル）の埋め込み用URLを入力してください。"%><br/><br/>
+              <%="《埋め込み用URL》"%><br/>
+              <%="Flash埋め込み用ソース内「src="..."」の「""」内にあるURLを使用してください。"%><br/><br/>
+              <%="《ファイルパス》"%><br/>
+              <%="拡張子がswfのファイルを選択し、アップロードしてください。"%><br/><br/>
+              <%="※iPhone等のFlash非対応OSでは、このプレーヤを使用すると画面が表示出来ない事があります。"%><br/>
+              <%="※VASDAQ.TVはVideoプレーヤを推奨しています。"%><br/>
+			</div>
+		</div>
+	</div>
+</div>
+<%  
+if settings["flashtype"] == "path"  
+%>
+<script>document.getElementById("contents_setting_flashtype_path").checked = "checked";
+document.getElementById("curl").style.display = "none";
+document.getElementById("cpath").style.display = "block";</script>
+<%  end
+%>
+<script type="text/javascript" charset="utf-8">
+function flashtype(str){
+	var type = str;
+	if (type =="url"){
+		document.getElementById("cpath").style.display = "none";
+		document.getElementById("curl").style.display = "block";
+	}
+	else{
+		document.getElementById("curl").style.display = "none";
+		document.getElementById("cpath").style.display = "block";
+	}
+}
+</script>

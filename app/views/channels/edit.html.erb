@@ -1,0 +1,297 @@
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker');
+	 var p = jQuery('#picker').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+	});
+</script>
+<div style="margin-left:75px;margin-top:75px;">
+	<div class="select" style="margin-bottom:15px;">
+	<div style="margin:5px;">
+		<%= image_tag("./imagefile/point.png")%><%=_("設定手順")%>
+	</div>
+	<div id="listback">
+	<table id="channelset" border="0px">
+		<tr align="center">
+			<td width="10px"></td>
+			<td width="140px"><b><%= link_to _("チャンネル選択"), channels_path %></b></td>
+			<td width="10px"></td>
+			<td width="120px"><b><%=_("チャンネル設定")%></b></td>
+			<td width="5px"></td>
+			<td width="120px"><b>
+				<%if !@channel.name.blank? && @channel.uploaded_flg %>
+					<b><%= link_to _("ページ選択"),channel_pages_path(@channelstype)%></b>
+				<%else%>
+					<b><%= _("ページ選択")%></b>
+				<%end%>
+				</b></td>
+			<td width="10px"></td>
+			<td width="160px"><b><%=_("ページ＋プレーヤ設定")%></b></td>
+			<td width="5px"></td>
+			<td width="100px"><b><%=_("ページを表示")%></b></td>
+			<td width="30px"></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+	
+	
+	<h1><%= _("チャンネル設定")%></h1>
+	<div class="select" style="margin-bottom:15px;">
+		<table frame="void"  bordercolor="#50494a" style="padding:8px">
+			<tr>
+		<% 12.times do |i|-%>
+			<% flg = false-%>
+			<% @channels.each{|channel|-%>
+				<% if (i + 1) == channel.channel_no-%>
+					<% if (i + 1).to_s == @channel.channel_no.to_s-%>
+					<td height="40px" width="56px"align="center" valign="center" style="border-left:2px solid #d1d1d2; border-top:2px solid #d1d1d2; border-right:1px solid #696969; border-bottom:1px solid #949a9e; background-color:#fb835b;">
+					<%= link_to (image_tag("./channels/on/" + (i+1).to_s + ".gif"),edit_channel_path(channel),:popup => false)%>
+					</td>
+					<%else-%>
+					<td height="42px" width="58px"align="center" valign="center">
+					<%= link_to (image_tag("./channels/on/" + (i+1).to_s + ".gif"),edit_channel_path(channel),:popup => false)%>
+					</td>
+					<%end-%>
+					<% flg = true-%>
+				<%end-%>
+			<%}%>
+			<%if !flg-%>
+			<td height="42px" width="58px"align="center" valign="center">
+					<%= link_to (image_tag("./channels/off/" + (i+1).to_s + ".gif"),new_channel_path(:channel_no=>(i+1)),:popup => false)%>
+			</td>
+			<%end-%>
+		<% end-%>
+			</tr>
+		</table>
+	</div>
+
+	<%
+		id = params[:channel_id]
+		id ||=params[:id]
+	
+	%>
+	
+	<% form_tag(update_channel_path(id), :action=>"update", :multipart=>true) do -%>
+	<div class="select" style="margin-bottom:15px; padding-top:15px;">
+		<div style="margin:5px">
+			<b><%= _("チャンネル") + @channel.channel_no.to_s+_("設定画面")%></b> <b><%=_("チャンネル")+@channel.channel_no.to_s+_("のデータを")%><%=link_to _("削除"),channel_path, :method => :delete,:confirm=>_("本当に削除しますか？")%></b>
+		</div>
+		<table frame="void" rules="none" style="margin:5px;padding-top:10px;">
+			<tr>
+				<td width="100px"><%= _("チャンネル名")%><font color=red>*</font></td>
+				<td width="200px"><%= text_field_tag("channel_propertie[name]", h(@channel["name"]), :maxlength=>40)%></td>
+				<td width=""></td>
+				<td align="right"><%= _("背景色")%></td>
+				<td><%= text_field_tag("channel_propertie[background]", h(@channel["background"]),:class=>"colorwell",:value=>"#123456",:maxlength => 7)%></td>
+				<td rowspan="10"><div id="picker"></div></td>
+			</tr>
+			<tr>
+				<td><%= _("カテゴリー")%></td>
+				<td><%= text_field_tag("channel_propertie[category]", h(@channel["category"]),:maxlength =>40) %></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><%= _("ページ幅")%><font color=red>*</font></td>
+				<td colspan="4">
+					<%= text_field_tag("channel_propertie[width]", @channel["width"],:size=>"6",:maxlength=>"4")%>
+					px - &nbsp;<%= _("画面解像度 幅　")%>
+				<span id="screen_width"></span>
+				<script>document.getElementById("screen_width").innerHTML = "<font color='#f8661b'><b>"+screen.width+"px</b></font>"</script>
+				<%if !@channel.width%>
+					<script>document.getElementById("channel_propertie[width]").value = screen.width</script>
+				<%end%>
+				</td>
+			</tr>
+			<tr>
+				<td><%= _("ページ高さ")%><font color=red>*</font></td>
+				<td colspan="4">
+					<%= text_field_tag("channel_propertie[height]", @channel["height"],:size=>"6",:maxlength=>"4")%>
+					px - &nbsp;<%= _("画面解像度 高さ")%>
+				<span id="screen_height"></span>
+				<script>document.getElementById("screen_height").innerHTML = "<font color='#f8661b'><b>"+screen.height+"px</b></font>"</script>
+				<%if !@channel.height%>
+					<script>document.getElementById("channel_propertie[height]").value = screen.height</script>
+				<%end%>
+				</td>
+			</tr>
+			<tr>
+				<td><%= _("説明")%></td>
+				<td><%= text_area_tag("channel_propertie[description]", h(@channel["description"]),:maxlength =>1024)%></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><%= _("リンク先情報")%></td>
+				<td><%= text_field_tag("channel_propertie[link_info]", h(@channel["link_info"]), :size=>10, :maxlength =>256)%></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><%= _("その他情報")%></td>
+				<td><%= text_field_tag("channel_propertie[other_info]", h(@channel["other_info"]), :maxlength =>256)%></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><%= _("サムネイル")%></td>
+				<td colspan="4"><%= file_field_tag("channel_propertie[thumbnailfile]", :size=>"40")%></td>
+			</tr>
+			<tr>
+				<td><%= _("公開する")%></td>
+				<% if @channel.pages.count == 0 %>
+					<td colspan="4"><%= check_box("channel_propertie","public_flag", :disabled=>"disabled")%>
+				<% elsif @channel["public_flag"]==nil||@channel["public_flag"]==0 %>
+					<td colspan="4"><%= check_box("channel_propertie","public_flag")%>
+				<% elsif  @channel["public_flag"]==1 %>
+					<td colspan="4"><%= check_box("channel_propertie","public_flag", :checked=>"checked") %>
+				<% end %>
+				<a href="/welcome/privacy_policy"><%= _("ページを公開する際には利用規約に同意下さい")%></a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div style="margin:5px;"><%= submit_tag(_("チャンネル情報を保存")) %>
+					<%if !@channel.name.blank? && @channel.uploaded_flg-%>
+					<%= link_to _("ページ選択＞＞"),channel_pages_path(@channelstype)%>
+					<%end-%>
+					</div>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<%end-%>
+
+	<%if @channel.name %>
+	<div class="select" style="margin-bottom:15px;">
+		<% form_tag(upload_channel_path(@channel), :action=>"upload", :multipart=>true) do -%>
+			<table style="margin:5px;">
+				<tr>
+					<td colspan="2">
+						<b><%= _("ページファイルのダウンロード/アップロード") %></b>
+					</td>
+				</tr>
+				<tr>
+					<td width="100px"><%= _("ダウンロード")%></td>
+					<td>
+						<%if !@channel.name.blank? && @channel.pages.size != 0-%>
+							<input type="button" value="ダウンロード" onClick="location.href='<%= download_channel_path(@channel)%>'">
+						<%else-%>
+							<%= _("ページを作成後、ダウンロード可能になります。")%>
+						<%end-%>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><%= _("アップロード")%></td>
+					<td>
+						<% if @channel.uploaded_flg && @channel.pages.size == 0-%>
+						<%= submit_tag _("アップロード") %>
+						<% else-%>
+						<%= _("チャンネルのページを削除、またはクリアされていないためアップロードできません。")%>
+						<% end-%>
+					</td>
+					<td>
+						<% if @channel.uploaded_flg && @channel.pages.size == 0-%>
+						<%= file_field_tag("channel_zip_upload[zipfile_path]", :size=>"60")%>
+						<% end-%>
+					</td>
+					
+				</tr>
+				<tr>
+					<td><%= _("クリア")%></td>
+					<td>
+						<% if !@channel.uploaded_flg%>
+						<input type="button" value="クリア" onClick="location.href='<%= clear_channel_path(@channel) %>'">
+
+						<% else%>
+						<%= _("アップロードされたクリア可能なファイルがありません。")%>
+						<% end%>
+					</td>
+					<td></td>
+				</tr>
+			</table>
+		<%end-%>
+		<% if @channel["background"] != nil %>
+			<script>document.getElementById("channel_propertie[background]").value="<%=@channel['background']%>"</script>
+		<%end-%>
+		<% if !@channel.uploaded_flg-%>
+		<div style="margin-bottom:5px;margin-left:10px;">
+		<b>ページ一覧</b>
+		<table>
+			<tr>
+		<% 10.times do |i|-%>
+			<% flg = false%>
+			<% @channel.pages.each{|page|
+				if page.page_no.to_s == (i + 1).to_s
+			%>
+			<td width="60px">
+				<a href="#" onClick="javascript:window.open('<%=playpage_channel_page_path(@channel,page)%>','_blank'); return true;"><%= image_tag("./pages/on/" + (i+1).to_s + ".gif") %></a>
+			</td>
+			<% flg = true%>
+			<%
+				end 
+			}%>
+			<% if !flg%>
+			<td width="60px">
+					<%= image_tag("./pages/off/" + (i+1).to_s + ".gif") %>
+			</td>
+			<%end%>
+		<% end%>
+			</tr>
+		</table>
+		</div>
+		<%end%>
+	</div>
+	<%end%>
+			
+	<div class="select" style="margin-bottom:15px; padding-top:15px;">
+		<div style="padding-left:5px;">
+			<%= image_tag("./imagefile/point.png")%>&nbsp;<%=_("説明")%>
+		</div>
+		<div style="padding:5px;">
+			<table frame="border" rules="all" bordercolor="#cccccc" width="100%">
+				<tr>
+					<td align="center" width="130px">
+						<%=_("チャンネル設定")%>
+					</td>
+					<td>
+						<%=_("チャンネル設定、各項目を設定してください。")%>
+						<font color='red'>*</font>
+						<%=_("マークがついているものは必須項目です。<br>設定終了後、「チャンネル情報を保存」ボタンを押してください。保存後、「")%>
+						<%if !@channel.name.blank?%>
+							<%= link_to _("ページ選択"),channel_pages_path(@channelstype)%>
+						<%else%>
+							<%= _("ページ選択")%>
+						<%end%>
+						<%=_("」へ進んでください。")%><br>
+						<%=_("※必須項目を入力し、「チャンネル情報を保存」をクリックして保存してください。保存しないと、ページ選択へ進むことはできません。")%><br>
+						<%=_("※ページ幅とページ高さをお使いのモニタの画面解像度に合わせた場合、OS・ブラウザ等によっては画面がはみ出る場合があります。環境に合わせて適宜幅・高さの調整を行って下さい。")%>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="rogo">
+		<%= image_tag("./imagefile/tv.gif",:width=>"50px",:height=>"50px")%>
+		<%= image_tag("./imagefile/bottomrogo.png") %>
+	</div>
+</div>

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv='cache-control' content='non-cache' />
+		<title>Untitled Document</title>
+		<%= stylesheet_link_tag "layoutcontroller"%>
+	</head>
+	<body style="margin:0px;">
+<%
+if @page.contents.length != 0
+%>
+<%
+	@reserveid = Array.new
+	@contents.each{|content|
+		@reserveid << content.id.to_i
+		@reserveid << ","
+	}
+	@reserveid.pop
+%>
+	<!-- Preview Screen & drag & drop -->
+	<% form_tag(drag_channel_page_content_path(params[:channel_id],params[:id]), :action=>"drag", :multipart=>true) do -%>
+	<%if @channel.width < 750 
+		layoutwidth = 750
+	else
+		layoutwidth = @channel.width
+	end%>
+	<table id="test" width="<%=layoutwidth.to_s%>px" height="<%=@channel.height+70%>" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<%
+				screenwidth = @channel.width - 2
+				screenheight = @channel.height - 2
+				time = Time.now.to_i
+				screenground = @page["backgroundfile"] == nil ? @page["background"] : "url('/"+RuntimeSystem.page_save_dir(@page)+@page["backgroundfile"] + "?" +time.to_s + "')"
+				%>
+				<%
+				 if @page["backgroundfile"] == nil 
+				%>
+				<div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; width:<%=screenwidth%>px; height:<%=screenheight%>px;">
+				<%elsif @page["background_display_type"] == 0 %>
+					<div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; background-position:center center;background-repeat:no-repeat; width:<%=screenwidth%>px; height:<%=screenheight%>px;">
+				<%elsif @page["background_display_type"] == 1 %>
+				    <div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; width:<%=screenwidth%>px; height:<%=screenheight%>px;background-repeat:repeat;">
+				<%elsif @page["background_display_type"] == 2 %>
+				    <div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; width:<%=screenwidth%>px; height:<%=screenheight%>px; -moz-background-size: 100% 100%;   -o-background-size: 100% 100%; -webkit-background-size: 100% 100%; -khtml-background-size: 100% 100%;   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(Src=<%=screenground%>,SizingMethod=scale); -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(Src=<%= screenground %>,SizingMethod=scale)'; ">
+				<%end%>
+				<% @i=0
+				contentlength = @contents.length
+				@contents.each{|content|
+				xpos = 0
+				ypos = 0
+				width = 0
+				height = 0
+				@player_id = content.player_id
+				img_obj = Player.find(:first,:conditions=>["id=?",@player_id])
+				xpos = content.x_pos
+				ypos = content.y_pos
+				#ypos = 986 + content.y_pos
+				width = content.width - 2
+				height = content.height - 2
+					@i +=1
+				%>
+				<div id="player<%=@i%>" class="jqDnR" style="width:<%=width%>px; height:<%=height%>px; position:absolute; top:<%=ypos%>px; left:<%=xpos%>px; overflow:hidden;">
+					<span class="popchecker" onMouseOver="mousepop(['over','<%=@i%>']);" onMouseOut="mousepop(['out','<%=@i%>']);"></span>  
+					<table id="pname<%=@i%>" border="0" cellspacing="0" cellpadding="0" onMouseOver="player_drag(<%=@i%>,<%=content.id%>);" onMouseDown="dragposition(<%=@i%>,<%=content.width%>,<%=content.height%>,<%=content.id%>,<%=content.x_pos%>,<%=content.y_pos%>);">   
+						<tr>
+							<td align="center" valign="middle">
+								<div class="player_no" id="pop<%=@i%>"><%="NO."+@i.to_s %></div>
+								<span class="a_player_no" id="a_pop<%=@i%>"><%="NO."+@i.to_s %></span>
+								<%= image_tag("../../../../images/players/" + img_obj.logo_img,:width=>"43px",:height=>"43px",:style=>"cursor: pointer;",:onDblClick=>"to_setting("+params[:channel_id].to_s+","+params[:id].to_s+","+content.id.to_s+")") %>
+							</td>
+						</tr>
+					</table>
+					<div class="jqResize" onMouseOver="player_size(<%=@i%>,<%=content.width%>,<%=content.height%>,<%=content.id%>,<%=content.x_pos%>,<%=content.y_pos%>);" onMouseDown="dragresize(<%=@i%>,<%=content.id%>)"></div>  
+				</div>
+						<%=hidden_field_tag("current_player_id", value = nil, options = {})%>
+						<%=hidden_field_tag(content.id.to_s+"reserve", value = content.width.to_s+"*"+content.height.to_s, options = {})%>
+						<%=hidden_field_tag(content.id.to_s+"preserve", value = content.x_pos.to_s+"*"+content.y_pos.to_s, options = {})%>
+						<%=hidden_field_tag("width"+content.id.to_s, value = content.width, :id=>content.id.to_s+"width")%>
+						<%=hidden_field_tag("height"+content.id.to_s, value = content.height, :id=>content.id.to_s+"height")%>
+						<%=hidden_field_tag("x_pos"+content.id.to_s, value = content.x_pos, :id=>content.id.to_s+"x")%>
+						<%=hidden_field_tag("y_pos"+content.id.to_s, value = content.y_pos, :id=>content.id.to_s+"y")%>
+				<% }%>		
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td id="setting" style="padding:5px 0px 5px 0px;" valign="bottom">
+				<%=hidden_field_tag("content_length",@contents.length)%>
+				<div class="layout_settings" width="750px">
+					<span><%=_("画面サイズ")%></span> <%= _("横：")%>
+					<%= text_field_tag("screenwidth",h(@channel.width),:class=>"settings_data",:maxlength=>"3",:disabled=>"true")%>
+					<%="px"%>
+					<%= hidden_field_tag("remaxwidth",h(@channel.width))%>
+					<%=_("&nbsp;縦：")%>
+					<%= text_field_tag("screenheight",h(@channel.height),:class=>"settings_data",:maxlength=>"3",:disabled=>"true")%>
+					<%="px"%>
+					<%= hidden_field_tag("remaxheight",h(@channel.height))%>
+				</div>
+				<div class="layout_settings">
+					<span><%=_("プレーヤサイズ")%></span> <%= _("横：")%>
+					<%= text_field_tag("dragwidth","",:class=>"settings_data",:maxlength=>"3",:disabled=>"true")%>
+					<%="px"%>
+					<%=_("&nbsp;縦：")%>
+					<%= text_field_tag("dragheight","",:class=>"settings_data",:maxlength=>"3",:disabled=>"true")%>
+					<%="px"%>
+				</div>
+				<div class="layout_settings">
+					<span><%=_("プレーヤ位置")%></span> <%= _("Left：")%>
+					<%= text_field_tag("x_setting","",:class=>"settings_data",:maxlength=>"3",:disabled=>"true")%>
+					<%="px"%>
+					<%=_("&nbsp;Top：")%>
+					<%= text_field_tag("y_setting","",:class=>"settings_data",:maxlength=>"3",:disabled=>"true")%>
+					<%="px"%>
+				</div>
+				<div style="clear:both;"></div>
+				<%= submit_tag _("レイアウトを保存")%>
+				<input id="return_params" type="button" value=<%= _("レイアウトを戻す")%> onclick="reservedate('<%=@reserveid%>');">
+				<%=hidden_field_tag("no_flag","off")%>
+				<input id="players_no" type="button" value="<%=_("プレーヤNO表示")%>" onclick="no_btn('<%=contentlength%>');">
+				<input type="button" class="preview_bt" onClick="javascript:window.open('<%=playpage_channel_page_path(params[:channel_id],params[:id])%>','_blank'); return true;" value="プレビューを表示＞＞"/>	
+			</td>
+		</tr>
+	</table>
+	<%end%>
+<%else%>
+	<%
+	screenwidth = @channel.width - 2
+	screenheight = @channel.height - 2
+	time = Time.now.to_i
+	screenground = @page["backgroundfile"] == nil ? @page["background"] : "url('/"+RuntimeSystem.page_save_dir(@page)+@page["backgroundfile"] + "?" +time.to_s + "')"
+	%>
+	<%
+	 if @page["backgroundfile"] == nil 
+	%>
+		<div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; width:<%=screenwidth%>px; height:<%=screenheight%>px;">
+	<%elsif @page["background_display_type"] == 0 %>
+		<div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; background-position:center center;background-repeat:no-repeat; width:<%=screenwidth%>px; height:<%=screenheight%>px;">
+	<%elsif @page["background_display_type"] == 1 %>
+	    <div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; width:<%=screenwidth%>px; height:<%=screenheight%>px;background-repeat:repeat;">
+	<%elsif @page["background_display_type"] == 2 %>
+	    <div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; width:<%=screenwidth%>px; height:<%=screenheight%>px; -moz-background-size: 100% 100%;   -o-background-size: 100% 100%; -webkit-background-size: 100% 100%; -khtml-background-size: 100% 100%;   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(Src=<%=screenground%>,SizingMethod=scale); -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(Src=<%= screenground %>,SizingMethod=scale)'; ">
+	<%end%>
+			<span class="layout_guide">プレーヤがありません。プレーヤを追加してください。</span>
+		</div>
+<%end%>
+<input type="hidden" id="browsercheck">
+<%= javascript_include_tag "properties"%>
+<%= javascript_include_tag 'jquery-1.2.3.min.js' %>
+<%= javascript_include_tag 'jqDnR.js' %>
+<%= javascript_include_tag 'jquery.dimensions.js' %>
+<%= javascript_include_tag 'ui.mouse.js' %>
+<%= javascript_include_tag 'ui.draggable.js' %>
+<%= javascript_include_tag 'ui.draggable.ext.js' %>
+
+<script>
+var ua = navigator.userAgent;
+var strBrowser;
+
+if       (ua.indexOf("MSIE") >= 0)         strBrowser = "IE";
+else if (ua.indexOf("Netscape") >= 0) strBrowser = "NN";
+else if (ua.indexOf("Safari") >= 0)      strBrowser = "Safari";
+else if (ua.indexOf("Opera") >= 0)      strBrowser = "Opera";
+else if (ua.indexOf("Firefox") >= 0)    strBrowser = "Firefox";
+else if (ua.indexOf("Gecko") >= 0)      strBrowser = "Mozilla";
+else if (ua.indexOf("Mozilla/4") >= 0)   strBrowser = "NN";
+else    strBrowser = "";
+document.getElementById("browsercheck").value = strBrowser; 
+</script>
+
+	</body>
+</html>

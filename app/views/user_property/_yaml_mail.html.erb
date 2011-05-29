@@ -1,0 +1,79 @@
+<div class="account" style="margin-bottom:15px;">
+	<table>
+		<tr>
+			<td colspan="2"><h2><b><%= _("YAMLメール設定") %></b></h2><br></td>
+		</tr>
+	</table>
+	<% form_tag(user_property_path(params[:id]), :method=>"put") do -%>
+		<table>
+			<tr>
+				<td><%= _("YAMLメールアドレス") %></td>
+				<td><%= text_field_tag "user_property[email]", h(@user_property["email"]), :maxlength => 256 %></td>
+
+				<td><%= _("ドメイン名") %></td>
+				<td><%= text_field_tag "user_property[domain]", h(@user_property["domain"]), :maxlength => 255 %></td>
+			</tr>
+			<tr>
+				<td><%= _("送信サーバー（SMTP）") %></td>
+				<td><%= text_field_tag "user_property[smtp_address]", h(@user_property["smtp_address"]), :maxlength => 255 %></td>
+
+				<td><%= _("ポート番号") %></td>
+				<td><%= text_field_tag "user_property[smtp_port]", h(@user_property["smtp_port"]),
+							 :maxlength => 5, :style=>"text-align:right", :size => 5 %></td>
+			</tr>
+			<tr>
+				<td><%= _("受信サーバー（POP）") %></td>
+				<td><%= text_field_tag "user_property[pop3_address]", h(@user_property["pop3_address"]), :maxlength => 255 %></td>
+
+				<td><%= _("ポート番号") %></td>
+				<td><%= text_field_tag "user_property[pop3_port]", h(@user_property["pop3_port"]),
+							 :maxlength => 5, :style=>"text-align:right", :size => 5 %></td>
+			</tr>
+			<tr>
+				<td><%= _("アカウント名") %></td>
+				<td><%= text_field_tag "user_property[auth_user_name]", h(@user_property["auth_user_name"]), :maxlength => 64 %></td>
+
+				<td><%= _("パスワード") %></td>
+				<td><%= password_field_tag "user_property[auth_password]", h(@user_property["auth_password"]), :maxlength => 64 %></td>
+			</tr>	
+			<tr>
+				<td><%= _("認証方式") %></td>
+					<%
+						check_1 = false	
+						check_2 = false	
+						check_3 = false	
+						check_4 = false
+					
+						case  @user_property["authentication"]
+						when "4"
+							check_4 = true
+						when "3"
+							check_3 = true
+						when "2"
+							check_2 = true
+						else
+							check_1 = true
+						end
+					-%>
+				<td>
+					<%= radio_button_tag "user_property[authentication]", 1, check_1 %><%= _("PLAIN") %><br>
+					<%= radio_button_tag "user_property[authentication]", 2, check_2 %><%= _("LOGIN") %><br>
+					<%= radio_button_tag "user_property[authentication]", 3, check_3 %><%= _("CRAM-MD5") %><br>
+					<%= radio_button_tag "user_property[authentication]", 4, check_4 %><%= _("POP before SMTP") %>
+				</td>
+			</tr>
+		
+			<tr>
+				<td>
+					<br><%= submit_tag _("設定") %>
+					<%= link_to _("VASDAQ.TVトップへ"), root_path %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<%=_("※ 認証にSSLを使用するメールアカウントは使用できません。") %>
+				</td>
+			</tr>
+		</table>
+	<% end -%>	
+</div>		

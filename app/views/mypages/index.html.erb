@@ -1,0 +1,103 @@
+<div id="Area">
+    <h1><%= image_tag("./welcome/icon/h1_favorite.gif")%><%= _("マイページ")%></h1>
+    
+    <%= _("マイページの一覧です。最大２０チャンネル登録しておく事ができます。") %><br>
+    <%= _("チャンネルをマイページから削除したい場合は[削除]をクリックして下さい。") %><br><br>
+
+    <% if @mypages.length == 0 %>
+        <%= _("マイページが登録されていません。")%>
+    <% else %>
+    
+        <% i=0 %>
+        <% for mypage in @mypages %>
+            <%
+                page = mypage.channel.pages.find(:first, :order=>"page_no")
+                if !page
+                    next
+                end
+            %>
+            <!-- サムネイルここから -->
+            <h3><%= h mypage.channel.name %></h3>
+            <table>
+            <tr>
+            <td valign="top">
+            <% 
+                if mypage.channel.thumbnail_filename == nil
+                    thumbnail_path = "./welcome/icon/noimage.gif"
+                else
+	                thumbnail_path = "/"+RuntimeSystem.channel_save_dir(mypage.channel)+mypage.channel.thumbnail_filename
+                end
+                preview_url = root_path+RuntimeSystem.page_save_dir(page)+"preview.html"
+            %>
+            <%= link_to(image_tag(thumbnail_path, :width=>199, :height=>149), preview_url, :target=> :blank) %>
+            </td>
+            <td align="left" valign="top">
+                <table border bordercolor="#ffcc66">
+                <tr>
+                <td bgcolor="#ffff99" width="100px" align="center">
+                
+                <%= _("説明")%>
+                </td>
+                <td bgcolor="#ffffcc" width="500px" align="left">
+                <%= h mypage.channel.description %>
+                </td>
+                <td bgcolor="#ffffcc" width="100px" align="left" rowspan="6">
+                    <% form_tag delete_confirm_mypage_path(mypage), :method=>"get" do -%>
+                    <%= submit_tag _("削除") %>
+                    <% end -%>
+                </td>
+                </tr>
+                <tr>
+                <td bgcolor="#ffff99" width="100px" align="center">
+                <%= _("ページ数")%>
+                </td>
+                <td bgcolor="#ffffcc" width="500px" align="left">
+                <%= mypage.channel.pages.count %>
+                </td>
+                </tr>
+                <tr>
+                <td bgcolor="#ffff99" width="100px" align="center">
+                
+                <%= _("画面サイズ")%>(<%=_("px")%>)
+                </td>
+                <td bgcolor="#ffffcc" width="500px" align="left">
+                <%= mypage.channel.width %>×<%= mypage.channel.height %>
+                </td>
+                </tr>
+                <tr>
+                <td bgcolor="#ffff99" width="100px" align="center">
+                <%= _("作成者")%>
+                </td>
+                <td bgcolor="#ffffcc" width="500px" align="left">
+                <%= mypage.channel.user.user_name %>
+                </td>
+                </tr>
+                <tr>
+                <td bgcolor="#ffff99" width="100px" align="center">
+                <%= _("リンク先情報")%>
+                
+                </td>
+                <td bgcolor="#ffffcc" width="500px" align="left">
+                <%= h mypage.channel.link_info %>
+                </td>
+                </tr>
+                <tr>
+                <td bgcolor="#ffff99" width="100px" align="center">
+                <%= _("その他情報")%>
+                </td>
+                <td bgcolor="#ffffcc" width="500px" align="left">
+                <%= h mypage.channel.other_info %>
+                </td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+            </table>
+            
+            <!-- サムネイルここまで -->
+            
+        <% end %>
+        <br>
+        <br>
+    <% end %>
+</div>

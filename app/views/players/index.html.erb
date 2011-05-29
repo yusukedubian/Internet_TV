@@ -1,0 +1,40 @@
+<div style="margin-left:75px;margin-top:75px;">
+	<h1>プレーヤ管理画面</h1>
+	
+	<table>
+	  <tr>
+	  	<td width="20px">No</td>
+		<td width="200px"><%= _("プレーヤ名")%></td>
+		<td width="50px"><%= _("使用可")%></td>
+		<td width="30px"></td>
+		<td width="30px"></td>
+		<td width="30px"></td>
+	
+	  </tr>
+	
+	<% for player in @players %>
+	<%if player.del_flg%>
+	  <tr bgcolor="#d3d3d3">
+		<%else%>
+	  <tr>
+		<%end%>
+	  	<td><%= player.player_no %></td>
+		<td><%= player.name%></td>
+		<td>
+		<%if !player.del_flg%>
+			<%= link_to _("enable"), disable_player_path(player), :method => :put%>
+		<%else%>
+			<%= link_to _("disable"), enable_player_path(player), :method => :put%>
+		<%end%>
+		</td>
+	
+	    <td><%= link_to '表示', player %></td>
+	    <td><%= link_to '編集', edit_player_path(player) %></td>
+	  </tr>
+	<% end %>
+	</table>
+		<%= will_paginate @players%>
+	<br />
+	
+	<%= link_to '新規作成', new_player_path %>
+</div>

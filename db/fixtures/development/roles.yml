@@ -1,0 +1,24 @@
+#
+# roles
+#
+administrator:
+    id: 1
+    name: $LABEL
+    name_kana: システム管理者
+
+free_user:
+    id: 2
+    name: $LABEL
+    name_kana: ユーザー
+
+group_admin:
+    id: 3
+    name: $LABEL
+    name_kana: 管理者
+
+group_user:
+    id: 4
+    name: $LABEL
+    name_kana: ユーザー
+    
+    

@@ -1,0 +1,726 @@
+<style type="text/css">
+	div.audio_title{
+		padding:2px;
+		float:left;
+		border-top:1px solid #cccccc;
+		border-left:1px solid #cccccc;
+		border-bottom:1px solid #cccccc;
+	}
+	div.audio_title_no{
+		text-align:center;
+		padding:2px;
+		width:48px;
+		height:30px;
+		background:#f5f5f5;
+	}
+	div.audio_title_name{
+		text-align:center;
+		padding:2px;
+		width:248px;
+		height:30px;
+		background:#f5f5f5;
+	}
+	div.audio_title_file{
+		text-align:center;
+		padding:2px;
+		width:98px;
+		height:30px;
+		background:#f5f5f5;
+	}
+	div.audio_title_type{
+		text-align:center;
+		padding:2px;
+		width:98px;
+		height:30px;
+		background:#f5f5f5;
+	}
+	div.audio_title_delete{
+		text-align:center;
+		padding:2px;
+		width:68px;
+		height:30px;
+		background:#f5f5f5;
+	}
+	div#title_right{
+		border-top:1px solid #cccccc;
+		border-right:1px solid #cccccc;
+		border-left:1px solid #cccccc;
+	}
+	div.audio_frame{
+		position:relative;
+		margin:0px 0px 3px 0px;
+		padding:3px;
+		float:left;
+		border-top:1px solid #cccccc;
+		border-bottom:1px solid #cccccc;
+		border-left:1px solid #cccccc;
+	}
+	div.audio_no_frame{
+		position:relative;
+		margin:0px 0px 3px 0px;
+		padding:3px;
+		border-top:1px solid #cccccc;
+		border-bottom:1px solid #cccccc;
+		border-left:1px solid #cccccc;
+	}
+	
+	div#right{
+		border:1px solid #cccccc;
+	}
+	
+	div.audio_no{
+		width:50px;
+		height:65px;
+	}
+	div.audio_name{
+		width:250px;
+		height:65px;
+	}
+	div.audio_file_type{
+		width:100px;
+		height:65px;
+	}
+	div.audio_type{
+		width:100px;
+		height:65px;
+	}
+	div.audio_delete{
+		width:70px;
+		height:65px;
+	}
+	div.codec_title{
+		font-size:11px;
+		width:33px;
+		float:left;
+	}
+	div.file_name{
+		white-space: nowrap;
+		overflow:hidden;
+		width:230px;
+		margin:0px 5px 0px 5px;
+		padding:1px 0px 1px 7px;
+		border-bottom:dotted 2px #cccccc;
+	}
+	div.file_extension{
+		text-align:center;
+		white-space: nowrap;
+		overflow:hidden;
+		width:80px;
+		margin:0px 5px 0px 5px;
+		padding:1px 0px 1px 7px;
+		border-bottom:dotted 2px #cccccc;
+	}
+	div.file_type{
+		text-align:center;
+		white-space: nowrap;
+		overflow:hidden;
+		width:80px;
+		margin:0px 5px 0px 5px;
+		padding:1px 0px 1px 7px;
+		border-bottom:dotted 2px #cccccc;
+	}
+	div.file_del{
+		text-align:center;
+		white-space: nowrap;
+		overflow:hidden;
+		width:50px;
+		margin:0px 5px 0px 5px;
+		padding:1px 0px 1px 7px;
+		border-bottom:dotted 2px #cccccc;
+	}
+	table.audio_list {
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	}
+	.audio_list th{
+		padding: 0px;
+	}
+	.audio_list td{
+		padding: 0px;
+	}
+	ul #order_list{list-style:none;}
+	ul li{line-height:130%;}
+	.li_hover:hover{
+		background:#f0f5f9;
+	}
+	.audio_select{
+		width:599px;
+		padding:2px;
+		border-top:1px solid #cccccc;
+		border-left:1px solid #cccccc;
+		border-right:1px solid #cccccc;
+	}
+	.audio_select_info{
+		padding:8px;
+		background:#f5f5f5;	
+	}
+	.audio_form{
+		width:583px;
+		padding:10px;
+		border:1px solid #cccccc;
+		margin-bottom:10px;
+	}
+	.set_audio_info{
+		width:583px;
+		font-size:11px;
+	}
+	
+	div.audio_box {
+		position:relative;
+	    display: -moz-inline-box; /*for Firefox 2*/
+	    display: inline-block; /*for modern*/
+	    /display: inline; /*for ie5～7*/
+	    /zoom: 1; /*for ie5～7*/
+		margin-bottom:15px;
+		vertical-align: top;
+	}
+	span#upload_no{
+		padding:2px;
+		background:#f0f5f9;
+		font-size:17px;
+		font-weight:bold;
+	}
+    .audio_guide_text{
+            width:810px;
+            height:120px;
+            word-break:break-all
+    }
+    .audio_guide_title{
+            height:70px;
+            width:100px;
+            padding-top:50px;
+            text-align:center;
+    }	
+</style>
+
+	<div class="audio_select">
+		<div class="audio_select_info">
+		<%= "設定タイプ："%>
+		<%= radio_button_tag("contents_setting[audio_set_type]", "audio_upload", true, options ={:onclick=>"view_setting_type('audio_upload');"})%><%="アップロード"%>
+		<%= radio_button_tag("contents_setting[audio_set_type]", "audio_url", false, options ={:onclick=>"view_setting_type('audio_url');"})%><%="URL指定"%>
+		</div>
+	</div>
+	
+	<div class="audio_form">
+		<div class="audio_box">
+		<!-- upload -->
+			<div id="audio_upload">
+				<div id="mp3_upload">		
+					<div class="codec_title"><%="MP3:"%></div>
+					<%= file_field_tag("contents_upload[audio_file_mp3]",:id=>"file_mp3_form", :size=>"40")%>
+				</div>
+				<div id="ogg_upload">		
+					<div class="codec_title"><%="OGG:"%></div>
+					<%= file_field_tag("contents_upload[audio_file_ogg]",:id=>"file_ogg_form", :size=>"40")%>
+				</div>
+				<div id="wav_upload">		
+					<div class="codec_title"><%="WAV:"%></div>
+					<%= file_field_tag("contents_upload[audio_file_wav]",:id=>"file_wav_form", :size=>"40")%>
+				</div>
+			</div>
+			
+		<!-- URL -->
+			<div id="audio_url" style="display:none;">
+				<div id="mp3_url">		
+					<div class="codec_title"><%="MP3:"%></div>
+					<%= text_field_tag("contents_setting[audio_url_mp3]","",:size=>"50",:maxlength => 256)%>
+				</div>
+				<div id="ogg_url">		
+					<div class="codec_title"><%="OGG:"%></div>
+					<%= text_field_tag("contents_setting[audio_url_ogg]","",:size=>"50",:maxlength => 256)%>
+				</div>
+				<div id="wav_url">		
+					<div class="codec_title"><%="WAV:"%></div>
+					<%= text_field_tag("contents_setting[audio_url_wav]","",:size=>"50",:maxlength => 256)%>
+				</div>
+			</div>
+		</div>
+		<div class="audio_box">
+			<div class="set_audio_info">
+					<%=_("※ブラウザによって再生可能なコーデックが違うため、MP３、OGG、WAV、３つのファイルを設定する事を推奨します。")%>
+			</div>
+		</div>
+	</div>
+
+
+<%music_length = 0%>
+<%add_music = "0"%>
+<% 5.times do |i|-%>
+	<%i +=1%>
+	<%
+	if !settings["audio"+i.to_s+"_audio_file_mp3"].blank? || !settings["audio"+i.to_s+"_audio_url_mp3"].blank?
+		music_length += 1
+		add_music = i
+	elsif !settings["audio"+i.to_s+"_audio_file_ogg"].blank? || !settings["audio"+i.to_s+"_audio_url_ogg"].blank?
+		music_length += 1
+		add_music = i
+	elsif !settings["audio"+i.to_s+"_audio_file_wav"].blank? || !settings["audio"+i.to_s+"_audio_url_wav"].blank?
+		music_length += 1
+		add_music = i
+	elsif i == 5
+		if music_length == 0
+			music_length = 1
+		end
+	end
+	%>
+<%end%>
+
+<table class="audio_list" cellpadding="0" cellspacing="0" border="0">
+	<tr><td colspan="2">
+	<div class="audio_title"><div class="audio_title_no"><%="曲"%></div></div>
+	<div class="audio_title"><div class="audio_title_name"><%="設定したファイル"%></div></div>
+	<div class="audio_title"><div class="audio_title_file"><%="ファイルタイプ"%></div></div>
+	<div class="audio_title"><div class="audio_title_type"><%="設定タイプ"%></div></div>
+	<div id="title_right" class="audio_title"><div class="audio_title_delete"><%="削除"%></div></div>
+	</td></tr>
+	<tr><td>
+<% music_length.times do |i|-%>
+	<%i +=1%>
+		<div class="audio_no_frame"><div class="audio_no"><b><%=i.to_s%></b></div></div>
+<%end%>
+	</td><td>
+	
+	<ul id="order_list" style="list-style:none;">
+
+<% music_length.times do |i|-%>
+	<%i +=1%>
+	<li id="<%=i.to_s%>" class="li_hover" style="cursor:s-resize;">
+	<span id="<%=i.to_s%>handle" class="handle">
+<!-- File Name -->
+	<div class="audio_frame">
+		<div class="audio_name">
+			<%if !settings["audio"+i.to_s+"_audio_file_mp3"].blank?%>
+				<%=hidden_field_tag("file_list_mp3["+i.to_s+"mp3]",settings["audio"+i.to_s+"_audio_file_mp3"].to_s)%>
+				<div class="file_name"><%=settings["audio"+i.to_s+"_audio_file_mp3"].to_s%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_mp3"].blank?%>
+					<div class="file_name"><%=settings["audio"+i.to_s+"_audio_url_mp3"]%></div>
+				<%end
+			end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_ogg"].blank?%>
+				<%=hidden_field_tag("file_list_ogg["+i.to_s+"ogg]",settings["audio"+i.to_s+"_audio_file_ogg"].to_s)%>
+				<div class="file_name"><%=settings["audio"+i.to_s+"_audio_file_ogg"].to_s%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_ogg"].blank?%>
+					<div class="file_name"><%=settings["audio"+i.to_s+"_audio_url_ogg"]%></div>
+				<%end
+			end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_wav"].blank?%>
+				<%=hidden_field_tag("file_list_wav["+i.to_s+"wav]",settings["audio"+i.to_s+"_audio_file_wav"].to_s)%>
+				<div class="file_name"><%=settings["audio"+i.to_s+"_audio_file_wav"].to_s%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_wav"].blank?%>
+					<div class="file_name"><%=settings["audio"+i.to_s+"_audio_url_wav"]%></div>
+				<%end
+			end%>
+		</div>
+	</div>
+	
+<!-- file_extension -->
+	<div class="audio_frame">
+		<div class="audio_file_type">
+			<%if !settings["audio"+i.to_s+"_audio_file_mp3"].blank? || !settings["audio"+i.to_s+"_audio_url_mp3"].blank?%>
+				<div class="file_extension"><%="MP3"%></div>
+			<%end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_ogg"].blank? || !settings["audio"+i.to_s+"_audio_url_ogg"].blank?%>
+				<div class="file_extension"><%="OGG"%></div>
+			<%end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_wav"].blank? || !settings["audio"+i.to_s+"_audio_url_wav"].blank?%>
+				<div class="file_extension"><%="WAV"%></div>
+			<%end%>
+		</div>
+	</div>
+	
+<!-- File Type -->
+	<div class="audio_frame">
+		<div class="audio_type">
+			<%if !settings["audio"+i.to_s+"_audio_file_mp3"].blank?%>
+				<div class="file_type"><%="アップロード"%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_mp3"].blank?%>
+					<div class="file_type"><%="URL"%></div>
+				<%end
+			end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_ogg"].blank?%>
+				<div class="file_type"><%="アップロード"%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_ogg"].blank?%>
+					<div class="file_type"><%="URL"%></div>
+				<%end
+			end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_wav"].blank?%>
+				<div class="file_type"><%="アップロード"%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_wav"].blank?%>
+					<div class="file_type"><%="URL"%></div>
+				<%end
+			end%>
+		</div>
+	</div>
+		
+<!-- File Delete -->
+	<div id="right" class="audio_frame">
+		<div class="audio_delete">
+			<%file_count = 0%>
+			<%if !settings["audio"+i.to_s+"_audio_file_mp3"].blank?%>
+				<%file_count += 1%>
+			<%end
+			  if !settings["audio"+i.to_s+"_audio_url_mp3"].blank?%>
+				<%file_count += 1%>
+			<%end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_ogg"].blank?%>
+				<%file_count += 1%>
+			<%end
+			  if !settings["audio"+i.to_s+"_audio_url_ogg"].blank?%>
+				<%file_count += 1%>
+			<%end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_wav"].blank?%>
+				<%file_count += 1%>
+			<%end
+			  if !settings["audio"+i.to_s+"_audio_url_wav"].blank?%>
+				<%file_count += 1%>
+			<%end%>
+			
+			<%if !settings["audio"+i.to_s+"_audio_file_mp3"].blank?%>
+				<div id="<%=i.to_s%>del_mp3" class="file_del"><%="削除"%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_mp3", false, options = {:id=>i.to_s+"_file_mp3", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_mp3"].blank?%>
+					<div class="file_del"><%="削除"%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_mp3", false, options = {:id=>i.to_s+"_url_mp3", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+				<%end
+			end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_ogg"].blank?%>
+				<div id="<%=i.to_s%>del_ogg" class="file_del"><%="削除"%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_ogg", false, options = {:id=>i.to_s+"_file_ogg",:onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_ogg"].blank?%>
+					<div class="file_del"><%="削除"%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_ogg", false, options = {:id=>i.to_s+"_url_ogg", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+				<%end
+			end%>
+			<%if !settings["audio"+i.to_s+"_audio_file_wav"].blank?%>
+				<div id="<%=i.to_s%>del_wav" class="file_del"><%="削除"%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_wav", false, options = {:id=>i.to_s+"_file_wav", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+			<%else
+				if !settings["audio"+i.to_s+"_audio_url_wav"].blank?%>
+					<div class="file_del"><%="削除"%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_wav", false, options = {:id=>i.to_s+"_url_wav", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+				<%end
+			end%>
+			<%=hidden_field_tag("file_count["+i.to_s+"]",file_count)%>
+		</div>
+	</div>
+	
+
+	</span>
+	<div style="clear:both;"></div>
+	</li>
+	<% end%>
+	</ul>
+</td></tr></table>
+
+<%if add_music.to_s == "5"%>
+<script type="text/javascript" charset="utf-8">
+document.getElementById("file_mp3_form").disabled = true;
+document.getElementById("file_ogg_form").disabled = true;
+document.getElementById("file_wav_form").disabled = true;
+</script>
+<%end%>
+<%next_music = add_music.to_i+1%>
+<%=hidden_field_tag("music_length",music_length.to_s)%>
+<%=hidden_field_tag("contents_setting[current_music]",next_music.to_s,:id=>"current_music")%>
+<br/>
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="audio_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="audio_guide_text">
+				<%= _("音声や音楽の再生をするプレーヤです。最大5曲までの音楽ファイルを指定する事が出来ます。HTML5対応ブラウザで再生できます。") %><br/>
+				<%= _("ファイルアップロードは、他の曲で使用している同じファイルをアップロードすることはできません。") %><br/>
+				<%= _("一つの拡張子にアップロード、URL指定の両方をセットした場合は、アップロードを優先し再生します。") %><br/>
+				<%= _("曲右側の表をドラッグ＆ドロップすることにより、曲順を変更することができます。") %><br/>
+				<%= _("曲順と削除を同時に編集することはできません。") %><br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<input type="hidden" name="contents_setting[local_url]" value=<%= request.env["HTTP_HOST"] %>>
+	<input type="hidden" name="current_order[]"  id="list_items">
+
+<script type="text/javascript" charset="utf-8">
+function view_setting_type(str,no){
+	var type = str;
+	if (type == "audio_upload") {
+		document.getElementById("audio_upload").style.display = "block";
+		document.getElementById("audio_url").style.display = "none";
+	}else{
+		document.getElementById("audio_upload").style.display = "none";
+		document.getElementById("audio_url").style.display = "block";
+	}
+}
+</script>
+
+<script type="text/javascript"> 
+$(document).ready(function() { 
+	$("#order_list").sortable({ 
+		handle : '.handle', 
+		revert: false,
+		axis:'y',
+		update : function () { 
+		$('#list_items').val($('#order_list').sortable('toArray') );
+    	}
+
+		,
+		stop: function(){
+			var order_flag = false;
+			var length = document.getElementById("music_length").value;
+			var ordre = document.getElementById("list_items").value;
+			var n = 0;
+			var array = [];
+			for (i = 1; i <= parseInt(length); i = i + 1) {
+				if (parseInt(ordre.split(",")[n]) == i){
+					order_flag = true;
+				}
+				else{
+					order_flag = false;
+					break
+				}
+				n += 1;
+
+			}
+			
+			if (order_flag == false) {
+				for (i = 1; i <= parseInt(length); i = i + 1) {
+					var element_ump3 = document.getElementById(i + "_url_mp3");
+					var element_uogg = document.getElementById(i + "_url_ogg");
+					var element_uwav = document.getElementById(i + "_url_wav");
+					var element_fmp3 = document.getElementById(i + "_file_mp3");
+					var element_fogg = document.getElementById(i + "_file_ogg");
+					var element_fwav = document.getElementById(i + "_file_wav");
+					if (element_ump3 != null) {
+						element_ump3.disabled = true;
+					}
+					if (element_uogg != null) {
+						element_uogg.disabled = true;
+					}
+					if (element_uwav != null) {
+						element_uwav.disabled = true;
+					}
+					if (element_fmp3 != null) {
+						element_fmp3.disabled = true;
+					}
+					if (element_fogg != null) {
+						element_fogg.disabled = true;
+					}
+					if (element_fwav != null) {
+						element_fwav.disabled = true;
+					}
+				}
+			}
+			else{
+				for (i = 1; i <= parseInt(length); i = i + 1) {
+					var element_ump3 = document.getElementById(i + "_url_mp3");
+					var element_uogg = document.getElementById(i + "_url_ogg");
+					var element_uwav = document.getElementById(i + "_url_wav");
+					var element_fmp3 = document.getElementById(i + "_file_mp3");
+					var element_fogg = document.getElementById(i + "_file_ogg");
+					var element_fwav = document.getElementById(i + "_file_wav");
+					if (element_ump3 != null) {
+						element_ump3.disabled = false;
+					}
+					if (element_uogg != null) {
+						element_uogg.disabled = false;
+					}
+					if (element_uwav != null) {
+						element_uwav.disabled = false;
+					}
+					if (element_fmp3 != null) {
+						element_fmp3.disabled = false;
+					}
+					if (element_fogg != null) {
+						element_fogg.disabled = false;
+					}
+					if (element_fwav != null) {
+						element_fwav.disabled = false;
+					}
+				}
+			}
+		}
+
+  	});
+});
+</script>
+
+<script type="text/javascript">
+	function box_obj(str,count){
+		var flag = false;
+		var checked_count = 0;
+		var url_mp3 = document.getElementById(str+"_url_mp3");
+		var url_ogg = document.getElementById(str+"_url_ogg");
+		var url_wav = document.getElementById(str+"_url_wav");
+		var file_mp3 = document.getElementById(str+"_file_mp3");
+		var file_ogg = document.getElementById(str+"_file_ogg");
+		var file_wav = document.getElementById(str+"_file_wav");
+		if (url_mp3 != null) {
+			if (url_mp3.checked == true) {
+				checked_count += 1;
+				nodrag();
+			}
+			else{
+				ondrag();
+			}
+		}
+		if (url_ogg != null) {
+			if (url_ogg.checked == true) {
+				checked_count += 1;
+				nodrag();
+			}
+			else{
+				ondrag();
+			}
+		}
+		if (url_wav != null) {
+			if (url_wav.checked == true) {
+				checked_count += 1;
+				nodrag();
+			}
+			else{
+				ondrag();
+			}
+		}
+		if (file_mp3 != null) {
+			if (file_mp3.checked == true) {
+				checked_count += 1;
+				nodrag();
+			}
+			else{
+				ondrag();
+			}
+		}
+		if (file_ogg != null) {
+			if (file_ogg.checked == true) {
+				checked_count += 1;
+				nodrag();
+			}
+			else{
+				ondrag();
+			}
+		}
+		if (file_wav != null) {
+			if (file_wav.checked == true) {
+				checked_count += 1;
+				nodrag();
+			}
+			else{
+				ondrag();
+			}
+		}
+		var current_count = parseInt(count) - checked_count;
+		document.getElementById("file_count["+str+"]").value = current_count;
+	} 
+	
+	function nodrag(){
+		for (i = 1; i <= 5; i = i + 1) {
+			var element = document.getElementById(i+"handle");
+			if (element != null){
+				element.className = 'nohandle';	
+			}
+		}
+	}
+	
+	function ondrag(){
+		var flag = true;
+		for (i = 1; i <= 5; i = i + 1) {
+			var element_ump3 = document.getElementById(i+"_url_mp3");
+			var element_uogg = document.getElementById(i+"_url_ogg");
+			var element_uwav = document.getElementById(i+"_url_wav");
+			if (element_ump3 != null) {
+				if (element_ump3.checked == true) {
+					flag = false
+				}
+			}
+			if (element_uogg != null) {
+				if (element_uogg.checked == true) {
+					flag = false
+				}
+			}
+			if (element_uwav != null) {
+				if (element_uwav.checked == true) {
+					flag = false
+				}
+			} 
+			var element_fmp3 = document.getElementById(i+"_file_mp3");
+			var element_fogg = document.getElementById(i+"_file_ogg");
+			var element_fwav = document.getElementById(i+"_file_wav");
+			if (element_fmp3 != null) {
+				if (element_fmp3.checked == true) {
+					flag = false
+				}
+			}
+			if (element_fogg != null) {
+				if (element_fogg.checked == true) {
+					flag = false
+				}
+			}
+			if (element_fwav != null) {
+				if (element_fwav.checked == true) {
+					flag = false
+				}
+			}
+			if (flag == true){
+				var element = document.getElementById(i+"handle");
+				if (element != null){
+					element.className = 'handle';	
+				}
+			} 
+		}
+	}
+</script>
+
+<script type="text/javascript">
+	for (i = 1; i <= 5; i = i + 1) {
+		var element_ump3 = document.getElementById(i + "_url_mp3");
+		var element_uogg = document.getElementById(i + "_url_ogg");
+		var element_uwav = document.getElementById(i + "_url_wav");
+		var element_fmp3 = document.getElementById(i + "_file_mp3");
+		var element_fogg = document.getElementById(i + "_file_ogg");
+		var element_fwav = document.getElementById(i + "_file_wav");
+		if (element_ump3 != null) {
+			element_ump3.disabled = false;
+			element_ump3.checked = false;
+		}
+		if (element_uogg != null) {
+			element_uogg.disabled = false;
+			element_uogg.checked = false;
+		}
+		if (element_uwav != null) {
+			element_uwav.disabled = false;
+			element_uwav.checked = false;
+		}
+		if (element_fmp3 != null) {
+			element_fmp3.disabled = false;
+			element_fmp3.checked = false;
+		}
+		if (element_fogg != null) {
+			element_fogg.disabled = false;
+			element_fogg.checked = false;
+		}
+		if (element_fwav != null) {
+			element_fwav.disabled = false;
+			element_fwav.checked = false;
+		}
+	}
+</script>
+
+<%= javascript_include_tag 'jquery-ui-1.8.2.custom.min' %>

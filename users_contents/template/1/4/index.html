@@ -1,0 +1,52 @@
+<script>var obj = null; 
+function clock(){ 
+var time = changeTime(); 
+var date = changeDate(); 
+var temp = ''; 
+temp += '<font '; 
+temp += ' style=" '; 
+temp += ' font-size:30px;'; 
+temp += ' color:#029d03;'; 
+temp += '"> '; 
+temp += date + '  ' + time; 
+temp += '</font> '; 
+document.getElementById('clock').innerHTML = temp; 
+setTimeout('clock()', 1000); 
+} 
+ 
+function changeDate(){ 
+    var myDate=new Date(); 
+    var YYYY=myDate.getFullYear(); 
+    var MM=myDate.getMonth()+1; 
+    if(MM<10){MM='0'+MM;} 
+    var DD=myDate.getDate(); 
+    if(DD<10){DD='0'+DD;} 
+    var date=YYYY+'/'+MM+'/'+DD; 
+    return date; 
+} 
+ 
+function changeTime(){ 
+ 
+    var myTime=new Date(); 
+    var hh=myTime.getHours(); 
+    var MI=myTime.getMinutes(); 
+    if(MI < 10){MI = '0' + MI} 
+    var ss=myTime.getSeconds(); 
+    if(ss < 10){ss = '0' + ss} 
+    var time=hh +':' + MI+ ':' + ss; 
+    return time; 
+} 
+ 
+onload = function(){ 
+  clock(); 
+}; 
+</script><body style='margin:0px;'>
+<table cellpading=0 cellspacing=0 style='width:100%; height:100%; background:#020f1d;'>
+ <tr>
+   <td valign='middle'>
+     <div id='clock' style='width:100%; text-align:center;'> 
+     </div>
+   </td>
+ </tr>
+</table>
+</body>

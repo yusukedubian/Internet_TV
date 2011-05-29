@@ -1,0 +1,794 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+# rake db:import:development
+
+#template1
+#t1_1
+template_conpro_1:
+    template_content_id : 1
+    property_key : urlpath1
+    property_value : http://business.nikkeibp.co.jp/rss/all_nbo.rdf
+
+template_conpro_2:
+    template_content_id : 1 
+    property_key : title1
+    property_value : 日経ビジネスオンライン 
+
+template_conpro_3:
+    template_content_id : 1
+    property_key : scroll_direction
+    property_value : up
+
+template_conpro_4:
+    template_content_id : 1
+    property_key : scroll_speed
+    property_value : 50
+
+template_conpro_5:
+    template_content_id : 1
+    property_key : font_size
+    property_value : 20
+
+template_conpro_6:
+    template_content_id : 1
+    property_key : font_color
+    property_value : \#dce0f9
+
+template_conpro_7:
+    template_content_id : 1
+    property_key : title_color
+    property_value : \#ffffff
+
+template_conpro_8:
+    template_content_id : 1
+    property_key : title_font_color
+    property_value : \#000000
+    
+template_conpro_9:
+    template_content_id : 1
+    property_key : back_color
+    property_value : \#020f1d
+
+#t1_2
+template_conpro_10:
+    template_content_id : 2
+    property_key : urlpath1
+    property_value : http://www.chukei-news.co.jp/index.xml
+
+template_conpro_11:
+    template_content_id : 2 
+    property_key : title1
+    property_value : 中部経済新聞
+
+template_conpro_12:
+    template_content_id : 2
+    property_key : scroll_direction
+    property_value : up
+
+template_conpro_13:
+    template_content_id : 2
+    property_key : scroll_speed
+    property_value : 50
+
+template_conpro_14:
+    template_content_id : 2
+    property_key : font_size
+    property_value : 20
+
+template_conpro_15:
+    template_content_id : 2
+    property_key : font_color
+    property_value : \#dce0f9
+
+template_conpro_16:
+    template_content_id : 2
+    property_key : title_color
+    property_value : \#ffffff
+
+template_conpro_17:
+    template_content_id : 2
+    property_key : title_font_color
+    property_value : \#000000
+
+template_conpro_18:
+    template_content_id : 2
+    property_key : back_color
+    property_value : \#020f1d
+
+#t1_3
+template_conpro_19:
+    template_content_id : 3
+    property_key : urlpath1
+    property_value : http://eco.nikkeibp.co.jp/rss/eco/eco.rdf
+
+template_conpro_20:
+    template_content_id : 3
+    property_key : title1
+    property_value : ECO JAPAN
+
+template_conpro_21:
+    template_content_id : 3
+    property_key : scroll_direction
+    property_value : up
+
+template_conpro_22:
+    template_content_id : 3
+    property_key : scroll_speed
+    property_value : 50
+
+template_conpro_23:
+    template_content_id : 3
+    property_key : font_size
+    property_value : 20
+
+template_conpro_24:
+    template_content_id : 3
+    property_key : font_color
+    property_value : \#dce0f9
+
+template_conpro_25:
+    template_content_id : 3
+    property_key : title_color
+    property_value : \#ffffff
+
+template_conpro_26:
+    template_content_id : 3
+    property_key : title_font_color
+    property_value : \#000000
+
+template_conpro_27:
+    template_content_id : 3
+    property_key : back_color
+    property_value : \#020f1d
+
+#t1_4
+template_conpro_28:
+    template_content_id : 4
+    property_key : font_size
+    property_value : 30
+
+template_conpro_29:
+    template_content_id : 4
+    property_key : font_color
+    property_value : \#029d03
+
+template_conpro_30:
+    template_content_id : 4
+    property_key : analogtype
+    property_value : white
+
+template_conpro_31:
+    template_content_id : 4
+    property_key : back_color
+    property_value : \#020f1d
+
+#template2
+#t2_1
+template_conpro_32:
+    template_content_id : 5
+    property_key : camera_path
+    property_value : 
+
+template_conpro_33:
+    template_content_id : 5
+    property_key : account_code
+    property_value : 
+
+#t2_2
+template_conpro_34:
+    template_content_id : 6
+    property_key : scroll_direction
+    property_value : up
+
+template_conpro_35:
+    template_content_id : 6
+    property_key : yamlperiodtype
+    property_value : Today
+
+template_conpro_36:
+    template_content_id : 6
+    property_key : scroll_speed
+    property_value : 70
+
+template_conpro_37:
+    template_content_id : 6
+    property_key : yamlperiodspecification
+    property_value : Day
+
+template_conpro_38:
+    template_content_id : 6
+    property_key : yamlsubject
+    property_value : test
+
+template_conpro_39:
+    template_content_id : 6
+    property_key : font_size
+    property_value : 10
+
+template_conpro_40:
+    template_content_id : 6
+    property_key : font_color
+    property_value : \#e7f0f8
+
+template_conpro_41:
+    template_content_id : 6
+    property_key : back_color
+    property_value : \#123456
+
+#t2_3
+template_conpro_42:
+    template_content_id : 7
+    property_key : camera_path
+    property_value : 
+
+template_conpro_43:
+    template_content_id : 7
+    property_key : account_code
+    property_value : 
+
+#t2_4
+template_conpro_44:
+    template_content_id : 8
+    property_key : scroll_direction
+    property_value : up
+
+template_conpro_45:
+    template_content_id : 8
+    property_key : yamlperiodtype
+    property_value : Today
+
+template_conpro_46:
+    template_content_id : 8
+    property_key : scroll_speed
+    property_value : 70
+
+template_conpro_47:
+    template_content_id : 8
+    property_key : yamlperiodspecification
+    property_value : Day
+
+template_conpro_48:
+    template_content_id : 8
+    property_key : yamlsubject
+    property_value : test
+
+template_conpro_49:
+    template_content_id : 8
+    property_key : font_size
+    property_value : 10
+
+template_conpro_50:
+    template_content_id : 8
+    property_key : font_color
+    property_value : \#e7f0f8
+
+template_conpro_51:
+    template_content_id : 8
+    property_key : back_color
+    property_value : \#123456
+    
+#template3
+#t3_1
+template_conpro_52:
+    template_content_id : 9
+    property_key : font_color
+    property_value : \#edf1f8
+
+template_conpro_53:
+    template_content_id : 9
+    property_key : control_type
+    property_value : 4
+
+template_conpro_54:
+    template_content_id : 9
+    property_key : font_size
+    property_value : 60
+
+template_conpro_55:
+    template_content_id : 9
+    property_key : scroll_speed
+    property_value : 70
+    
+template_conpro_56:
+    template_content_id : 9
+    property_key : scroll_direction
+    property_value : up
+
+template_conpro_57:
+    template_content_id : 9
+    property_key : back_color
+    property_value : \#051424
+
+template_conpro_58:
+    template_content_id : 9
+    property_key : text_content
+    property_value : VASDAQ - TV
+      
+#t3_2
+template_conpro_59:
+    template_content_id : 10
+    property_key : font_color
+    property_value : \#ffffff
+
+template_conpro_60:
+    template_content_id : 10
+    property_key : control_type
+    property_value : 1
+
+template_conpro_61:
+    template_content_id : 10
+    property_key : font_size
+    property_value : 30
+
+template_conpro_62:
+    template_content_id : 10
+    property_key : scroll_speed
+    property_value : 50
+    
+template_conpro_63:
+    template_content_id : 10
+    property_key : scroll_direction
+    property_value : up
+    
+template_conpro_64:
+    template_content_id : 10
+    property_key : back_color
+    property_value : \#051424
+
+template_conpro_65:
+    template_content_id : 10
+    property_key : text_content
+    property_value : VASDAQ-TVとは？
+    
+#t3_3
+template_conpro_66:
+    template_content_id : 11
+    property_key : font_size
+    property_value : 40
+    
+template_conpro_67:
+    template_content_id : 11
+    property_key : font_color
+    property_value : \#ffffff
+    
+template_conpro_68:
+    template_content_id : 11
+    property_key : analoqtype
+    property_value : white
+    
+template_conpro_69:
+    template_content_id : 11
+    property_key : back_color
+    property_value : \#020a12
+    
+#t3_4
+template_conpro_70:
+    template_content_id : 12
+    property_key : fiximage_path
+    property_value : VT01.bmp
+ 
+#t3_4   
+template_conpro_71:
+    template_content_id : 13
+    property_key : fiximage_path
+    property_value : VT02.jpg
+
+#template4
+#t4_1
+template_conpro_72:
+    template_content_id : 14
+    property_key : effecttime
+    property_value : 3000
+
+template_conpro_73:
+    template_content_id : 14
+    property_key : time
+    property_value : 5000
+
+template_conpro_74:
+    template_content_id : 14
+    property_key : effect_type
+    property_value : scrollUp
+
+template_conpro_75:
+    template_content_id : 14
+    property_key : picture_path1
+    property_value : food01.jpg
+
+template_conpro_76:
+    template_content_id : 14
+    property_key : picture_path2
+    property_value : food02.jpg
+
+#t4_2
+template_conpro_77:
+    template_content_id : 15
+    property_key : control_type
+    property_value : 1
+    
+template_conpro_78:
+    template_content_id : 15
+    property_key : font_color
+    property_value : \#282525
+    
+template_conpro_79:
+    template_content_id : 15
+    property_key : font_size
+    property_value : 30
+    
+template_conpro_80:
+    template_content_id : 15
+    property_key : scroll_speed
+    property_value : 50
+    
+template_conpro_81:
+    template_content_id : 15
+    property_key : scroll_direction
+    property_value : up
+    
+template_conpro_82:
+    template_content_id : 15
+    property_key : back_color
+    property_value : \#e4dbc4
+    
+template_conpro_83:
+    template_content_id : 15
+    property_key : text_content
+    property_value : 内容
+ 
+#t4_3
+template_conpro_84:
+    template_content_id : 16
+    property_key : control_type
+    property_value : 1
+    
+template_conpro_85:
+    template_content_id : 16
+    property_key : font_color
+    property_value : \#ffffff
+    
+template_conpro_86:
+    template_content_id : 16
+    property_key : font_size
+    property_value : 30
+    
+template_conpro_87:
+    template_content_id : 16
+    property_key : scroll_speed
+    property_value : 50
+    
+template_conpro_88:
+    template_content_id : 16
+    property_key : scroll_direction
+    property_value : up
+    
+template_conpro_89:
+    template_content_id : 16
+    property_key : back_color
+    property_value : \#252628
+    
+template_conpro_90:
+    template_content_id : 16
+    property_key : text_content
+    property_value : 内容
+    
+#t4_4
+template_conpro_91:
+    template_content_id : 17
+    property_key : effecttime
+    property_value : 3000
+
+template_conpro_92:
+    template_content_id : 17
+    property_key : time
+    property_value : 5000
+
+template_conpro_93:
+    template_content_id : 17
+    property_key : effect_type
+    property_value : scrollDown
+
+template_conpro_94:
+    template_content_id : 17
+    property_key : picture_path1
+    property_value : food03.jpg
+
+template_conpro_95:
+    template_content_id : 17
+    property_key : picture_path2
+    property_value : food04.jpg
+
+#template5
+#t5_1
+template_conpro_96:
+    template_content_id : 18
+    property_key : fiximage_path
+    property_value : 
+
+#t5_2
+template_conpro_97:
+    template_content_id : 19
+    property_key : fiximage_path
+    property_value : 
+
+#t5_3
+template_conpro_98:
+    template_content_id : 20
+    property_key : fiximage_path
+    property_value : 
+
+#t5_4
+template_conpro_99:
+    template_content_id : 21
+    property_key : fiximage_path
+    property_value :  
+
+#t5_5
+template_conpro_100:
+    template_content_id : 22
+    property_key : control_type
+    property_value : 1
+    
+template_conpro_101:
+    template_content_id : 22
+    property_key : font_color
+    property_value : \#123456
+    
+template_conpro_102:
+    template_content_id : 22
+    property_key : font_size
+    property_value : 30
+    
+template_conpro_103:
+    template_content_id : 22
+    property_key : scroll_speed
+    property_value : 50
+    
+template_conpro_104:
+    template_content_id : 22
+    property_key : scroll_direction
+    property_value : up
+    
+template_conpro_105:
+    template_content_id : 22
+    property_key : back_color
+    property_value : \#123456
+    
+template_conpro_106:
+    template_content_id : 22
+    property_key : text_content
+    property_value : 内容
+ 
+#template6
+#t6_1
+template_conpro_107:
+    template_content_id : 23
+    property_key : xbrlfile_path
+    property_value : 
+
+#t6_2 
+template_conpro_108:
+    template_content_id : 24
+    property_key : xbrlfile_path
+    property_value : 
+ 
+#t6_3
+template_conpro_109:
+    template_content_id : 25
+    property_key : font_size
+    property_value : 35
+
+template_conpro_110:
+    template_content_id : 25
+    property_key : font_color
+    property_value : \#b9cfe4
+
+template_conpro_111:
+    template_content_id : 25
+    property_key : analogtype
+    property_value : white
+
+template_conpro_112:
+    template_content_id : 25
+    property_key : back_color
+    property_value : \#123456
+
+#t6_4 
+template_conpro_113:
+    template_content_id : 26
+    property_key : control_type
+    property_value : 1
+    
+template_conpro_114:
+    template_content_id : 26
+    property_key : font_color
+    property_value : \#ffffff
+    
+template_conpro_115:
+    template_content_id : 26
+    property_key : font_size
+    property_value : 20
+    
+template_conpro_116:
+    template_content_id : 26
+    property_key : scroll_speed
+    property_value : 50
+    
+template_conpro_117:
+    template_content_id : 26
+    property_key : scroll_direction
+    property_value : up
+    
+template_conpro_118:
+    template_content_id : 26
+    property_key : back_color
+    property_value : \#123456
+    
+template_conpro_119:
+    template_content_id : 26
+    property_key : text_content
+    property_value : 社長挨拶
+
+#template7
+#t7_1
+template_conpro_120:
+    template_content_id : 27
+    property_key : effecttime
+    property_value : 3000
+
+template_conpro_121:
+    template_content_id : 27
+    property_key : time
+    property_value : 5000
+
+template_conpro_122:
+    template_content_id : 27
+    property_key : effect_type
+    property_value : scrollRight
+
+template_conpro_123:
+    template_content_id : 27
+    property_key : picture_path1
+    property_value : Album01.jpg
+
+template_conpro_124:
+    template_content_id : 27
+    property_key : picture_path2
+    property_value : Album01.jpg
+
+#t7_2
+template_conpro_125:
+    template_content_id : 28
+    property_key : effecttime
+    property_value : 3000
+
+template_conpro_126:
+    template_content_id : 28
+    property_key : time
+    property_value : 5000
+
+template_conpro_127:
+    template_content_id : 28
+    property_key : effect_type
+    property_value : scrollRight
+
+template_conpro_128:
+    template_content_id : 28
+    property_key : picture_path1
+    property_value : Album02.jpg
+
+template_conpro_129:
+    template_content_id : 28
+    property_key : picture_path2
+    property_value : Album02.jpg
+
+#t7_3
+template_conpro_130:
+    template_content_id : 29
+    property_key : effecttime
+    property_value : 3000
+
+template_conpro_131:
+    template_content_id : 29
+    property_key : time
+    property_value : 5000
+
+template_conpro_132:
+    template_content_id : 29
+    property_key : effect_type
+    property_value : scrollRight
+
+template_conpro_133:
+    template_content_id : 29
+    property_key : picture_path1
+    property_value : Album03.jpg
+
+template_conpro_134:
+    template_content_id : 29
+    property_key : picture_path2
+    property_value : Album03.jpg
+
+#t7_4
+template_conpro_135:
+    template_content_id : 30
+    property_key : effecttime
+    property_value : 3000
+
+template_conpro_136:
+    template_content_id : 30
+    property_key : time
+    property_value : 5000
+
+template_conpro_137:
+    template_content_id : 30
+    property_key : effect_type
+    property_value : scrollLeft
+
+template_conpro_138:
+    template_content_id : 30
+    property_key : picture_path1
+    property_value : Album04.jpg
+
+template_conpro_139:
+    template_content_id : 30
+    property_key : picture_path2
+    property_value : Album04.jpg
+
+#t7_5
+template_conpro_140:
+    template_content_id : 31
+    property_key : effecttime
+    property_value : 3000
+
+template_conpro_141:
+    template_content_id : 31
+    property_key : time
+    property_value : 5000
+
+template_conpro_142:
+    template_content_id : 31
+    property_key : effect_type
+    property_value : scrollLeft
+
+template_conpro_143:
+    template_content_id : 31
+    property_key : picture_path1
+    property_value : Album05.jpg
+
+template_conpro_144:
+    template_content_id : 31
+    property_key : picture_path2
+    property_value : Album05.jpg
+
+#t7_6
+template_conpro_145:
+    template_content_id : 32
+    property_key : effecttime
+    property_value : 3000
+
+template_conpro_146:
+    template_content_id : 32
+    property_key : time
+    property_value : 5000
+
+template_conpro_147:
+    template_content_id : 32
+    property_key : effect_type
+    property_value : scrollLeft
+
+template_conpro_148:
+    template_content_id : 32
+    property_key : picture_path1
+    property_value : Album06.jpg
+
+template_conpro_149:
+    template_content_id : 32
+    property_key : picture_path2
+    property_value : Album06.jpg
+

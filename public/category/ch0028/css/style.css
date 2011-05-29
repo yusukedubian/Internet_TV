@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	text-align:center;
+	background: url(../img/xloop_bg.jpg);
+	color:#000000;
+	margin: 0;
+  font-family: "ＭＳ ゴシック",sans-serif;
+}
+
+h1 {
+  font-size:16px;
+}
+
+p {
+  font-size: 12px;
+	margin: 2px 0;
+	clear: both;
+}
+
+ul, ol {
+	margin-left 0;
+}
+
+ul ul {
+	margin-bottom: 10px;
+}
+
+ul li{ 
+	list-style:none; 
+	display:block; 
+	padding-bottom:1px; 
+	margin-bottom:0px; 
+}
+
+a {
+	color:white
+}
+
+/* #con 右のマージンが同じ値になるように自動調節され、結果としてセンタリグされます。文字だけ左寄せに*/
+#base {
+	width:830px;
+	height:620px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+  background: url(../img/bg.jpg) no-repeat;
+}
+
+#left {
+	display:inline;
+	float:left;
+	width:240px;
+	height: 525px;
+	margin: 68px 0px 0px 10px;
+}
+
+#gundam1_title {
+	display:inline;
+	float:left;
+	width:225px;
+	height: 20px;
+	margin: 35px 0px 0px 7px;
+	text-align:center;
+	font-weight:bold;
+	font-size:14px;
+}
+
+#actor1_title {
+	display:inline;
+	float:left;
+	width:225px;
+	height: 20px;
+	margin: 75px 0px 0px 7px;
+	text-align:center;
+	font-weight:bold;
+	font-size:14px;
+}
+
+#left1 {
+	display:inline;
+	float:left;
+	width:225px;
+	height: 156px;
+	margin: 13px 0px 0px 7px;
+}
+
+#left2 {
+	display:inline;
+	float:left;
+	width:225px;
+	height: 186px;
+	margin: 13px 0px 0px 7px;
+}
+
+#right {
+	display:inline;
+	float:right;
+	width:530px;
+	height:585px;
+	margin:9px 40px 0px 0px;
+}
+
+#right1 {
+	display:inline;
+	float:left;
+	width:516px;
+	height: 215px;
+	margin: 16px 0px 0px 7px;
+}
+
+#right2 {
+	display:inline;
+	float:left;
+	width:513px;
+	height:225px;
+	margin:111px 0px 0px 9px;
+}
+
+#right2_1 {
+	display:inline;
+	float:left;
+	width:242px;
+	height:186px;
+	margin:20px 0px 0px 14px;
+}
+
+#right2_2 {
+	display:inline;
+	float:right;
+	width:242px;
+	height:186px;
+	margin:20px 15px 0px 0px;
+}

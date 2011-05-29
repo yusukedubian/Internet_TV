@@ -1,0 +1,52 @@
+.jcarousel-skin-twitline .jcarousel-container {
+}
+
+.jcarousel-skin-twitline .jcarousel-container-horizontal {
+    width: 134px;
+    height:150px;
+		padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.jcarousel-skin-twitline .jcarousel-container-vertical {
+    width: 134px;
+    height:150px;
+    padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.jcarousel-skin-twitline .jcarousel-clip-horizontal {
+    width:  134px;
+    height: 150px;
+    padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.jcarousel-skin-twitline .jcarousel-clip-vertical {
+    width:  134px;
+    height: 150px;
+    padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.jcarousel-skin-twitline .jcarousel-item {
+    width: 134px;
+    height:186px;
+		margin: 0px 0px 0px 0px;
+}
+
+.jcarousel-skin-twitline .jcarousel-item:hover {
+    border-color: #808080;
+}
+
+.jcarousel-skin-twitline .jcarousel-item-horizontal {
+    margin-right: 0px;
+}
+
+.jcarousel-skin-twitline .jcarousel-item-vertical {
+    margin-bottom: 0px;
+}
+
+.jcarousel-skin-twitline .jcarousel-item-placeholder {
+}
+

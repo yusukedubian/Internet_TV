@@ -1,0 +1,333 @@
+<% 
+	if flash[:alert].blank?
+		# alertが設定されてない場合はgoogleAPIKeyが設定されてるか確認
+		if @user_property.blank? || @user_property["google_key"].blank? || 
+		   (@user_property["google_key"] == ConstUserSettings::DEFAULT_GOOGLE_API_KEY)
+			alert_now("ERR_0x01025416")
+		end
+	else
+		# alertが既に設定されている場合はそちらを表示する
+	end
+
+%>
+<style type="text/css">
+<style type="text/css">
+.rss_guide_text{
+        width:810px;
+        height:70px;
+        word-break:break-all
+}
+.rss_guide_title{
+        height:45px;
+        width:100px;
+        padding-top:25px;
+        text-align:center;
+}
+</style>
+<div>
+		<div id="urlpath1" style="display:blcok;">
+	        <table>
+	        	<% if @user_property.blank? || @user_property["google_key"].blank? %>
+                  <b><%= _("画面右上「設定▼」→「アカウント設定」→「Google API Key」の設定をして下さい。") %></b>
+                <% end %>
+				<tr>
+					<td><%= "表示タイプ"%><font color=red>*</font></td>
+					<td>
+						<%= radio_button_tag("contents_setting[viewtype]", "classic", false, options ={:onclick=>"viewtype('classic');"})%><%="クラシック  "%>
+						<%= radio_button_tag("contents_setting[viewtype]", "billboard", true, options ={:onclick=>"viewtype('billboard');"})%><%="電光掲示板風  "%>
+					</td>
+				</tr>
+	        	<tr>
+	        		<td>
+						<%="RssUrl"%><font color=red>*</font>
+					</td>
+					<td>
+						<%= text_field_tag("contents_setting[urlpath1]", h(settings["urlpath1"]),:size=>"80")%>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<%=_("Rssタイトル")%><font color=red>*</font>
+					</td>
+					<td>
+						<%= text_field_tag("contents_setting[title1]", h(settings["title1"]),:size=>"40")%>
+					</td>
+				</tr>    	
+			</table>		    				
+        </div>
+
+	  <div id="classic" style="float:left; width:400px;">
+		  <table>
+		  	<tr>
+		  		<td valign="top">
+					  <table border="0" cellpadding="0" cellspacing="0">
+					  	<tr>
+					  		<td></td>
+							<td></td>
+							<td></td>
+							<td><%=_("背景色")%></td>
+							<td>
+								<%= text_field_tag("contents_setting[back_color]", settings["back_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+							  	<%if settings["back_color"] != nil %>
+									  <script>document.getElementById("contents_setting[back_color]").value="<%=settings['back_color']%>"</script>
+							  	<%end%>
+							</td>
+					  	</tr>
+					  	<tr>
+					  		<td valign="top">
+						      	<%=_("フォントサイズ")%>
+							</td>
+							<td>
+								<%= select_tag("contents_setting[font_size]", 
+								options_for_select(font_size_for_select, settings["font_size"]
+								))
+								%>
+								<%="px"%>
+							</td>
+							<td></td>
+							<td>
+								<%=_("本文フォントカラー")%>
+							</td>
+							<td valign="top">
+								<div class="form-item">
+							  	<%= text_field_tag("contents_setting[font_color]", settings["font_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+							  	</div>
+							  	<%if settings["font_color"] != nil %>
+									  <script>document.getElementById("contents_setting[font_color]").value="<%=settings['font_color']%>"</script>
+							  	<%end%>
+						 	</td>
+						</tr>
+						<tr>
+							<td valign="top">
+						      	<%=_("タイトルフォントサイズ")%>
+							</td>
+							<td>
+								<%= select_tag("contents_setting[title_font_size]", 
+								options_for_select(font_size_for_select, settings["title_font_size"]
+								))
+								%>
+								<%="px"%>
+							</td>
+							<td></td>
+							<td><%=_("タイトルフォントカラー")%></td>
+							<td>
+								<div class="form-item">
+							  	<%= text_field_tag("contents_setting[title_font_color]", settings["title_font_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+							  	</div>
+							  	<%if settings["title_font_color"] != nil %>
+									  <script>document.getElementById("contents_setting[title_font_color]").value="<%=settings['title_font_color']%>"</script>
+							  	<%end%>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><%=_("タイトル背景色")%></td>
+							<td>
+								<div class="form-item">
+							  	<%= text_field_tag("contents_setting[title_color]", settings["title_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+							  	</div>
+							  	<%if settings["title_color"] != nil %>
+									  <script>document.getElementById("contents_setting[title_color]").value="<%=settings['title_color']%>"</script>
+							  	<%end%>
+							</td>
+						</tr>
+						<tr>
+							<td>
+						        <%=_("スクロール方向")%>
+							</td>
+							<td>
+								<%= select_tag("contents_setting[scroll_direction]", 
+								options_for_select(scroll_direction_for_select, settings["scroll_direction"]
+								))
+								%>
+							</td>
+							<td></td>
+							<td>
+								<%=_("スクロール速度")%>
+							</td>
+							<td>
+								<%= select_tag("contents_setting[scroll_speed]", 
+								options_for_select(scroll_speed_for_select, settings["scroll_speed"]
+								))
+								%>
+							</td>
+						</tr>
+				    </table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="billboard" style="float:left; width:400px;">
+		<table>
+		  	<tr>
+		  		<td valign="top">
+					  <table border="0" cellpadding="0" cellspacing="0">
+					  	<tr>
+					  		<td valign="top">
+						      	<%=_("フォントサイズ")%>
+							</td>
+							<td width="60px">
+								<%= select_tag("contents_setting[billboard_font_size]", 
+									options_for_select(string_font_size_select, settings["billboard_font_size"]
+									))
+								%>
+							</td>
+							<td></td>
+							<td>
+								<%=_("フォント色")%>
+							</td>
+							<td valign="top">
+								<%= select_tag("contents_setting[billboard_font_color]", 
+									options_for_select(string_font_color_select, settings["billboard_font_color"]
+									))
+								%>
+						 	</td>
+						</tr>
+						<tr>
+							<td valign="top">
+						      	<%=_("タイトルフォントサイズ")%>
+							</td>
+							<td>
+								<%= select_tag("contents_setting[billboard_title_font_size]", 
+								options_for_select(font_size_for_select, settings["billboard_title_font_size"]
+								))
+								%>
+								<%="px"%>
+							</td>
+							<td></td>
+							<td><%=_("タイトルフォントカラー")%></td>
+							<td>
+								<div class="form-item">
+							  	<%= text_field_tag("contents_setting[billboard_title_font_color]", settings["billboard_title_font_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+							  	</div>
+							  	<%if settings["billboard_title_font_color"] != nil %>
+									  <script>document.getElementById("contents_setting[billboard_title_font_color]").value="<%=settings['billboard_title_font_color']%>"</script>
+							  	<%end%>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><%=_("タイトル背景色")%></td>
+							<td>
+								<div class="form-item">
+							  	<%= text_field_tag("contents_setting[billboard_title_color]", settings["billboard_title_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+							  	</div>
+							  	<%if settings["billboard_title_color"] != nil %>
+									  <script>document.getElementById("contents_setting[billboard_title_color]").value="<%=settings['billboard_title_color']%>"</script>
+							  	<%end%>
+							</td>
+						</tr>
+						<tr>
+							<td>
+						        <%=_("スクロール方向")%>
+							</td>
+							<td>
+								<%= select_tag("contents_setting[billboard_scroll_direction]", 
+								options_for_select(scroll_direction_for_select, settings["billboard_scroll_direction"]
+								))
+								%>
+							</td>
+							<td></td>
+							<td>
+								<%=_("スクロール速度")%>
+							</td>
+							<td>
+								<%= select_tag("contents_setting[billboard_scroll_speed]", 
+								options_for_select(scroll_speed_for_select, settings["billboard_scroll_speed"]
+								))
+								%>
+							</td>
+						</tr>
+				    </table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="picker" style="float: left;"></div>
+</div>
+<input type="hidden" name="contents_setting[billboard_local_url]" value=<%= request.env["HTTP_HOST"] %>>
+<div style="clear:both;"></div>
+<br/>
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="rss_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="rss_guide_text">
+				<%="ニュースやブログなどの最新情報をリアルタイムに表示させる事が出来ます。"%><br/>
+				<%="ご希望サイトのRss用URLを入力してください。"%><br/>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker');
+	 var p = jQuery('#picker').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+	});
+</script>
+
+<% if settings["viewtype"] == "classic" %>
+   <script>
+	 document.getElementById("contents_setting_viewtype_classic").checked = "checked";
+     document.getElementById("classic").style.display = "block";
+     document.getElementById("billboard").style.display = "none";
+   </script>
+<% end %>   
+<% if settings["viewtype"] == "billboard" %>
+   <script>
+	 document.getElementById("contents_setting_viewtype_billboard").checked = "checked";
+     document.getElementById("classic").style.display = "none";
+     document.getElementById("billboard").style.display = "block";
+   </script>
+<% end %>
+<% if settings["viewtype"] == nil %>
+	<script>
+	 document.getElementById("contents_setting_viewtype_classic").checked = "checked";
+     document.getElementById("classic").style.display = "block";
+     document.getElementById("billboard").style.display = "none";
+   </script>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+function viewtype(str){
+	var type = str;
+	if (type =="classic"){
+		document.getElementById("classic").style.display = "block";
+		document.getElementById("billboard").style.display = "none";
+	}
+	else if(type =="billboard"){
+		document.getElementById("classic").style.display = "none";
+		document.getElementById("billboard").style.display = "block";
+	}
+}
+</script>

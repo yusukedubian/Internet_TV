@@ -1,0 +1,110 @@
+<div id="Area">
+	
+	<h1><%=_("プレーヤ情報編集")%></h1>
+	<div class="flap"></div>
+	
+	<h3><b><%=_("基本情報")%></b></h3>
+	<dl>
+		<dt class="company_title">会社ID</dt>
+		<dd class="company_content"><%=@company_code%></dd>
+		<dt class="company_title">会社名</dt>
+		<dd class="company_content-right"><%=@company_name%></dd>
+	</dl>
+	<div class="flap"></div>
+	
+	<% form_tag(update_player_info_path(params[:id]),:onSubmit => 'return check_length();')do-%>
+	<%=hidden_field_tag("order")%>
+	<div id="player_box">
+		<h3><b><%=_("プレーヤ利用登録")%></b></h3>
+		
+		<table>
+			<tr>
+				<th><%=_("<b>未設定プレーヤ</b>")%></th><th><th><%=_("<b>設定済みプレーヤ</b>")%></th>
+			</tr>
+			<tr>
+				<td>
+					<select id="ListBox1" class="playerbox" size="11"  multiple="multiple">
+<%@offset_players_name.each{|player_name|%>
+					<option value="<%=player_name%>"><%=player_name%></option>
+<%}%>
+		  			</select>
+				</td>
+				<td>
+					<input id="btnMoveRight" type="button" value="→" />
+				  	<div class="flap"></div>
+				  	<input id="btnMoveLeft" type="button" value="←" />
+				</td>
+				<td>
+					<select id="ListBox2" name="test" class="playerbox" size="11"  multiple="multiple">
+<%@access_players.each{|access_player|%>
+					<option value="<%=access_player%>"><%=access_player%></option>
+<%}%>
+		  			</select>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="flap"></div>
+	<div id="entry"><%= submit_tag "登 録",:id=>"test",:disabled => true %></div>
+	<%end%>
+	
+	<div class="flap"></div>
+	<div style="float:left; padding-right:5px;"><%= button_to ("表　示",player_info_path(params[:id]),{:method => :get})%></div>
+	<div><button>戻る</button></div>
+
+</div>
+<script type="text/javascript"> 
+window.onload = function() {
+  document.getElementById("btnMoveRight").onclick = moveItems;
+  document.getElementById("btnMoveLeft").onclick = moveItems;
+}
+function moveItems() {
+  var leftBox = document.getElementById("ListBox1");
+  var rightBox = document.getElementById("ListBox2"); 
+  var fromBox, toBox;
+  
+  if (this.value == "→") {
+    fromBox = leftBox; toBox = rightBox;
+  } 
+  else if (this.value == "←") {
+    fromBox = rightBox; toBox = leftBox;
+  }
+  
+  if ((fromBox != null) && (toBox != null)) { 
+    if(fromBox.length < 1) {
+      alert("リストボックスにアイテムがありません!");
+      return false;
+    }
+    if(fromBox.selectedIndex == -1) {
+      alert("移動するアイテムを選択してください!");
+      return false;
+    }
+    while ( fromBox.selectedIndex >= 0 ) { 
+      var newOption = new Option(); 
+      newOption.text = fromBox.options[fromBox.selectedIndex].text; 
+      newOption.value = fromBox.options[fromBox.selectedIndex].value; 
+      toBox.options[toBox.length] = newOption;
+      fromBox.remove(fromBox.selectedIndex);
+	  document.getElementById("test").disabled = false; 
+    } 
+  }
+  return false; 
+}
+</script>
+<script>
+	function check_length(){
+		sObj=document.getElementsByName("test")[0];
+		var v = new Array();
+		var o = sObj.options;
+		for(var i = 0; i < o.length; i++) {
+			v[i] = o[i].value;
+		}
+		if (parseInt(o.length) == 0) {
+			return confirm("<%='設定済みプレーヤにプレーヤが設定されていません。登録しますか？'%>");
+		}
+		else {
+			document.getElementById("order").value = v;
+			return true;
+		}
+	}
+</script>

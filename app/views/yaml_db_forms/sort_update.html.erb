@@ -1,0 +1,7 @@
+<% i = 0 %>
+<% @order.each do |index| %>
+	<%= hidden_field_tag "yaml_db_form[sort_order][#{i}]", index %>
+	<% i += 1 %>
+<% end %>
+
+

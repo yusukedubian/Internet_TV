@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> </title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-Type" content="text/html; charset=iso-8859-1">
+
+<!-- スタイルシート ここから -->
+<link rel="stylesheet" href="css/master.css" type="text/css" media="all" />
+<link rel="stylesheet" href="stylesheets/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="stylesheets/coda-slider-2.0.css" type="text/css" media="screen" />
+<!-- スタイルシート ここまで -->
+
+<!-- 時計 ここから -->
+<script src="clock/scroll.js"></script>
+<script src="clock/clock.js"></script>	
+<!-- 時計 ここまで -->
+
+<!-- テキストスライド ここから -->
+<script type="text/javascript" src="javascripts/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="javascripts/jquery.coda-slider-2.0.js"></script>
+<script type="text/javascript">
+    	$().ready(function() {
+            $('#coda-slider-1').codaSlider({
+                autoSlide: true,
+                autoSlideInterval: 8000,
+                autoSlideStopWhenClicked: true
+            });
+        });
+</script>
+<!-- テキストスライド ここまで -->
+
+<!-- ガラガラ表示 ここまで -->
+
+<script type="text/javascript" src="javascripts/jquery.flightboard.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#demo_01').flightboard({
+		messages: ['1POUND', '134YEN','CHANGE','UP 033']
+	});
+	
+	$('#demo_02').flightboard({
+		messages: ['1EURO', '111YEN','CHANGE','UP 017']
+	});
+	
+	$('#demo_03').flightboard({
+		messages: ['1SWISSFRANC', '81YEN','CHANGE','UP 001']
+	});
+	
+	$('#demo_04').flightboard({
+		messages: ['1AUSTRALIANDOLLAR', '78YEN','CHANGE','DOWN 010']
+	});
+	
+	$('#demo_05').flightboard({
+		messages: ['1NZDOLLAR', '63YEN','CHANGE','DOWN 017']
+	});
+	
+	$('#demo_06').flightboard({
+		messages: ['1CANADIANDOLLAR', '87YEN','CHANGE','DOWN 008']
+	});
+
+	$('#demo_07').flightboard({
+		messages: ['1DOLLAR', '90YEN','CHANGE','DOWN 008'] 
+	});
+
+});
+</script>
+<!-- ガラガラ表示 ここまで -->
+
+</head>
+<body class="coda-slider-no-js" onload="clock();">
+<div id="Area">
+<div id="Box">
+
+<img src="img/title01.png" style="margin:15px 0px 0px 25px;">
+
+<table>
+<tr>
+<td>
+<!-- 英ポンド ここから -->
+<table style="margin:50px 0px 0px 100px;">
+<tr>
+<td class="bgAlpha">
+<img src="img/country01.gif" style="margin-right:5px;">英ポンド
+</td>
+</tr>
+<tr>
+<td>
+<div id="demo_01"></div>
+</td>
+</tr>
+</table>
+<!-- 英ポンド ここまで -->
+
+<!-- ユーロ ここから -->
+<table style="margin:15px 0px 0px 120px;">
+<tr>
+<td class="bgAlpha">
+<img src="img/country02.gif" style="margin-right:5px;">ユーロ
+</td>
+</tr>
+<tr>
+<td>
+<div id="demo_02"></div>
+</td>
+</tr>
+</table>
+<!-- ユーロ ここまで -->
+</td>
+<td>
+<!-- カナダドル ここから -->
+<table style="margin:100px 0px 0px 230px;">
+<tr>
+<td class="bgAlpha">
+<img src="img/country06.gif" style="margin-right:5px;">カナダドル
+</td>
+</tr>
+<tr>
+<td>
+<div id="demo_06"></div>
+</td>
+</tr>
+</table>
+<!-- カナダドル ここまで -->
+
+<!-- 米ドル ここから -->
+<table style="margin:10px 0px 0px 280px;">
+<tr>
+<td class="bgAlpha">
+<img src="img/country07.gif" style="margin-right:5px;">米ドル
+</td>
+</tr>
+<tr>
+<td>
+<div id="demo_07"></div>
+</td>
+</tr>
+</table>
+<!-- 米ドル ここまで -->
+</td>
+</tr>
+</table>
+
+
+
+<!-- スイスフラン ここから -->
+<table style="margin:0px 0px 0px 110px;">
+<tr>
+<td class="bgAlpha">
+<img src="img/country03.gif" style="margin-right:5px;">スイスフラン
+</td>
+</tr>
+<tr>
+<td>
+<div id="demo_03"></div>
+</td>
+</tr>
+</table>
+<!-- スイスフラン ここまで -->
+
+<!-- 豪ドル ここから -->
+<table style="margin:40px 0px 0px 300px;">
+<tr>
+<td class="bgAlpha">
+<img src="img/country04.gif" style="margin-right:5px;">豪ドル
+</td>
+</tr>
+<tr>
+<td>
+<div id="demo_04"></div>
+</td>
+</tr>
+</table>
+<!-- 豪ドル ここまで -->
+
+<!-- ニュージーランドドル ここから -->
+<table style="margin:20px 0px 0px 380px;">
+<tr>
+<td class="bgAlpha">
+<img src="img/country05.gif" style="margin-right:5px;">ニュージーランドドル
+</td>
+</tr>
+<tr>
+<td>
+<div id="demo_05"></div>
+</td>
+</tr>
+</table>
+<!-- ニュージーランドドル ここまで -->
+
+
+<img src="img/title02.png" style="margin:15px 0px 0px 25px;">
+
+<table>
+<tr>
+<td>
+<!-- 時計 ここから --> 
+<h1><div id="clock">loading</div></h1> 
+<!-- 時計 ここまで --> 
+</td>
+<td>
+</td>
+<img src="img/title03.png" style="margin:15px 0px 0px 60px;">
+<td>
+<div style="width:500px;">
+<!-- テキストスライド ここから -->
+<div class="coda-slider-wrapper" style="margin:0px 0px 0px 20px;">
+<div class="coda-slider preload" id="coda-slider-1">
+<div class="panel">
+<div class="panel-wrapper">
+<h2>ロンドン市場　ドル円89.65レベル、<br>約1ヶ月ぶり安値水準</h2>
+</div>
+</div>
+<div class="panel">
+<div class="panel-wrapper">
+<h2>欧州株　寄付き後まもなく下げに転じる</h2>
+</div>
+</div>
+<div class="panel">
+<div class="panel-wrapper">
+<h2>NY原油　時間外取引　上げ幅消すも、<br>上値は限定　材料難</h2>
+</div>
+</div>
+<div class="panel">
+<div class="panel-wrapper">
+<h2>欧州株　英FTは買い優勢<br>BHPビリトンは豪新首相で期待感</h2>
+</div>
+</div>
+<div class="panel">
+<div class="panel-wrapper">
+<h2>東京市場　ドル買い試す、<br>ポンドドル1.49台半ば</h2>
+</div>
+</div>
+</div>
+</div>
+<!-- テキストスライド ここまで -->
+</div>
+</td>
+</tr>
+</table>
+
+
+</div>
+</div>
+</body>
+
+</html>

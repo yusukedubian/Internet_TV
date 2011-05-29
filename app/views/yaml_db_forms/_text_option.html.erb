@@ -1,0 +1,45 @@
+<% option = @name + "_text_option" %>
+<table>
+	<tr>
+		<td align='center'>
+			<%= _("テキストボックスの横幅") %>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[#{@name}_width]",
+								@yaml_db_forms["#{@name}_width"],
+								{:maxlength => ConstYamlDbForm::TEXT_WIDTH_MAX.to_s.length, :style => "width:100px;"} %>
+			<font>px</font>	
+		</td>
+	</tr>	
+	<tr>	
+		<td align='center'>
+			<%= _("入力可能な最大文字数") %>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[#{@name}_length]",
+								@yaml_db_forms["#{@name}_length"],
+								{:maxlength => ConstYamlDbForm::TEXT_LENGTH_MAX.to_s.length, :style => "width:100px;"} %>
+		</td>
+	</tr>	
+	<tr>
+		<td align='center'>
+			<%= _("入力値チェック処理の数") %>
+		</td>
+		<td>
+			<%= yaml_db_form_num_select_tag "yaml_db_form[#{@name}_count]",
+											ConstYamlDbForm::TEXT_VALIDATE_MIN,
+											ConstYamlDbForm::TEXT_VALIDATE_MAX,
+											@yaml_db_forms["#{@name}_count"] %>
+											
+			<%= observe_field "yaml_db_form[#{@name}_count]",
+								:update=>option,
+								:url=>{:action=>"text_option_update"},
+								:submit=>"#{@name}" %>			
+		</td>	
+	</tr>	
+</table>
+
+<div id="<%= option %>">
+	<%= render :partial => 'text_option_update' %>
+</div>
+

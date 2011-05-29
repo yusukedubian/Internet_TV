@@ -1,0 +1,98 @@
+name: 業務報告
+desc: |
+  業務を報告するためのフォーム
+  
+table: 業務フォーマット
+button: 送信
+items:
+- name: 所属
+  desc: |
+    所属を入力してください
+    
+  type: text
+  column: 所属
+  option:
+  - width: 50
+- name: 報告者名
+  desc: |
+    報告者名を入力してください。
+    
+  type: text
+  column: 報告者名
+  option:
+  - width: 50
+- name: 報告日
+  desc: |
+    報告日を入力してください。
+    
+  type: text
+  column: 報告日
+  option:
+  - width: 10
+- name: 勤怠チェック
+  desc: |
+    勤怠の報告をチェックでしてください。
+    
+  type: radio
+  column: 勤怠チェック
+  option:
+  - name: 出勤
+    value: 出勤
+    checked: true
+  - name: 欠勤
+    value: 欠勤
+    checked: false
+  - name: 有給
+    value: 有給
+    checked: false
+  - name: 早退
+    value: 早退
+    checked: false
+  - name: 遅刻
+    value: 遅刻
+    checked: false
+- name: 本日の一言報告　（入力は140文字迄）
+  desc: |
+    業務報告内容を140文字迄で入力して下さい。    
+    
+  type: textarea
+  column: 本日の一言報告　（入力は140文字迄）
+  option:
+  - width: 500
+    hight: 25
+- name: 勤務報告（午前）
+  desc: |
+    勤務報告を入力して下さい。    
+    
+  type: textarea
+  column: 勤務報告（午前）
+  option:
+  - width: 500
+    hight: 100
+- name: 勤務報告（午後）
+  desc: |
+    勤務報告を入力して下さい。   
+    
+  type: textarea
+  column: 勤務報告（午後）
+  option:
+  - width: 500
+    hight: 100
+- name: 勤務予定（午前）
+  desc: |
+    勤務報告を入力して下さい。   
+    
+  type: textarea
+  column: 勤務予定（午前）
+  option:
+  - width: 500
+    hight: 100
+- name: 勤務予定（午後）
+  desc: |
+    勤務報告を入力して下さい。   
+    
+  type: textarea
+  column: 勤務予定（午後）
+  option:
+  - width: 500
+    hight: 100

@@ -1,0 +1,106 @@
+<div class="top_title">
+	<%= _("YAMLメール") %>
+	<span><%= _("YAMLを使うとメールでVASDAQ.TVの画面に表示されている文字を動的に変更したり、データベースを更新する事が出来ます。") %></span>
+</div>
+<div class="container" id="container">
+	<h4><%= _("フリーフォーマット") %></h4>
+	<div class="account" style="margin-bottom:15px;">
+		<div style="margin-left:15px;">
+		<%= link_to(image_tag("./players/mail.png"),yamlmails_path,:popup => false) %>
+		<%="　定型フォームを作成しなくても、YAML構文のメールをテキスト形式で直接送信することができます。"%> 
+		</div>
+	</div>
+
+	<h4><%= _("YAMLフォーム") %></h4>
+	<div class="account" style="margin-bottom:15px;">
+		<table>
+			<tr align="center", bgcolor="#c0dbfb">
+		        <th width="1%">
+		        	<%= _("No") %>
+				</th>
+				<th width="10%">
+					<%= _("フォームの名前") %>
+				</th>
+				<th width="10%">
+					<%= _("フォームの説明") %>
+				</th>
+<!--
+		        <th width="10%">
+					<%= _("更新時刻") %>
+				</th>
+		        <th width="10%">
+					<%= _("作成時刻") %>
+				</th>
+-->
+				<th width="10%">
+					<%= _("オペレーション") %>
+				</th>
+		    </tr>
+	
+			<% i = 1 %>
+			<% @yaml_db_forms.each do |forms| %>
+			<tr bgcolor="#f2faff">
+				<td align="center">
+					<%= i %>
+				</td>
+				<td align="center">
+					<%= h forms.form_name %>
+				</td>
+				<td align="center">
+					<%= h forms.form_desc %>
+				</td>
+<!--
+				<td align="center">
+					<%= forms.updated_at %>
+				</td>
+				<td align="center">
+					<%= forms.created_at %>
+				</td>
+-->
+				<td align="center">
+					<%= link_to _("入力と送信"), {:action=>'input', :id=>forms.id} %>
+					<%= link_to _("フォーム編集"), {:action=>'edit', :id=>forms.id} %>
+					<!--= link_to _("テキスト編集"), {:action=>'text_edit', :id=>forms.id} -->
+					<%= link_to _("削除"), {:action=>'delete', :id=>forms.id}, :confirm=>_("削除しますがよろしいですか？") %>
+				</td>
+			</tr>
+			<% i += 1 %>
+			<% end %>
+		</table><br>
+
+		<% form_tag({:action=>'upload'}, {:multipart=>true}) do %>
+			<table>
+				<tr>
+					<td>
+						<%= file_field "yaml_db_forms", "file", "size"=>40 %>
+					</td>
+					<td>
+						<%= submit_tag _("アップロード") %>
+					</td>
+				</tr>
+			</table><br>
+		<% end %>
+	
+		<table>
+			<tr>			
+				<td>
+					<%= button_to _("新規作成"), :action=>'new' %>
+				</td>
+				<td>
+					<%= link_to _("VASDAQ.TVトップへ"), root_path %>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<%= render :partial => 'index_help' %>
+
+	<div class="rogo" style="cursor:pointer;" onclick="location.href='<%=root_path%>'">
+		<%= image_tag ("./imagefile/tv.gif",:width=>"50px",:height=>"50px")%>
+		<%= image_tag ("./imagefile/bottomrogo.png") %>
+	</div>	
+</div>
+
+<style type="text/css">
+	div.container {list-style-type: none;margin-left:10px;margin-top:15px;}
+</style>

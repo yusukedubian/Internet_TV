@@ -1,0 +1,9 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => true } %>
+
+<b><%= _("※横400px、縦460px以下に設定した場合、全ての情報が表示されません。") %></b>
+<br>
+<br>
+<b><%= _("EDINETサイトのトップページ[有価証券報告書等]からダウンロードしたXBRLファイルを選択して下さい。HTML形式に変換します。") %></b>
+<br>
+  <font color=red>*</font><%= file_field_tag("contents_upload[xbrlfile_path]", :size=>"60")%>
+<br>

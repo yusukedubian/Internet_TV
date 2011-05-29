@@ -1,0 +1,21 @@
+<div class="account" style="margin-bottom:15px;">
+	<table>
+		<tr>
+			<td colspan="2"><h2><b><%= _("Google API Key設定") %></b></h2><br></td>
+		</tr>
+	</table>					
+	<% form_tag(user_property_path(params[:id]), :method=>"put") do -%>	
+		<table>
+			<tr>
+				<td><%= _("Google API Key") %></td>
+				<td><%= text_field_tag "user_property[google_key]", h(@user_property["google_key"]), {:size => 50, :maxlength => 256} %></td>
+			</tr>
+			<tr>
+				<td>
+					<br><%= submit_tag _("設定") %>
+					<%= link_to _("VASDAQ.TVトップへ"), root_path %>
+				</td>
+			</tr>						
+		</table>
+	<% end -%>	
+</div>

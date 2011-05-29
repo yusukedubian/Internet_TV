@@ -1,0 +1,77 @@
+<div style="margin-left:75px;margin-top:75px;">
+	<h1>プレーヤ新規作成</h1>
+	
+	<% form_for(@player) do |f| %>
+	  <%= f.error_messages %>
+	  <table>
+	  	<tr>
+	  		<th></th>
+	  	</tr>
+		<tr>
+			<td>プレーヤNo</td>
+			<td>
+				<%= f.text_field :player_no %>
+			</td>
+		</tr>
+		<tr>
+			<td>プレーヤ名</td>
+			<td>
+				<%= f.text_field :name %>
+			</td>
+		</tr>
+		<tr>
+			<td>ガイドメッセージ</td>
+			<td>
+				<%= f.text_area :guide_text %>
+			</td>
+		</tr>
+		<tr>
+			<td>クラス名</td>
+			<td>
+				<%= f.text_field :playerclass %>
+			</td>
+		</tr>
+		<tr>
+			<td>erb名</td>
+			<td>
+				<%= f.text_field :playerview %>
+			</td>
+		</tr>
+		<tr>
+			<td>runtime get</td>
+			<td>
+				<%= f.text_field :runtime_get_type %>
+			</td>
+		</tr>
+		<tr>
+			<td>runtime create</td>
+			<td>
+				<%= f.text_field :runtime_create_type %>
+			</td>
+		</tr>
+		<tr>
+			<td>runtime config</td>
+			<td>
+				<%= f.text_field :runtime_config_table %>
+			</td>
+		</tr>
+		<tr>
+			<td>ロゴ画像</td>
+			<td>
+				<%= f.text_field :logo_img %>
+			</td>
+		</tr>
+		<tr>
+			<td>タイトル画像</td>
+			<td>
+				<%= f.text_field :title_img %>
+			</td>
+		</tr>
+	  </table>
+	  <p>
+	    <%= f.submit "新規作成" %>
+	  </p>
+	<% end %>
+	
+	<%= link_to '戻る', players_path %>
+</div>

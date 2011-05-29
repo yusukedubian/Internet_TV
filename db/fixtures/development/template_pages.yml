@@ -1,0 +1,109 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+# rake db:import:development
+
+
+template_page1:
+    template_page_no : 1
+    name : 
+    category : 
+    switchtime : 
+    background : 
+    backgroundfile : 
+    width : 800
+    height : 600
+    description :
+    link_info :
+    other_info : 
+    thumbnail_filename :
+    
+template_page2:
+    template_page_no : 2
+    name : 
+    category : 
+    switchtime : 
+    background : 
+    backgroundfile : 
+    width : 800
+    height : 600
+    description :
+    link_info :
+    other_info : 
+    thumbnail_filename :
+    
+template_page3:
+    template_page_no : 3
+    name : 
+    category : 
+    switchtime : 
+    background : 
+    backgroundfile : background.gif
+    width : 800
+    height : 600
+    description :
+    link_info :
+    other_info : 
+    thumbnail_filename :
+    
+template_page4:
+    template_page_no : 4
+    name : 
+    category : 
+    switchtime : 
+    background : 
+    backgroundfile : 
+    width : 800
+    height : 600
+    description :
+    link_info :
+    other_info : 
+    thumbnail_filename :
+    
+template_page5:
+    template_page_no : 5
+    name : 
+    category : 
+    switchtime : 
+    background : 
+    backgroundfile : 
+    width : 800
+    height : 600
+    description :
+    link_info :
+    other_info : 
+    thumbnail_filename :
+    
+template_page6:
+    template_page_no : 6
+    name : 
+    category : 
+    switchtime : 
+    background : 
+    backgroundfile : 
+    width : 800
+    height : 600
+    description :
+    link_info :
+    other_info : 
+    thumbnail_filename :
+    
+template_page7:
+    template_page_no : 7
+    name : 
+    category : 
+    switchtime : 
+    background : 
+    backgroundfile : 
+    width : 800
+    height : 600
+    description :
+    link_info :
+    other_info : 
+    thumbnail_filename :
+    

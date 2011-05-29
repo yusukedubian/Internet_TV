@@ -1,0 +1,185 @@
+<style type="text/css">
+.twitter_guide_text{
+        width:810px;
+        height:193px;
+        word-break:break-all
+}
+.twitter_guide_title{
+        height:97px;
+        width:100px;
+        padding-top:96px;
+        text-align:center;
+}
+</style>
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker');
+	 var p = jQuery('#picker').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+  });
+
+  function twitter_type_select(){
+    if(jQuery('#twitter_player_type').val()!='search')
+      jQuery('#search_setting_fields').hide();
+    else
+      jQuery('#search_setting_fields').show();
+  }
+
+</script>
+<div>
+	  <!--<img src="../images/joint.gif">-->
+<!--
+	  <select id="rsstype" name="type" onchange="rssformattype()">
+        <option value="custom">カスタム Rss</option>
+        <option value="fix" disabled="true">固定フォーマット Rss</option>
+      </select>
+-->
+      <div id="customline" name="custom" style="display:block;">
+	  <table>
+		<tr>
+			<td>
+			  <%= _("表示数") %><font color=red>*</font>
+			</td>
+			<td>
+			  <%= text_field_tag("contents_setting[count]", h(settings["count"]),:size=>3, :maxlength=> 3) %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			  <%= _("切り替え時間(秒)") %><font color=red>*</font>
+			</td>
+			<td>
+			  <%= select_tag("contents_setting[interval]", 
+					options_for_select(["60","120","180","240","300"], settings["interval"]
+					))
+					%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			  <%= _("キーワード検索") %><font color=red>*</font>
+			</td>
+			<td>
+	          <%= text_field_tag("contents_setting[keyword]", h(settings["keyword"]),:size=>"40", :maxlength=> 40 )%>
+		  	</td>
+	  </table>
+	  </div>
+	  <br><br>
+	  <table>
+	  	<tr>
+	  		<td valign="top">
+				  <table border="0" cellpadding="0" cellspacing="0">
+				  	<tr>
+				  		<td valign="top">
+					      	<%=_("フォントサイズ")%>
+						</td>
+						<td>
+							<%= select_tag("contents_setting[font_size]", 
+							options_for_select(font_size_for_select, settings["font_size"]
+							))
+							%>
+							<%="px"%>
+						</td>
+						<td></td>
+						<td>
+							<%=_("フォントカラー")%>
+						</td>
+						<td valign="top">
+							<div class="form-item">
+						  	<%= text_field_tag("contents_setting[font_color]", settings["font_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+						  	</div>
+						  	<%if settings["font_color"] != nil %>
+								  <script>document.getElementById("contents_setting[font_color]").value="<%=settings['font_color']%>"</script>
+						  	<%end%>
+					 	</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><%=_("背景色")%></td>
+						<td>
+							<div class="form-item">
+						  	<%= text_field_tag("contents_setting[title_color]", settings["title_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+						  	</div>
+						  	<%if settings["title_color"] != nil %>
+								  <script>document.getElementById("contents_setting[title_color]").value="<%=settings['title_color']%>"</script>
+						  	<%end%>
+						</td>
+					</tr>
+					<tr>
+						<td>
+					        <%=_("スクロール方向")%>
+						</td>
+						<td>
+							<%= select_tag("contents_setting[scroll_direction]", 
+							options_for_select(scroll_direction_for_select, settings["scroll_direction"]
+							))
+							%>
+						</td>
+						<td></td>
+						<td>
+							<%=_("スクロール速度")%>
+						</td>
+						<td>
+							<%= select_tag("contents_setting[scroll_speed]", 
+							options_for_select(scroll_speed_for_select, settings["scroll_speed"]
+							))
+							%>
+						</td>
+          			</tr>
+			  </table>
+			</td>
+			<td>
+				<div id="picker" style="float: right;"></div>
+			</td>
+		</tr>
+	</table>
+</div>
+<br/>
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="twitter_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="twitter_guide_text">
+              <%="Twitterのつぶやき情報を表示します。"%><br/>
+              <%="検索キーワードに関係する最新のつぶやきを取得し、自動表示する事が可能です。"%><br/><br/>
+              <%="《表示数》"%><br/>
+              <%="画面に表示される最大のつぶやきの件数を指定します。"%><br/><br/>
+              <%="《切り替え時間》"%><br/>
+              <%="指定された秒数後、最新のつぶやきを再度表示します。"%><br/><br/>
+              <%="《キーワード検索》"%><br/>
+              <%="指定されたキーワードからつぶやきを検索し表示します。"%>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script><!--
+twitter_type_select();
+//--></script>

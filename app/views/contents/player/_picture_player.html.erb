@@ -1,0 +1,114 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => true } %>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $('#files').MultiFile( {
+      STRING: {
+        remove: '<input type="hidden" name="new_list[]" value="1" />削除',
+      }
+    })
+  })
+
+  function delFile(chk){
+  	var ischecked = chk.checked;
+  	if (file_count == 10 && !ischecked) {
+		alert("Max filecount is 10!");
+		chk.checked = true;
+		return false;
+	}
+	if (ischecked) {
+		file_count = file_count - 1
+	} else {
+		file_count = file_count + 1
+	}
+  }
+  
+</script>
+<table style="margin-bottom:15px;">
+	<tr>
+		<td>
+			<%= _("画像切替タイム(ms)")%><font color=red>*</font>
+		</td>
+		<td>
+			<%= text_field_tag("contents_setting[time]", h(settings["time"]), :maxlength => 6, :size=>6)%>
+		</td>
+		<td>
+			<%= _("エフェクトタイム(ms)")%><font color=red>*</font>
+		</td>
+		<td>
+			<%= text_field_tag("contents_setting[effecttime]", h(settings["effecttime"]), :maxlength => 6, :size=>6)%>
+		</td>
+        <td>
+			<%= _("エフェクト")%>
+			<%= select_tag("contents_setting[effect_type]", 
+				options_for_select(img_effect_for_select, settings["effect_type"]))
+			%>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><%="※ ms　・・・ 1000 ms (1 秒)"%></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<table style="margin-bottom:15px;">
+	<tr>
+        <td>
+        	<%=_("ファイルパス")%><font color=red>*</font>
+		</td>
+    </tr>
+	<tr>
+		<td>
+<%
+i = 0
+settings.each{|key,value|
+	if key =~ /picture_path/
+		i += 1
+	end
+}
+maxlength = 10 - i
+length = i
+%>
+			<input name="contents_multi_upload[picture_path][]" class="multi" id="files" size="60" type="file" accept="gif|jpg|png" maxlength="<%=maxlength%>"/>
+		</td>
+    </tr>
+</table>
+<%
+if maxlength == 0
+%>
+<script>document.getElementById("files").disabled = true;</script>
+<%end%>
+<table style="margin-bottom:15px;">
+	<tr>
+<%
+		settings.each{|key,value|
+		if key =~ /picture_path/
+%>
+	<tr>
+		<td>
+			<%= 
+				h value.split("-",2)[1]
+			%>
+		</td>
+		<td>
+			<%= check_box_tag("contents_uploaded[check_list][]", key + "/" + value, false, options = { :onclick =>"delFile(this)" })%>
+			<%=_("削除しますか？")%>
+		</td>
+	</tr>
+<%
+		end
+		}
+%>
+	</tr>
+</table>
+<script type="text/javascript" charset="utf-8">
+	var file_count = document.getElementsByName("contents_uploaded[check_list][]").length;
+</script>
+<%if maxlength == 0%>
+	<%=hidden_field_tag("checklength","max")%>
+<%else%>
+	<%=hidden_field_tag("checklength","nomal")%>	
+<%end%>
+<%=hidden_field_tag("length",length)%>
+<%= javascript_include_tag 'jquery.MultiFile' %>

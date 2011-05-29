@@ -1,0 +1,167 @@
+<style type="text/css">
+.video_guide_text{
+        width:810px;
+        height:265px;
+        word-break:break-all
+}
+.video_guide_title{
+        height:133px;
+        width:100px;
+        padding-top:132px;
+        text-align:center;
+}
+</style>
+<div>
+<!--
+	<div id="videoicon">
+		<img src="../images/video.gif">
+		<font size="5">
+			VIDEO SETTING FORM
+		</font>
+	</div>
+	<div align="center" style="width:90px; border:1px solid #ccc;"><font size="2px">Video設定</font></div>
+	<img src="../images/joint.gif">
+      Videoサイズ：<select id="videosize" name="Video_imagesize">
+        <option value="640*480">640*480</option>
+        <option value="320*240">320*240</option>
+        <option value="160*120">160*120</option>
+      </select>
+-->
+
+	<table>
+		<tr>
+			<td><%= "動画の設定方法"%><font color=red>*</font></td>
+			<td>
+					<%= radio_button_tag("contents_setting[video_set_type]", "video_upload", true, options ={:onclick=>"view_setting_type('video_upload');"})%><%="自分でアップロードする"%>
+					<%= radio_button_tag("contents_setting[video_set_type]", "youtube_keyword_search", false, options ={:onclick=>"view_setting_type('youtube_keyword_search');"})%><%="youtubeで動画を検索"%>
+					<%= radio_button_tag("contents_setting[video_set_type]", "embed_tag", false, options ={:onclick=>"view_setting_type('embed_tag');"})%><%="埋め込みタグを設定"%>
+			</td>
+		</tr>
+	</table>
+
+
+	<div id="video_upload">
+		<table>
+			<tr>
+				<td>
+					<%=_("アップロードするmp4　ファイル")%><font color=red>*</font>
+				</td>
+				<td>
+					<%= file_field_tag("contents_upload[video_file_mp4]", :size=>"60")%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%=_("アップロードするwebmファイル")%><font color=red>*</font>
+				</td>
+				<td>
+					<%= file_field_tag("contents_upload[video_file_webm]", :size=>"60")%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%=_("アップロードするogvファイル")%><font color=red>*</font>
+				</td>
+				<td>
+					<%= file_field_tag("contents_upload[video_file_ogv]", :size=>"60")%>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div id="youtube_keyword_search" style="display:none;">
+		<table>
+			<tr>
+				<td>
+					<%=_("検索キーワード")%><font color=red>*</font>
+					<%= text_field_tag("contents_setting[keyword]", h(settings["keyword"]),:size=>"60",:maxlength => 50)%>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="embed_tag" style="display:none;">
+		<table>
+			<tr>
+				<td>
+					<%=_("埋め込みタグ")%><font color=red>*</font>
+					<%= text_area_tag("contents_setting[embed_tag]", h(settings["embed_tag"]),:size=>"50",:maxlength => 2048)%>
+				</td>
+			</tr>
+		</table>
+	</div>
+<input type="hidden" name="contents_setting[local_url]" value=<%= request.env["HTTP_HOST"] %>>
+	
+</div>
+<br/>
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="video_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="video_guide_text">
+             <%="動画を再生するプレーヤです。"%><br/><br/>
+             <%="《自分でアップロードする》"%><br/>
+             <%="HTML5対応のブラウザで再生できます(IEはバージョン9以降)。"%><br/>
+             <%="mp4、webm、ogvの3つの動画ファイル形式の中で、"%><br/>
+             <%="ご利用されるブラウザの推奨形式が不明の場合は、"%><br/>
+             <%="3つとも設定して下さい。"%><br/><br/>
+             <%="《youtubeで動画を検索》"%><br/>
+             <%="指定したキーワードで動画を検索し、表示させます。"%><br/><br/>
+             <%="《埋め込みタグを設定》"%><br/>
+             <%="youtubeやニコニコ動画等の動画共有サイトから、"%><br/>
+             <%="動画の埋め込み用URLを入力してください。"%> 
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if settings["video_set_type"] == "youtube_keyword_search" %>
+<script>
+	document.getElementById("contents_setting_video_set_type_youtube_keyword_search").checked = "checked";
+	document.getElementById("video_upload").style.display = "none";
+	document.getElementById("youtube_keyword_search").style.display = "block";
+	document.getElementById("embed_tag").style.display = "none";
+</script>
+<% elsif settings["video_set_type"] == "embed_tag" %>
+<script>
+	document.getElementById("contents_setting_video_set_type_embed_tag").checked = "checked";
+	document.getElementById("video_upload").style.display = "none";
+	document.getElementById("youtube_keyword_search").style.display = "none";
+	document.getElementById("embed_tag").style.display = "block";
+</script>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+function view_setting_type(str){
+	var type = str;
+	if (type == "video_upload") {
+		document.getElementById("video_upload").style.display = "block";
+		document.getElementById("youtube_keyword_search").style.display = "none";
+		document.getElementById("embed_tag").style.display = "none";
+	}else if(type == "youtube_keyword_search"){
+		document.getElementById("video_upload").style.display = "none";
+		document.getElementById("youtube_keyword_search").style.display = "block";
+		document.getElementById("embed_tag").style.display = "none";
+	}else{
+		document.getElementById("video_upload").style.display = "none";
+		document.getElementById("youtube_keyword_search").style.display = "none";
+		document.getElementById("embed_tag").style.display = "block";
+	}
+}
+</script>

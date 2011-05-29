@@ -1,0 +1,100 @@
+<div style="margin-left:75px;margin-top:75px;">
+	<div class="select" style="margin-bottom:15px;">
+		<div style="margin:5px;">
+			<%= image_tag("./imagefile/point.png")%><%=_("設定手順")%>
+		</div>
+		<div id="listback">
+		<table id="pageselect" border="0px">
+			<tr align="center">
+				<td width="10px"></td>
+				<td width="140px"><b><%= link_to _("チャンネル選択"), channels_path %></b></td>
+				<td width="10px"></td>
+				<td width="120px"><b><%= link_to _("チャンネル設定"),edit_channel_path(@channel)%></b></td>
+				<td width="5px"></td>
+				<td width="120px"><b><%=_("ページ選択")%></b></td>
+				<td width="10px"></td>
+				<td width="160px"><b><%=_("ページ＋プレーヤ設定")%></b></td>
+				<td width="5px"></td>
+				<td width="100px"><b><%=_("ページを表示")%></b></td>
+				<td width="30px"></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+	<%
+		id = params[:page_id]
+		id ||=params[:id]
+	%>
+<!--チャンネルインフォメーション-->
+	<table frame="box" rules="none" border="1px" bordercolor="#cccccc" style="margin-bottom:15px; margin-top:5px;">
+		<tr>
+			<td>
+				<table>
+					<tr>
+				        <th colspan="4"><%= _("チャンネル 設定内容")%>
+				        </th>
+				    </tr>
+					<tr>
+						<td><%= _("現在のチャンネルは<b>%dCh</b> です") % @channel.channel_no.to_s %></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><%= _("チャンネル名 ")%><b><%= h @channel["name"]%></b></td>
+						<td><%= _("背景色 ")%></td>
+						<td style="background:<%=  @channel['background']%>;"><b><%=  @channel["background"]%></b></td>
+						<td></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<!--チャンネルインフォメーションここまで-->
+	<h1><%= _("ページ選択")%></h1>
+	<!--ページセレクション-->
+	<div class="select" style="margin-bottom:15px;">
+		<table frame="void"  bordercolor="#50494a" style="padding:8px">
+			<tr>
+		<% 10.times do |i|-%>
+			<td width="58px" height="40px" align="center" valign="center">
+			<% flg = false-%>
+			<% @pages.each{|page|-%>
+				<% if (i + 1) == page.page_no-%>
+					<%= link_to(image_tag("./pages/on/" + (i+1).to_s + ".gif"),edit_channel_page_path(@channel, page),:popup => false) %>
+					<% flg = true-%>
+				<%end-%>
+			<%}%>
+			<%if !flg-%>
+					<%= link_to(image_tag("./pages/off/" + (i+1).to_s + ".gif"),new_channel_page_path(:page_no=>(i+1)),:popup => false) %>
+			<%end-%>
+			</td>
+		<% end-%>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="select	" style="margin-top:15px; margin-bottom:15px;">
+		<table><tr><td><%= image_tag("./imagefile/point.png")%>&nbsp;<%=_("説明")%></td></tr></table>
+		<!--ページインフォメーション-->
+		<div style="padding:5px;">
+			<table frame="border" rules="all" bordercolor="#cccccc" width="100%">
+			<tr>
+				<td align="center" width="130px">
+					<%=_("ページ選択")%>
+				</td>
+				<td valign="top">
+					<%=_("設定するページを選択してください。")%>
+					<%=_("1つのチャンネル内には１０ページがあり、設定した時間で切替表示を行います。")%>
+				</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+	<div class="rogo">
+		<%= image_tag ("./imagefile/tv.gif",:width=>"50px",:height=>"50px")%>
+		<%= image_tag ("./imagefile/bottomrogo.png") %>
+	</div>
+</div>
+<!--ページインフォメーションここまで-->

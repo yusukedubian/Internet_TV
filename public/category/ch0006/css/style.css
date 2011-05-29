@@ -1,0 +1,233 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	text-align:center;
+	background: #000000;
+	color: #FFFFFF;
+	margin: 0;
+}
+
+h1 {
+  font-size:16px;
+}
+
+p {
+  font-size: 12px;
+	margin: 2px 0;
+	clear: both;
+}
+
+ul, ol {
+	margin-left 0;
+}
+
+ul ul {
+	margin-bottom: 10px;
+}
+
+ul li{ 
+	list-style:none; 
+	display:block; 
+	padding-bottom:1px; 
+	margin-bottom:0px; 
+}
+
+a {
+	color:white
+}
+
+/* #con 右のマージンが同じ値になるように自動調節され、結果としてセンタリグされます。文字だけ左寄せに*/
+#conten {
+	width:830px;
+	height:620px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+	background: url(../img/bg.jpg) no-repeat;
+}
+
+#header {
+}
+
+#side {
+	width:208px;
+	display:inline;
+	float:left;
+	margin: 61px 10px 20px 40px;
+	height: 570px;
+}
+
+#main {
+	float: right;
+	width: 540px;
+	height: 250px;
+  margin-top:60px;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+#main2 {
+	float:right;
+	width:540px;
+	height:320px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top: 10px;
+}
+
+#new1_title {
+  width:165px;
+  float:left;
+  margin-top:13px;
+  margin-left:5px;
+  height:20px;
+  text-align:center;
+}
+
+#new2_title {
+  width:165px;
+  float:left;
+  margin-top:13px;
+  margin-left:5px;
+  height:20px;
+  font-size:12px;
+  text-align:center;
+}
+
+#new3_title {
+  width:165px;
+  float:left;
+  margin-top:13px;
+  margin-left:5px;
+  height:20px;
+  font-size:12px;
+  text-align:center;
+}
+
+#new1_content {
+	width:165px;
+	float:left;
+  margin-top:5px;
+  margin-left:5px;
+  margin-right:5px;
+	height: 250px;
+  font-size:12px;
+}
+
+#new2_content {
+	width:165px;
+	float:left;
+  margin-top:5px;
+  margin-left:5px;
+  margin-right:5px;
+	height: 250px;
+  font-size:12px;
+}
+
+#new3_content {
+	width:165px;
+	float:left;
+  margin-top:5px;
+  margin-left:5px;
+  margin-right:5px;
+	height: 250px;
+  font-size:12px;
+}
+
+.main_span {
+  font-size:14px;
+  font-weight:bold;
+}
+
+.genre_title {
+  font-size:16px;
+  font-weight:bold;
+}
+
+.new_span {
+  font-size:16px;
+  font-weight:bold;
+}
+
+.div_center {
+  text-align:center;
+}
+
+.side_span {
+  font-size:9px;
+}
+
+* { margin:0; padding:0; }
+
+.bestseller .entry_line {
+	float:left;
+	height: 80px;
+  margin: 0px 0px 0px 0px;
+}
+
+.gift .entry_main {
+	float:left;
+	width: 500px;
+	height: 200px;
+}
+
+.gift_entry_title {
+	font-weight:bold;
+	font-size:14px;
+	color:#FFFFFF;
+	}
+
+.bestseller_entry_title {
+		font-weight:bold;
+		font-size:12px;
+}
+
+.new1_entry_title {
+		font-weight:bold;
+		font-size:12px;
+	}
+
+.new2_entry_title {
+		font-weight:bold;
+		font-size:12px;
+	}
+
+.new3_entry_title {
+		font-weight:bold;
+		font-size:12px;
+	}
+
+.gift_entry_image {
+		float:left;
+    margin:0px 0px 0px 0px;
+}
+
+.gift_entry_content {
+	float:right;
+	margin:100px 0px 0px 0px;
+	width:330px;
+	color:#FFFFFF;
+	}
+
+
+  .gift_contents_author {
+    font-size:14px;
+		font-weight:bold;
+		margin-bottom:0px;
+  }
+  .gift_contents_published {
+    font-size:14px;
+		font-weight:bold;
+		margin-bottom:0px;
+  }
+  .gift_contents_price {
+    font-size:14px;
+		font-weight:bold;
+		margin-bottom:0px;
+  }
+  .gift_contents_ranking {
+		font-size:14px;
+		font-weight:bold;
+		margin-bottom:0px;
+  }

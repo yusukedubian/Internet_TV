@@ -1,0 +1,97 @@
+<style type="text/css">
+.ustream_guide_text{
+        width:810px;
+        height:450px;
+        word-break:break-all
+}
+.ustream_guide_title{
+        height:225px;
+        width:100px;
+        padding-top:225px;
+        text-align:center;
+}
+</style>
+	<div>
+		<table>
+			<tr>
+				<td>
+					<%=radio_button_tag("contents_setting[ustreamtype]","pc",checked=true,options ={:onclick=>"ustreamtype('pc');"})%><%=_("PCブラウザ")%>
+					<%=radio_button_tag("contents_setting[ustreamtype]","ipad",checked=false,options ={:onclick=>"ustreamtype('ipad');"})%><%=_("ipad")%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="pc">
+						<%=radio_button_tag("contents_setting[searchtype]","keyword",checked=true,options ={:onclick=>"searchtype('keyword');"})%><%=_("キーワード検索")%><font color=red>*</font>
+						<%=radio_button_tag("contents_setting[searchtype]","ch_name",checked=false,options ={:onclick=>"searchtype('ch_name');"})%><%=_("Ustreamチャンネル名")%><font color=red>*</font>
+							<div id="keyword">
+								<%= text_field_tag("contents_setting[ustream_keyword]", h(settings["ustream_keyword"]),:size=>"50",:maxlength => 60)%>
+							</div>
+							<div id="ch_name" style="display:none;">
+								<%= text_field_tag("contents_setting[ustream_channel_name]", h(settings["ustream_channel_name"]),:size=>"50",:maxlength =>60)%>
+							</div>
+					</div>
+					<div id="ipad" style="display:none;">
+						<%=_("UstreamチャンネルID")%><font color=red>*</font><br>
+						<%= text_field_tag("contents_setting[ustream_channel_id]", h(settings["ustream_channel_id"]),:size=>"20",:maxlength => 7)%>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+<br/>
+	<div class="select">
+		<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+			<span class="bt1">
+				<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+			</span>
+			<span><%=@player.view_name+" 説明を開く"%></span>
+		</div>
+		<div id="layout_guide_off" class="layout_guide">
+			<span id="layout_guide_offbt" class="bt1">
+				<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+			</span>
+			<span><%="説明を閉じる"%></span>
+			<div style="clear:both;"></div>
+			<div class="guide_box">
+				<div class="ustream_guide_title">
+					<%=@player.view_name%>
+				</div>
+			</div>
+			<div class="guide_box">
+				<div class="ustream_guide_text">
+                  <%="USTREAMの生放送を表示します。キーワード再生やチャンネル再生、iPadでの表示にも対応しています(※1，2)。"%><br/><br/>
+                  <%="《PCブラウザ、キーワード検索》"%><br/>
+                  <%="好きなタイトル名を入力すると、最初にヒットしたものが閲覧出きるようになります。"%><br/><br/>
+                  <%="《Ustreamチャンネル名(※3)》"%><br/>
+                  <%="Ustreamのチャンネル名を入力すると、指定したチャンネルを閲覧できるようになります。"%><br/><br/>
+                  <%="《ipad》"%><br/>
+                  <%="ipadでチャンネルIDを入力する場合、配信者と視聴者で手順が分れます。"%><br/><br/>
+                  <%="配信者は、Ustreamサイト内で、配信したいチャンネルを選ぶと、"%><br/>
+                  <%="ブラウザのURL欄にアドレスが表示されるので、そのURLの最後の5〜7桁の数字を入力してください。"%><br/>
+                  <%="(例)http://www.ustream.tv/mybroadcasts/9999999"%><br/><br/>
+                  <%="視聴者は、以下の手順で表示される数字を入力して下さい。"%><br/>
+                  <%="①PCのブラウザで視聴したいチャンネルを表示"%><br/>
+                  <%="②「embed codes」をクリック"%><br/>
+                  <%="③「embed」タグ内に埋め込まれている「cid=数字」の5〜7桁の数字"%><br/><br/>
+                  <%="(※1)UstreamはipadとPCブラウザとでは閲覧方法が異なります。対応したものを選択してください。"%><br/>
+                  <%="(※2)閲覧できるものはquicktimeで配信されているものに限ります。"%><br/>
+                  <%="(※3)チャンネル名…http://www.ustream.tv/xxxxx　の　xxxxxの部分"%><br/>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<%if settings["ustreamtype"] == "ipad"%>
+<script>
+document.getElementById("contents_setting_ustreamtype_ipad").checked = "checked";
+document.getElementById("pc").style.display = "none";
+document.getElementById("ipad").style.display = "block";
+</script>
+<%elsif settings["searchtype"] == "ch_name"%>
+<script>
+document.getElementById("contents_setting_searchtype_ch_name").checked = "checked";
+document.getElementById("keyword").style.display = "none";
+document.getElementById("ch_name").style.display = "block";
+</script>
+<%end%>

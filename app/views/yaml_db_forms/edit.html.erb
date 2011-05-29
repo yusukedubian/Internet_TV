@@ -1,0 +1,66 @@
+<%= javascript_include_tag "prototype" %>
+<%= javascript_include_tag "effects" %>
+<%= javascript_include_tag "dragdrop" %>
+<%= javascript_include_tag "controls" %>
+
+<div class="container" id="container">
+	<div class="account" style="margin-bottom:15px;">
+		<table width="100%">
+			<tr>
+				<td colspan="1">
+					<h2>
+						<b>
+							<%= _("YAMLフォーム GUI編集") %>
+						</b>
+					</h2><br>
+				</td>
+				<td align="right">
+					<div style="text-align:right; margin-right:35px;">
+						<%= link_to _("テキスト編集モード＞＞"), {:action=>'text_edit', :id=>@yaml_db_forms[:id]} %>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<% form_tag({:action=>'modify', :id=>@yaml_db_forms[:id]}, {:multipart=>true}) do %>
+			<%= render :partial => 'form' %>
+
+			<table>
+				<tr>
+					<td>
+						<%= submit_tag _("保存") %>
+					</td>
+					<td>
+						<a href="javascript:history.back();"><%="戻る"%></a>
+					</td>
+				</tr>
+			</table><br>
+		<% end %>	
+	</div>
+	
+	<%= render :partial => 'form_help' %>
+</div>
+
+<script>
+	function limitChars(target,maxlength) {
+    	if ( target.value.length > maxlength ) {
+			target.value = target.value.substr(0,maxlength);
+    	}
+	}
+</script>
+
+<style type="text/css">
+div.container {list-style-type: none; margin-left: 10px;margin-top:10px;}
+	
+div.html_item {
+   border-radius: 10px;         /* CSS3 */
+   -moz-border-radius: 5px;    /* Firefox */
+   -webkit-border-radius: 10px; /* Safari,Chrome */
+
+   border: 1px #ccc solid;     /* 枠線の装飾 */
+   background-color: #f5f5f5;   /* 背景色 */
+   width:850px;
+   padding-top:15px;
+   padding-bottom:15px;
+   margin-left: 25px;
+}	
+</style>

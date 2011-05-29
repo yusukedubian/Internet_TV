@@ -1,0 +1,26 @@
+
+
+<div id="Area">
+<h1>パスワード再設定</h1>
+	<div class="account" style="width:400px;padding-left:10px;">
+		<% form_for(:user, :url => { :action => 'update_after_forgetting' }) do |f| %>
+		
+		  <p>パスワードや個人情報を不正に入手する手口にご注意ください</p>
+		
+		  <p>
+		    <%= f.label :password, "パスワード" %><br />
+		    <%= f.password_field :password %>
+		  </p>
+		
+		  <p>
+		    <%= f.label :password_confirmation, "パスワード再入力" %><br />
+		    <%= f.password_field :password_confirmation %>
+		  </p>
+		
+		  <p>
+		    <%= hidden_field_tag :reset_code, params[:reset_code] %>
+		    <%= f.submit "パスワード再設定" %>
+		  </p>
+		<% end %>
+	</div>
+</div>

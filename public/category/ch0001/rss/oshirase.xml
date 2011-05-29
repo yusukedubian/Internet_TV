@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>お知らせ</title>
+    <link> </link>
+    <description> </description>
+    <item>
+      <title>お知らせ</title>
+      <description>VASDAQTVリリースしました（3月29日）。　　</description>
+      <pubDate>Tue, 30 Mar 2010 16:15:15 +0900</pubDate>
+      <dc:date>2010-03-30T16:15:15+09:00</dc:date>
+    </item>
+  </channel>
+</rss>

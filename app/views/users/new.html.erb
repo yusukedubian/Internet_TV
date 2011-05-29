@@ -1,0 +1,25 @@
+<div id="Area">
+<h1><%= image_tag("./welcome/icon/h1_mospeng.gif")%><%= _("新規アカウント作成") %></h1>
+<div class="account" style="width:400px;padding-left:10px;">
+<%= _("既にアカウントをお持ちの方はこちら =>")%><%= link_to _("ログイン"), login_path %><p>
+<% form_for @user, :autocomplete=>'off' do |f| %>
+<p><label for="user_name"><%= _("ニックネーム") %><%= _("(1～20文字以内)") %></label><br/>
+<%= f.text_field :user_name, :maxlength=>20 ,:size=>20%></p>
+<p><label for="login"><%= _("ログインID") %><%= _("(3～40文字以内)") %></label><br/>
+<%= f.text_field :login, :maxlength=>40 ,:size=>20%></p>
+<p><label for="email"><%= _("メールアドレス") %></label><br/>
+<%= f.text_field :email, :maxlength=>100 ,:size=>20%></p>
+<p><label for="password"><%= _("パスワード") %><%= _("(6～40桁以内)") %></label><br/>
+<%= f.password_field :password, :maxlength=>40 ,:size=>20%></p>
+<p><label for="password_confirmation"><%= _("パスワード再入力") %><%= _("(6～40桁以内)") %></label><br/>
+<%= f.password_field :password_confirmation, :maxlength=>40 ,:size=>20%></p>
+
+  <p>
+    <%= link_to _('キャンセル'), login_path, :id=>'cancel_link' %>
+    <%= submit_tag _('サインアップ') %>
+  </p>
+<% end %>
+
+</div><br/>
+<%= render :partial => 'new_help' %>
+</div>

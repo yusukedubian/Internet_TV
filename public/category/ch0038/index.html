@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="Description" content="" />
+  <meta name="Keywords" content="" />
+  <title>ヴァスダック｜世界の総合ニュース</title>
+  <link rel="stylesheet" href="./css/reset.css" type="text/css" />
+  <link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="./css/jcarousel.css" />
+  <link rel="stylesheet" type="text/css" href="./css/skin-news.css" />
+  <link rel="stylesheet" type="text/css" href="./css/skin-twit.css" />
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/jcarousel.pack.js"></script>
+  <script type="text/javascript" src="./js/jcarousel.js"></script>
+  <script type="text/javascript" src="./js/twitterAPI.js"></script>
+  <script type="text/javascript" src="./js/twit.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAcEYKMy58hPWd8htp6fqZDRSmVRvEqGFb2dDZ5TKdmLoZWOWYiBTYKMG5jrox7KvmEikP8Mb2PSQqlw"></script>
+  <script src="js/feed.js" type="text/javascript"></script>
+  <script type="text/javascript">
+   function caroBack(carousel) {
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+     carousel.stopAuto();
+    }, function() {
+     carousel.startAuto();
+    });
+   };
+
+   jQuery(document).ready(function() {
+    jQuery('#inews').jcarousel({
+     auto: 5,
+     wrap: 'last',
+		 vertical: true,
+		 scroll: 1,
+     initCallback: caroBack
+    });
+   });
+
+   jQuery(document).ready(function() {
+    jQuery('#anews').jcarousel({
+     auto: 5,
+     wrap: 'last',
+		 vertical: true,
+		 scroll: 1,
+     initCallback: caroBack
+    });
+   });
+
+   jQuery(document).ready(function() {
+    jQuery('#twit').jcarousel({
+     auto: 5,
+     wrap: 'last',
+		 vertical: false,
+		 scroll: 1,
+     initCallback: caroBack
+    });
+   });
+  </script>
+ </head>
+ <body>
+  <div id="main">
+   <div id="upper">
+    <div id="twit_nickname" class="twit_nickname">
+    </div>
+    <div id="twit_content" class="twit_content">
+     <div id="twit_image" class="twit_image">
+     </div>
+     <div id="twit_text" class="twit_text">
+      <ul id="twit" class="jcarousel-skin-twit">
+       <li><div id="twit_text_1"></div></li>
+       <li><div id="twit_text_2"></div></li>
+       <li><div id="twit_text_3"></div></li>
+       <li><div id="twit_text_4"></div></li>
+       <li><div id="twit_text_5"></div></li>
+       <li><div id="twit_text_6"></div></li>
+       <li><div id="twit_text_7"></div></li>
+       <li><div id="twit_text_8"></div></li>
+       <li><div id="twit_text_9"></div></li>
+       <li><div id="twit_text_10"></div></li>
+       <li><div id="twit_text_11"></div></li>
+       <li><div id="twit_text_12"></div></li>
+       <li><div id="twit_text_13"></div></li>
+       <li><div id="twit_text_14"></div></li>
+       <li><div id="twit_text_15"></div></li>
+       <li><div id="twit_text_16"></div></li>
+       <li><div id="twit_text_17"></div></li>
+       <li><div id="twit_text_18"></div></li>
+       <li><div id="twit_text_19"></div></li>
+       <li><div id="twit_text_20"></div></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div id="left">
+    <ul id="inews" class="jcarousel-skin-news">
+     <li><div id="inews_entry_1"></div></li>
+     <li><div id="inews_entry_2"></div></li>
+     <li><div id="inews_entry_3"></div></li>
+     <li><div id="inews_entry_4"></div></li>
+     <li><div id="inews_entry_5"></div></li>
+     <li><div id="inews_entry_6"></div></li>
+     <li><div id="inews_entry_7"></div></li>
+     <li><div id="inews_entry_8"></div></li>
+     <li><div id="inews_entry_9"></div></li>
+     <li><div id="inews_entry_10"></div></li>
+     <li><div id="inews_entry_11"></div></li>
+     <li><div id="inews_entry_12"></div></li>
+     <li><div id="inews_entry_13"></div></li>
+     <li><div id="inews_entry_14"></div></li>
+     <li><div id="inews_entry_15"></div></li>
+     <li><div id="inews_entry_16"></div></li>
+     <li><div id="inews_entry_17"></div></li>
+     <li><div id="inews_entry_18"></div></li>
+     <li><div id="inews_entry_19"></div></li>
+     <li><div id="inews_entry_20"></div></li>
+    </ul>
+   </div>
+   <div id="right">
+    <ul id="anews" class="jcarousel-skin-news">
+     <li><div id="anews_entry_1"></div></li>
+     <li><div id="anews_entry_2"></div></li>
+     <li><div id="anews_entry_3"></div></li>
+     <li><div id="anews_entry_4"></div></li>
+     <li><div id="anews_entry_5"></div></li>
+     <li><div id="anews_entry_6"></div></li>
+     <li><div id="anews_entry_7"></div></li>
+     <li><div id="anews_entry_8"></div></li>
+     <li><div id="anews_entry_9"></div></li>
+     <li><div id="anews_entry_10"></div></li>
+     <li><div id="anews_entry_11"></div></li>
+     <li><div id="anews_entry_12"></div></li>
+     <li><div id="anews_entry_13"></div></li>
+     <li><div id="anews_entry_14"></div></li>
+     <li><div id="anews_entry_15"></div></li>
+     <li><div id="anews_entry_16"></div></li>
+     <li><div id="anews_entry_17"></div></li>
+     <li><div id="anews_entry_18"></div></li>
+     <li><div id="anews_entry_19"></div></li>
+     <li><div id="anews_entry_20"></div></li>
+    </ul>
+   </div>
+  </div>
+  <script type="text/javascript">
+   getFeed();
+  </script>
+  <script type="text/javascript">
+   createTwit();
+  </script>
+ </body>
+</html>

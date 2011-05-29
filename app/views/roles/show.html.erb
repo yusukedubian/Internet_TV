@@ -1,0 +1,12 @@
+<div class="admin">
+<% form_for(@role, :disabled=>true) do |f| %>
+  <label for>name</label><%= @role.name%><br>
+  <label for>name</label><%= @role.created_at%><br>
+  <label for>name</label><%= @role.updated_at%><br>
+<% end %>
+
+<p>
+  <%= link_to _('Edit'), edit_role_path(@role) %> |
+  <%= link_to _('Back'), roles_path %>
+</p>
+</div>

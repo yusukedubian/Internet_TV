@@ -1,0 +1,17 @@
+<div id="Area">
+<h1><%= image_tag("./welcome/icon/h1_mospeng.gif")%><%= _("パスワードを忘れた場合") %></h1>
+	<div class="account" style="width:400px;padding-left:10px;">
+	<% form_for(@forgot_password) do |f| %>
+	  <p><label for="email"><%= _("メールアドレス")%></label><br/>
+	
+	  <p>
+	    <%= f.label :email %><br />
+	    <%= f.text_field :email, :autocomplete=>'off', :size=>40  %>
+	  </p>
+	  <p>
+	    <%= f.submit "送信" %>
+	  </p>
+	  <p><%= link_to _("キャンセル"), new_session_path %></p>
+	<% end %>
+	</div>
+</div>

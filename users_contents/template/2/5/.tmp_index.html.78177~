@@ -1,0 +1,17 @@
+<body style='margin:0px;'>
+<div> 
+<embed 
+TYPE = 'application/x-java-applet' \ 
+CODE = 'ultracam.class' \ 
+ARCHIVE = 'ultracam.jar' \ 
+NAME = 'ucx' \ 
+WIDTH = '320' \ 
+HEIGHT = '240' \ 
+accountcode ='YWRtaW46YWRtaW4' / \ 
+codebase ='http://vasdaqshanghai.dyndns.org:8008/admin' / \ 
+mode ='0' / \ 
+scriptable = false 
+pluginspage = 'http://java.sun.com/products/plugin/index.html#download'> 
+</embed>
+</div> 
+</body>

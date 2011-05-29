@@ -1,0 +1,149 @@
+<div id="Area">
+<h1><%= image_tag("./welcome/icon/h1_mospeng.gif")%><%= _("プレーヤ一覧")%></h1>
+<ul>
+<li class="disc"><%= _("VASDAQ.TVのプレーヤ一覧です。")%><br>
+<%= _("今後も様々なプレーヤを追加していく予定ですのでご期待ください。")%></li>
+</ul>
+<br>
+
+<!-- 文章ここから -->
+<h3><%= _("VASDAQ.TV標準プレーヤ")%></h3>
+<ul>
+<li class="decimal"><b class="orange"><%= _("HTMLプレーヤ")%></b><br><%= _("お好きなHPを動的に表示するプレーヤです。指定した時間毎に複数のURLを順番に切り替えて表示します。")%></li>
+<li class="decimal"><b class="orange"><%= _("RSSプレーヤ")%></b><br><%= _("RSS情報をリアリタイムに読み込んで、画面に自動表示します。縦横自動スクロール表示等も対応。電光掲示板風に表示する事も可能です。")%></li>
+<li class="decimal"><b class="orange"><%= _("ウィジェットプレーヤ")%></b><br><%= _("Web版Googleガジェットやブログパーツを動的に表示します。ウィジェットを指定時間毎に自動更新したり、自作ウィジェットの追加も出来ます。")%></li>
+<li class="decimal"><b class="orange"><%= _("テキストプレーヤ")%></b><br><%= _("入力したテキストを、スクロールしたり、点滅させて、動的に表示させる事が出来ます。電光掲示板風の表示や日付時刻を表示する事も出来ます。")%></li>
+<li class="decimal"><b class="orange"><%= _("イメージプレーヤ")%></b><br><%= _("画像ファイル（gif,jpg,png等）を動的に表示します。画像切替時にエフェクトを指定し、デジタルフォトフレーム風の表示も可能です。")%></li>
+
+<li class="decimal"><b class="orange"><%= _("オーディオプレーヤ")%></b><br><%= _("音声や音楽の再生をするプレーヤです。最大１０曲までの音楽ファイルを指定する事が出来ます。HTML5対応ブラウザで再生可。")%></li>
+<li class="decimal"><b class="orange"><%= _("ビデオプレーヤ")%></b><br><%= _("ビデオを表示する汎用プレーヤです。HTML5対応ビデオファイルの再生やYoutubeを動的に検索して、 キーワードに対応する動画の再生も可能です。")%></li>
+<li class="decimal"><b class="orange"><%= _("Twitterプレーヤ")%></b><br><%= _("Twitterのつぶやき情報を表示するプレーヤです。検索キーワードに関係するつぶやきを順番に自動表示し、最新情報の取得表示が可能です。")%></li>
+<li class="decimal"><b class="orange"><%= _("USTREAMプレーヤ")%></b><br><%= _("USTREAMの生放送を表示するプレーヤです。キーワード再生やチャンネル再生、iPadでの表示にも対応しています。")%></li>
+<li class="decimal"><b class="orange"><%= _("カメラプレーヤ")%></b><br><%= _("IPカメラの動画画像をリアルタイム表示するプレーヤです。（COREGA社製のIPカメラのみ対応しています。他社のカメラ対応はご相談下さい。）")%></li>
+
+<li class="decimal"><b class="orange"><%= _("YAMLメールプレーヤ")%></b><br><%= _("YAML形式で記述されたメールの内容をリアルタイムに表示するプレーヤです。YAML専用メーラも提供しています。（市販のメーラでも更新可能です。）")%></li>
+<li class="decimal"><b class="orange"><%= _("FLASHプレーヤ(非推奨)")%></b><br><%= _("FLASHファイルを表示するプレーヤです。(VASDAQ.TVはHTML5に完全対応しています。iPhone等はこのプレーヤを使用すると表示出来ない可能性があります。)")%></li>
+<!--
+<li class="decimal"><b class="orange"><%=_("EDINETプレーヤ")%></b><br><%= _("株式投資家用にEDINETのXBRLファイルを表示するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("Q＆Aプレーヤ")%></b><br><%= _("５月１日リリース予定。問題集やQ＆A、なぞなぞを出題する為のプレーヤです。")%></li>
+-->
+</ul>
+
+<br>
+
+<h3><%= _("今後の提供予定プレーヤ（提供次期未定）")%></h3>
+<ul>
+<li class="decimal"><b class="orange"><%= _("Googleマッププレーヤ ")%></b><br><%= _("GoogleLatitudeやGoogleマップの地図を表示するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("メッセンジャープレーヤ")%></b><br><%= _("XMPP Jingleライブラリを利用し、文字や音声、動画のメッセンジャー機能を実現するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("セカイカメラプレーヤ")%></b><br><%= _("セカイカメラのサービスを表示するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("CVプレーヤ")%></b><br><%= _("OpenCVライブラリを利用し、人や物の自動認識をするプレーヤです。")%></li>
+
+<li class="decimal"><b class="orange"><%= _("AR Toolkitプレーヤ")%></b><br><%= _("AR Toolkitライブラリを利用し、仮想空間を実現するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("ePubプレーヤ")%></b><br><%= _("電子書籍フォーマットepubファイルを動的に表示するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("ポッドキャストプレーヤ")%></b><br><%= _("ポッドキャスト、ビデオポッドキャスト、epub配信を制御するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("表／グラフプレーヤ")%></b><br><%= _("YAMLデータに基づき、動的に表／グラフを表示します。動くグラフの作成が可能です。")%></li>
+<li class="decimal"><b class="orange"><%= _("リアルタイム検索プレーヤ")%></b><br><%= _("インターネットから指定されたキーワードを検索し、リアルタイムの最新情報を表示するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("株価／チャートプレーヤ")%></b><br><%= _("株価ボードやチャートの表示をするプレーヤです。為替や各種投資のチャートも表示可能です。")%></li>
+
+<!--
+<li class="decimal"><b class="orange"><%= _("地上波テレビプレーヤ")%></b><br><%= _("地上波テレビを表示するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("ニュースプレーヤ")%></b><br><%= _("よく使うニュースのRSSを集めて、簡単に表示する簡易プレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("天気プレーヤ")%></b><br><%= _("よく使う天気予報のRSSを集めて、簡単に表示する簡易プレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("株価プレーヤ")%></b><br><%= _("よく使う株価のRSSを集めて、簡単に表示する簡易プレーヤです。")%></li>
+
+<li class="decimal"><b class="orange"><%= _("ピクトグラムプレーヤ")%></b><br><%= _("ピクトグラムを表示する為のプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("サウンドプレーヤ")%></b><br><%= _("入電されたRSS情報やメールを読み上げるプレーヤです。音楽の再生も可能です。")%></li>
+-->
+</ul>
+
+<br>
+
+<h3><%= _("VASDAQ-ITオプションプレーヤ（有料サービス）")%></h3>
+<ul>
+<li class="decimal"><b class="orange"><%= _("モバイルオペレーションプレーヤ")%></b><br><%= _("モバイル機器を利用し、各種業務機能を実現するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("IDentificationプレーヤ")%></b><br><%= _("RFIDやQRコードなどの各種ID管理技術と連携する為のプレーヤです。")%></li>
+
+<li class="decimal"><b class="orange"><%=_("XBRLプレーヤ")%></b><br><%= _("会計ソフトやERPとXBRLで連携する為のプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("アドバタイジングプレーヤ")%></b><br><%= _("広告配信を制御するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("マイク（ヴォイス＋テレフォニー）プレーヤ")%></b><br><%= _("マイクを使い、VASDAQ.TVのオペレーション、自動電話指示等を実現するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("surveillanceプレーヤ")%></b><br><%= _("商用監視カメラとの連携を実現するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("レジスタプレーヤ")%></b><br><%= _("POSレジとの連携を実現するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("外部モニタ、電光掲示板プレーヤ")%></b><br><%= _("外部モニタや電光掲示板にVASDAQ.TVの情報を表示する為のプレーヤです。")%></li>
+
+<li class="decimal"><b class="orange"><%= _("各種センサー連携プレーヤ")%></b><br><%= _("温度計や湿度計などの各種センサーとの連携を実現するプレーヤです。")%></li>
+<li class="decimal"><b class="orange"><%= _("見える化マネジメントプレーヤ")%></b><br><%= _("見える化マネジメントを実現する業務用プレーヤです。")%></li>
+</ul>
+
+<br>
+
+<h3><%= _("バージョンアップ内容　2011年3月1日")%></h3>
+<ul>
+<li class="decimal">
+<b class="orange"><%= _("操作の利便性向上")%></b><br>
+<%= _("チャンネル選択⇒チャンネル設定⇒ページ選択⇒ページ設定⇒プレーヤ設定、これらの設定を1画面内で全て設定できるようにしました。")%><br>
+</li>
+
+<li class="decimal">
+<b class="orange"><%= _("プレーヤバージョンアップ")%></b><br>
+<%= _("●RssPlayer")%><br>
+<%= _("クラシックタイプ、電光掲示板タイプどちらかの方法で、RSSを表示することが出来ます。もともとあったStringPlayerをRssPlayerに統合しました。")%></li>
+
+<li class="decimal">
+<b class="orange"><%= _("新しいプレーヤ")%></b><br>
+<%= _("●VideoPlayer")%><br>
+<%= _("HTML5に対応しています。mp4とwebmファイル、youtubeで動画の検索、埋め込みタグを設定し表示することが出来ます。元々あったYoutubePlayerをVideoPlayerに統合しました。")%>
+<br>
+<%= _("●TextPlayer")%><br>
+<%= _("入力したテキストもしくは、時間を表示することが出来ます。入力したテキストは、クラシックタイプ、電光掲示板タイプの
+どちらかの方法で表示することが出来ます。もともとあった、FixtextPlayer/StringPlayer/ClockPlayerをTextPlayerに統合しました。")%>
+<br>
+<%= _("●ImagePlayer")%><br>
+<%= _("PicturePlayer/FiximagePlayerをImagePlayerに統合しました。 ")%><br>
+</li>
+
+<li class="decimal">
+<b class="orange"><%= _("削除したプレーヤ")%></b><br>
+<%= _("SoftRemoconPlayer")%><br>
+<%= _("YamlGraphPlayer")%><br>
+<%= _("YamlTablePlayer")%><br>
+<%= _("EdinetPlayer")%><br>
+<%= _("FixImagePlayer")%><br>
+<%= _("StringPlayer")%><br>
+<%= _("FixtextPlayer")%><br>
+<%= _("ClockPlayer")%><br>
+<%= _("YoutubePlayer")%><br>
+</li>
+
+<li class="decimal">
+<b class="orange"><%= _("バージョンアップによる制約事項")%></b><br>
+<%= _("今回削除したプレーヤを既に設定されているページがある場合は、引き続き　設定変更や表示をすることはできますが、
+<br>そのプレーヤを削除してしまうと、今後は追加することが出来ません。")%>
+</li>
+</ul>
+
+<br>
+<br>
+<br>
+
+<%= _("VASDAQ.TVはオープンソースプロジェクトです。")%><br>
+<%= _("プレーヤを新たに作成したい場合は、下記のインターフェース仕様書を参考にしてください。")%><br>
+<br>
+
+<a href="<%= image_path('./welcome/common/interface.pdf')%>"><%= _("VASDAQ.TVプレーヤインターフェース仕様（PDF 57.5KB）")%></a><br>
+<br>
+<%= _("もし、新たなプレーヤを作成して、オープンソースとして公開したい場合は、")%><br><%= _("下記")%><a href="http://sites.google.com/site/vasdaqit/contact-us"><%= _("「VASDAQ.TVオープンソースプロジェクト」")%></a><%= _("までお問い合わせください。")%>
+<br>
+<br>
+<br>
+<div class="bt"><center><a href="http://www.vasdaq.tv/yaml_db_forms/input/100005"><img src="<%= image_path('./welcome/common/ads_bt01.gif')%>"></a></center></div>
+
+
+
+
+
+
+<!-- 文章ここまで -->
+
+</div>
+
+

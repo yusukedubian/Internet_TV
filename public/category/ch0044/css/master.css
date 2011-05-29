@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+/*
+ Share Style [
+----------------------------------------------------------- */
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	background-color:#000000;
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:80%;
+}
+h1 {
+	color:#e8005d;
+	font-size:30px;
+	font-weight:normal;
+	margin:0px 0px 0px 120px;
+}
+h2 {
+	color:#2d2c2c;
+	font-size:30px;
+}
+h3 {
+	color:#000000;
+	font-size:30px;
+	font-weight:normal;
+}
+p,li,dt,dl {
+	line-height:160%;
+}
+p {
+	margin:0 0 1em 0;
+}
+li {
+	list-style-type:none;
+}
+img {
+	border:0;
+	vertical-align: middle;
+}
+
+hr {
+	display:none;
+}
+table{
+	border-collapse:collapse;
+}
+th,td{
+	padding:0;
+}
+.clear {
+	clear:both;
+}
+.bgAlpha{
+	padding:2px;
+	background-image:url("../img/bg.png");
+}
+
+/*
+ Link Color [
+----------------------------------------------------------- */
+a {
+	color:#003cff;
+	text-decoration:none;
+	outline:none;	//リンクをクリックした時に出る点線を消す
+}
+a:link {
+	color:#003cff;
+}
+a:visited {
+	color:#003cff;
+}
+a:hover {
+	text-decoration:underline;
+	color:#003cff;
+}
+a:active {
+	color:#003cff;
+}
+
+/*
+ Header [
+----------------------------------------------------------- */
+#Area {
+	height:640px;
+	background-image:url("../img/bg.jpg");
+	background-repeat: no-repeat;
+	background-position:top center;
+	}
+#Box {
+	margin:0 auto;
+	width:790px;
+	height:590px;
+	padding:5px;
+}
+#twitter_bg{
+	width:780px;
+	height:402px;
+	margin:0 auto;
+	background-image:url("../img/twitter_bg.png");
+}
+#message_bg{
+	width:426px;
+	height:110px;
+	margin:0 auto;
+	margin:10px 0px 0px 4px;
+	background-image:url("../img/message_bg.png");
+}
+#train_bg{
+	width:216px;
+	height:108px;
+	margin:0 auto;
+	margin:10px 0px 0px 4px;
+	background-image:url("../img/train_bg.png");
+}
+#TransCSR {
+	width:260px;
+	height:238px;
+	border:1px #FFF solid;
+	margin-left:5px;
+	padding:40px 5px 8px 5px;
+	background-image:url("../img/bg_alf01.png");
+}
+
+#Trans3future {
+	width:535px;
+	height:84px;
+	border:1px #FFF solid;
+	margin-top:5px;
+	padding:40px 7px 8px 7px;
+	background-image:url("../img/bg_alf02.png");
+}
+
+#TransApproach {
+	width:773px;
+	height:100px;
+	border:1px #FFF solid;
+	margin-top:5px;
+	padding:40px 7px 8px 7px;
+	background-image:url("../img/bg_alf03.png");
+}
+
+#TransIntroduction {
+	width:220px;
+	height:132px;
+	margin:5px 0px 0px 5px;
+	border:1px #FFF solid;
+	padding:0px 5px 0px 5px;
+	background-image:url("../img/bg_alf04.png");
+}
+
+#slideshow { position:relative; width:216px; height:108px; background-image:url("../img/train_bg.png"); margin:10px 0px 0px 12px;}
+#slideshow img { position:absolute; top:0; left:0; z-index:8; padding:8px 10px 10px 10px;}
+#slideshow img.active { z-index:10; }
+#slideshow img.last-active { z-index:9; }
+
+
+#weather_slideshow { position:relative; width:115px; height:109px; background-image:url("../img/weather_bg.png"); margin:10px 0px 0px 12px;}
+#weather_slideshow img { position:absolute; top:0; left:0; z-index:8; }
+#weather_slideshow img.active { z-index:10; }
+#weather_slideshow img.last-active { z-index:9; }
+

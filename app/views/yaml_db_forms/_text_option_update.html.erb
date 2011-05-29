@@ -1,0 +1,28 @@
+<% i = 0 %>
+<% while i < @yaml_db_forms["#{@name}_count"].to_i do %>
+<% option = @name + "_text_" + i.to_s + "option" %>
+<% @validate = @name + "_text_" + i.to_s %>
+	<table>	
+		<tr>
+			<td align='center'>
+				<%= _("入力値チェック処理 ") + (i + 1).to_s %>
+			</td>
+			<td>
+				<%= yaml_db_form_validate_select_tag "yaml_db_form[#{@name}_text_#{i}_validate]",
+														@yaml_db_forms["#{@name}_text_#{i}_validate"] %>
+				
+				<%= observe_field "yaml_db_form[#{@name}_text_#{i}_validate]",
+									:update=>option,
+									:with=>"'type='+value+'&'+'name=#{@name}_text_#{i}'",
+									:url=>{:action=>"text_validate_option_update"} %>												
+			</td>
+			<td>
+				<div id="<%= option %>">
+					<%= render :partial => 'text_validate_option_update' %>
+				</div>
+			</td>	
+		</tr>
+	</table>
+
+	<% i += 1 %>
+<% end %>

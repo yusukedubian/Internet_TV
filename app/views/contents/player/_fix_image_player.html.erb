@@ -1,0 +1,12 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => true } %>
+
+<table>
+	<tr>
+		<td>
+    		<%=_("イメージファイル")%><font color=red>*</font>
+		</td>
+		<td>
+			<%= file_field_tag("contents_upload[fiximage_path]", :size=>"60")%>
+		</td>
+	</tr>
+</table>

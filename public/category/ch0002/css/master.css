@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+/*
+ Share Style [
+----------------------------------------------------------- */
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	color:#FFFFFF;
+	background-color:#000000;
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:70%;//80
+}
+h1 {
+	font-size:18px;
+	font-weight:bold;
+}
+h2 {
+	font-size:16px;
+	font-weight:bold;
+}
+h3 {
+	margin-top:4px;
+	font-size:12px;
+	text-align:left;
+}
+/* -- IE7ハック -- */
+*:first-child+html h3 {
+	margin:6px -10px -1px 8px;
+}
+/* -- IE8ハック -- */
+html>/**/body h3 {
+	margin /*\**/:5px -10px 0px 8px\9;
+}
+
+p,li,dt,dl {
+	line-height:160%;
+}
+p {
+	margin:0 0 1em 0;
+}
+li {
+	list-style-type:none;
+}
+img {
+	border:0;
+	vertical-align: middle;
+}
+
+hr {
+	display:none;
+}
+table{
+	border-collapse:collapse;
+}
+th,td{
+	padding:0;
+}
+.clear {
+	clear:both;
+}
+/*
+ Link Color [
+----------------------------------------------------------- */
+a {
+	color:#003cff;
+	text-decoration:none;
+	outline:none;	//リンクをクリックした時に出る点線を消す
+}
+a:link {
+	color:#003cff;
+}
+a:visited {
+	color:#003cff;
+}
+a:hover {
+	text-decoration:underline;
+	color:#003cff;
+}
+a:active {
+	color:#003cff;
+}
+
+/*
+ Content [
+----------------------------------------------------------- */
+#Area {
+	height:640px;
+	background-image:url("../img/bg.jpg");
+	background-repeat: no-repeat;
+	background-position:top center;
+	}
+#Box {
+	margin:0 auto;
+	width:800px;
+	height:600px;
+}
+#bg {
+	width:800px;
+    height:41px;
+	background-image:url("../img/bg_newsclock.png");
+	background-repeat: no-repeat;
+}
+*:first-child+html #bg {  //IE7
+	width:800px;
+	margin-left:1px;
+}
+.Left{
+	padding:7px 0px 0px 30px;
+	width:470px;
+	float:left;
+}
+*:first-child+html .Left {  //IE7
+	padding:7px 0px 0px 30px;
+	margin-top:4px;
+}
+.Right{
+	padding:12px 3px 0px 0px;
+	width:280px;
+	float:right;
+}

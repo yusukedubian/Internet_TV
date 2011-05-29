@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="Description" content="" />
+  <meta name="Keywords" content="" />
+  <title>ヴァスダック｜VOCALOIDニュース</title>
+  <link rel="stylesheet" href="./css/index.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/jcarousel.pack.js"></script>
+  <script type="text/javascript" src="./js/jcarousel.js"></script>
+  <script type="text/javascript" src="./js/swfobject.js"></script>
+  <script type="text/javascript" src="./js/twitterAPI.js"></script>
+  <script type="text/javascript" src="./js/twit.js"></script>
+  <script type="text/javascript" src="./js/yt.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAcEYKMy58hPWd8htp6fqZDRSmVRvEqGFb2dDZ5TKdmLoZWOWYiBTYKMG5jrox7KvmEikP8Mb2PSQqlw"></script>
+  <script type="text/javascript" src="./js/feed.js"></script>
+  <script type="text/javascript">
+   var ytplayer;
+   function onYouTubePlayerReady(playerId) {
+	  ytplayer = document.getElementById("myytplayer");
+    ytplayer.addEventListener("onStateChange", "ytp.onStateNextLoad");
+    ytplayer.addEventListener("onError", "ytp.onError");
+   }
+  </script>
+  <script type="text/javascript">
+   function caroBack(carousel) {
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+     carousel.stopAuto();
+    }, function() {
+     carousel.startAuto();
+    });
+   };
+
+   jQuery(document).ready(function() {
+    jQuery('#inews').jcarousel({
+     auto: 5,
+     wrap: 'last',
+		 vertical: true,
+		 scroll: 1,
+     initCallback: caroBack
+    });
+   });
+   jQuery(document).ready(function() {
+    jQuery('#twit').jcarousel({
+     auto: 5,
+     wrap: 'last',
+		 vertical: true,
+		 scroll: 1,
+     initCallback: caroBack
+    });
+   });
+  </script>
+ </head>
+ <body onload="ytp.findByWord('日刊VOCALOIDランキング', 50, 'setTitleOnLoad');">
+  <div id="main">
+   <div id="player">
+    <div id="myyt">
+     You need Flash player 8+ and JavaScript enabled to view this video.
+    </div>
+   </div>
+   <script type="text/javascript">
+    //<![CDATA[
+     var params = {allowScriptAccess:"always", bgcolor:"#cccccc"};
+     var atts = {id:"myytplayer"};
+     swfobject.embedSWF(
+      "http://www.youtube.com/apiplayer?enablejsapi=1&amp;autoplay=1&playerapiid=ytplayer",
+      "myyt", "425", "358", "8", null, null, params, atts
+     );
+    //]]>
+   </script>
+   <div id="news">
+    <ul id="inews" class="jcarousel-skin-news">
+     <li><div id="news1_entry_1"></div></li>
+     <li><div id="news1_entry_2"></div></li>
+     <li><div id="news1_entry_3"></div></li>
+     <li><div id="news1_entry_4"></div></li>
+     <li><div id="news1_entry_5"></div></li>
+     <li><div id="news1_entry_6"></div></li>
+     <li><div id="news1_entry_7"></div></li>
+     <li><div id="news1_entry_8"></div></li>
+     <li><div id="news1_entry_9"></div></li>
+     <li><div id="news1_entry_10"></div></li>
+     <li><div id="news2_entry_1"></div></li>
+     <li><div id="news2_entry_2"></div></li>
+     <li><div id="news2_entry_3"></div></li>
+     <li><div id="news2_entry_4"></div></li>
+     <li><div id="news2_entry_5"></div></li>
+     <li><div id="news2_entry_6"></div></li>
+     <li><div id="news2_entry_7"></div></li>
+     <li><div id="news2_entry_8"></div></li>
+     <li><div id="news2_entry_9"></div></li>
+     <li><div id="news2_entry_10"></div></li>
+    </ul>
+   </div>
+   <div id="twitter">
+     <div id="twit_image" class="twit_image">
+     </div>
+     <div id="twit_text" class="twit_text">
+      <ul id="twit" class="jcarousel-skin-twit">
+       <li><div id="twit_text_1"></div></li>
+       <li><div id="twit_text_2"></div></li>
+       <li><div id="twit_text_3"></div></li>
+       <li><div id="twit_text_4"></div></li>
+       <li><div id="twit_text_5"></div></li>
+       <li><div id="twit_text_6"></div></li>
+       <li><div id="twit_text_7"></div></li>
+       <li><div id="twit_text_8"></div></li>
+       <li><div id="twit_text_9"></div></li>
+       <li><div id="twit_text_10"></div></li>
+       <li><div id="twit_text_11"></div></li>
+       <li><div id="twit_text_12"></div></li>
+       <li><div id="twit_text_13"></div></li>
+       <li><div id="twit_text_14"></div></li>
+       <li><div id="twit_text_15"></div></li>
+       <li><div id="twit_text_16"></div></li>
+       <li><div id="twit_text_17"></div></li>
+       <li><div id="twit_text_18"></div></li>
+       <li><div id="twit_text_19"></div></li>
+       <li><div id="twit_text_20"></div></li>
+      </ul>
+     </div>
+   </div>
+  </div>
+  <script type="text/javascript">
+   getFeed();
+  </script>
+  <script type="text/javascript">
+   createTwit();
+  </script>
+ </body>
+</html>

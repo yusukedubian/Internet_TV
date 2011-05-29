@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<title>ヴァスダック｜エリア</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/skin-side.css" />
+<link rel="stylesheet" type="text/css" href="css/skin-main.css" />
+<link rel="stylesheet" type="text/css" href="css/jcarousel.css" />
+  <script src="js/jquery.js" type="text/javascript"></script>
+  <script src="js/jquery.easing.js" type="text/javascript"></script>
+  <script src="js/jquery.easing.compatibility.js" type="text/javascript"></script>
+  <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+  <script src="js/jquery.jcarousel.js" type="text/javascript"></script>
+  <script src="js/jquery.cycle.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAcEYKMy58hPWd8htp6fqZDRSmVRvEqGFb2dDZ5TKdmLoZWOWYiBTYKMG5jrox7KvmEikP8Mb2PSQqlw"></script>
+<script type="text/javascript">
+google.load("feeds", "1");
+</script>
+</head>
+<body>
+<div id="wrap" class="clearfix">
+	<div id="head_ttlarea" class="clearfix">
+		<h1 title="VASDAQ.TV Travel Channnel">VASDAQ.TV Travel Channnel</h1>
+		<div class="partsarea"><!--<object data="http://gallia.cc/item/images/clock_white.swf" width="180" height="25" type="application/x-shockwave-flash"> <param name="movie" value="http://gallia.cc/item/images/clock_white.swf" /> <param name="wmode" value="transparent" /> <embed src="http://gallia.cc/item/images/clock_white.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="180" height="25"></embed> </object>--></div>
+	</div>
+	
+	<div id="sub">
+		<div id="sub_in01">
+			<div class="ttlarea">
+				<p>Powerd by るるぶ</p>
+				<h2>旬のおでかけ情報</h2>
+			</div>
+<script type="text/javascript">
+function loadFeed() {
+	// 初期化
+	var feed = new google.feeds.Feed("http://www.rurubu.com/rss/rssdc.xml");
+	// 記事を最大10件読み込む
+	feed.setNumEntries(20);
+	// 記事を読み込む
+	feed.load(function(result) {
+		var html;
+		var html02;
+		// 読み込みに成功したときの処理
+		if (!result.error) {
+			// サイトのタイトルを出力
+			html = '';
+			html02 = '';
+			// 各記事の情報を順に出力
+			if (result.feed.entries.length) {
+				for (var i = 0; i < result.feed.entries.length; i++) {
+					// 各記事のタイトルを出力
+					var entry = result.feed.entries[i];
+					if (i % 2 == 0) {
+						html += '<div>';
+						html += '<p class="bodyttl"><a href="' + entry.link + '" target="new">' + entry.title + '</a></p>';
+						html += '<p class="bodydate">投稿日:' + entry.publishedDate + '</p>';
+						html += '<div class="bodytxt clearfix">' + entry.content + '</div>';
+						html += '</div>';
+					}
+					else {
+						html02 += '<div>';
+						html02 += '<p class="bodyttl"><a href="' + entry.link + '" target="new">' + entry.title + '</a></p>';
+						html02 += '<p class="bodydate">投稿日:' + entry.publishedDate + '</p>';
+						html02 += '<div class="bodytxt clearfix">' + entry.content + '</div>';
+						html02 += '</div>';
+					}
+				}
+		   }
+	   }
+	   // 読み込みエラー時の処理
+	   else {
+		   html = '<p>フィードの読み込みに失敗しました。</p>';
+	   }
+	   // 読み込み結果を、idが「feed」の要素に流し込む
+	   var container = document.getElementById("odekakearea");
+	   container.innerHTML = html;
+		$(document).ready(function() {
+			$('div#odekakearea').cycle({
+			 fx: 'zoom',
+			 timeout: 5000,
+			 speed:200,
+			 delay:0
+			});
+		});
+	});
+}
+// ページが読み込まれたら、loadFeed関数を実行する
+google.setOnLoadCallback(loadFeed);
+</script>
+<script type="text/javascript">
+function loadFeed01() {
+	// 初期化
+	var feed = new google.feeds.Feed("http://www.rurubu.com/rss/rssdc.xml");
+	// 記事を最大10件読み込む
+	feed.setNumEntries(20);
+	// 記事を読み込む
+	feed.load(function(result) {
+		var html;
+		var html02;
+		// 読み込みに成功したときの処理
+		if (!result.error) {
+			// サイトのタイトルを出力
+			html = '';
+			html02 = '';
+			// 各記事の情報を順に出力
+			if (result.feed.entries.length) {
+				for (var i = 0; i < result.feed.entries.length; i++) {
+					// 各記事のタイトルを出力
+					var entry = result.feed.entries[i];
+					if (i % 2 == 0) {
+						html += '<div>';
+						html += '<p class="bodyttl"><a href="' + entry.link + '" target="new">' + entry.title + '</a></p>';
+						html += '<p class="bodydate">投稿日:' + entry.publishedDate + '</p>';
+						html += '<div class="bodytxt clearfix">' + entry.content + '</div>';
+						html += '</div>';
+					}
+					else {
+						html02 += '<div>';
+						html02 += '<p class="bodyttl"><a href="' + entry.link + '" target="new">' + entry.title + '</a></p>';
+						html02 += '<p class="bodydate">投稿日:' + entry.publishedDate + '</p>';
+						html02 += '<div class="bodytxt clearfix">' + entry.content + '</div>';
+						html02 += '</div>';
+					}
+				}
+		   }
+	   }
+	   // 読み込みエラー時の処理
+	   else {
+		   html = '<p>フィードの読み込みに失敗しました。</p>';
+	   }
+	   // 読み込み結果を、idが「feed」の要素に流し込む
+	   var container02 = document.getElementById("odekakearea02");
+	   container02.innerHTML = html02;
+		$(document).ready(function() {
+			$('div#odekakearea02').cycle({
+			 fx: 'zoom',
+			 timeout: 5000,
+			 speed:200,
+			 delay:0
+			});
+		});
+	});
+}
+// ページが読み込まれたら、loadFeed関数を実行する
+google.setOnLoadCallback(loadFeed01);
+</script>
+			<div id="odekakearea">
+			読み込んでいます。。
+			</div>
+			<div id="odekakearea02">
+			</div>
+		</div>
+		<div id="tenki">
+<!-- Start WxSticker -->
+<table cellpadding="0" cellspacing="0" style="width: 271px; background-color: #FFF; border: 1px solid #999;"><tr><td colspan="2"><div style="height: 35px;"><a href="http://www.wunderground.com/global/stations/47671.html?bannertypeclick=htmlSticker"><img src="http://banners.wunderground.com/weathersticker/htmlSticker1/language/www/global/stations/47671.gif" alt="" height="35" width="271" style="border: 0px;"></a></div></td></tr><tr><td style="vertical-align: top;"><div style="width: 101px;"><div style="height: 22px;"><img src="http://icons-ecast.wxug.com/graphics/smash/htmlsticker/html_linkT.gif" width="101" height="22"></div><div style="font-family: Geneva, Arial, Helvetica, sans-serif; font-size: 10px; background-image: url(http://icons-ecast.wxug.com/graphics/smash/htmlsticker/html_linkBG.gif); text-align: left;"><div style="padding-left: 10px;"><a href="http://www.wunderground.com/history/airport/RJTT/1972/1/1/PlannerHistory.html?bannertypeclick=htmlSticker">Plan your trip</a></div><div style="padding-left: 10px;"><a href="http://www.wunderground.com/radar/radblast.asp?ID=XXX&region=XX&lat=35.54999924&lon=139.77999878">Local Radar</a></div><div style="padding-left: 10px;"><a href="http://www.wunderground.com/global/stations/47671.html?bannertypeclick=htmlSticker">Detailed Forecast</a></div><div style="height: 12px;"><img src="http://icons-ecast.wxug.com/graphics/smash/htmlsticker/html_linkB.gif" width="101" height="12"></div></div><form action="http://www.wunderground.com/cgi-bin/findweather/getForecast" method="get" target="_blank" style="margin-top: 10px; margin-bottom: 0px; text-align: center;"><input type="hidden" name="bannertypeclick" value="htmlSticker"><div><input name="query" type="text" value="Find Weather" onFocus="this.value=''" style="width: 85px;"></div><div style="padding-top: 5px;"><input name="GO" type="submit" value="GO" style="width: 50px; background-color: #008; color: #FFF; font-size: 12px; font-weight: bold; border-top: 1px solid #CCC; border-left: 1px solid #CCC; border-right: 1px solid #000; border-bottom: 1px solid #000;"></div></form></div></td><td style="vertical-align: top;"><div style="height: 139px;"><a href="http://www.wunderground.com/global/stations/47671.html?bannertypeclick=htmlSticker"><img src="http://banners.wunderground.com/weathersticker/htmlSticker2_cond/language/www/global/stations/47671.gif" alt="" height="139" width="170" style="border: 0px;"></a></div></td></tr></table>
+<!-- End WxSticker -->		</div>
+	</div>
+	<div id="main">
+		<div id="content01">
+			<div class="ttlarea">
+				<p>Powerd by ALL格安航空券比較</p>
+				<h2>国内新着ツアー</h2>
+			</div>
+<script type="text/javascript">
+function loadFeed02() {
+	// 初期化
+	var feed = new google.feeds.Feed("http://www.airticket.ne.jp/rss/dtour_fresh.xml");
+	// 記事を最大10件読み込む
+	feed.setNumEntries(10);
+	// 記事を読み込む
+	feed.load(function(result) {
+		var html;
+		// 読み込みに成功したときの処理
+		if (!result.error) {
+			// サイトのタイトルを出力
+			html = '';
+			// 各記事の情報を順に出力
+			if (result.feed.entries.length) {
+				for (var i = 0; i < result.feed.entries.length; i++) {
+					// 各記事のタイトルを出力
+					var entry = result.feed.entries[i];
+					html += '<p><a href="' + entry.link + '" target="new">' + entry.title + '</a></p>';
+				}
+		   }
+	   }
+	   // 読み込みエラー時の処理
+	   else {
+		   html = '<p>フィードの読み込みに失敗しました。</p>';
+	   }
+	   // 読み込み結果を、idが「feed」の要素に流し込む
+	   var container = document.getElementById("con01");
+	   container.innerHTML = html;
+		$(document).ready(function() {
+			$('div#con01').cycle({
+			 fx: 'zoom',
+			 timeout: 5000,
+			 speed:200,
+			 delay:0
+			});
+		});
+	});
+}
+// ページが読み込まれたら、loadFeed関数を実行する
+google.setOnLoadCallback(loadFeed02);
+</script>
+			<div id="con01">
+				読み込んでいます。。
+			</div>
+		</div>
+		<div id="content02">
+			<div class="ttlarea">
+				<p>Powerd by ALL格安航空券比較</p>
+				<h2>国内新着ツアー</h2>
+			</div>
+<script type="text/javascript">
+function loadFeed03() {
+	// 初期化
+	var feed = new google.feeds.Feed("http://www.airticket.ne.jp/rss/ftour_fresh.xml");
+	// 記事を最大10件読み込む
+	feed.setNumEntries(10);
+	// 記事を読み込む
+	feed.load(function(result) {
+		var html;
+		// 読み込みに成功したときの処理
+		if (!result.error) {
+			// サイトのタイトルを出力
+			html = '';
+			// 各記事の情報を順に出力
+			if (result.feed.entries.length) {
+				for (var i = 0; i < result.feed.entries.length; i++) {
+					// 各記事のタイトルを出力
+					var entry = result.feed.entries[i];
+					html += '<p><a href="' + entry.link + '" target="new">' + entry.title + '</a></p>';
+				}
+		   }
+	   }
+	   // 読み込みエラー時の処理
+	   else {
+		   html = '<p>フィードの読み込みに失敗しました。</p>';
+	   }
+	   // 読み込み結果を、idが「feed」の要素に流し込む
+	   var container = document.getElementById("con02");
+	   container.innerHTML = html;
+		$(document).ready(function() {
+			$('div#con02').cycle({
+			 fx: 'zoom',
+			 timeout: 5000,
+			 speed:200,
+			 delay:0
+			});
+		});
+	});
+}
+// ページが読み込まれたら、loadFeed関数を実行する
+google.setOnLoadCallback(loadFeed03);
+</script>
+			<div id="con02">
+				読み込んでいます。。
+			</div>
+		</div>
+		<div id="content03">
+			<div class="ttlarea">
+				<p>Powerd by フォートラベル</p>
+				<h2>国内新着ツアー</h2>
+		  </div>
+			<div id="content03_txt">
+<script type="text/javascript">
+function loadFeed04() {
+	// 初期化
+	var feed = new google.feeds.Feed("http://4travel.jp/rdf/travelogue_all_new.xml");
+	// 記事を最大10件読み込む
+	feed.setNumEntries(20);
+	// 記事を読み込む
+	feed.load(function(result) {
+		var html;
+		var html02;
+		// 読み込みに成功したときの処理
+		if (!result.error) {
+			// サイトのタイトルを出力
+			html = '';
+			html02 = '';
+			// 各記事の情報を順に出力
+			if (result.feed.entries.length) {
+				for (var i = 0; i < result.feed.entries.length; i++) {
+					// 各記事のタイトルを出力
+					var entry = result.feed.entries[i];
+					if (i % 2 == 0) {
+						html += '<div>';
+						html += '<p class="bodyttl"><a href="' + entry.link + '" target="new">' + entry.title + '</a></p>';
+						html += '<p class="bodydate">投稿日:' + entry.publishedDate + '</p>';
+						html += '<div class="bodytxt clearfix">' + entry.content + '</div>';
+						html += '</div>';
+					}
+					else {
+						html02 += '<div>';
+						html02 += '<p class="bodyttl"><a href="' + entry.link + '" target="new">' + entry.title + '</a></p>';
+						html02 += '<p class="bodydate">投稿日:' + entry.publishedDate + '</p>';
+						html02 += '<div class="bodytxt clearfix">' + entry.content + '</div>';
+						html02 += '</div>';
+					}
+				}
+		   }
+	   }
+	   // 読み込みエラー時の処理
+	   else {
+		   html = '<p>フィードの読み込みに失敗しました。</p>';
+		   html02 = '<p>フィードの読み込みに失敗しました。</p>';
+	   }
+	   // 読み込み結果を、idが「feed」の要素に流し込む
+	   
+	   
+	   var container = document.getElementById("con0301");
+	   container.innerHTML = html;
+	   var container02 = document.getElementById("con0302");
+	   container02.innerHTML = html02;
+	   
+		$(document).ready(function() {
+			$('div#con0301').cycle({
+			 fx: 'zoom',
+			 timeout: 5000,
+			 speed:200,
+			 delay:0
+			});
+		});
+		$(document).ready(function() {
+			$('div#con0302').cycle({
+			 fx: 'zoom',
+			 timeout: 5000,
+			 speed:200,
+			 delay:0
+			});
+		});
+	});
+}
+// ページが読み込まれたら、loadFeed関数を実行する
+google.setOnLoadCallback(loadFeed04);
+</script>
+				<div id="con0301">
+					読み込んでいます。。
+				</div>
+				<div id="con0302">
+					読み込んでいます。。
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

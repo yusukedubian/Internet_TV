@@ -1,0 +1,22 @@
+
+<div style="margin-left:75px;margin-top:75px;">
+<h1>プレビュー</h1>
+<div class="select" style="margin-bottom:15px;width:550px">
+<div id="functionbox" style="margin:5px">
+		<div id="guide_icon">
+			<%= image_tag ("./players/" + @player.logo_img) %>
+		</div>
+		<div style="width:360px; height:110px; padding:10px;">
+			<%= image_tag("./players/" + @player.title_img)%>
+			<br>
+		<font size="2" color="#535355">
+			<%= @player.guide_text%> 
+		</font>
+		</div>
+</div>
+</div>
+<%= link_to 'Edit', edit_player_path(@player) %> |
+<%= link_to 'Back', players_path %>
+</div>
+
+

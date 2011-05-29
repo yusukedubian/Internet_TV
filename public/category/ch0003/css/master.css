@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/*
+ Share Style [
+----------------------------------------------------------- */
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	color:#FFFFFF;
+	background-color:#191919;
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:70%;//80
+}
+h1 {
+	margin:0px 0px 0px 20px;
+	font-size:22px;
+	font-weight:normal;
+}
+h2 {
+	margin:5px 0px 0px 4px;
+	font-size:18px;
+	font-weight:normal;
+}
+h3 {
+	font-size:27px;
+	font-weight:normal;
+	padding:6px 0px 0px 3px;
+}
+p,li,dt,dl {
+	line-height:160%;
+}
+p {
+	margin:0 0 1em 0;
+}
+li {
+	list-style-type:none;
+}
+img {
+	border:0;
+	vertical-align: middle;
+}
+
+hr {
+	display:none;
+}
+table{
+	border-collapse:collapse;
+}
+th,td{
+	padding:0;
+}
+.clear {
+	clear:both;
+}
+
+/*
+ Link Color [
+----------------------------------------------------------- */
+a {
+	color:#003cff;
+	text-decoration:none;
+	outline:none;	//リンクをクリックした時に出る点線を消す
+}
+a:link {
+	color:#003cff;
+}
+a:visited {
+	color:#003cff;
+}
+a:hover {
+	text-decoration:underline;
+	color:#003cff;
+}
+a:active {
+	color:#003cff;
+}
+
+/*
+ Header [
+----------------------------------------------------------- */
+#Area {
+	height:640px;
+	background-image:url("../img/bg.gif");
+	background-repeat: no-repeat;
+	background-position:top center;
+	}
+#Box {
+	margin:0 auto;
+	width:800px;
+	height:600px;
+}
+#bg {
+	width:443px;
+    height:205px;
+	background-image:url("../img/bg_reportinfo.gif");
+	background-repeat: no-repeat;
+}
+#slideshow { position:relative; width:355px; height:254px;}
+#slideshow img { position:absolute; top:0; left:0; z-index:8; }
+#slideshow img.active { z-index:10; }
+#slideshow img.last-active { z-index:9; }

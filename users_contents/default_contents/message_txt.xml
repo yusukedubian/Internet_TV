@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<config
+		stage_width="auto"
+		stage_height="auto"
+	/>
+	<text 
+		message_txt="VASDAQ.TV Flash Player"
+		text_size="42"
+		text_color="0x6666FF"
+		text_fade_speed="1"
+		glow_color="neon"
+		glow_blur="4"
+		glow_intensity="2"
+		glow_quality="8"
+		glow_width="100"
+		glow_move_speed="10"
+		glow_repeat_counter="0"
+	/>
+	<text 
+		message_txt="You can add your Flash file to your page by FLASH PLAYER "
+		text_size="20"
+		text_color="0x00CCCC"
+		text_fade_speed="1"
+		glow_color="ocean"
+		glow_blur="4"
+		glow_intensity="2"
+		glow_quality="8"
+		glow_width="100"
+		glow_move_speed="10"
+		glow_repeat_counter="1"
+	/>
+	<text 
+		message_txt="Enjoy it"
+		text_size="48"
+		text_color="0xFF9900"
+		text_fade_speed="1"
+		glow_color="gold"
+		glow_blur="4"
+		glow_intensity="2"
+		glow_quality="15"
+		glow_width="50"
+		glow_move_speed="5"
+		glow_repeat_counter="1"
+	/>
+	<text 
+		message_txt="By VASDAQ Group"
+		text_size="32"
+		text_color="0x0066CC"
+		text_fade_speed="1"
+		glow_color="blue"
+		glow_blur="4"
+		glow_intensity="2"
+		glow_quality="6"
+		glow_width="100"
+		glow_move_speed="10"
+		glow_repeat_counter="1"
+	/>
+	
+</messages>

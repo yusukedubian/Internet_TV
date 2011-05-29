@@ -1,0 +1,89 @@
+<div style="margin-left:75px;margin-top:75px;">
+	<div class="select" style="margin-bottom:15px;">
+		<div style="margin:5px;">
+			<%= image_tag("./imagefile/point.png")%><%=_("設定手順")%>
+		</div>
+		<div id="listback">
+		<table id="setlist" border="0px">
+			<tr align="center">
+				<td width="10px"></td>
+				<td width="140px"><b><%=_("チャンネル選択")%></b></td>
+				<td width="10px"></td>
+				<td width="120px"><b><%=_("チャンネル設定")%></b></td>
+				<td width="5px"></td>
+				<td width="120px"><b><%=_("ページ選択")%></b></td>
+				<td width="10px"></td>
+				<td width="160px"><b><%=_("ページ＋プレーヤ設定")%></b></td>
+				<td width="5px"></td>
+				<td width="100px"><b><%=_("ページを表示")%></b></td>
+				<td  width="30px"></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+
+	<h1><%= _("チャンネル選択")%></h1>	
+	<div class="select" style="margin-bottom:15px;">
+		<table frame="void"  bordercolor="#50494a" style="padding:8px">
+			<tr>
+		<% 12.times do |i|-%>
+			<td width="58px" height="40px" align="center" valign="center">
+			<% flg = false-%>
+			<% @channels.each{|channel|-%>
+				<% if (i + 1) == channel.channel_no-%>
+					<%= link_to (image_tag("./channels/on/" + (i+1).to_s + ".gif"),edit_channel_path(channel),:popup => false)%>
+					<% flg = true-%>
+				<%end-%>
+			<%}%>
+			<%if !flg-%>
+					<%= link_to (image_tag("./channels/off/" + (i+1).to_s + ".gif"),new_channel_path(:channel_no=>(i+1)),:popup => false)%>
+			<%end-%>
+			</td>
+		<% end-%>
+			</tr>
+		</table>
+	</div>
+
+	<div class="select" style="margin-bottom:15px;">
+		<table><tr><td><%= image_tag("./imagefile/point.png")%>&nbsp;<%=_("説明")%></td></tr></table>
+		<div style="padding:5px;">
+			<table frame="border" rules="all" bordercolor="#cccccc" width="100%">
+			<tr>
+				<td align="center" width="130px">
+					<%=_("チャンネル選択")%>
+				</td><td>
+					<%=_("設定するチャンネルを選択してください。<br>
+						全12チャンネル、各チャンネルは１０枚のページから構成されています。チャンネルはリモコンで切り替える事が出来ます。
+					")%>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div style="padding:10px;">
+						<table>
+							<tr>
+								<td>
+									<%= image_tag("./imagefile/onicon.gif",:width=>"35px",:height=>"25px")%><%=_("設定済み")%>
+								</td>
+								<td>
+									<%= image_tag("./imagefile/officon.gif",:width=>"35px",:height=>"25px")%><%=_("未設定")%>
+								</td>
+								<td style="border-left:1px solid #d1d1d2; border-top:1px solid #d1d1d2; border-right:1px solid #696969; border-bottom:1px solid #949a9e; background-color:#fb835b;">
+									<%= image_tag("./imagefile/onicon.gif",:width=>"35px",:height=>"25px")%>
+								</td>
+								<td>
+									<%=_("選択中のアイコン")%>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+	<div class="rogo">
+		<%= image_tag ("./imagefile/tv.gif",:width=>"50px",:height=>"50px")%>
+		<%= image_tag ("./imagefile/bottomrogo.png") %>
+	</div>
+</div>

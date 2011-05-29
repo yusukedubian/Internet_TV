@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> </title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="index" href="/index.shtml" />
+<link rel="stylesheet" href="css/master.css" type="text/css" media="all" />
+<script src="http://www.google.com/jsapi?key=ABQIAAAAchJu3eoh_0uOR8f6we34GxTo28GlTqNFgyQcy9PXdEU-Yu69IBQwQeIQ8fP1McR1t1ufhnHEOFC56Q" type="text/javascript"></script>
+<script src="twitter/rss.js"></script>
+<script src="twitter/ie.js"></script>
+<script src="http://www.google.com/jsapi?key=ABQIAAAAchJu3eoh_0uOR8f6we34GxTo28GlTqNFgyQcy9PXdEU-Yu69IBQwQeIQ8fP1McR1t1ufhnHEOFC56Q"></script>
+<script src="clock/scroll.js"></script>
+<script src="clock/clock.js"></script>
+
+<script src="js/jquery-1.2.6.pack.js"></script>
+<script src="gyoumu/gyoumu.js"></script>
+
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>
+      <script type="text/javascript">
+         function slideSwitch() {
+             var $active = $('#slideshow img.active');
+             if ( $active.length == 0 ) $active = $('#slideshow img:last');
+             var $next =  $active.next().length ? $active.next() : $('#slideshow img:first');
+             $active.addClass('last-active');
+             $next.css({opacity: 0.0})
+                 .addClass('active')
+                 .animate({opacity: 1.0}, 1000, function() {
+                     $active.removeClass('active last-active');
+               });
+         }
+         $(function() {
+             setInterval( "slideSwitch()", 6000 );
+         });
+      </script>
+      <script type="text/javascript">
+
+      </script>
+</head>
+<body onload="clock();gyoumu();oshirase();">
+<div id="Area">
+<div id="Box">
+<!-- 総合ニュース ここから -->
+<iframe src="flash/rss_sougou/index.html" width="800px" height="100px" scrolling="no" frameborder="0" marginheight="0" marginwidth="0">iframeに対しているブラウザでご覧ください。</iframe>
+<!-- 総合ニュース ここまで -->
+<table>
+<tr>
+<td width="320px" height="240px">
+<!-- カメラ ここから -->
+<object
+<comment>
+<embed
+type = "application/x-java-applet" \
+CODE = "ultracam.class" \
+ARCHIVE = "ultracam.jar" \
+NAME = "ucx" \
+WIDTH = "320" \
+HEIGHT = "240" \
+accountcode ="YWRtaW46dnNoaWJhdXJh" / \
+codebase ="http://vasdaq.dyndns.org:8006/admin" / \
+mode ="0" / \
+scriptable = false
+pluginspage = "http://java.sun.com/products/plugin/index.html#download">
+</embed>
+</comment>
+</object>
+<!-- カメラ ここまで -->
+</td>
+<td>
+<table>
+<tr>
+<td>
+<!-- 天気予報 ここから -->
+<iframe src="weather/weather01.html" width="338px" height="170px" scrolling="no" frameborder="0"></iframe>
+<!-- 天気予報 ここまで -->
+</td>
+<td style="border-left:solid 1px #2a2a2a;padding-left:5px;">
+<!-- twitter ここから -->
+<div id="ie" style="width:150px; height:180px;">
+<!-- twitter ここまで -->
+</td>
+</tr>
+</table>
+<!-- ITニュース ここから -->
+<iframe src="flash/rss_it/index.html" width="480px" height="57px" scrolling="no" frameborder="0" marginheight="0" marginwidth="0">iframeに対しているブラウザでご覧ください。</iframe> 
+<!-- ＩＴニュース ここまで -->
+</tr>
+</table>
+
+<table>
+<tr>
+<td valign=top>
+<div id="bg">
+<table>
+<tr>
+<td height="170px">
+<!-- お知らせ ここから -->
+<h1>
+<marquee behavior="scroll" direction="up" scrollamount='1' width="403px" height="140px">
+<div id='gyoumu'>
+</marquee>
+</h1>
+<!-- お知らせ ここまで -->
+</td>
+</tr>
+<tr>
+<td>
+<!-- 業務報告 ここから -->
+<h2>
+<marquee behavior="scroll" direction="left" scrollamount='6' width="432px" height="32px">
+<div id='oshirase'>
+</marquee>
+</h2>
+<!-- 業務報告 ここまで -->
+</td>
+</tr>
+</table>
+</div>
+<!-- 時計 ここから -->
+<h3><div id="clock">loading</div></h3>
+<!-- 時計 ここまで -->
+</td>
+<td>
+<!-- 路線状況 ここから -->
+<div id="slideshow">
+<img src="img/slideshow01.gif" alt="" />
+<img src="img/slideshow02.gif" alt="" />
+<img src="img/slideshow03.gif" alt="" />
+<img src="img/slideshow04.gif" alt="" />
+</div>
+<!-- 路線状況 ここまで -->
+</td>
+</tr>
+</table>
+
+
+</div>
+</div>
+</body>
+
+</html>

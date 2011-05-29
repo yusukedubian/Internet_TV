@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="css/master.css" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="./css/jquery.jcarousel.css" />
+<script type="text/javascript" src="./js/jquery-1.4.1.js" ></script>
+<script type="text/javascript" src="./js/jquery.easing.js"></script>
+<script type="text/javascript" src="./js/jquery.easing.compatibility.js"></script>
+<script type="text/javascript" src="./js/jquery.jcarousel.pack.js"></script>
+<script type="text/javascript" src="./js/jquery.jcarousel.js"></script>
+<script type="text/javascript" src="./js/jquery.bxSlider.js"></script>
+<script src="http://www.google.com/jsapi?key=ABQIAAAAchJu3eoh_0uOR8f6we34GxTo28GlTqNFgyQcy9PXdEU-Yu69IBQwQeIQ8fP1McR1t1ufhnHEOFC56Q" type="text/javascript"></script>
+<script type="text/javascript" src="./js/feed.js" ></script>
+<script type='text/javascript'>
+function caroCallback(carousel)
+{
+    carousel.clip.hover(function() {
+        carousel.stopAuto();
+    }, function() {
+        carousel.startAuto();
+    });
+};
+
+jQuery(document).ready(function() {
+    jQuery('#weather_list').jcarousel({
+        start: 1,
+        auto: 3,
+        vertical: false,
+        wrap: "both",
+        scroll: 1,
+        initCallback: caroCallback
+    });
+});
+
+jQuery(document).ready(function() {
+    jQuery('#spot_list').jcarousel({
+        start: 1,
+        auto: 3,
+        vertical: false,
+        wrap: "both",
+        scroll: 1,
+        initCallback: caroCallback
+    });
+});
+
+jQuery(document).ready(function() {
+    jQuery('#quiz_list').jcarousel({
+        start: 1,
+        auto: 3,
+        vertical: false,
+        wrap: "both",
+        scroll: 1,
+        initCallback: caroCallback
+    });
+});
+
+jQuery(document).ready(function() {
+    jQuery('#pet_list').jcarousel({
+        start: 1,
+        auto: 3,
+        vertical: false,
+        wrap: "both",
+        scroll: 1,
+        initCallback: caroCallback
+    });
+});
+$(document).ready(function(){
+	$('#pickup_list').bxSlider({
+		mode: 'slide', //slide,fade,ticker
+		auto: 'true',
+		speed: 2000,
+		pause: 6000,
+		width: 580,
+		prev_text: '',
+		next_text: '',
+		wrapper_class: 'pickup_list_container'
+	}); 
+});
+
+</script>
+
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="left_contents">
+				
+		<div><img src="img/bar_pickup.gif" width="580" /></div>
+								
+		<div class="pickup_list_container">
+			<ul id="pickup_list"> 
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image1" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title1"></div>
+							<div class="pickup_message" id="pickup_message1">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image2" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title2"></div>
+							<div class="pickup_message" id="pickup_message2">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image3" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title3"></div>
+							<div class="pickup_message" id="pickup_message3">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image4" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title4"></div>
+							<div class="pickup_message" id="pickup_message4">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image5" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title5"></div>
+							<div class="pickup_message" id="pickup_message5">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image6" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title6"></div>
+							<div class="pickup_message" id="pickup_message6">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image7" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title7"></div>
+							<div class="pickup_message" id="pickup_message7">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image8" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title8"></div>
+							<div class="pickup_message" id="pickup_message8">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image9" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title9"></div>
+							<div class="pickup_message" id="pickup_message9">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+				<li>
+					<div id="pickup">
+						<div class="left">
+							<div id="pickup_image10" style="text-align:center;padding:10px 0 0 0;"></div>
+						</div>
+						<div class="right" style="border:0;background-color:#ffffff;">
+							<div class="pickup_title" id="pickup_title10"></div>
+							<div class="pickup_message" id="pickup_message10">
+							</div>
+						</div>
+						<div id="clear"><hr /></div>
+					</div>
+				</li>
+			</ul>    
+		</div>
+		
+		<div><img src="img/bar_recommend.gif" width="580" /></div>
+		
+		<div id="recommend">
+			<div class="pet">
+				<div class="message">
+					<marquee behavior="scroll" direction="up" scrollamount="1" width="278px" height="74px" id="pet_message">
+					</marquee>
+				</div>
+			</div>
+			<div class="today">
+				<div class="message">
+					<marquee behavior="scroll" direction="up" scrollamount="1" width="278px" height="74px" id="quiz_message">
+					</marquee>
+				</div>
+			</div>
+			<div id="clear"><hr /></div>
+		</div>
+		
+		<div><img src="img/bar_spot.gif" width="580" /></div>
+		
+		<div id="spot">
+			<div class="spot">
+				<div class="message">
+					<marquee behavior="scroll" direction="up" scrollamount="1" width="278px" height="94px" id="spot_message">
+					</marquee>
+				</div>
+			</div>
+			<div class="weather">
+				<div class="message">
+					<div id="weather_date" style="margin:2px 0 8px 0;"></div>
+					<marquee behavior="scroll" direction="up" scrollamount="1" width="278px" height="74px" id="weather_message">
+					</marquee>
+				</div>
+			</div>
+			<div id="clear"><hr /></div>
+		</div>
+		
+	</div>
+	<div id="right_contents">
+		
+		<div id="kids">
+			<div class="box_inner">
+				<marquee behavior="scroll" direction="up" scrollamount="1" width="150px" height="100px" id="kids_message">
+				</marquee>
+			</div>
+		</div>
+		
+		<div id="fortune">
+			<div class="box_inner">
+				<marquee behavior="scroll" direction="up" scrollamount="1" width="150px" height="100px" id="fortune_message">
+				</marquee>
+			</div>
+		</div>
+		
+		<div id="question">
+			<div class="box_inner">
+				<marquee behavior="scroll" direction="up" scrollamount="1" width="150px" height="100px" id="question_message">
+				</marquee>
+			</div>
+		</div>
+		
+		<div id="eco">
+			<div class="box_inner">
+				<marquee behavior="scroll" direction="up" scrollamount="1" width="150px" height="100px" id="eco_message">
+				</marquee>
+			</div>
+		</div>
+		
+	</div>
+
+</div>
+
+</body>
+
+</html>

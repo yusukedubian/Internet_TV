@@ -1,0 +1,390 @@
+<div class="account" style="margin-bottom:15px;">
+	<table>
+		<tr>
+			<td><%= image_tag("./imagefile/point.png")%><%= "&nbsp;" %><%= _("説明") %></td>
+		</tr>			
+	</table>
+	<table frame="void" rules="none">
+		<tr>
+			<td>
+				<table frame="border" rules="all" bordercolor="#cccccc" width="900px">
+					<tr>
+						<td align="center" width="130px">
+							<%= _("YAMLフォーム定義") %>
+						</td>
+						<td>
+							<%= _("VASDAQ-TV独自にYAML構文を拡張した定義です。") %>
+						</td>
+					</tr>
+					
+					<tr>
+						<td align="center" width="130px">
+							<%= _("フォーマット") %>
+						</td>
+						<td>
+							<%= _("name: サンプルフォーム") %><br>
+							<%= _("desc: サンプルフォームの説明") %><br>
+							<%= _("table: サンプルフォーム") %><br>
+							<%= _("button: 送信") %><br>
+							<%= _("items:") %><br>
+							
+							<%= _("- name: チェックボックス") %><br>
+							<%= _("&nbsp;&nbsp;desc: チェックボックスの説明") %><br>
+							<%= _("&nbsp;&nbsp;type: check") %><br>
+							<%= _("&nbsp;&nbsp;column: チェックボックス") %><br>
+							<%= _("&nbsp;&nbsp;option:") %><br>
+							<%= _("&nbsp;&nbsp;- checked: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;value: 100") %><br>
+
+							<%= _("- name: ラジオボタン") %><br>
+							<%= _("&nbsp;&nbsp;desc: ラジオボタンの説明") %><br>
+							<%= _("&nbsp;&nbsp;type: radio") %><br>
+							<%= _("&nbsp;&nbsp;column: ラジオボタン") %><br>
+							<%= _("&nbsp;&nbsp;option:") %><br>
+							<%= _("&nbsp;&nbsp;- name: ラジオボタン名1") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;value: 100") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;checked: false") %><br>
+							<%= _("&nbsp;&nbsp;- name: ラジオボタン名2") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;value: 200") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;checked: true") %><br>
+
+							<%= _("- name: 選択リスト") %><br>
+							<%= _("&nbsp;&nbsp;desc: 選択リストの説明") %><br>
+							<%= _("&nbsp;&nbsp;type: list") %><br>
+							<%= _("&nbsp;&nbsp;column: 選択リスト") %><br>
+							<%= _("&nbsp;&nbsp;option:") %><br>
+							<%= _("&nbsp;&nbsp;- name: リスト名1") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;value: 100") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;selected: false") %><br>
+							<%= _("&nbsp;&nbsp;- name: リスト名2") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;value: 200") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;selected: true") %><br>							
+
+							<%= _("- name: テキストエリア") %><br>
+							<%= _("&nbsp;&nbsp;desc: テキストエリアの説明") %><br>
+							<%= _("&nbsp;&nbsp;type: textarea") %><br>
+							<%= _("&nbsp;&nbsp;column: テキストエリア") %><br>
+							<%= _("&nbsp;&nbsp;option:") %><br>
+							<%= _("&nbsp;&nbsp;- hight: 100") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;width: 100") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;length: 1000") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;validate:") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- is_blank: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- not_integer: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- not_float: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- not_alpha: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- is_full_char: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- is_half_char: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- range: [1, 100]") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- prohibit: [!, %, $]") %><br>
+
+							<%= _("- name: テキストボックス") %><br>
+							<%= _("&nbsp;&nbsp;desc: テキストボックスの説明") %><br>
+							<%= _("&nbsp;&nbsp;type: text") %><br>
+							<%= _("&nbsp;&nbsp;column: テキストボックス") %><br>
+							<%= _("&nbsp;&nbsp;option:") %><br>
+							<%= _("&nbsp;&nbsp;- width: 100") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;length: 1000") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;validate:") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- is_blank: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- not_integer: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- not_float: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- not_alpha: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- is_full_char: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- is_half_char: true") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- range: [1, 100]") %><br>
+							<%= _("&nbsp;&nbsp;&nbsp;&nbsp;- prohibit: [!, %, $]") %><br>
+						</td>		
+					</tr>
+					
+					<tr>
+						<td align="center" width="130px">
+							<%= _("name") %>
+						</td>
+						<td>
+							<%= _("「フォームの名前」「項目の名前」「ラジオボタンの名前」「リストの名前」を指定してください。") %><br>
+							<%= _("「フォームの名前」は「#{ConstYamlDbForm::FORM_NAME_MIN}文字～#{ConstYamlDbForm::FORM_NAME_MAX}文字」の範囲で指定してください。") %><br>
+							<%= _("「項目の名前」は「#{ConstYamlDbForm::ITEM_NAME_MIN}文字～#{ConstYamlDbForm::ITEM_NAME_MAX}文字」の範囲で指定してください。") %><br>
+							<%= _("「ラジオボタンの名前」は「#{ConstYamlDbForm::RADIO_NAME_MIN}文字～#{ConstYamlDbForm::RADIO_NAME_MAX}文字」の範囲で指定してください。") %><br>
+							<%= _("「リストの名前」は「#{ConstYamlDbForm::LIST_NAME_MIN}文字～#{ConstYamlDbForm::LIST_NAME_MAX}文字」の範囲で指定してください。") %>
+						</td>		
+					</tr>	
+					
+					<tr>
+						<td align="center" width="130px">
+							<%= _("desc") %>
+						</td>
+						<td>
+							<%= _("「フォームの説明」「項目の説明 」を指定してください。") %><br>
+							<%= _("「フォームの説明」は「#{ConstYamlDbForm::FORM_DESC_MIN}文字～#{ConstYamlDbForm::FORM_DESC_MAX}文字」の範囲で指定してください。") %><br>
+							<%= _("「項目の説明」は「#{ConstYamlDbForm::ITEM_DESC_MIN}文字～#{ConstYamlDbForm::ITEM_DESC_MAX}文字」の範囲で指定してください。") %><br>
+							<%= _("※<b>省略する際は、「desc」は不要です。</b>") %>			
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("table") %>
+						</td>
+						<td>
+							<%= _("「メールの本文に載せるフォーム名」を指定してください。") %><br>
+							<%= _("「メールの本文に載せるフォーム名」は「#{ConstYamlDbForm::DB_TABLE_MIN}文字～#{ConstYamlDbForm::DB_TABLE_MAX}文字」の範囲で指定してください。") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("button") %>
+						</td>
+						<td>
+							<%= _("「ボタンの名前」を指定してください。") %><br>
+							<%= _("「メールの本文に載せるフォーム名」は「#{ConstYamlDbForm::FORM_BUTTON_MIN}文字～#{ConstYamlDbForm::FORM_BUTTON_MAX}文字」の範囲で指定してください。") %><br>
+							<%= _("※<b>「GUI編集」を行うと「ボタンの名前」が「送信」と自動的に変更されます。</b>") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("items") %>
+						</td>
+						<td>
+							<%= _("フォームで使用する項目分の定義を指定してください。") %><br>
+							<%= _("フォームで使用可能な項目数は「#{ConstYamlDbForm::FORM_ITEMS_MIN}個～#{ConstYamlDbForm::FORM_ITEMS_MAX}個」の範囲で指定してください。") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("type") %>
+						</td>
+						<td>
+							<%= _("「項目の種別」を指定してください。") %><br>
+							<%= _("「text」「check」「radio」「list」「textarea」が指定できます。") %><br>
+							<%= _("・「text」はテキストボックスを使用します。") %><br>
+							<%= _("・「check」はチェックボックスを使用します。") %><br>
+							<%= _("・「radio」はラジオボタンを使用します。") %><br>
+							<%= _("・「list」は選択リストを使用します。") %><br>
+							<%= _("・「textarea」はテキストエリアを使用します。") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("column") %>
+						</td>
+						<td>
+							<%= _("「メールの本文に載せる項目名」を指定してください。") %><br>
+							<%= _("「メールの本文に載せる項目名」は「#{ConstYamlDbForm::DB_COLUMN_MIN}文字～#{ConstYamlDbForm::DB_COLUMN_MAX}文字」の範囲で指定してください。") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("option") %>
+						</td>
+						<td>
+							<%= _("「項目の種別」毎のオプションを指定してください。") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("value") %>
+						</td>
+						<td>
+							<%= _("「メールの本文に載せる値」を指定してください。") %><br>
+							<%= _("「ラジオボタン」の場合は「#{ConstYamlDbForm::RADIO_VALUE_MIN}文字～#{ConstYamlDbForm::RADIO_VALUE_MAX}文字」の範囲で指定してください。") %><br>
+							<%= _("「選択リスト」の場合は「#{ConstYamlDbForm::LIST_VALUE_MIN}文字～#{ConstYamlDbForm::LIST_VALUE_MAX}文字」の範囲で指定してください。") %><br>
+							<%= _("「チェックボックス」の場合は「#{ConstYamlDbForm::CHECK_VALUE_MIN}文字～#{ConstYamlDbForm::CHECK_VALUE_MAX}文字」の範囲で指定してください。") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("checked") %>
+						</td>
+						<td>
+							<%= _("「チェックの初期状態」を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、初期状態が「チェックON」になります。") %><br>
+							<%= _("「false」を指定した場合は、初期状態が「チェックOFF」になります。") %><br>
+							<%= _("※<b>「ラジオボタン」「チェックボックス」の場合のみ指定できます。</b>") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("selected") %>
+						</td>
+						<td>
+							<%= _("「選択の初期状態」を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、初期状態が「選択状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、初期状態が「未選択状態」になります。") %><br>
+							<%= _("※<b>「選択リスト」の場合のみ指定できます。</b>") %>						
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("hight") %>
+						</td>
+						<td>
+							<%= _("「テキストエリアの高さ」を指定してください。") %><br>
+							<%= _("「テキストエリアの高さ」は「#{ConstYamlDbForm::TEXTAREA_HIGHT_MIN}～#{ConstYamlDbForm::TEXTAREA_HIGHT_MAX}」の範囲で指定してください。") %><br>
+							<%= _("※<b>「テキストボックス」の場合のみ指定できます。</b>") %><br>
+							<%= _("※<b>省略する際は、「hight」は不要です。</b>") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("width") %>
+						</td>
+						<td>
+							<%= _("「テキストエリアの横幅」「テキストボックスの横幅」を指定してください。") %><br>
+							<%= _("「テキストエリアの横幅」は「#{ConstYamlDbForm::TEXTAREA_WIDTH_MIN}～#{ConstYamlDbForm::TEXTAREA_WIDTH_MAX}」の範囲で指定してください。") %><br>
+							<%= _("「テキストボックスの横幅」は「#{ConstYamlDbForm::TEXT_WIDTH_MIN}～#{ConstYamlDbForm::TEXT_WIDTH_MAX}」の範囲で指定してください。") %><br>
+							<%= _("※<b>「テキストボックス」「テキストエリア」の場合のみ指定できます。</b>") %><br>
+							<%= _("※<b>省略する際は、「width」は不要です。</b>") %>
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("length") %>
+						</td>
+						<td>
+							<%= _("「入力可能な最大文字数  	」を指定してください。") %><br>
+							<%= _("「テキストエリア」の場合は「#{ConstYamlDbForm::TEXTAREA_LENGTH_MIN}～#{ConstYamlDbForm::TEXTAREA_LENGTH_MAX}」の範囲で指定してください。") %><br>
+							<%= _("「テキストボックス」の場合は「#{ConstYamlDbForm::TEXT_LENGTH_MIN}～#{ConstYamlDbForm::TEXT_LENGTH_MAX}」の範囲で指定してください。") %><br>
+							<%= _("※<b>「テキストボックス」「テキストエリア」の場合のみ指定できます。</b>") %><br>
+							<%= _("※<b>省略する際は、「length」は不要です。</b>") %>							
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("validate") %>
+						</td>
+						<td>
+							<%= _("使用する入力値チェック処理数分の定義を指定してください。") %><br>
+							<%= _("「is_blank」「not_integer」「not_float」「not_alpha」「is_full_char」「is_half_char」「range」「prohibit」が指定できます。") %><br>
+							<%= _("「テキストエリア」の場合は「#{ConstYamlDbForm::TEXTAREA_VALIDATE_MIN}個～#{ConstYamlDbForm::TEXTAREA_VALIDATE_MAX}個」の範囲で指定してください。") %><br>			
+							<%= _("「テキストボックス」の場合は「#{ConstYamlDbForm::TEXT_VALIDATE_MIN}個～#{ConstYamlDbForm::TEXT_VALIDATE_MAX}個」の範囲で指定してください。") %><br>
+							<%= _("※<b>「テキストボックス」「テキストエリア」の場合のみ指定できます。</b>") %><br>
+							<%= _("※<b>省略する際は、「validate」は不要です。</b>") %>	
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("is_blank") %>
+						</td>
+						<td>
+							<%= _("「空白チェック処理」の有無を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、「有効状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、「無効状態」になります。") %><br>
+							<%= _("有効時、入力値が「空」の場合、エラーメッセージを表示します。") %>	
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("not_integer") %>
+						</td>
+						<td>
+							<%= _("「整数チェック処理」の有無を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、「有効状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、「無効状態」になります。") %><br>
+							<%= _("有効時、入力値が「整数以外」の場合、エラーメッセージを表示します。") %>	
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("not_float") %>
+						</td>
+						<td>
+							<%= _("「小数点数チェック処理」の有無を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、「有効状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、「無効状態」になります。") %><br>
+							<%= _("有効時、入力値が「小数点数以外」の場合、エラーメッセージを表示します。") %>								
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("not_alpha") %>
+						</td>
+						<td>
+							<%= _("「アルファベットチェック処理」の有無を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、「有効状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、「無効状態」になります。") %><br>
+							<%= _("有効時、入力値が「アルファベット（大文字、小文字）以外」の場合、エラーメッセージを表示します。") %>								
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("is_full_char") %>
+						</td>
+						<td>
+							<%= _("「全角文字チェック処理」の有無を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、「有効状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、「無効状態」になります。") %><br>
+							<%= _("有効時、入力値が「全角文字」の場合、エラーメッセージを表示します。") %>								
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("is_half_char") %>
+						</td>
+						<td>
+							<%= _("「半角文字チェック処理」の有無を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、「有効状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、「無効状態」になります。") %><br>
+							<%= _("有効時、入力値が「半角文字」の場合、エラーメッセージを表示します。") %>								
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("range") %>
+						</td>
+						<td>
+							<%= _("「範囲チェック処理」の有無を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、「有効状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、「無効状態」になります。") %><br>
+							<%= _("有効時、入力値が「最小値～最大値の範囲外」の場合、エラーメッセージを表示します。") %><br>
+							<%= _("「最小値」「最大値」の順番で配列指定してください。") %><br>
+							<%= _("「最小値」「最大値」は、それぞれ「#{ConstYamlDbForm::RANGE_MIN}～#{ConstYamlDbForm::RANGE_MAX}」の範囲で指定してください。") %>							
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("prohibit") %>
+						</td>
+						<td>
+							<%= _("「禁止文字チェック処理」の有無を指定してください。") %><br>
+							<%= _("「true」を指定した場合は、「有効状態」になります。") %><br>
+							<%= _("「false」を指定した場合は、「無効状態」になります。") %><br>
+							<%= _("有効時、入力値が「禁止文字」の場合、エラーメッセージを表示します。") %><br>
+							<%= _("「禁止文字」は配列指定してください。") %><br>
+							<%= _("「禁止文字」は「#{ConstYamlDbForm::PROHIBIT_MIN}文字～#{ConstYamlDbForm::PROHIBIT_MAX}文字」の範囲で指定してください。") %><br>					
+						</td>		
+					</tr>
+
+					<tr>
+						<td align="center" width="130px">
+							<%= _("保存ボタン") %>
+						</td>
+						<td>
+							<%= _("編集した内容を保存します。") %>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>				
+</div>

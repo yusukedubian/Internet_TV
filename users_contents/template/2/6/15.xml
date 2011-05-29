@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>test</title>
+    <link> </link>
+    <description> </description>
+    <item>
+      <title>営業報告</title>
+      <pubDate>Sat, 20 Mar 2010 08:23:33 -0000</pubDate>
+      <content:encoded>商品完売しました。</content:encoded>
+      <dc:date>2010-03-20T08:23:33Z</dc:date>
+    </item>
+    <item>
+      <title>営業報告</title>
+      <pubDate>Sat, 20 Mar 2010 08:23:33 -0000</pubDate>
+      <content:encoded>○月○日、○時営業会議、○時○○社訪問、○時○○社訪問</content:encoded>
+      <dc:date>2010-03-20T08:23:33Z</dc:date>
+    </item>
+    <item>
+      <title>営業報告</title>
+      <pubDate>Sat, 20 Mar 2010 08:23:33 -0000</pubDate>
+      <content:encoded>○月○日上海出張</content:encoded>
+      <dc:date>2010-03-20T08:23:33Z</dc:date>
+    </item>
+  </channel>
+</rss>

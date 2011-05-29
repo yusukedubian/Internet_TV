@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+/*
+ Share Style [
+----------------------------------------------------------- */
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	color:#000000;
+	background-color:#FFCC33;
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	font-size:70%;
+}
+h1 {
+	margin:0px 0px 0px 20px;
+	font-size:22px;
+	font-weight:normal;
+}
+h2 {
+	margin:5px 0px 0px 4px;
+	font-size:18px;
+	font-weight:normal;
+}
+h3 {
+	font-size:27px;
+	font-weight:normal;
+	padding:6px 0px 0px 3px;
+}
+p,li,dt,dl {
+	line-height:160%;
+}
+p {
+	margin:0 0 1em 0;
+}
+li {
+	list-style-type:none;
+}
+img {
+	border:0;
+	vertical-align: middle;
+}
+
+hr {
+	display:none;
+}
+table{
+	border-collapse:collapse;
+}
+th,td{
+	padding:0;
+}
+.clear {
+	clear:both;
+}
+
+/*
+ Link Color [
+----------------------------------------------------------- */
+a {
+	color:#003cff;
+	text-decoration:none;
+	outline:none;	//リンクをクリックした時に出る点線を消す
+}
+a:link {
+	color:#003cff;
+}
+a:visited {
+	color:#003cff;
+}
+a:hover {
+	text-decoration:underline;
+	color:#003cff;
+}
+a:active {
+	color:#003cff;
+}
+
+/*
+ Header [
+----------------------------------------------------------- */
+
+#container {
+	width:800px;
+	height:600px;
+	margin:0 auto;
+	background-image:url("../img/background.gif");
+	background-repeat: no-repeat;
+	background-position:top center;
+}
+
+#left_contents {
+	width:580px;
+	float:left;
+	margin:12px 0 0 20px;
+}
+
+#left_contents #pickup {
+	width:580px;
+	margin:8px 0;
+}
+
+#left_contents #pickup .left {
+	width:225px;
+	float:left;
+}
+
+#left_contents #pickup .right {
+	width:345px;
+	height:180px;
+	float:right;
+	background-image:url("../img/area_pickup.gif");
+	background-repeat: no-repeat;
+	background-position:top center;
+}
+
+.pickup_list_container {
+	width:580px;
+	height:195px;
+}
+
+.pickup_title {
+	font-size:20px;
+	margin:4px 3px 3px 6px;
+	border:0;
+}
+
+.pickup_message {
+	width:320px;
+	font-size:12px;
+	line-height:18px;
+	margin:8px auto;
+}
+
+.message {
+	font-size:12px;
+	line-height:18px;
+	margin:28px 6px 6px 6px;
+}
+
+#left_contents #recommend {
+	width:580px;
+	margin:8px 0;
+}
+
+#left_contents #recommend .pet {
+	width:290px;
+	height:110px;
+	float:left;
+	background-image:url("../img/area_pet.gif");
+	background-repeat: no-repeat;
+	background-position:top left;
+}
+
+#left_contents #recommend .today {
+	width:290px;
+	height:110px;
+	float:right;
+	background-image:url("../img/area_today.gif");
+	background-repeat: no-repeat;
+	background-position:top right;
+}
+
+#left_contents #spot {
+	width:580px;
+	margin:8px 0;
+}
+
+#left_contents #spot .spot {
+	width:290px;
+	height:140px;
+	float:left;
+	background-image:url("../img/area_spot.gif");
+	background-repeat: no-repeat;
+	background-position:top left;
+}
+
+#left_contents #spot .weather {
+	width:290px;
+	height:140px;
+	float:right;
+	background-image:url("../img/area_weather.gif");
+	background-repeat: no-repeat;
+	background-position:top right;
+}
+
+#right_contents {
+	width:165px;
+	float:right;
+	margin:12px 20px 0 0;
+}
+
+#right_contents #kids {
+	width:165px;
+	height:135px;
+	background-image:url("../img/box_kids.gif");
+	background-repeat: no-repeat;
+	background-position:top center;
+	margin-bottom:10px;
+}
+
+#right_contents #fortune {
+	width:165px;
+	height:135px;
+	background-image:url("../img/box_fortune.gif");
+	background-repeat: no-repeat;
+	background-position:top center;
+	margin-bottom:11px;
+}
+
+#right_contents #question {
+	width:165px;
+	height:135px;
+	background-image:url("../img/box_question.gif");
+	background-repeat: no-repeat;
+	background-position:top center;
+	margin-bottom:11px;
+}
+
+#right_contents #eco {
+	width:165px;
+	height:135px;
+	background-image:url("../img/box_eco.gif");
+	background-repeat: no-repeat;
+	background-position:top center;
+}
+
+.box_inner {
+	padding:28px 8px 6px 8px;
+}
+
+#clear {
+	clear:both;
+}
+
+#clear hr {
+	display:none;
+}

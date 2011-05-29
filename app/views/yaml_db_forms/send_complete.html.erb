@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>VASDAQ.TV</title>
+	</head>
+	<body>
+		<%if !flash[:notice].blank? || !flash[:alert].blank?-%>
+			<div style="height:20px"></div>
+			<p id="notice_message", style="color: green;background: lightgreen;"><%= flash[:notice] -%></p>
+			<p id="alert_messege", style="color: red;background: pink;"><%= flash[:alert] -%></p>
+		<%end-%>
+		
+		メールを送信しました。戻るリンクをクリックして下さい。
+		<% if @create_yaml_form_user_flag %>
+<% #			<a href="javascript:history.back();"><%="戻る"%></a> %>
+			<%= link_to _("戻る１"), {:action=>'input', :id=>params[:id]} %>
+		<% else %>
+<% #			<a href="javascript:history.back();"><%="戻る"%></a> %>
+			<%= link_to _("戻る２"), {:action=>'input', :id=>params[:id]} %>
+		<% end %>
+	</body>
+</html>

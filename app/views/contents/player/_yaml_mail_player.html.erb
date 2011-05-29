@@ -1,0 +1,199 @@
+<!-- Yaml Set -->
+<style type="text/css">
+    .mail_guide_text{
+            width:810px;
+            height:243px;
+            word-break:break-all
+    }
+    .mail_guide_title{
+            height:128px;
+            width:100px;
+            padding-top:115px;
+            text-align:center;
+    }	
+</style>
+<div>
+	<table>
+		<tr>
+			<td colspan="3" align="left">
+				<%=_("メール取得時間：　")%><%= text_field_tag("contents_setting[getTime]", settings["getTime"],:size=>"2",:maxlength=>"3")%><%=_("分ごと")%>
+			</td>
+		</tr>
+		<tr>
+			<td width="10"></td>
+			<td>
+				<%=_("メール件名")%>
+			</td>
+			<td>
+				<%=_("取得項目名")%>
+			</td>
+		</tr>
+		<tr>
+			<td align=right>1</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailSubject1]", settings["mailSubject1"],:size=>"18",:maxlength=>"30")%>
+			</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailContentsTitle1]", settings["mailContentsTitle1"],:size=>"18",:maxlength=>"30")%>
+			</td>
+		</tr>			
+		<tr>
+			<td align=right>2</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailSubject2]", settings["mailSubject2"],:size=>"18",:maxlength=>"30")%>
+			</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailContentsTitle2]", settings["mailContentsTitle2"],:size=>"18",:maxlength=>"30")%>
+			</td>
+		</tr>
+		<tr>
+			<td align=right>3</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailSubject3]", settings["mailSubject3"],:size=>"18",:maxlength=>"30")%>
+			</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailContentsTitle3]", settings["mailContentsTitle3"],:size=>"18",:maxlength=>"30")%>
+			</td>
+		</tr>
+		<tr>
+			<td align=right>4</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailSubject4]", settings["mailSubject4"],:size=>"18",:maxlength=>"30")%>
+			</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailContentsTitle4]", settings["mailContentsTitle4"],:size=>"18",:maxlength=>"30")%>
+			</td>
+		</tr>
+		<tr>
+			<td align=right>5</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailSubject5]", settings["mailSubject5"],:size=>"18",:maxlength=>"30")%>
+			</td>
+			<td>
+				<%= text_field_tag("contents_setting[mailContentsTitle5]", settings["mailContentsTitle5"],:size=>"18",:maxlength=>"30")%>
+			</td>
+		</tr>
+
+	</table>
+	  <br>
+
+	<table border=0 cellpadding=0 cellspacing=0  style="float: left;">
+		<tr>
+			<td></td>
+			<td><%=_("背景色")%></td>
+			<td>
+				<%= text_field_tag("contents_setting[back_color]", settings["back_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+			  	<%if settings["back_color"] != nil %>
+					  <script>document.getElementById("contents_setting[back_color]").value="<%=settings['back_color']%>"</script>
+			  	<%end%>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<%=_("フォントサイズ")%>
+				<%= select_tag("contents_setting[font_size]", 
+				options_for_select(font_size_for_select, settings["font_size"]
+				))
+				%>
+				<%=_("px")%>
+				<br><br>
+				<%=_("スクロール方向")%>
+				<%= select_tag("contents_setting[scroll_direction]", 
+				options_for_select(scroll_direction_for_select, settings["scroll_direction"]
+				))
+				%>
+				<%=_("スクロール速度")%>
+				<%= select_tag("contents_setting[scroll_speed]", 
+				options_for_select(scroll_speed_for_select, settings["scroll_speed"]
+				))
+				%> 
+			</td>
+			<td valign="top">
+				<%=_("フォントカラー")%>
+			</td>
+	  		<td valign="top">
+				<div class="form-item">
+			  	<%= text_field_tag("contents_setting[font_color]", settings["font_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+			  	</div>
+			  	<%if settings["font_color"] != nil %>
+					  <script>document.getElementById("contents_setting[font_color]").value="<%=settings['font_color']%>"</script>
+			  	<%end%>
+		 	</td>
+		 	<td>
+				
+		 	</td>	
+		</tr>
+	</table>
+	<div id="picker" style="float: left;"></div>
+	<div style="clear:both;"></div>
+</div>
+<input type="hidden" name="contents_setting[local_url]" value=<%= request.env["HTTP_HOST"] %>>
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="mail_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="mail_guide_text">
+				<table>
+					<tr>
+						<td>
+							<%=_("※トップメニューの「設定」⇒「アカウント設定」⇒「YAMLメール」の設定をしてください。設定しないと表示されません。")%><br>
+							<%=_("　設定が終わりましたら、設定したメールアドレスにトップメニューの「YAMLメール」もしくは、お使いの電子メールから送信してください。")%><br>
+							<br>
+							<%=_("　電子メールから送信する場合は、下記メール本文のフォーマットを使用し送信してください。")%>
+						</td>
+					</tr>
+				</table>
+				<table frame="box" rules="all" border="1px" bordercolor="#cccccc" style="margin-left:22px;">
+					<tr>
+						<td width="70px" align="center"><%="件名"%></td>
+						<td><%=_("「メール件名」に設定したものを、入力してください。")%></td>
+					</tr>
+					<tr>
+						<td><%=_("メール本文")%></td>
+						<td><%=_("取得項目名: 〇〇〇<br>取得項目名: 〇〇〇<br>")%></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<%=_("　「取得項目名:」の横には半角スペースを入れてください。")%><br>
+							<%=_("　トップメニューの「YAMLメール」から送信する場合は、上記フォーマットは必要ありません。")%>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker');
+	 var p = jQuery('#picker').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+	});
+</script>

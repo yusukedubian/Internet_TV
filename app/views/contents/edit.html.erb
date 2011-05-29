@@ -1,0 +1,70 @@
+<div style="margin-left:75px;margin-top:15px;">	
+	<h1><%=@player.view_name%></h1>
+	<h4><%=_("最大ページ幅：")%><%=@channel.width%>px<%=_("　最大ページ高さ：")%><%=@channel.height%>px</h4>	
+<%
+	settings={}
+	@contents_properties.each{|contents_setting|
+		settings[contents_setting["property_key"]] = contents_setting["property_value"]	
+	}
+%>
+
+<% form_tag(update_channel_page_content_path(params[:channel_id],params[:page_id], params[:id], :player_id => @player), :action=>"update", :multipart=>true) do -%>
+	<div class="player_box">
+		<table height="64px">
+			<tr>
+				<td width="80px">
+					<%= _("横サイズ")%><font color=red>*</font>
+				</td>
+				<td width="110px">
+					<%= text_field_tag("contents[width]", @content.width,:maxlength => 6, :size=>6)%><%= _("px") %>
+				</td>
+				<td width="80px">
+					<%= _("縦サイズ")%><font color=red>*</font>
+				</td>
+				<td width="110px">
+					<%= text_field_tag("contents[height]", @content.height,:maxlength => 6, :size=>6)%><%= _("px") %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= _("位置　Top")%><font color=red>*</font>
+				</td>
+				<td>
+					<%= text_field_tag("contents[y_pos]", @content.y_pos,:maxlength => 6, :size=>6)%><%= _("px") %>
+				</td>
+				<td>
+					<%= _("位置　Left")%><font color=red>*</font>
+				</td>
+				<td>
+					<%= text_field_tag("contents[x_pos]", @content.x_pos,:maxlength => 6, :size=>6)%><%= _("px") %>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="player_box">
+	<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => true } %>
+	</div>
+	<br/>
+	<h6></h6>
+	<%= render :partial=> "contents/player/" + @player.playerview, :locals=>{:settings =>settings}%>
+	
+	<%=hidden_field_tag("submit[flag]","")%>
+	<table style="margin-bottom:15px;">
+		<tr>
+			<td colspan="3">
+				<%= submit_tag _("確　定"),{:onClick=>"submitflag('normal')" } %>
+			</td>
+			<td>
+				<%= submit_tag _("確定して戻る"),{:onClick=>"submitflag('return')" }%>
+			</td>
+			<td>
+				<%= link_to _("戻 る"), edit_channel_page_path(params[:channel_id],params[:page_id]) %>
+			</td>
+			<td>
+				<% end -%>
+				<a href="#" onClick="javascript:window.open('<%=preview_channel_page_content_path(params["channel_id"], params["page_id"],@content.id,:from=>:contents)%>','_blank','width=<%=@content.width%>px,height=<%=@content.height%>px,top=10,left=10'); return true;"><%=_("プレビュー")%></a>
+			</td>
+		</tr>
+	</table>
+</div>

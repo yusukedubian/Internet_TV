@@ -1,0 +1,109 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+# rake db:import:development
+
+# class YamlmailsController
+ERR_0x01020101:
+    message_code : ERR_0x01020101
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 01
+    message_str : Not YAML form.
+    
+ERR_0x01020102:
+    message_code : ERR_0x01020102
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 02
+    message_str : Failed in the YAML transmission.
+    
+ERR_0x01020103:
+    message_code : ERR_0x01020103
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 03
+    message_str : Email address is not set. 
+    
+ERR_0x01020104: 
+    message_code : ERR_0x01020104
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 04
+    message_str : SMTP server's port number is not set.     
+
+ERR_0x01020105:
+    message_code : ERR_0x01020105
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 05
+    message_str : SMTP server's address is not set. 
+
+ERR_0x01020106:
+    message_code : ERR_0x01020106
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 06
+    message_str : Authentication type is not set.
+
+ERR_0x01020107:
+    message_code : ERR_0x01020107
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 07
+    message_str : Authentication user name is not set.
+
+ERR_0x01020108:
+    message_code : ERR_0x01020108
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 08
+    message_str : Authentication user's password is not set.
+    
+ERR_0x01020109:
+    message_code : ERR_0x01020109
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 09
+    message_str : Transmission domain is not set.
+  
+ERR_0x0102010A:
+    message_code : ERR_0x0102010A
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 0A
+    message_str : POP3 server's port number is not set.     
+
+ERR_0x0102010B:
+    message_code : ERR_0x0102010B
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 01
+    small_code : 0B
+    message_str : POP3 server's address is not set. 
+
+# module MessagePrint
+ERR_0x01020201:
+    message_code : ERR_0x01020201
+    large_code : 01
+    middle1_code : 02
+    middle2_code : 02
+    small_code : 01
+    message_str : Unknown ERROR code (%s). 
+  
+  

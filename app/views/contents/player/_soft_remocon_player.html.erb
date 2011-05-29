@@ -1,0 +1,63 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => false } %>
+
+	<div>
+		<table frame="void" rules="none">
+			<tr>
+				<td>
+					<%=_("表示の種類")%>
+				</td>
+				<td>	
+					<%= select_tag("contents_setting[button_type]", 
+						options_for_select(remocon_select, settings["button_type"]
+						),:onchange => "change_px(this.selectedIndex)")
+					%>
+				</td>
+				<td rowspan="2">
+					<div id="picker" style="float: right;"></div>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">		
+					<%=_("背景色")%>
+				</td>
+				<td valign="top">
+					<%= text_field_tag("contents_setting[back_color]", settings["back_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+					<%if settings["back_color"] != nil %>
+						  <script>document.getElementById("contents_setting[back_color]").value="<%=settings['back_color']%>"</script>
+				  	<%end%>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<%=_("※当プレーヤを配置していないチャンネルからの、チャンネルボタンでの切り換えは行えません。<br>")%>
+					<%=_("また各チャンネル、ページのプレーヤの配置によっては、操作がしにくくなる場合があります。")%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%=_("※各ボタン画像、リモコン画像は、高解像度で表示した場合に、画像が粗く見える場合があります。")%>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<%=hidden_field_tag("contents_setting[channel_id]",params[:channel_id])%>
+<script type="text/javascript" charset="utf-8">
+init_remocon();
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker');
+	 var p = jQuery('#picker').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+	});
+</script>

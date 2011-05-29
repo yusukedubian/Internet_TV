@@ -1,0 +1,160 @@
+<style type="text/css">
+.image_guide_text{
+        width:810px;
+        height:130px;
+        word-break:break-all
+}
+.image_guide_title{
+        height:75px;
+        width:100px;
+        padding-top:55px;
+        text-align:center;
+}
+</style>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $('#files').MultiFile( {
+      STRING: {
+        remove: '<input type="hidden" name="new_list[]" value="1" />削除',
+      }
+    })
+  })
+
+  function delFile(chk){
+  	var ischecked = chk.checked;
+  	if (file_count == 10 && !ischecked) {
+		alert("Max filecount is 10!");
+		chk.checked = true;
+		return false;
+	}
+	if (ischecked) {
+		file_count = file_count - 1
+	} else {
+		file_count = file_count + 1
+	}
+  }
+  
+</script>
+<table style="margin-bottom:15px;">
+	<tr>
+		<td>
+			<%= _("画像切替タイム(ms)")%><font color=red>*</font>
+		</td>
+		<td>
+			<%= text_field_tag("contents_setting[time]", h(settings["time"]), :maxlength => 6, :size=>6)%>
+		</td>
+		<td>
+			<%= _("エフェクトタイム(ms)")%><font color=red>*</font>
+		</td>
+		<td>
+			<%= text_field_tag("contents_setting[effecttime]", h(settings["effecttime"]), :maxlength => 6, :size=>6)%>
+		</td>
+        <td>
+			<%= _("エフェクト")%>
+			<%= select_tag("contents_setting[effect_type]", 
+				options_for_select(img_effect_for_select, settings["effect_type"]))
+			%>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><%="※ ms　・・・ 1000 ms (1 秒)"%></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<table style="margin-bottom:15px;">
+	<tr>
+        <td>
+        	<%=_("ファイルパス")%><font color=red>*</font>
+		</td>
+    </tr>
+	<tr>
+		<td>
+<%
+i = 0
+settings.each{|key,value|
+	if key =~ /picture_path/
+		i += 1
+	end
+}
+maxlength = 10 - i
+length = i
+%>
+			<input name="contents_multi_upload[picture_path][]" class="multi" id="files" size="60" type="file" accept="gif|jpg|png" maxlength="<%=maxlength%>"/>
+		</td>
+    </tr>
+</table>
+<%
+if maxlength == 0
+%>
+<script>document.getElementById("files").disabled = true;</script>
+<%end%>
+<table>
+	<tr>
+<%
+		order_key =[]
+		order_value =[]
+		settings.each{|key,value|
+			if key =~ /picture_path/
+				order_key[key.slice(12..13).to_i-1] = key
+				order_value[key.slice(12..13).to_i-1] = value
+			end
+		}
+		for i in 1..order_key.length
+			j = i - 1
+%>
+	<tr>
+		<td>
+			<%=i.to_s+"-"+(h order_value[j].split("-",2)[1])%>
+		</td>
+		<td>
+			
+			<%= check_box_tag("contents_uploaded[check_list][]", order_key[j] + "/" + order_value[j], false, options = { :onclick =>"delFile(this)" })%>
+			<%=_("削除しますか？")%>
+		</td>
+	</tr>
+<%
+		end
+%>
+	</tr>
+</table>
+
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="image_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="image_guide_text">
+				<%="画像ファイル（gif,jpg,png）を動的に表示します。デジタルフォトフレーム風の表示も可能です。"%><br/>
+				<%="切り替えタイムで画像変更の間隔を指定し、"%><br/>
+				<%="エフェクトタイムで、画像へ与える効果の間隔を指定します。"%><br/>
+				<%="最大10個の画像を設定出来ます。"%>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" charset="utf-8">
+	var file_count = document.getElementsByName("contents_uploaded[check_list][]").length;
+</script>
+<%if maxlength == 0%>
+	<%=hidden_field_tag("checklength","max")%>
+<%else%>
+	<%=hidden_field_tag("checklength","nomal")%>	
+<%end%>
+<%=hidden_field_tag("length",length)%>
+<%= javascript_include_tag 'jquery.MultiFile' %>

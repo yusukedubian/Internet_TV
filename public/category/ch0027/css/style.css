@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	text-align:center;
+	background: url(../img/xloop_bg.jpg);
+	color:#000000;
+	margin: 0;
+  font-family: "ＭＳ ゴシック",sans-serif;
+}
+
+h1 {
+  font-size:16px;
+}
+
+p {
+  font-size: 12px;
+	margin: 2px 0;
+	clear: both;
+}
+
+ul, ol {
+	margin-left 0;
+}
+
+ul ul {
+	margin-bottom: 10px;
+}
+
+ul li{ 
+	list-style:none; 
+	display:block; 
+	padding-bottom:1px; 
+	margin-bottom:0px; 
+}
+
+a {
+	color:white
+}
+
+/* #con 右のマージンが同じ値になるように自動調節され、結果としてセンタリグされます。文字だけ左寄せに*/
+#base {
+	width:830px;
+	height:620px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+  background: url(../img/bg.jpg) no-repeat;
+}
+
+#left {
+	display:inline;
+	float:left;
+	width:239px;
+	height: 545px;
+	margin: 48px 0px 0px 10px;
+}
+
+#left1 {
+	display:inline;
+	float:left;
+	width:239px;
+	height: 286px;
+	margin: 0px 0px 0px 0px;
+}
+
+#left2 {
+	display:inline;
+	float:left;
+	width:221px;
+	margin: 60px 0px 0px 9px;
+	height: 182px;
+}
+
+#right {
+	display:inline;
+	float:right;
+	width:530px;
+	height:545px;
+	margin:0px 40px 0px 0px;
+}
+
+#right1 {
+	display:inline;
+	float:left;
+	width:530px;
+	height: 208px;
+	margin: 7px 0px 0px 0px;
+}
+
+#right2 {
+	display:inline;
+	float:left;
+	width:530px;
+	height: 309px;
+	margin: 74px 0px 0px 0px;
+}

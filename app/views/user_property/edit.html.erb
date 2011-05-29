@@ -1,0 +1,137 @@
+<div class="top_title">
+	<%= _("アカウント設定") %>
+</div>
+<div class="container" id="container">
+	<ul id="tab">
+		<li class="present"><a><%= _("ユーザー") %></a></li>
+		<li class="release"><a><%= _("YAMLメール") %></a></li>
+		<li class="release"><a><%= _("Google Key") %></a></li>
+	</ul>
+
+	<div id="page1" name="page1">
+		<%= render :partial => 'login_name' %>
+		<%= render :partial => 'user_name' %>
+		<%= render :partial => 'password' %>
+		<%= render :partial => 'mail_address' %>
+		<%= render :partial => 'edit_help' %>
+	</div>
+	
+	<div id="page2" name="page2">
+		<%= render :partial => 'yaml_mail' %>
+		<%= render :partial => 'yaml_mail_help' %>
+	</div>
+	
+	<div id="page3" name="page3">
+		<%= render :partial => 'google_api_key' %>
+		<%= render :partial => 'google_api_help' %>		
+	</div>
+	
+		
+	<div class="rogo" style="cursor:pointer;" onclick="location.href='<%=root_path%>'">
+		<%= image_tag ("./imagefile/tv.gif",:width=>"50px",:height=>"50px")%>
+		<%= image_tag ("./imagefile/bottomrogo.png") %>
+	</div>	
+</div>
+	
+<script type="text/javascript">
+	var tab = {
+		init: function(){
+			var tabs = this.setup.tabs;
+			var pages = this.setup.pages;
+			
+			for(i=0; i<pages.length; i++) {
+				if(i !== 0) pages[i].style.display = 'none';
+				tabs[i].onclick = function(){ tab.showpage(this); return false; };
+			}
+			this.dive();
+		},
+		
+		showpage: function(obj){
+			var tabs = this.setup.tabs;
+			var pages = this.setup.pages;
+			var num;
+			
+			for(num=0; num<tabs.length; num++) {
+				if(tabs[num] === obj) break;
+			}
+			
+			for(var i=0; i<pages.length; i++) {
+				if(i == num) {
+					pages[num].style.display = 'block';
+					tabs[num].className = 'present';
+				}
+				else{
+					pages[i].style.display = 'none';
+					tabs[i].className = 'release';
+				}
+			}
+		},
+	
+		dive: function(){
+			var hash = window.location.hash;
+			hash = hash.split("?");
+			hash = hash[0].split("#");
+	
+			var tabs = this.setup.tabs;
+			var pages = this.setup.pages;
+			for(i=0; i<pages.length; i++) {
+				if(pages[i] == document.getElementById(hash[1])) this.showpage(tabs[i]);
+			}
+		}
+	}
+	
+	tab.setup = {
+		tabs: document.getElementById('tab').getElementsByTagName('li'),
+		
+		pages: [
+			document.getElementById('page1'),
+			document.getElementById('page2'),
+			document.getElementById('page3')
+		]
+	}
+	
+	tab.init();
+</script>
+
+<style type="text/css">
+div.container {list-style-type: none; margin-left:10px;margin-top:25px;}
+
+#tab {
+	margin-left: 0;
+	padding-left: 0;
+	border-bottom: medium solid #333;
+	width: 910px;
+	height: 1.5em;
+	overflow: hidden;
+}
+
+#tab li {
+	float: left;
+	height: 1.5em;
+	width: 120px;	
+}
+
+#tab li a {
+	display: block;
+	width: 60px;
+	height: 1.5em;
+	border: 1px solid #ccc;
+	border-bottom: 0;
+	color: #777;
+	text-align: center;
+}
+
+#tab li a:hover,
+#tab li.present a {
+	border-color: #333;
+	color: #000;
+	background: #E5F2F8;
+	width: 120px;
+}
+
+#tab li.release a {
+	border-color: #333;	
+	width: 120px;	
+}
+</style>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<設定> 
+<rss_url>http://www.vasdaq.tv/string/show?url=http://dailynews.yahoo.co.jp/fc/computer/rss.xml</rss_url> 
+<text_width>480</text_width> 
+<text_height>57</text_height> 
+<text_type>rss</text_type> 
+<text_content></text_content> 
+<font_color>0xFF0000</font_color> 
+<font_size>8.5</font_size> 
+<scroll_speed>10</scroll_speed> 
+<scroll_direction>Left</scroll_direction> 
+</設定>

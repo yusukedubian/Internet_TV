@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+		<style>
+			#gallery{
+				margin-top:15px;
+			}
+			.gallery-item{
+				font-size:12px;
+				width:400px;
+				min-height:350px;
+				display:-moz-inline-stack;
+				display:inline-block;
+				vertical-align:top;
+				margin:10px;
+				padding:5px;
+			}
+			.gallery-item:hover{
+				background:#e5f1f6
+			}
+			.preview{
+				margin-bottom:15px;
+			}
+			.bgsize{
+				padding-left:5px;
+				text-align:left;
+			}
+			.bgsize dt{
+				width:85px;
+				float:left;
+			}
+			
+			div .longtype{
+				width:205px;
+				float:left;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div style="width:100%; text-align:center;">
+			<h1>背景画像ギャラリー</h1>
+			<center>
+			<div style="text-align:left; margin-left:75px;">
+			<%= link_to ("戻る",edit_channel_page_path(params[:channel_id],params[:id]))%>
+			</div>
+			<div style="text-align:left; margin:15px 0px 0px 75px;">
+			<%="お好きな画像の中から,ページサイズに合ったものを適用してください。<br>（合ったサイズがない場合は、近いサイズを選び、ページ+プレーヤ設定、表示方法のページ全画面表示を選んでください。ただし画像の質が悪くなる可能性があります。）<br>"%>
+			</div>
+			<div id="gallery" style="width:900px; text-align:center;">
+			<ul>
+				<div id="imagebox">
+					<li class="gallery-item">
+	                        <h5>
+	                        	blackfilter
+	                        </h5>
+	                        <div class="preview">
+	                        	<%=image_tag("./imagefile/bgimage1.png")%>  
+	                        </div>
+							<table style="width:380px; margin:0px;padding:0px;" cellpadding="0px" cellspacing="0px"><tr><td width="35%" valign="top">
+							<div class="bgsize">
+								<dt><%="●800×600"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"1_800_600.png"))%></dd>
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●1024×768"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"1_1024_768.png"))%></dd>
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●1280×1024"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"1_1280_1024.png"))%></dd>
+	                        </div>
+							</td><td>
+								<div class="bgsize">
+									<dt class="longtype"><%="●DVGA 640×960<font size='-2'>(iPhone4縦)</font>"%></dt>
+		                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"DVGA_640_960.png"))%></dd>
+	                        	</div>
+								<div class="bgsize">
+									<dt class="longtype"><%="●DVGA 960×640<font size='-2'>(iPhone4横)</font>"%></dt>
+									<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"DVGA_960_640.png"))%></dd>
+								</div>
+								<div class="bgsize">
+									<dt class="longtype"><%="●XGA 768×1024<font size='-2'>(iPad縦)</font>"%></dt>
+									<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"XGA_768_1024.png"))%></dd>
+								</div>
+								<div class="bgsize">
+									<dt class="longtype"><%="●XGA 1024×768<font size='-2'>(iPad横)</font>"%></dt>
+									<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"XGA_1024_768.png"))%></dd>
+								</div>
+								<div class="bgsize">
+									<dt class="longtype"><%="●FHD 1920×1080<font size='-2'>(FullHiVisionTV)</font>"%></dt>
+									<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"FHD_1920_1080.png"))%></dd>
+								</div>
+								<div class="bgsize">
+									<dt class="longtype"><%="●WUXGA 1920×1200"%></dt>
+									<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"WUXGA_1920_1200.png"))%></dd>
+								</div>
+							</td></tr></table>
+					</li>
+					<li class="gallery-item">
+						 <div>
+	                        <h5>
+	                        	blackframe
+	                        </h5>
+	                        <div class="preview">
+	                          <%=image_tag("./imagefile/bgimage2.png")%>  
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●800×600"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"2_800_600.png"))%></dd>
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●1024×768"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"2_1024_768.png"))%></dd>
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●1280×1024"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"2_1280_1024.png"))%></dd>
+	                        </div>
+	                    </div>
+					</li>
+					<li class="gallery-item">
+						 <div>
+	                        <h5>
+	                        	worldmap
+	                        </h5>
+	                        <div class="preview">
+	                          <%=image_tag("./imagefile/bgimage3.png")%>  
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●800×600"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"3_800_600.png"))%></dd>
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●1024×768"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"3_1024_768.png"))%></dd>
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●1280×1024"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"3_1280_1024.png"))%></dd>
+	                        </div>
+	                    </div>
+					</li>
+					<li class="gallery-item">
+						 <div>
+	                        <h5>
+	                        	matrix
+	                        </h5>
+	                        <div class="preview">
+	                          <%=image_tag("./imagefile/bgimage4.png")%>  
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●800×600"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"4_800_600.png"))%></dd>
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●1024×768"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"4_1024_768.png"))%></dd>
+	                        </div>
+							<div class="bgsize">
+								<dt><%="●1280×1024"%></dt>
+	                        	<dd><%= link_to ("適用",backimages_channel_page_path(params[:channel_id],params[:id],:bg=>"4_1280_1024.png"))%></dd>
+	                        </div>
+	                    </div>
+					</li>
+				</div>
+			</ul>
+			</div>
+			</center>
+		</div>
+	</body>
+</html>

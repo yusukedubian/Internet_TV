@@ -1,0 +1,98 @@
+name: TODOリスト
+desc: |
+  TODOリストです
+  
+table: TODO　LIST
+button: 送信
+items:
+- name: 何をする（１４０文字まで入力できます）
+  desc: |
+    何をするのかを記入してください。
+    
+  type: textarea
+  column: 何をする
+  option:
+  - width: 535
+    length: 140
+    hight: 50
+    validate:
+    - is_blank: true
+- name: 優先度　
+  desc: |
+    優先度を”高”　”標準”　”低”の中から、選択してください。
+    
+  type: radio
+  column: 優先度
+  option:
+  - name: 高
+    value: 高
+    checked: true
+  - name: 標準
+    value: 標準
+    checked: false
+  - name: 低
+    value: 低
+    checked: false
+- name: いつから
+  desc: |
+    いつからなのかを記入してください。　　例：2011/3/21
+    
+  type: text
+  column: いつから
+- name: いつまで
+  desc: |
+    いつまでなのかを記入してください。　　例：2011/3/30
+    
+  type: text
+  column: いつまで
+- name: どこで　
+  desc: |
+    場所を記入してください。３０文字まで入力可能です。
+    
+  type: text
+  column: どこで
+  option:
+  - width: 70
+    length: 30
+- name: 誰と　　
+  desc: |
+    参加者、同行者を記入してください。
+    
+  type: list
+  column: 誰と
+  option:
+  - name: 友人
+    value: 友人
+    selected: true
+  - name: 家族
+    value: 家族
+    selected: false
+  - name: 同僚
+    value: 同僚
+    selected: false
+  - name: 先輩
+    value: 先輩
+    selected: false
+  - name: お客様
+    value: お客様
+    selected: false
+  - name: その他
+    value: その他
+    selected: false
+- name: 上記項目で”その他”を選択した場合に記入
+  desc: |
+    ”誰と”の項目で、その他を選択した場合、記入してください。１５文字まで入力可能です。
+  type: text
+  column: その他（詳細）
+  option:
+  - width: 30
+    length: 15
+- name: 備考
+  desc: |
+    その他必要事項を記入してください。
+    
+  type: textarea
+  column: 備考
+  option:
+  - width: 510
+    hight: 50

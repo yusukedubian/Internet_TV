@@ -1,0 +1,63 @@
+<div style="margin-left:75px;margin-top:75px;">
+	
+	<h1>メッセージ管理画面</h1>
+	
+	<table>
+	  <tr>
+		<td width="50px">ステータス</td>
+	  	<td width="90px">開始日時</td>
+		<td width="90px">終了日時</td>
+		<td width="150px">本文</td>
+		<td width="30px"></td>
+		<td width="30px"></td>
+		<td width="30px"></td>
+	  </tr>
+	
+	<% for index_message in @index_messages %>
+	
+	<%if index_message.del_flg || ((index_message.end_date < DateTime.now) && !index_message.no_end_flg) %>
+	  <tr bgcolor="#d3d3d3">
+	<%elsif index_message.start_date > DateTime.now%>
+	  <tr bgcolor="#ffff66">
+	<%else%>
+	  <tr>
+	<%end%>
+		<td>
+			<%if index_message.del_flg%>
+				<%= _("削除フラグ")%>
+			<%elsif (index_message.end_date < DateTime.now) && !index_message.no_end_flg%>
+				<%= _("掲載終了")%>
+			<%elsif index_message.start_date > DateTime.now %>
+				<%= _("未開始")%>
+			<%else%>
+				<%= _("掲載中")%>
+			<%end%>
+		</td>
+	  	<td><%= simple_time(index_message.start_date)%></td>
+		<td>
+			<%if index_message.no_end_flg%>
+			<%= "無し"%>
+			<%else%>
+			<%= simple_time(index_message.end_date)%>
+			<%end%>
+		</td>
+		<td><%= index_message.body%></td>
+		<td>
+		<%if !index_message.del_flg%>
+			<%= link_to _("enable"), disable_index_message_path(index_message), :method => :put%>
+		<%else%>
+			<%= link_to _("disable"), enable_index_message_path(index_message), :method => :put%>
+		<%end%>
+		</td>
+		
+	    <td><%= link_to '表示', index_message %></td>
+	    <td><%= link_to '編集', edit_index_message_path(index_message) %></td>
+
+	  </tr>
+	<%end%>
+	</table>
+	<%= will_paginate @index_messages%>
+	<br />
+	
+	<%= link_to '新規作成', new_index_message_path %>
+</div>

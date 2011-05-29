@@ -1,0 +1,313 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+# rake db:import:development
+
+# class PlayersController
+player1:
+    id : 987777807
+    player_no : 1
+    guide_text : お好きなHPを動的に表示するプレーヤです。指定した時間毎に複数のURLを順番に切り替えて表示します。
+    name : HtmlPlayer
+    view_name : HTMLプレーヤ
+    playerclass : Html_Player
+    playerview : html_player
+    runtime_get_type : 
+    runtime_create_type :
+    logo_img : html.png
+    title_img : titlehtml.png
+    role_add_flg : true
+
+player2:
+    id : 104332058
+    player_no : 2
+    guide_text : RSS情報をリアリタイムに読み込んで、画面に自動表示します。縦横自動スクロール表示等も対応。電光掲示板風に表示する事も可能です。
+    name : RssPlayer
+    view_name : RSSプレーヤ
+    playerclass : Rss_player
+    playerview : rss_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : rss.png
+    title_img : titlerss.png
+    role_add_flg : true
+
+player3:
+    id : 3
+    player_no : 3
+    guide_text : Web版Googleガジェットやブログパーツを動的に表示します。ウィジェットを指定時間毎に自動更新したり、自作ウィジェットの追加も出来ます。
+    name : WidgetPlayer
+    view_name : ウィジェットプレーヤ
+    playerclass : WidgetPlayer
+    playerview : widget_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : widget.png
+    title_img : titlewidget.png
+    role_add_flg : true
+
+player4:
+    id : 104332056
+    player_no : 4
+    guide_text : 入力したテキストを、スクロールしたり、点滅させて、動的に表示させる事が出来ます。電光掲示板風の表示や日付時刻を表示する事も出来ます。
+    name : TextPlayer
+    view_name : テキストプレーヤ
+    playerclass : Text_player
+    playerview : text_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : text.png
+    title_img : titletext.png
+    role_add_flg : true
+    
+#player4:
+#    id : 104332056
+#    player_no : 4
+#    guide_text : 入力したテキストを、スクロール、点滅等、自由に表示させる事が出来ます。
+#    name : FixTextPlayer
+#    playerclass : Fix_text_player
+#    playerview : fix_text_player
+#    runtime_get_type : 
+#    runtime_create_type : 
+#    logo_img : fixtext.png
+#    title_img : titlefixtext.png
+#    role_add_flg : false
+
+player5:
+    id : 987777812
+    player_no : 5
+    guide_text : 画像ファイル（gif,jpg,png等）を動的に表示します。画像切替時にエフェクトを指定し、デジタルフォトフレーム風の表示も可能です。
+    name : ImagePlayer
+    view_name : イメージプレーヤ
+    playerclass : Image_player
+    playerview : image_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : image.png
+    title_img : titleimage.png
+    role_add_flg : true
+    
+#player5:
+#    player_no : 5
+#    guide_text : お好きな画像（gif,jpg,pngファイル）をアップロードし、指定の時間毎にエフェクト表示します。
+#    name : PicturePlayer
+#    playerclass : Picture_player
+#    playerview : picture_player
+#    runtime_get_type : 
+#    runtime_create_type : 
+#    logo_img : picture.png
+#    title_img : titlepicture.png
+
+player6:
+    id : 104332051
+    player_no : 6
+    guide_text : ビデオを表示するプレーヤです。Youtubeの動画やご自分で動画をアップロードして再生することができます。
+    name : VideoPlayer
+    view_name : ビデオプレーヤ
+    playerclass : Video_player
+    playerview : video_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : video.png
+    title_img : titlevideo.png
+    role_add_flg : true
+    
+#player6:
+#    player_no : 6
+#    guide_text : Youtubeの動画を、キーワードを指定し表示します。
+#    name : YoutubePlayer
+#    playerclass : Youtube_player
+#    playerview : youtube_player
+#    runtime_get_type : 
+#    runtime_create_type : 
+#    logo_img : youtube.png
+#    title_img : titleyoutube.png
+
+player7:
+    id : 7
+    player_no : 7
+    guide_text : 音声や音楽の再生をするプレーヤです。最大５曲までの音楽ファイルを指定する事が出来ます。HTML5対応ブラウザで再生可。
+    name : AudioPlayer
+    view_name : オーディオプレーヤ
+    playerclass : Audio_player
+    playerview : audio_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : audio.png
+    title_img : titleaudio.png
+    role_add_flg : true
+    
+player8:
+    id : 987777810
+    player_no : 8
+    guide_text : Twitterのつぶやき情報を表示するプレーヤです。検索キーワードに関係するつぶやきを順番に自動表示し、最新情報の取得表示が可能です。
+    name : TwitterPlayer
+    view_name : Twitterプレーヤ
+    playerclass : TwitterPlayer
+    playerview : twitter_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : twitter.png
+    title_img : titletwitter.png
+    role_add_flg : true
+    
+player9:
+    id : 987777805
+    player_no : 9
+    guide_text : USTREAMの生放送を表示するプレーヤです。キーワード再生やチャンネル再生、iPadでの表示にも対応しています。
+    name : UstreamPlayer
+    view_name : Ustreamプレーヤ
+    playerclass : Ustream_Player
+    playerview : ustream_player
+    runtime_get_type : 
+    runtime_create_type :
+    logo_img : ustream.png
+    title_img : titleustream.png
+    role_add_flg : true
+
+player10:
+    id : 104332052
+    player_no : 10
+    guide_text : IPカメラの動画画像をリアルタイム表示するプレーヤです。（COREGA社製のIPカメラのみ対応しています。他社のカメラ対応はご相談下さい。）
+    name : CameraPlayer
+    view_name : カメラプレーヤ
+    playerclass : Camera_player
+    playerview : camera_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : camera.png
+    title_img : titlecamera.png
+    role_add_flg : true
+
+player11:
+    id : 104332057
+    player_no : 11
+    guide_text : YAML形式で記述されたメールの内容をリアルタイムに表示するプレーヤです。YAML専用メーラも提供しています。（ 市販のメーラでも更新可能です。）
+    name : YamlMailPlayer
+    view_name : メールプレーヤ
+    playerclass : Yaml_mail_player
+    playerview : yaml_mail_player
+    runtime_get_type : 
+    runtime_create_type : 
+    runtime_config_table : 
+    logo_img : mail.png
+    title_img : titleyaml.png
+    role_add_flg : true
+    
+player12:
+    id : 104332050
+    player_no : 12
+    guide_text : FLASHファイルを表示するプレーヤです。(VASDAQ.TVはHTML5に完全対応しています。iPhone等はこのプレーヤを使用すると表示出来ない可能性があります。)
+    name : FlashPlayer
+    view_name : Flashプレーヤ
+    playerclass : Flash_player
+    playerview : flash_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : flash.png
+    title_img : titleflash.png
+    role_add_flg : true
+    
+player13:
+    id : 104332055
+    player_no : 13
+    guide_text : お気に入りの画像をアップロードして表示出来ます。
+    name : FixImagePlayer
+    view_name : FixImageプレーヤ
+    playerclass : Fix_image_player
+    playerview : fix_image_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : fiximage.png
+    title_img : titlefiximage.png
+    role_add_flg : false
+    
+player14:
+    id : 104332053
+    player_no : 14
+    guide_text : お好みのカラー、サイズに合わせて時刻を表示します。
+    name : ClockPlayer
+    view_name : クロックプレーヤ
+    playerclass : Clock_player
+    playerview : clock_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : clock.png
+    title_img : titleclock.png
+    role_add_flg : false
+    
+player15:
+    id : 987777813
+    player_no : 15
+    guide_text : EDINETのXbrlファイルの内容を分析し、業務値、財務値、財務指標値を表示します。
+    name : EdinetPlayer
+    view_name : Edinetプレーヤ
+    playerclass : Edinet_player
+    playerview : edinet_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : xbrl.png
+    title_img : titleedinet.png
+    role_add_flg : false
+
+player16:
+    id : 987777811
+    player_no : 16
+    guide_text : お好きなテキストやRSSを、電光掲示板風の文字で表示することが出来ます。
+    name : StringPlayer
+    view_name : ストリングプレーヤ
+    playerclass : String_player
+    playerview : string_player
+    runtime_get_type : 
+    runtime_create_type : 
+    logo_img : stringboard.png
+    title_img : titlestring.png
+    role_add_flg : false
+
+player17:
+    id : 987777809
+    player_no : 17
+    guide_text : 表形式で表示することができます。
+    name : YamlTablePlayer
+    view_name : Yamlテーブルプレーヤ
+    playerclass : YamlTablePlayer
+    playerview : yaml_table_player
+    runtime_get_type : GetMail
+    runtime_create_type : StoreYamlAsJson
+    runtime_config_table : runtime_config_mail
+    logo_img : yamltable.png
+    title_img : titleyamltable.png
+    role_add_flg : false
+
+player18:
+    id : 987777808
+    player_no : 18
+    guide_text : YAMLにより定義されたグラフを表示します。
+    name : YamlGraphPlayer
+    view_name : Yamlグラフプレーヤ
+    playerclass : YamlGraphPlayer
+    playerview : yaml_graph_player
+    runtime_get_type : GetMail
+    runtime_create_type : StoreGraphYamlAsJson
+    runtime_config_table : runtime_config_mail
+    logo_img : graph.png
+    title_img : titlegraph.png
+    role_add_flg : false
+
+#player18:
+#    id : 987777806
+#    player_no : 18
+#    guide_text : チャンネル切り替えボタンを表示します。
+#    name : SoftRemoconPlayer
+#    playerclass : Soft_remocon_player
+#    playerview : soft_remocon_player
+#    runtime_get_type : 
+#    runtime_create_type : 
+#    logo_img : remocon.png
+#    title_img : titlesoftremocon.png
+#    role_add_flg : false

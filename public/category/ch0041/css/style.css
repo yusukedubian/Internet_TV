@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+
+body {
+	text-align:center;
+	font-family:"ＭＳ ゴシック",sans-serif;
+	background:#000000;
+}
+
+div#main {
+	width:800px;
+	height:600px;
+	margin:0px auto 0px auto;
+	background:url("../img/bg.jpg") no-repeat;
+}
+
+div#player {
+	display:inline;
+	float:left;
+	width:425px;
+	height:358px;
+	margin:45px 15px 15px 15px;
+}
+
+div#news {
+	display:inline;
+	float:right;
+	width:310px;
+	height:301px;
+	margin:81px 15px 0px 0px;
+	padding:10px 10px 10px 10px;
+}
+
+div#twitter {
+	display:inline;
+	float:left;
+	width:740px;
+	height:110px;
+	margin:30px 0px 0px 15px;
+	padding:15px 15px 15px 15px;
+}

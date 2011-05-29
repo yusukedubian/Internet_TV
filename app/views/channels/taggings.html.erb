@@ -1,0 +1,11 @@
+<h1>tag</h1>
+
+
+<% form_tag(:controller=> "taggings", :action=>"update", :id=> params[:id], :class=> @obj.class) do -%>
+<%10.times do |i|%>
+
+<%= text_field_tag("tagging["+i.to_s+"]", @obj.tag_list[i])%><br>
+<% end%>
+<%= submit_tag(_("submit")) %>
+<% end -%>
+<%= link_to _("cancel"), channels_path%>

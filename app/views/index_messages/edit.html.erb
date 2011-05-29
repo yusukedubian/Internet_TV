@@ -1,0 +1,52 @@
+<div style="margin-left:75px;margin-top:75px;">
+	<h1>メッセージ編集画面</h1>
+	
+	
+	<% form_for(@index_message) do |f| %>
+	  <%= f.error_messages %>
+	  <table>
+	  	<tr>
+	  		<th></th>
+	  	</tr>
+		<tr>
+				<td>メッセージ本文</td>
+			<td>
+				<%= f.text_field :body,:size=> 30,:maxlength =>200 %>
+			</td>
+		</tr>
+		<tr>
+			<td>開始日時</td>
+			<td>
+				<%= f.datetime_select  "start_date", :use_month_numbers => true%>
+			</td>
+		</tr>
+		<tr>
+			<td>終了日時</td>
+			<td>
+				<%= f.datetime_select  "end_date" , :use_month_numbers => true%>
+			</td>
+		</tr>
+		<tr>
+			<td>終了日時不可</td>
+			<td>
+				<%= f.check_box :no_end_flg %>
+			</td>
+		</tr>
+		<tr>
+			<td>削除フラグ</td>
+			<td>
+				<%= f.check_box :del_flg %>
+			</td>
+		</tr>
+	  </table>
+	  <p>
+	    <%= f.submit "更新" %>
+	  </p>
+	<% end %>
+	
+	
+	<%= link_to '表示', @index_message %> |
+	<%= link_to '戻る', index_messages_path %>
+	<br><br>
+	<%= link_to '削除', @index_message, :method=>:delete, :confirm=>_("本当に削除しますか？") %>
+</div>

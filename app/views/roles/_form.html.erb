@@ -1,0 +1,6 @@
+<%= _("name") %><br>
+<% if @role.name == "administrator"%>
+<%= f.text_field :name, :disabled=>true %>
+<% else %>
+<%= f.text_field :name %>
+<% end%>

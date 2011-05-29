@@ -1,0 +1,253 @@
+
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	background-repeat: repeat-x;
+	font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+	color: #333333;
+	font-size:80%;
+	
+}
+h1 {
+	color:#ff9900;
+	font-size:200%;
+	font-weight:normal;
+	margin:0;
+	padding-bottom:10px;
+}
+h4{
+	width:945px;
+	font-size:120%;
+	font-weight:bold;
+	background-image:url("../../../../images/welcome/common/h3_bt.gif");
+	background-repeat:no-repeat;
+	background-position:left center;
+	border-bottom:solid 1px #d3d3d3;
+	padding:5px 0px 5px 15px;
+	margin-bottom:10px;
+}
+h6{
+	width:960px;
+	background-position:left center;
+	border-bottom:solid 1px #d3d3d3;
+	margin:0px 0px 10px 5px;
+	padding:5px 0px 0px 0px;
+}
+li {
+	
+}
+/*
+ Link Color [
+----------------------------------------------------------- */
+a {
+	color:#003cff;
+	text-decoration:none;
+	outline:none;	//リンクをクリックした時に出る点線を消す
+}
+a:link {
+	color:#003cff;
+}
+a:visited {
+	color:#003cff;
+}
+a:hover {
+	text-decoration:underline;
+	color:#003cff;
+	cursor:pointer;
+}
+a:active {
+	color:#003cff;
+}
+
+.qasetting{
+margin-left:75px;
+margin-top:15px;
+margin-bottom:75px;
+}
+
+div.box_left{
+position:relative;
+display: -moz-inline-box; /*for Firefox 2*/
+display: inline-block; /*for modern*/
+/display: inline; /*for ie5～7*/
+/zoom: 1; /*for ie5～7*/
+padding:2px;
+margin-bottom:5px;
+vertical-align: top;
+width:110px;
+}
+
+div.box_right {
+position:relative;
+display: -moz-inline-box; /*for Firefox 2*/
+display: inline-block; /*for modern*/
+/display: inline; /*for ie5～7*/
+/zoom: 1; /*for ie5～7*/
+padding:2px;
+margin-bottom:5px;
+vertical-align: top;
+}
+
+div.qbox{
+position:relative;
+display: -moz-inline-box; /*for Firefox 2*/
+display: inline-block; /*for modern*/
+/display: inline; /*for ie5～7*/
+/zoom: 1; /*for ie5～7*/
+padding-right:2px;
+vertical-align: top;
+width:230px;
+}
+div.abox{
+position:relative;
+display: -moz-inline-box; /*for Firefox 2*/
+display: inline-block; /*for modern*/
+/display: inline; /*for ie5～7*/
+/zoom: 1; /*for ie5～7*/
+padding-right:2px;
+vertical-align: top;
+width:230px;
+}
+
+.widget_url{
+width:600px;
+height:100px;
+border:1px solid #ccc;
+margin-bottom:15px;
+}
+
+pre {
+white-space: -moz-pre-wrap; /* Mozilla */
+white-space: -pre-wrap;     /* Opera 4-6 */
+white-space: -o-pre-wrap;   /* Opera 7 */
+white-space: pre-wrap;      /* CSS3 */
+word-wrap: break-word;      /* IE 5.5+ */
+
+}
+
+.ol_qa{
+white-space: -moz-pre-wrap; /* Mozilla */
+white-space: -pre-wrap;     /* Opera 4-6 */
+white-space: -o-pre-wrap;   /* Opera 7 */
+white-space: pre-wrap;      /* CSS3 */
+word-wrap: break-word;      /* IE 5.5+ */
+width:922px;
+margin:5px 0px 0px 35px;
+}
+
+.player_box{
+position:relative;
+display: -moz-inline-box; /*for Firefox 2*/
+display: inline-block; /*for modern*/
+/display: inline; /*for ie5～7*/
+/zoom: 1; /*for ie5～7*/
+padding:2px;
+margin-bottom:5px;
+vertical-align: top;
+}
+
+/* JQuery Color Picker
+----------------------------------------------------------- */
+.farbtastic {
+  position: relative;
+}
+.farbtastic * {
+  position: absolute;
+  cursor: crosshair;
+}
+.farbtastic, .farbtastic .wheel {
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .color, .farbtastic .overlay {
+  top: 47px;
+  left: 47px;
+  width: 101px;
+  height: 101px;
+}
+.farbtastic .wheel {
+  background: url(../../../../images/imagefile/wheel.png) no-repeat;
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .overlay {
+  background: url(../../../../images/imagefile/mask.png) no-repeat;
+}
+.farbtastic .marker {
+  width: 17px;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden; 
+  background: url(../../../../images/imagefile/marker.png) no-repeat;
+}
+.colorwell {
+  border: 2px solid #fff;
+  width: 5em;
+  text-align: center;
+  cursor: pointer;
+}
+.colorwell-selected {
+  border: 3px solid #a6bfe3;
+  font-weight: bold;
+}
+
+.colorwell_border{
+  border: 2px solid #fff;
+  width: 5em;
+  text-align: center;
+  cursor: pointer;
+}
+.qdata{
+border-bottom:dotted 1px #f64c31;
+overflow: auto;
+}
+.adata{
+border-bottom:dotted 1px #075db6;
+overflow: auto;
+}
+
+.qatextarea{
+height:20px;
+width:230px;
+}
+div.select {
+border-radius: 10px;         /* CSS3 */
+-moz-border-radius: 5px;    /* Firefox */
+-webkit-border-radius: 10px; /* Safari,Chrome */
+border: 1px #ccc solid;     /* 枠線の装飾 */
+background-color: #f5f5f5;   /* 背景色 */
+width:955px;
+position:relative;
+margin-bottom:5px;
+}
+.bt1{
+cursor: pointer;
+margin-right:5px;
+}
+.layout_guide{
+padding:5px 0px 5px 15px;
+display:none;
+}
+div.guide_box {
+display: -moz-inline-box; /*for Firefox 2*/
+display: inline-block; /*for modern*/
+/display: inline; /*for ie5～7*/
+/zoom: 1; /*for ie5～7*/
+border:1px solid #ccc;
+padding:2px;
+margin-top:5px;
+vertical-align: top;
+}
+.qanda_guide_text{
+width:810px;
+height:90px;
+word-break:break-all
+}
+.qanda_guide_title{
+height:55px;
+width:100px;
+padding-top:35px;
+text-align:center;
+}

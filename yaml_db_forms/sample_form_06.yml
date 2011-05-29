@@ -1,0 +1,63 @@
+name: お問い合わせフォーム
+desc: |
+  本プロジェクトに関するお問い合わせはこちらからどうぞ
+  
+table: お問い合わせフォーム
+button: 送信
+items:
+- name: ■お問い合わせ分類
+  type: radio
+  column: お問い合わせ分類
+  option:
+  - name: 仕様、その他のご質問
+    value: 仕様、その他のご質問
+    checked: true
+  - name: 開発協力、プロジェクトへの参加
+    value: 開発協力、プロジェクトへの参加
+    checked: false
+  - name: バグ報告
+    value: バグ報告
+    checked: false
+  - name: VASDAQTVプロジェクトへのご提案
+    value: VASDAQTVプロジェクトへのご提案
+    checked: false
+  - name: データベースへの素材提供
+    value: データベースへの素材提供
+    checked: false
+  - name: クレーム
+    value: クレーム
+    checked: false
+  - name: その他
+    value: その他
+    checked: false
+- name: ■お問い合わせ内容
+  type: textarea
+  column: お問い合わせ内容
+  option:
+  - width: 256
+    length: 512
+    hight: 64
+    validate:
+    - is_blank: true
+- name: ■お名前
+  desc: |
+    ハンドルネームでもかまいません
+    
+  type: text
+  column: お名前
+  option:
+  - width: 32
+    length: 100
+    validate:
+    - is_blank: true
+- name: ■メールID
+  desc: |
+    プロジェクトからの返信が必要な場合ご記入ください
+    
+  type: text
+  column: メールID
+  option:
+  - width: 32
+    length: 100
+    validate:
+    - is_blank: true

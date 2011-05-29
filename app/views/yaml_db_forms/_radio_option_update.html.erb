@@ -1,0 +1,41 @@
+<table>
+	<tr>
+		<td align='center'>
+			<%= _("初期状態のチェック") %>
+		</td>
+		<td>
+			<%= yaml_db_form_num_select_tag "yaml_db_form[#{@name}_checked]",
+											1,
+											@yaml_db_forms["#{@name}_count"].to_i,
+											@yaml_db_forms["#{@name}_checked"] %>
+		</td>
+	</tr>
+</table>		
+
+<% i = 0 %>
+<% while i < @yaml_db_forms["#{@name}_count"].to_i do %>
+	<table>	
+		<tr>
+			<td align='center'>
+				<%= _("ラジオボタンの名前 ") + (i + 1).to_s %>
+				<font color=red>*</font>
+			</td>
+			<td>
+				<%= text_field_tag "yaml_db_form[#{@name}_radio_#{i}_name]",
+									@yaml_db_forms["#{@name}_radio_#{i}_name"],
+									{:maxlength => ConstYamlDbForm::RADIO_NAME_MAX, :style => "width:200px;"} %>
+			</td>
+
+			<td align='center'>
+				<%= _("メールの本文に載せる値 ") + (i + 1).to_s %>
+				<font color=red>*</font>
+			</td>
+			<td>
+				<%= text_field_tag "yaml_db_form[#{@name}_radio_#{i}_value]",
+									@yaml_db_forms["#{@name}_radio_#{i}_value"],
+									{:maxlength => ConstYamlDbForm::RADIO_VALUE_MAX, :style => "width:200px;"} %>
+			</td>
+		</tr>
+	</table>
+	<% i += 1 %>
+<% end %>

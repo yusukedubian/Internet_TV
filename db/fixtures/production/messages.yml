@@ -1,0 +1,1362 @@
+#
+# Notice Messages
+#
+MSG_0x00000001:
+    message_code : MSG_0x00000001
+    message_str : ログインしました。
+     
+MSG_0x00000002:
+    message_code : MSG_0x00000002
+    message_str : ログアウトしました。
+
+MSG_0x00000003:
+    message_code : MSG_0x00000003
+    message_str : YAMLフォーム定義ファイルのアップロードに成功しました。
+
+MSG_0x00000004:
+    message_code : MSG_0x00000004
+    message_str : YAMLフォーム管理データの削除に成功しました。
+
+MSG_0x00000005:
+    message_code : MSG_0x00000005
+    message_str : YAMLフォームの更新を保存しました。
+
+MSG_0x00000006:
+    message_code : MSG_0x00000006
+    message_str : メールの送信に成功しました。
+
+MSG_0x00000007:
+    message_code : MSG_0x00000007
+    message_str : YAML構文のチェックに成功しました。
+
+MSG_0x00000008:
+    message_code : MSG_0x00000008
+    message_str : 設定の更新に成功しました。 
+
+MSG_0x00000009:
+    message_code : MSG_0x00000009
+    message_str : チャンネル情報を正常に保存しました。
+
+MSG_0x0000000A:
+    message_code : MSG_0x0000000A
+    message_str : YAMLフォームの作成に成功しました。
+
+MSG_0x0000000B:
+    message_code : MSG_0x0000000B
+    message_str : マイページは最大２０チャンネルまでです。既に２０チャンネル登録されています。
+
+MSG_0x0000000C:
+    message_code : MSG_0x0000000C
+    message_str : マイページに登録しました。
+    
+MSG_0x0000000D:
+    message_code : MSG_0x0000000D
+    message_str : ロールが正常に作成されました。
+    
+MSG_0x0000000E:
+    message_code : MSG_0x0000000E
+    message_str : ロールが正常に更新されました。
+    
+MSG_0x00000010:
+    message_code : MSG_0x00000010
+    message_str : ページ情報を正常に保存しました。
+
+MSG_0x00000011:
+    message_code : MSG_0x00000011
+    message_str : ご登録ありがとうございます。アクティベート用メールを送信しました。ご確認ください。
+
+MSG_0x00000012:
+    message_code : MSG_0x00000012
+    message_str : サインアップが完了しました。
+    
+MSG_0x00000013:
+    message_code : MSG_0x00000013
+    message_str : メールを送信しました。
+
+MSG_0x00000014:
+    message_code : MSG_0x00000014
+    message_str : 更新に成功しました。
+
+MSG_0x00000015:
+    message_code : MSG_0x00000015
+    message_str : アップロードが完了しました。
+    
+MSG_0x00000016:
+    message_code : MSG_0x00000016
+    message_str : クリアが完了しました。
+    
+MSG_0x00000017:
+    message_code : MSG_0x00000017
+    message_str : プレーヤ情報を正常に保存しました。
+    
+#
+# Error messages
+#
+
+# class UsersController
+ERR_0x01010101:
+    message_code : ERR_0x01010101
+    message_str : ログイン名は半角で入力してください。
+ERR_0x01010102:
+    message_code : ERR_0x01010102
+    message_str : emailを確認してください。
+
+ERR_0x01010103:
+    message_code : ERR_0x01010103
+    message_str : アカウント作成に失敗しました。
+    
+ERR_0x01010104:
+    message_code : ERR_0x01010104
+    message_str : パスワード欄が空欄では更新できません。
+
+ERR_0x01010105:
+    message_code : ERR_0x01010105
+    message_str : ニックネーム欄が空欄では更新できません。
+
+ERR_0x01010106:
+    message_code : ERR_0x01010106
+    message_str : メールアドレス欄が空欄では更新できません。
+    
+ERR_0x01010107:
+    message_code : ERR_0x01010107
+    message_str : パスワードの更新に失敗しました。
+ 
+ERR_0x01010108:
+    message_code : ERR_0x01010108
+    message_str : ニックネームの更新に失敗しました。
+
+ERR_0x01010109:
+    message_code : ERR_0x01010109
+    message_str : メールアドレスの更新に失敗しました。別のメールアドレスでお試しください。
+  
+ERR_0x0101010A:
+    message_code : ERR_0x0101010A
+    message_str : パスワードは半角で入力してください。
+
+ERR_0x0101010B:
+    message_code : ERR_0x0101010B
+    message_str : パスワードは6桁以上で入力してください。
+
+ERR_0x0101010C:
+    message_code : ERR_0x0101010C
+    message_str : パスワードは40桁以内で入力してください。
+
+ERR_0x0101010D:
+    message_code : ERR_0x0101010D
+    message_str : 入力されたパスワードとパスワード再入力が異なっています。
+
+ERR_0x0101010E:
+    message_code : ERR_0x0101010E
+    message_str : ログインIDはすでに使われております。
+    
+ERR_0x0101010F:
+    message_code : ERR_0x0101010F
+    message_str : メールアドレスはすでに使われております。
+
+ERR_0x01010111:
+    message_code : ERR_0x01010111
+    message_str : ログインIDは3桁以上40桁で入力してください。
+ERR_0x01010112:
+    message_code : ERR_0x01010112
+    message_str : メールアドレスは3桁以上40桁で入力してください。
+ERR_0x01010113:
+    message_code : ERR_0x01010113
+    message_str : ニックネームは1桁以上20桁で入力してください。   
+    
+    
+    
+# class SessionController
+ERR_0x01010201:
+    message_code : ERR_0x01010201
+    message_str : ユーザー名、またはパスワードが異なっています。
+
+# class ChannelsController
+ERR_0x01010301:
+    message_code : ERR_0x01010301
+    message_str : チャンネルを新規作成することが出来ませんでした。
+    
+ERR_0x01010302:
+    message_code : ERR_0x01010302
+    message_str : 指定されたチャンネルは表示できませんでした。
+
+ERR_0x01010303:
+    message_code : ERR_0x01010303
+    message_str : チャンネル情報を保存できませんでした。
+    
+ERR_0x01010304:
+    message_code : ERR_0x01010304
+    message_str : アップロードファイルを選択してください。
+
+ERR_0x01010305:
+    message_code : ERR_0x01010305
+    message_str : すでに設定済みのページか、アップロード済みのページを削除してください。
+
+ERR_0x01010306:
+    message_code : ERR_0x01010306
+    message_str : zipファイルをアップロードしてください。
+    
+ERR_0x01010307:
+    message_code : ERR_0x01010307
+    message_str : アップロードできるファイルは合計30MBまでです。
+    
+ERR_0x01010308:
+    message_code : ERR_0x01010308
+    message_str : アップロードされたファイルのファイルの構成を見直してください。
+    
+ERR_0x01010309:
+    message_code : ERR_0x01010309
+    message_str : アップロードされたファイルのファイル名に問題があります。
+    
+ERR_0x01010300A:
+    message_code : ERR_0x0101030A
+    message_str : 時間をおいてから再度操作をおこなってください。
+
+ERR_0x0101030B:
+    message_code : ERR_0x0101030B
+    message_str : 
+    
+ERR_0x0101030C:
+    message_code : ERR_0x0101030C
+    message_str : 
+    
+ERR_0x0101030D:
+    message_code : ERR_0x0101030D
+    message_str : 
+
+# class IndexMessagesController
+ERR_0x01010401:
+    message_code : ERR_0x01010401
+    message_str : 本文は必須です。
+ERR_0x01010402:
+    message_code : ERR_0x01010402
+    message_str : 本文は２００文字まで入力可能です。
+ERR_0x01010403:
+    message_code : ERR_0x01010403
+    message_str : 終了日付は開始日付より前には設定できません。
+
+# class PlayersController
+ERR_0x01010501:
+    message_code : ERR_0x01010501
+    message_str : そのプレーヤNoはすでに使われています。
+ERR_0x01010502:
+    message_code : ERR_0x01010502
+    message_str : コンテンツで使われているため、プレーヤを不可視に出来ません。
+ERR_0x01010503:
+    message_code : ERR_0x01010503
+    message_str : 更新に失敗しました。
+    
+# class PagesController
+ERR_0x01010901:
+    message_code : ERR_0x01010901
+    message_str : ページを新規作成することが出来ませんでした。
+
+ERR_0x01010902:
+    message_code : ERR_0x01010902
+    message_str : 指定されたページは表示できませんでした。
+    
+ERR_0x01010903:
+    message_code : ERR_0x01010303
+    message_str : ページ情報を保存できませんでした。
+
+
+# class UserProperty
+ERR_0x01011801:
+    message_code : ERR_0x01011801
+    message_str : メールアドレスが不正です。
+
+ERR_0x01011802:
+    message_code : ERR_0x01011802
+    message_str : ドメイン名が不正です。
+
+ERR_0x01011803:
+    message_code : ERR_0x01011803
+    message_str : 送信サーバー（SMTP）が不正です。
+    
+ERR_0x01011804:
+    message_code : ERR_0x01011804
+    message_str : 受信サーバー（POP）が不正です。
+
+ERR_0x01011805:
+    message_code : ERR_0x01011805
+    message_str : 送信サーバー（SMTP）のポート番号が不正です。
+
+ERR_0x01011806:
+    message_code : ERR_0x01011806
+    message_str : 受信サーバー（POP）のポート番号が不正です。
+
+ERR_0x01011807:
+    message_code : ERR_0x01011807
+    message_str : アカウント名が不正です。
+
+ERR_0x01011808:
+    message_code : ERR_0x01011808
+    message_str : パスワードが不正です。
+
+ERR_0x01011809:
+    message_code : ERR_0x01011809
+    message_str : 送信サーバー（SMTP）のポート番号が範囲外です。設定可能なポート番号は「0～65535」の範囲です。
+
+ERR_0x0101180A:
+    message_code : ERR_0x0101180A
+    message_str : 受信サーバー（POP）のポート番号が範囲外です。設定可能なポート番号は「0～65535」の範囲です。
+
+# class YamlmailsController
+ERR_0x01020101:
+    message_code : ERR_0x01020101
+    message_str : YAML構文ではありません。
+    
+ERR_0x01020102:
+    message_code : ERR_0x01020102
+    message_str : メールの送信に失敗しました。「メールの宛先」「YAMLメール設定」を確認して下さい。
+    
+ERR_0x01020103:
+    message_code : ERR_0x01020103
+    message_str : YAMLメールアドレスが設定されていません。
+    
+ERR_0x01020104: 
+    message_code : ERR_0x01020104
+    message_str : 送信サーバー（SMTP）のポート番号が設定されていません。 
+
+ERR_0x01020105:
+    message_code : ERR_0x01020105
+    message_str : 送信サーバー（SMTP）が設定されていません。 
+
+ERR_0x01020106:
+    message_code : ERR_0x01020106
+    message_str : 認証方式が設定されていません。
+
+ERR_0x01020107:
+    message_code : ERR_0x01020107
+    message_str : アカウント名が設定されていません。
+
+ERR_0x01020108:
+    message_code : ERR_0x01020108
+    message_str : パスワードが設定されていません。
+    
+ERR_0x01020109:
+    message_code : ERR_0x01020109
+    message_str : ドメイン名が設定されていません。
+  
+ERR_0x0102010A:
+    message_code : ERR_0x0102010A
+    message_str : 受信サーバー（POP）のポート番号が設定されていません。
+
+ERR_0x0102010B:
+    message_code : ERR_0x0102010B
+    message_str : 受信サーバー（POP）が設定されていません。
+
+ERR_0x0102010C:
+    message_code : ERR_0x0102010C
+    message_str : YAML構文ではありません。
+
+ERR_0x0102010D:
+    message_code : ERR_0x0102010D
+    message_str : メールの宛先が未入力です。
+
+ERR_0x0102010E:
+    message_code : ERR_0x0102010E
+    message_str : 宛先「To」のメールアドレスが不正です。
+    
+ERR_0x0102010F:
+    message_code : ERR_0x0102010F
+    message_str : 宛先「Cc」のメールアドレスが不正です。
+    
+ERR_0x01020110:
+    message_code : ERR_0x01020110
+    message_str : 宛先「Bcc」のメールアドレスが不正です。
+
+ERR_0x01020111:
+    message_code : ERR_0x01020111
+    message_str : 「YAMLメール設定」が完了していません。画面上部メニューの[設定]->[アカウント設定]->[YAMLメールタブ]で設定を行って下さい。
+    
+ERR_0x01020112:
+    message_code : ERR_0x01020112
+    message_str : メール件名１が設定されていない。
+
+ERR_0x01020113:
+    message_code : ERR_0x01020113
+    message_str : 取得項目名１が設定されていない。
+
+ERR_0x01020114:
+    message_code : ERR_0x01020114
+    message_str : 取得項目名２が設定されていない。
+
+ERR_0x01020115:
+    message_code : ERR_0x01020115
+    message_str : メール件名２が設定されていない。
+
+ERR_0x01020116:
+    message_code : ERR_0x01020116
+    message_str : 取得項目名３が設定されていない。
+
+ERR_0x01020117:
+    message_code : ERR_0x01020117
+    message_str : メール件名３が設定されていない。
+
+ERR_0x01020118:
+    message_code : ERR_0x01020118
+    message_str : 取得項目名４が設定されていない。
+
+ERR_0x01020119:
+    message_code : ERR_0x01020119
+    message_str : メール件名４が設定されていない。
+
+ERR_0x01020120:
+    message_code : ERR_0x01020120
+    message_str : 取得項目名５が設定されていない。
+
+ERR_0x01020121:
+    message_code : ERR_0x01020121
+    message_str : メール件名５が設定されていない。    
+
+ERR_0x01020122:
+    message_code : ERR_0x01020122
+    message_str : メール取得時間は不正です。
+
+ERR_0x01020123:
+    message_code : ERR_0x01020123
+    message_str : 未記入項目があります。
+        
+# class YamlDbFormsController
+ERR_0x01020201:
+    message_code : ERR_0x01020201
+    message_str : これ以上ファイルをアップロードすることはできません。アップロード可能なファイル数は「%sファイル」までです。
+
+ERR_0x01020202:
+    message_code : ERR_0x01020202
+    message_str : アップロードするファイルが選択されていません。アップロードするファイルを指定して下さい。
+
+ERR_0x01020203:
+    message_code : ERR_0x01020203
+    message_str : アップロードファイルのサイズが範囲外です。アップロード可能なファイルサイズは「%sbyte～%sKbyte」の範囲です。    
+
+ERR_0x01020204:
+    message_code : ERR_0x01020204
+    message_str : 対象の管理データが存在しません。
+    
+ERR_0x01020205:
+    message_code : ERR_0x01020205
+    message_str : YAMLフォーム定義ファイルが見つかりません。
+ 
+ERR_0x01020206:
+    message_code : ERR_0x01020206
+    message_str : YAMLフォーム定義ファイルの読み込みに失敗しました。 
+
+ERR_0x01020207:
+    message_code : ERR_0x01020207
+    message_str : メールの送信に失敗しました。「メールの宛先」「YAMLメール設定」を確認して下さい。     
+
+ERR_0x01020208:
+    message_code : ERR_0x01020208
+    message_str : 「%s」がハッシュで定義されていません。    
+
+ERR_0x01020209:
+    message_code : ERR_0x01020209
+    message_str : 「%sの名前」が定義されていません。
+    
+ERR_0x0102020A:
+    message_code : ERR_0x0102020A
+    message_str : 「%sの名前」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。    
+    
+ERR_0x0102020B:
+    message_code : ERR_0x0102020B
+    message_str : %s「%s」が未入力です。
+
+ERR_0x0102020C:
+    message_code : ERR_0x0102020C
+    message_str : %s「%s」の入力値が整数（半角文字）ではありません。
+
+ERR_0x0102020D:
+    message_code : ERR_0x0102020D
+    message_str : %s「%s」の入力値が小数点数（半角文字）ではありません。  
+
+ERR_0x0102020E:
+    message_code : ERR_0x0102020E
+    message_str : %s「%s」の入力値がアルファベット（半角文字）ではありません。     
+
+ERR_0x0102020F:
+    message_code : ERR_0x0102020F
+    message_str : %s「%s」の入力値が全角文字です。     
+
+ERR_0x01020210:
+    message_code : ERR_0x01020210
+    message_str : %s「%s」の入力値が半角文字です。
+    
+ERR_0x01020211:
+    message_code : ERR_0x01020211
+    message_str : %s「%s」の入力値が範囲外です。指定可能な値は「%s～%s」の範囲です。       
+
+ERR_0x01020212:
+    message_code : ERR_0x01020212
+    message_str : %s「%s」の入力値に使用禁止文字「%s」が使用されています。      
+
+ERR_0x01020213:
+    message_code : ERR_0x01020213
+    message_str : 「%sの説明」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。
+    
+ERR_0x01020214:
+    message_code : ERR_0x01020214
+    message_str : 「ボタン名」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。     
+
+ERR_0x01020215:
+    message_code : ERR_0x01020215
+    message_str : %s「%s」の「高さ」が整数ではありません。
+
+ERR_0x01020216:
+    message_code : ERR_0x01020216
+    message_str : %s「%s」の「高さ」が範囲外です。指定可能な値は「%s～%s」の範囲です。
+
+ERR_0x01020217:
+    message_code : ERR_0x01020217
+    message_str : %s「%s」の「横幅」が整数ではありません。
+
+ERR_0x01020218:
+    message_code : ERR_0x01020218
+    message_str : %s「%s」の「横幅」が範囲外です。指定可能な値は「%s～%s」の範囲です。
+
+ERR_0x01020219:
+    message_code : ERR_0x01020219
+    message_str : %s「%s」の「入力可能な最大文字数」が整数ではありません。
+
+ERR_0x0102021A:
+    message_code : ERR_0x0102021A
+    message_str : %s「%s」の「入力可能な最大文字数」が範囲外です。指定可能な値は「%s～%s」の範囲です。
+
+ERR_0x0102021B:
+    message_code : ERR_0x0102021B
+    message_str : %s「%s」の「入力値チェック処理」が配列ではありません。
+
+ERR_0x0102021C:
+    message_code : ERR_0x0102021C
+    message_str :  %s「%s」の「入力値チェック処理」に不明な指定が含まれています。
+
+ERR_0x0102021D:
+    message_code : ERR_0x0102021D
+    message_str : 「true」「false」以外が指定されています。
+
+ERR_0x0102021E:
+    message_code : ERR_0x0102021E
+    message_str : %s「%s」の「%s」が配列ではありません。
+
+ERR_0x0102021F:
+    message_code : ERR_0x0102021F
+    message_str : %s「%s」の「%s」の配列要素数が範囲外です。設定可能な要素数は「%s個」です。
+
+ERR_0x01020220:
+    message_code : ERR_0x01020220
+    message_str : %s「%s」の「%s」の最小値が整数ではありません。
+
+ERR_0x01020221:
+    message_code : ERR_0x01020221
+    message_str : %s「%s」の「%s」の最小値が範囲外です。指定可能な値は「%s～%s」の範囲です。
+    
+ERR_0x01020222:
+    message_code : ERR_0x01020222
+    message_str : %s「%s」の「%s」の大小関係が逆転しています。    
+    
+ERR_0x01020223:
+    message_code : ERR_0x01020223
+    message_str : %s「%s」の「%s」の禁止文字の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。
+    
+ERR_0x01020224:
+    message_code : ERR_0x01020224
+    message_str : %s「%s」の「メールの本文に載せる値」がハッシュではありません。   
+
+ERR_0x01020225:
+    message_code : ERR_0x01020225
+    message_str : %s「%s」の「メールの本文に載せる値」が定義されていません。     
+
+ERR_0x01020226:
+    message_code : ERR_0x01020226
+    message_str : %s「%s」の「メールの本文に載せる値」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。    
+
+ERR_0x01020227:
+    message_code : ERR_0x01020227
+    message_str : 「%sのメールの本文に載せるフォーム名」がハッシュではありません。    
+
+ERR_0x01020228:
+    message_code : ERR_0x01020228
+    message_str : 「%sのメールの本文に載せるフォーム名」が定義されていません。     
+    
+ERR_0x01020229:
+    message_code : ERR_0x01020229
+    message_str : 「メールの本文に載せるフォーム名」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。
+    
+ERR_0x0102022A:
+    message_code : ERR_0x0102022A
+    message_str : 「%sのメールの本文に載せるフォーム名」がハッシュではありません。     
+    
+ERR_0x0102022B:
+    message_code : ERR_0x0102022B
+    message_str : 「%sのメールの本文に載せる項目名」が定義されていません。     
+    
+ERR_0x0102022C:
+    message_code : ERR_0x0102022C
+    message_str : %s「%s」の「メールの本文に載せる項目名」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。
+     
+ERR_0x0102022D:
+    message_code : ERR_0x0102022D
+    message_str : %sの「詳細設定」が完了していません。   
+
+ERR_0x0102022E:
+    message_code : ERR_0x0102022E
+    message_str : 「%sのオプション数」が範囲外です。指定可能な要素数は「%s～%s」の範囲です。     
+
+ERR_0x0102022F:
+    message_code : ERR_0x0102022F
+    message_str : ハッシュではありません。    
+
+ERR_0x01020230:
+    message_code : ERR_0x01020230
+    message_str : 「項目」が定義されていません。   
+
+ERR_0x01020231:
+    message_code : ERR_0x01020231
+    message_str : 「項目数」が範囲外です。指定可能な要素数は「%s～%s」の範囲です。    
+
+ERR_0x01020232:
+    message_code : ERR_0x01020232
+    message_str : 「項目」が配列ではありません。   
+    
+ERR_0x01020233:
+    message_code : ERR_0x01020233
+    message_str : ハッシュではありません。     
+
+ERR_0x01020234:
+    message_code : ERR_0x01020234
+    message_str : 「項目の種別」が定義されていません。 
+    
+ERR_0x01020235:
+    message_code : ERR_0x01020235
+    message_str : 不明な「項目の種別」が指定されています。     
+
+ERR_0x01020236:
+    message_code : ERR_0x01020236
+    message_str : YAML構文ではありません。
+
+ERR_0x01020237:
+    message_code : ERR_0x01020237
+    message_str : バイナリファイルをアップロードすることはできません。    
+
+ERR_0x01020238:
+    message_code : ERR_0x01020238
+    message_str : アップロードファイルの書き込みに失敗しました。
+    
+ERR_0x01020239:
+    message_code : ERR_0x01020239
+    message_str : 管理データの保存に失敗しました。
+    
+ERR_0x0102023A:
+    message_code : ERR_0x0102023A
+    message_str : YAMLフォーム定義ファイルの更新に失敗しました。 
+
+ERR_0x0102023B:
+    message_code : ERR_0x0102023B
+    message_str : YAMLフォーム定義ファイルの更新に失敗しました。
+
+ERR_0x0102023C:
+    message_code : ERR_0x0102023C
+    message_str : メールの宛先が未入力です。    
+
+ERR_0x0102023C:
+    message_code : ERR_0x0102023C
+    message_str : メールの宛先が未入力です。
+
+ERR_0x0102023D:
+    message_code : ERR_0x0102023D
+    message_str : メールの宛先が不正です。
+
+ERR_0x0102023E:
+    message_code : ERR_0x0102023E
+    message_str : %sの「項目の名前」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。    
+
+ERR_0x0102023F:
+    message_code : ERR_0x0102023F
+    message_str : %s「%s」の「項目の説明」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。
+
+ERR_0x01020240:
+    message_code : ERR_0x01020240
+    message_str : %s「%s」の「%s」の最大値が整数ではありません。
+
+ERR_0x01020241:
+    message_code : ERR_0x01020241
+    message_str : %s「%s」の「%s」の最大値が範囲外です。指定可能な値は「%s～%s」の範囲です。
+
+ERR_0x01020242:
+    message_code : ERR_0x01020242
+    message_str : 「ラジオボタンの名前」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。 
+
+ERR_0x01020243:
+    message_code : ERR_0x01020243
+    message_str : 「リストの名前」の長さが範囲外です。設定可能な長さは「%s文字～%s文字」の範囲です。 
+
+ERR_0x01020244:
+    message_code : ERR_0x01020244
+    message_str : 「%sの名前」に「%s」を使用することはできません。
+
+ERR_0x01020245:
+    message_code : ERR_0x01020245
+    message_str : %s「%s」の「ラジオボタンの名前」に「%s」を使用することはできません。
+
+ERR_0x01020246:
+    message_code : ERR_0x01020246
+    message_str : %s「%s」の「リストの名前」に「%s」を使用することはできません。
+    
+ERR_0x01020247:
+    message_code : ERR_0x01020247
+    message_str : %sの「項目の名前」に「%s」を使用することはできません。
+
+ERR_0x01020248:
+    message_code : ERR_0x01020248
+    message_str : 「%sの名前」に「%s」を使用することはできません。
+
+ERR_0x01020249:
+    message_code : ERR_0x01020249
+    message_str : %s「%s」の「ラジオボタンの名前」に「%s」を使用することはできません。
+
+ERR_0x0102024A:
+    message_code : ERR_0x0102024A
+    message_str : %s「%s」の「リストの名前」に「%s」を使用することはできません。
+    
+ERR_0x0102024B:
+    message_code : ERR_0x0102024B
+    message_str : %sの「項目の名前」に「%s」を使用することはできません。 
+
+ERR_0x0102024C:
+    message_code : ERR_0x0102024C
+    message_str : 「%sの説明」に「%s」を使用することはできません。
+
+ERR_0x0102024D:
+    message_code : ERR_0x0102024D
+    message_str : %s「%s」の「項目の説明」に「%s」を使用することはできません。
+
+ERR_0x0102024E:
+    message_code : ERR_0x0102024E
+    message_str : 「%sの説明」に「%s」を使用することはできません。
+
+ERR_0x0102024F:
+    message_code : ERR_0x0102024F
+    message_str : %s「%s」の「項目の説明」に「%s」を使用することはできません。
+
+ERR_0x01020250:
+    message_code : ERR_0x01020250
+    message_str : 「ボタン名」に「%s」を使用することはできません。
+
+ERR_0x01020251:
+    message_code : ERR_0x01020251
+    message_str : 「ボタン名」に「%s」を使用することはできません。
+
+ERR_0x01020252:
+    message_code : ERR_0x01020252
+    message_str : %s「%s」の「メールの本文に載せる値」に「%s」を使用することはできません。 
+
+ERR_0x01020253:
+    message_code : ERR_0x01020253
+    message_str : %s「%s」の「メールの本文に載せる値」に「%s」を使用することはできません。
+
+ERR_0x01020254:
+    message_code : ERR_0x01020254
+    message_str : 「メールの本文に載せるフォーム名」に「%s」を使用することはできません。
+
+ERR_0x01020255:
+    message_code : ERR_0x01020255
+    message_str : 「メールの本文に載せるフォーム名」に「%s」を使用することはできません。
+
+ERR_0x01020256:
+    message_code : ERR_0x01020256
+    message_str : %s「%s」の「メールの本文に載せる項目名」に「%s」を使用することはできません。
+
+ERR_0x01020257:
+    message_code : ERR_0x01020257
+    message_str : %s「%s」の「メールの本文に載せる項目名」に「%s」を使用することはできません。
+    
+ERR_0x01020258:
+    message_code : ERR_0x01020258
+    message_str : これ以上「YAMLフォーム」を作成することはできません。作成可能なファイル数は「%sファイル」までです。
+
+
+# channels_controller
+ERR_0x01020401:
+    message_code : ERR_0x01020401
+    message_str : チャンネル名を入力してください。
+
+ERR_0x01020402:
+    message_code : ERR_0x01020402
+    message_str : ページ幅を入力してください。
+    
+ERR_0x01020403:
+    message_code : ERR_0x01020403
+    message_str : ページ幅が半角数値ではありません。半角数値で入力して下さい。
+    
+ERR_0x01020404:
+    message_code : ERR_0x01020404
+    message_str : ページ高さを入力してください。
+    
+ERR_0x01020405:
+    message_code : ERR_0x01020405
+    message_str : ページ高さが半角数値ではありません。半角数値で入力して下さい。       
+
+ERR_0x01020406:
+    message_code : ERR_0x01020406
+    message_str : ページ幅は1px以上の6桁以内の数字で入力してください。       
+
+ERR_0x01020407:
+    message_code : ERR_0x01020407
+    message_str : ページ高さは1px以上の6桁以内の数字で入力してください。       
+
+# pages_controller
+ERR_0x01020501:
+    message_code : ERR_0x01020501
+    message_str : ページ切替 が未入力です。
+
+ERR_0x01020502:
+    message_code : ERR_0x01020502
+    message_str : ページ切替 が半角数値ではありません。半角数値で入力して下さい。
+
+ERR_0x01020503:
+    message_code : ERR_0x01020503
+    message_str : ページ名が未入力です。
+
+ERR_0x01020504:
+    message_code : ERR_0x01020504
+    message_str : ページ切替に０は設定できません。
+    
+ERR_0x01020505:
+    message_code : ERR_0x01020505
+    message_str : ページ名を保存できませんでした。    
+    
+ERR_0x01020506:
+    message_code : ERR_0x01020506
+    message_str : ページ切替を保存できませんでした。 
+    
+ERR_0x01020507:
+    message_code : ERR_0x01020507
+    message_str : カテゴリーを保存できませんでした。            
+
+# mypages_controller
+ERR_0x01020601:
+    message_code : ERR_0x01020601
+    message_str : 
+
+ERR_0x01020602:
+    message_code : ERR_0x01020602
+    message_str : 
+
+# search_engine_controller
+ERR_0x01020701:
+    message_code : ERR_0x01020701
+    message_str : 
+
+ERR_0x01020702:
+    message_code : ERR_0x01020702
+    message_str : 
+
+# previews_controller
+ERR_0x01020801:
+    message_code : ERR_0x01020801
+    message_str : 
+
+ERR_0x01020802:
+    message_code : ERR_0x01020802
+    message_str : 
+    
+# remote_controller
+ERR_0x01020901:
+    message_code : ERR_0x01020901
+    message_str : 指定されたチャンネル内にページは設定されておりません。
+
+ERR_0x01020902:
+    message_code : ERR_0x01020902
+    message_str : 指定されたチャンネルは設定されておりません。
+    
+# remote_controller
+ERR_0x01021001:
+    message_code : ERR_0x01020901
+    message_str : 指定されたチャンネル内にページは設定されておりません。
+
+ERR_0x01021002:
+    message_code : ERR_0x01020902
+    message_str : 指定されたチャンネルは設定されておりません。
+    
+# class UserPropertyController
+ERR_0x01020702:
+    message_code : ERR_0x01020702
+    message_str : 設定の更新に失敗しました。    
+    
+# contents_controller
+ERR_0x01025001:
+    message_code : ERR_0x01025001
+    message_str : 横サイズが未入力です。
+
+ERR_0x01025002:
+    message_code : ERR_0x01025002
+    message_str : 横サイズが半角数値ではありません。半角数値で入力して下さい。
+
+ERR_0x01025003:
+    message_code : ERR_0x01025003
+    message_str : 縦サイズが未入力です。
+
+ERR_0x01025004:
+    message_code : ERR_0x01025004
+    message_str : 縦サイズが半角数値ではありません。半角数値で入力して下さい。
+
+ERR_0x01025005:
+    message_code : ERR_0x01025005
+    message_str : 位置TOPが未入力です。
+
+ERR_0x01025006:
+    message_code : ERR_0x01025006
+    message_str : 位置TOPが半角数値ではありません。半角数値で入力して下さい。
+
+ERR_0x01025007:
+    message_code : ERR_0x01025007
+    message_str : 位置LEFTが未入力です。
+
+ERR_0x01025008:
+    message_code : ERR_0x01025008
+    message_str : 位置LEFTが半角数値ではありません。半角数値で入力して下さい。
+    
+ERR_0x01025009:
+    message_code : ERR_0x01025009
+    message_str : 横サイズが６桁の半角数字です。
+
+ERR_0x01025010:
+    message_code : ERR_0x01025010
+    message_str : 縦サイズが６桁の半角数字です。
+    
+ERR_0x01025011:
+    message_code : ERR_0x01025011
+    message_str : 位置のTOPが６桁の半角数字です。
+    
+ERR_0x01025012:
+    message_code : ERR_0x01025012
+    message_str : 位置のLEFTが６桁の半角数字です。
+    
+ERR_0x01025013:
+    message_code : ERR_0x01025013
+    message_str : 横サイズをページ幅以内に設定してください。
+    
+ERR_0x01025014:
+    message_code : ERR_0x01025014
+    message_str : 縦サイズをページ高さ以内に設定してください。
+    
+ERR_0x01025015:
+    message_code : ERR_0x01025015
+    message_str : 横サイズを０以上に設定して下さい。
+    
+ERR_0x01025016:    
+    message_code : ERR_0x01025016
+    message_str : 横サイズ＋位置のLEFTをページ幅以内に設定してください。
+
+ERR_0x01025017:    
+    message_code : ERR_0x01025017
+    message_str : 縦サイズを０以上に設定して下さい。
+
+ERR_0x01025018:    
+    message_code : ERR_0x01025018
+    message_str : 縦サイズ＋位置のTOPをページ高さ以内に設定してください。
+    
+ERR_0x01025019:    
+    message_code : ERR_0x01025019
+    message_str : 位置のTOPを０以上に設定して下さい。
+    
+ERR_0x01025020:    
+    message_code : ERR_0x01025020
+    message_str : 位置のTOPをページ高さ以内に設定してください。
+
+ERR_0x01025021:    
+    message_code : ERR_0x01025021
+    message_str : 位置のLEFTを０以上に設定して下さい。
+
+ERR_0x01025022:    
+    message_code : ERR_0x01025022
+    message_str : 位置のLEFTをページ幅以内に設定してください。
+
+ERR_0x01025023:    
+    message_code : ERR_0x01025023
+    message_str : 枠線サイズが未入力です。
+
+ERR_0x01025024:
+    message_code : ERR_0x01025024
+    message_str : 枠線サイズが半角数値ではありません。半角数値で入力して下さい。
+
+ERR_0x01025025:
+    message_code : ERR_0x01025025
+    message_str : 枠線カラーが未入力です。
+
+ERR_0x01025026:
+    message_code : ERR_0x01025026
+    message_str : 枠線カラーがカラーコードではありません。カラーコードで入力して下さい。
+    
+ERR_0x01025027:
+    message_code : ERR_0x01025027
+    message_str : プレーヤは２０個以上設定できません。
+
+
+# clock Player
+ERR_0x01025101:
+    message_code : ERR_0x01025101
+    message_str : フォントサイズが未入力です。
+    
+ERR_0x01025102:
+    message_code : ERR_0x01025102
+    message_str : フォントサイズが半角数値ではありません。半角数値で入力して下さい。
+
+ERR_0x01025103:
+    message_code : ERR_0x01025103
+    message_str : フォントカラーが未入力です。
+
+ERR_0x01025104:
+    message_code : ERR_0x01025104
+    message_str : フォントカラーがカラーコードではありません。カラーコードで入力して下さい。
+
+ERR_0x01025105:
+    message_code : ERR_0x01025105
+    message_str : 背景色が未入力です。
+
+ERR_0x01025106:
+    message_code : ERR_0x01025106
+    message_str : 背景色がカラーコードではありません。カラーコードで入力して下さい。
+
+# fixtext Player
+ERR_0x01025201:
+    message_code : ERR_0x01025201
+    message_str : 切り替え時間(秒)が未入力です。
+    
+ERR_0x01025202:
+    message_code : ERR_0x01025202
+    message_str : 切り替え時間(秒)が半角数値ではありません。半角数値で入力して下さい。
+
+ERR_0x01025203:
+    message_code : ERR_0x01025203
+    message_str : フォントカラーが未入力です。
+
+ERR_0x01025204:
+    message_code : ERR_0x01025204
+    message_str : フォントカラーがカラーコードではありません。カラーコードで入力して下さい。
+
+ERR_0x01025205:
+    message_code : ERR_0x01025205
+    message_str : 本文が未入力です。
+
+ERR_0x01025206:
+    message_code : ERR_0x01025206
+    message_str : 表示タイプが未入力です。
+    
+ERR_0x01025207:
+    message_code : ERR_0x01025207
+    message_str : スクロール速度が未入力です。
+    
+ERR_0x01025208:
+    message_code : ERR_0x01025208
+    message_str : スクロール方向が未入力です。
+    
+ERR_0x01025209:
+    message_code : ERR_0x01025209
+    message_str : 背景色が未入力です。
+    
+ERR_0x01025210:
+    message_code : ERR_0x01025210
+    message_str : 背景色がカラーコードではありません。カラーコードで入力して下さい。
+
+ERR_0x01025211:
+    message_code : ERR_0x01025211
+    message_str : 本文は2048桁以内で入力してください。
+    
+# fiximage Player
+ERR_0x01025301:
+    message_code : ERR_0x01025301
+    message_str : イメージファイルが未設定です。
+    
+# rss Player
+ERR_0x01025401:
+    message_code : ERR_0x01025401
+    message_str : RSSURLが未入力です。
+
+ERR_0x01025402:
+    message_code : ERR_0x01025402
+    message_str : RSSURLがURLのフォーマットではありません。
+
+ERR_0x01025403:
+    message_code : ERR_0x01025403
+    message_str : RSSタイトルが未入力です。
+
+ERR_0x01025404:
+    message_code : ERR_0x01025404
+    message_str : フォントサイズが未入力です。
+
+ERR_0x01025405:
+    message_code : ERR_0x01025405
+    message_str : フォントサイズが半角数値ではありません。半角数値で入力して下さい。
+
+ERR_0x01025406:
+    message_code : ERR_0x01025406
+    message_str : 本文フォントカラーが未入力です。
+
+ERR_0x01025407:
+    message_code : ERR_0x01025407
+    message_str : 本文フォントカラーがカラーコードではありません。カラーコードで入力して下さい。
+
+ERR_0x01025408:
+    message_code : ERR_0x01025408
+    message_str : タイトルフォントカラーが未入力です。
+
+ERR_0x01025409:
+    message_code : ERR_0x01025409
+    message_str : タイトルフォントカラーがカラーコードではありません。カラーコードで入力して下さい。
+
+ERR_0x01025410:
+    message_code : ERR_0x01025410
+    message_str : タイトル背景色が未入力です。
+
+ERR_0x01025411:
+    message_code : ERR_0x01025411
+    message_str : タイトル背景色がカラーコードではありません。カラーコードで入力して下さい。
+
+ERR_0x01025412:
+    message_code : ERR_0x01025412
+    message_str : スクロール方向が未入力です。
+
+ERR_0x01025413:
+    message_code : ERR_0x01025413
+    message_str : スクロール速度が未入力です。
+
+
+ERR_0x01025414:
+    message_code : ERR_0x01025414
+    message_str : 背景色が未入力です。
+
+ERR_0x01025415:
+    message_code : ERR_0x01025415
+    message_str : 背景色がカラーコードではありません。カラーコードで入力して下さい。
+
+ERR_0x01025416:
+    message_code : ERR_0x01025416
+    message_str : Google API Keyが設定されていません。「設定」→「アカウント設定」でGoogle API Keyを設定して下さい。
+
+# camera Player
+ERR_0x01025501:
+    message_code : ERR_0x01025501
+    message_str : カメラURLが未入力です。
+
+ERR_0x01025502:
+    message_code : ERR_0x01025502
+    message_str : アカウントコードが未入力です。
+
+# video Player
+ERR_0x01025601:
+    message_code : ERR_0x01025601
+    message_str : 検索キーワードが未入力です。
+
+# flash Player
+ERR_0x01025701:
+    message_code : ERR_0x01025701
+    message_str : Flashタイプが未入力です。
+
+ERR_0x01025702:
+    message_code : ERR_0x01025702
+    message_str : FlashURLが未入力です。
+
+ERR_0x01025703:
+    message_code : ERR_0x01025703
+    message_str : ファイルパスが未入力です。
+
+ERR_0x01025704:
+    message_code : ERR_0x01025704
+    message_str : FlashURLがURLのフォーマットではありません。
+    
+ERR_0x01025705:
+    message_code : ERR_0x01025705
+    message_str : Flashファイルではありません。拡張子がswfのファイルを選択してください。
+
+# xbrl Player
+ERR_0x01025801:
+    message_code : ERR_0x01025801
+    message_str : XBRLファイルが未設定です。
+
+ERR_0x01025802:
+    message_code : ERR_0x01025802
+    message_str : XBRLファイルの拡張子が不正です。拡張子は.xbrlである必要があります。
+
+# yaml Player
+ERR_0x01025901:
+    message_code : ERR_0x01025901
+    message_str : データ取得基準日が未入力です。
+
+ERR_0x01025902:
+    message_code : ERR_0x01025902
+    message_str : データ取得基準日が半角数値ではありません。半角数値で入力して下さい。
+    
+ERR_0x01025903:
+    message_code : ERR_0x01025903
+    message_str : データ取得単位が未入力です。
+    
+ERR_0x01025904:
+    message_code : ERR_0x01025904
+    message_str : データ取得範囲が未入力です。
+    
+ERR_0x01025905:
+    message_code : ERR_0x01025905
+    message_str : フォントサイズが未入力です。
+    
+ERR_0x01025906:
+    message_code : ERR_0x01025906
+    message_str : フォントカラーが未入力です。
+    
+ERR_0x01025907:
+    message_code : ERR_0x01025907
+    message_str : フォントカラーがカラーコードではありません。カラーコードで入力して下さい。
+    
+ERR_0x01025908:
+    message_code : ERR_0x01025908
+    message_str : スクロール方向が未入力です。
+    
+ERR_0x01025909:
+    message_code : ERR_0x01025909
+    message_str : スクロール速度が未入力です。
+    
+ERR_0x01025910:
+    message_code : ERR_0x01025910
+    message_str : 背景色が未入力です。
+    
+ERR_0x01025911:
+    message_code : ERR_0x01025911
+    message_str : 背景色がカラーコードではありません。カラーコードで入力して下さい。
+    
+ERR_0x01025912:
+    message_code : ERR_0x01025912
+    message_str : データ取得基準日数値が３桁半角数字で入力してください。
+
+ERR_0x01025913:
+    message_code : ERR_0x01025913
+    message_str : 件名検索が未入力です。
+    
+# Picture Player    
+ERR_0x01026001:
+    message_code : ERR_0x01026001
+    message_str : 画像切替タイムは６桁以内の半角数字で入力して下さい。
+    
+ERR_0x01026002:
+    message_code : ERR_0x01026002
+    message_str : エフェクトタイムは６桁以内の半角数字で入力して下さい。
+    
+ERR_0x01026003:
+    message_code : ERR_0x01026003
+    message_str : 画像切替タイムが未入力です。
+    
+ERR_0x01026004:
+    message_code : ERR_0x01026004
+    message_str : エフェクトタイムが未入力です。
+    
+ERR_0x01026005:
+    message_code : ERR_0x01026005
+    message_str : ファイルパスが未入力です。
+    
+ERR_0x01026006:
+    message_code : ERR_0x01026006
+    message_str : ファイルを削除してください。
+
+ERR_0x01026007:
+    message_code : ERR_0x01026007
+    message_str : 1つ以上の画像ファイルを指定して下さい。
+
+# Html Player
+ERR_0x01027001:
+    message_code : ERR_0x01027001
+    message_str : URLが未入力です。
+
+ERR_0x01027002:
+    message_code : ERR_0x01027002
+    message_str : URLのフォーマットではありません。
+    
+ERR_0x01027003:
+    message_code : ERR_0x01027003
+    message_str : WEBページ自動更新時間(秒)が半角数値ではありません。半角数値で入力して下さい。
+    
+ERR_0x01027004:
+    message_code : ERR_0x01027004
+    message_str : WEBページ自動更新時間(秒)が未入力です。
+    
+# Ustream Player
+ERR_0x01027101:
+    message_code : ERR_0x01027101
+    message_str : Ustreamチャンネル名が未入力です。
+    
+ERR_0x01027102:
+    message_code : ERR_0x01027102
+    message_str : キーワードが未入力です。
+    
+ERR_0x01027103:
+    message_code : ERR_0x01027103
+    message_str : UstreamチャンネルIDが未入力です。
+
+ERR_0x01027104:
+    message_code : ERR_0x01027104
+    message_str : UstreamチャンネルIDには半角数字で入力してください。
+    
+# Video Player
+ERR_0x01027201:
+    message_code : ERR_0x01027201
+    message_str : ラジオボタンを選択してください。
+    
+ERR_0x01027202:
+    message_code : ERR_0x01027202
+    message_str : ファイルが設定されていません。アップロードするファイルを最低１つは設定してください。
+
+ERR_0x01027203:
+    message_code : ERR_0x01027203
+    message_str : mp4ファイルではありません。拡張子がmp4のファイルを選択してください。
+
+ERR_0x01027204:
+    message_code : ERR_0x01027204
+    message_str : webmファイルではありません。拡張子がwebmのファイルを選択してください。
+
+ERR_0x01027205:
+    message_code : ERR_0x01027205
+    message_str : ogvファイルではありません。拡張子がogvのファイルを選択してください。
+
+# Widget Player
+ERR_0x01027301:
+    message_code : ERR_0x01027301
+    message_str : ウィジェットコードを選択してください。
+    
+ERR_0x01027302:
+    message_code : ERR_0x01027302
+    message_str : ガジェットの自動更新時間(秒)が半角数値ではありません。半角数値で入力して下さい。
+    
+ERR_0x01027303:
+    message_code : ERR_0x01027303
+    message_str : ガジェットの自動更新時間(秒)が未入力です。
+    
+ERR_0x01027304:
+    message_code : ERR_0x01027304
+    message_str : ウィジェットコードは2048桁以内で入力してください。
+
+# Audio Player
+ERR_0x01027401:
+    message_code : ERR_0x01027401
+    message_str : ラジオボタンを選択してください。
+    
+ERR_0x01027402:
+    message_code : ERR_0x01027402
+    message_str : ファイルが設定されていません。アップロードするファイルを最低１つは設定してください。
+
+ERR_0x01027403:
+    message_code : ERR_0x01027403
+    message_str : mp3ファイルではありません。拡張子がmp3のファイルを選択してください。
+
+ERR_0x01027404:
+    message_code : ERR_0x01027404
+    message_str : oggファイルではありません。拡張子がoggのファイルを選択してください。
+
+ERR_0x01027405:
+    message_code : ERR_0x01027405
+    message_str : wavファイルではありません。拡張子がwavのファイルを選択してください。
+
+ERR_0x01027406:
+    message_code : ERR_0x01027406
+    message_str : URLが設定されていません。URLを最低１つは設定してください。
+    
+ERR_0x01027407:
+    message_code : ERR_0x01027407
+    message_str : 同じファイルをアップロードすることは出来ません。

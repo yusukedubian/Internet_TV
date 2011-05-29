@@ -1,0 +1,54 @@
+<div id="Header">
+	<div class="Left">
+		<li style="float:left;"><%= link_to _("VASDAQ.TV"), root_path %></li>
+		<li style="float:left;"><%= link_to _("チャンネル作成"), channels_path %></li>
+		<li style="float:left;"><%= link_to _("YAMLメール"), yaml_db_forms_path %></li>
+	</div>
+	
+	<div id="navi_continer_left">
+		<div id="navi_left">
+			<ul>
+				<li class="navi_menu" onmouseover="this.className='navi_menu_on'" onmouseout="this.className='navi_menu'">
+					<a href="#" style="padding:0px"><%= _("その他 ▼") %></a>
+					<ul class="sub">
+						<li><a href="/welcome/channel_pro"><%= _("チャンネル作成Ｐｒｏ") %></a></li>
+						<li><a href="/welcome/player_list"><%= _("プレーヤ一覧") %></a></li>
+						<li><a href="/welcome/web_widget"><%= _("リアルタイムWebウィジェット") %></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<% if logged_in? %>
+		<div class="Right"><%= link_to _("ログアウト"), logout_path %></div>
+	<% else %>
+		<div class="Right"><%= link_to _("ログイン"), login_path %></div>
+	<% end %>
+
+	<div id="navi_continer_right">
+		<div id="navi_right">
+			<div>
+				<ul>
+				<li class="navi_menu" onmouseover="document.getElementById('sub_navi').style.display='block';" onmouseout="document.getElementById('sub_navi').style.display='none';">
+					<a href="#" style="padding:0px"><%= _("設定 ▼") %></a>
+				</li>
+				</ul>
+			</div>
+			<div style="clear:left;" id="sub_navi" onmouseover="document.getElementById('sub_navi').style.display='block';" onmouseout="document.getElementById('sub_navi').style.display='none';">
+				<li><%= link_to _("マイページ設定"), search_mypages_path %></li>
+				<% if logged_in? %>
+					<li><%= link_to _("アカウント設定"), edit_user_property_path(current_user) %></li>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="Right">
+		<% if logged_in? %>
+			<dev style="margin-right:-7px;"><%= link_to h(current_user.user_name), edit_user_property_path(current_user) %><%= _("さん") %></dev>
+		<% else %>
+			<dev style="margin-right:-7px;"><%= link_to _("ゲスト"), login_path %></dev>
+		<% end %>
+		<%= link_to _("マイページ"), mypages_path %>
+	</div>
+</div>

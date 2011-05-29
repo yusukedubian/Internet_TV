@@ -1,0 +1,27 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => true } %>
+
+<div>
+<!--
+	<div id="videoicon">
+		<img src="../images/video.gif">
+		<font size="5">
+			VIDEO SETTING FORM
+		</font>
+	</div>
+	<div align="center" style="width:90px; border:1px solid #ccc;"><font size="2px">Video設定</font></div>
+	<img src="../images/joint.gif">
+      Videoサイズ：<select id="videosize" name="Video_imagesize">
+        <option value="640*480">640*480</option>
+        <option value="320*240">320*240</option>
+        <option value="160*120">160*120</option>
+      </select>
+-->
+	<table>
+		<tr>
+			<td>
+				<%=_("検索キーワード")%><font color=red>*</font>
+				<%= text_field_tag("contents_setting[keyword]", h(settings["keyword"]),:size=>"60",:maxlength => 50)%>
+			</td>
+		</tr>
+	</table>
+</div>

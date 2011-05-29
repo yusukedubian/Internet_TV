@@ -1,0 +1,125 @@
+name: サンプル
+desc: サンプルです。
+table: sampletable
+button: 送信ボタン
+items:
+- name: テキストボックス
+  desc: テキストボックスです。ここでは空欄か入力値が整数の１０から１００でないとエラーにするようにしています。
+  type: text
+  column: テキストボックス
+  option:
+  - width: 100
+    length: 100
+    validate:
+    - range: [10, 100]
+
+- name: チェックボックス
+  desc: チェックボックスです。チェックすることで、valueにセットされた値がDBへ書き込まれます。
+  type: check
+  column: チェックボックス
+  option:
+  - checked: true
+    value: チェックするとここの文字列がDBへ
+
+- name: ラジオボタン
+  desc: ラジオボタンです。1を選択するとDBにラジオボタン1のvalueにセットしたものが書きこまれ、2を選択するとDBにラジオボタン2のvalueにセットしたものが書きこまれます。
+  type: radio
+  column: ラジオボタン
+  option:
+  - name: ラジオボタン1
+    value: ラジオ1のデータが書き込まれる
+    checked: true
+  - name: ラジオボタン2
+    value: ラジオ2のデータが書き込まれる
+  - name: ラジオボタン3
+    value: ラジオ3のデータが書き込まれる
+  - name: ラジオボタン4
+    value: ラジオ4のデータが書き込まれる
+  - name: ラジオボタン5
+    value: ラジオ5のデータが書き込まれる
+  - name: ラジオボタン6
+    value: ラジオ6のデータが書き込まれる
+  - name: ラジオボタン7
+    value: ラジオ7のデータが書き込まれる
+  - name: ラジオボタン8
+    value: ラジオ8のデータが書き込まれる
+  - name: ラジオボタン9
+    value: ラジオ9のデータが書き込まれる
+  - name: ラジオボタン10
+    value: ラジオ10のデータが書き込まれる
+
+- name: 選択リスト
+  desc: 選択リストです。1を選択するとDBにリスト1のvalueにセットしたものが書きこまれ、2を選択するとDBにリスト2のvalueにセットしたものが書きこまれます。
+  type: list
+  column: 選択リスト
+  option:
+  - name: リスト1
+    value: リスト1のデータが書き込まれる
+    selected: true
+  - name: リスト2
+    value: リスト2のデータが書き込まれる
+  - name: リスト3
+    value: リスト3のデータが書き込まれる
+  - name: リスト4
+    value: リスト4のデータが書き込まれる
+  - name: リスト5
+    value: リスト5のデータが書き込まれる
+  - name: リスト6
+    value: リスト6のデータが書き込まれる
+  - name: リスト7
+    value: リスト7のデータが書き込まれる
+  - name: リスト8
+    value: リスト8のデータが書き込まれる
+  - name: リスト9
+    value: リスト9のデータが書き込まれる
+  - name: リスト10
+    value: リスト10のデータが書き込まれる
+
+- name: テキストエリア
+  desc: テキストエリアです。ここに入れた値がDBに書き込まれます。
+  type: textarea
+  column: テキストエリア
+  option:
+  - hight: 300
+    width: 500
+    length: 1000
+
+- name: テキストボックス2
+  desc: テキストボックス2です。ここに入れた値がDBに書き込まれます。
+  type: text
+  column: テキストボックス2
+  option:
+  - width: 100
+    length: 100
+
+- name: テキストボックス3
+  desc: テキストボックス3です。ここに入れた値がDBに書き込まれます。
+  type: text
+  column: テキストボックス3
+  option:
+  - width: 100
+    length: 100
+
+- name: テキストボックス4
+  desc: テキストボックス4です。ここに入れた値がDBに書き込まれます。
+  type: text
+  column: テキストボックス4
+  option:
+  - width: 100
+    length: 100
+
+- name: テキストボックス5
+  desc: テキストボックス5です。ここに入れた値がDBに書き込まれます。
+  type: text
+  column: テキストボックス5
+  option:
+  - width: 100
+    length: 100
+
+- name: テキストボックス6
+  desc: テキストボックス6です。ここに入れた値がDBに書き込まれます。
+  type: text
+  column: テキストボックス6
+  option:
+  - width: 100
+    length: 100

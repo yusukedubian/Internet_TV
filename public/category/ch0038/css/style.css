@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background: url(../img/body.jpg) repeat-x;
+	text-align:center;
+	color:#000000;
+}
+
+div#main {
+	width:800px;
+	height:600px;
+	margin:0px auto 0px auto;
+	text-align:left;
+  background: url(../img/bg.jpg) no-repeat;
+}
+
+div#upper {
+	display:inline;
+	float:right;
+	width:214px;
+	height:140px;
+	margin:162px 8px 0px 0px;
+	padding:15px 15px 15px 15px;
+}
+
+div#left {
+	display:inline;
+	float:left;
+	width:352px;
+	height:180px;
+	margin:396px 0px 0px 5px;
+	padding:10px 20px 10px 20px;
+}
+
+div#right {
+	display:inline;
+	float:left;
+	width:352px;
+	height:180px;
+	margin:64px 0px 0px 6px;
+	padding:10px 20px 10px 20px;
+}

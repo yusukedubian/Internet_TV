@@ -1,0 +1,94 @@
+<!-- Main -->
+<div id="Main" style="margin-top:75px;">
+<%= image_tag("./welcome/index/rogo.gif")%>
+
+<!-- Google  -->
+<%#
+<form method=get action="http://www.google.co.jp/search">
+
+<input type=text name=q size=75 maxlength=255 value="">
+<input type=hidden name=ie value=UTF-8>
+<input type=hidden name=oe value=UTF-8>
+<input type=hidden name=hl value="ja">
+<input type=submit name=btnG value=_("検索")>
+</form>
+%>
+
+<% form_tag(search_engine_path, :action=>"search", :method=>"get") do -%>
+<%= text_field_tag("search_condition", "", :size=>75, :maxlength=>255)%>
+<%= submit_tag _("検索") %>
+<% end -%>
+<!-- Google -->
+
+<div align="center">
+<table width="760px" border="0">
+
+<tr>
+<td width="33px"><a href="welcome/news"><%= image_tag("./welcome/icon/menu_news.gif")%></a></td>
+<td><a href="welcome/news"><%= _("ニュース・天気")%></a></td>
+<td width="33px"><a href="welcome/finance"><%= image_tag("./welcome/icon/menu_finance.gif")%></a></td>
+<td><a href="welcome/finance"><%= _("ファイナンス")%></a></td>
+<td width="33px"><a href="welcome/business"><%= image_tag("./welcome/icon/menu_business.gif")%></a></td>
+<td><a href="welcome/business"><%= _("ビジネス")%></a></td>
+<td width="33px"><a href="welcome/collaboration"><%= image_tag("./welcome/icon/menu_collaboration.gif")%></a></td>
+<td><a href="welcome/collaboration"><%= _("コラボレーション")%></a></td>
+<td width="33px"><a href="welcome/digital"><%= image_tag("./welcome/icon/menu_digital.gif")%></a></td>
+<td><a href="welcome/digital"><%= _("デジタルサイネージ")%></a></td>
+</tr>
+
+<tr>
+<td width="33px"><a href="welcome/life"><%= image_tag("./welcome/icon/menu_life.gif")%></a></td>
+<td><a href="welcome/life"><%= _("ライフ・衣食住")%></a></td>
+<td width="33px"><a href="welcome/hobby"><%= image_tag("./welcome/icon/menu_hobby.gif")%></a></td>
+<td><a href="welcome/hobby"><%= _("趣味・スポーツ")%></a></td>
+<td width="33px"><a href="welcome/entertainment"><%= image_tag("./welcome/icon/menu_entertainment.gif")%></a></td>
+<td><a href="welcome/entertainment"><%= _("エンタメ・ゲーム")%></a></td>
+<td width="33px"><a href="welcome/education"><%= image_tag("./welcome/icon/menu_education.gif")%></a></td>
+<td><a href="welcome/education"><%= _("教育・キッズ")%></a></td>
+<td width="33px"><a href="welcome/area"><%= image_tag("./welcome/icon/menu_area.gif")%></a></td>
+<td><a href="welcome/area"><%= _("エリア情報")%></a></td>
+</tr>
+
+</table>
+</div>
+
+</div>
+<!-- Main -->
+
+<!-- 注意事項 -->
+<br>
+<br>
+<center>
+<%if @message.size > 0%>
+<font color="#FF0000">【お知らせ】</font><br>
+<%end%>
+
+<table>
+	<% @message.each{|message|%>
+	<tr>
+		<td>
+			<font color="#006600"><%= message.start_date.strftime("%Y年%m月%d日")%></font>
+		</td>
+		<td >
+			<%= message.body%>
+		</td>
+	</tr>
+	<%}%>
+</table>
+
+</center>
+<br>
+<!-- 注意事項 -->
+
+<!-- Fotter -->
+<div id="Fotter">
+<a href="welcome/ads"><%= _("広告掲載")%></a>　｜　
+<a href="welcome/business_solution"><%= _("ビジネスソリューション")%></a>　｜　
+<a href="welcome/about"><%= _("VASDAQ.TVについて")%></a>　｜　
+<a href="welcome/opensource_project"><%= _("オープンソースプロジェクト")%></a>
+<p>Copyright (C) 2008- Vasdaq Group. All Rights Reserved.  -  <a href="welcome/privacy_policy"><%= _("ご利用にあたって")%></a></p>
+</div>
+<!-- Fotter -->
+
+
+

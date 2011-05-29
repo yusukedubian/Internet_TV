@@ -1,0 +1,67 @@
+<!-- Camera Set -->
+<style type="text/css">
+    .camera_guide_text{
+            width:810px;
+            height:60px;
+            word-break:break-all
+    }
+    .camera_guide_title{
+            height:40px;
+            width:100px;
+            padding-top:20px;
+            text-align:center;
+    }
+</style>
+<table style="height:80px;">
+	<tr>
+		<td>
+			<div id="cameradiv">
+				<table>
+					<tr>
+						<td>
+						    <%="Camera URL"%><font color=red>*</font>
+						</td>
+						<td>
+							<%= text_field_tag("contents_setting[camera_path]",h(settings["camera_path"]),:size=>"60")%>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<%=_("アカウントコード")%><font color=red>*</font>
+						</td>
+						<td>
+							<%= text_field_tag("contents_setting[account_code]",h(settings["account_code"]),:size=>"60")%>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="camera_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="camera_guide_text">
+				<%="IPカメラの動画画像をリアルタイム表示するプレーヤです。（COREGA社製のIPカメラのみ対応しています。他社のカメラ対応はご相談下さい。）"%>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Camera Set -->
+	

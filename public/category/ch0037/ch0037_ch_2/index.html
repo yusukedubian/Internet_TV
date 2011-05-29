@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>RFID</title>
+<style type="text/css"><!--
+.s1{border-width:thick;
+     border-style:double;
+     border-color:#FF9900;
+}
+ 
+
+body {
+	background-color: #094289;
+	background-image: url(images/2.jpg);
+}
+.STYLE3 {font-size: 14px ;
+           }
+.STYLE8 {
+	font-size: 14px;
+	color: #000000;
+	font-weight: bold;
+}
+.STYLE13 {color: #FF0000}
+.STYLE18 {
+	color: #000000;
+	font-size: 18px;
+	font-weight: bold;
+}
+.STYLE22 {color: #000000}
+.STYLE23 {font-size: 15px; color: #000000; font-weight: bold; }
+.STYLE24 {font-weight: bold; font-size: 15px;}
+-->
+</style><script type="text/javascript">
+ <!--
+//公共脚本文件 main.js
+function addEvent(obj,evtType,func,cap){
+    cap=cap||false;
+ if(obj.addEventListener){
+     obj.addEventListener(evtType,func,cap);
+  return true;
+ }else if(obj.attachEvent){
+        if(cap){
+         obj.setCapture();
+         return true;
+     }else{
+      return obj.attachEvent("on" + evtType,func);
+  }
+ }else{
+  return false;
+    }
+}
+function getPageScroll(){
+    var xScroll,yScroll;
+ if (self.pageXOffset) {
+  xScroll = self.pageXOffset;
+ } else if (document.documentElement  &&  document.documentElement.scrollLeft){
+  xScroll = document.documentElement.scrollLeft;
+ } else if (document.body) {
+  xScroll = document.body.scrollLeft;
+ }
+ if (self.pageYOffset) {
+  yScroll = self.pageYOffset;
+ } else if (document.documentElement  &&  document.documentElement.scrollTop){
+  yScroll = document.documentElement.scrollTop;
+ } else if (document.body) {
+  yScroll = document.body.scrollTop;
+ }
+ arrayPageScroll = new Array(xScroll,yScroll);
+ return arrayPageScroll;
+}
+function GetPageSize(){
+    var xScroll, yScroll;
+    if (window.innerHeight  &&  window.scrollMaxY) { 
+        xScroll = document.body.scrollWidth;
+        yScroll = window.innerHeight + window.scrollMaxY;
+    } else if (document.body.scrollHeight > document.body.offsetHeight){
+        xScroll = document.body.scrollWidth;
+        yScroll = document.body.scrollHeight;
+    } else {
+        xScroll = document.body.offsetWidth;
+        yScroll = document.body.offsetHeight;
+    }
+    var windowWidth, windowHeight;
+    if (self.innerHeight) {
+        windowWidth = self.innerWidth;
+        windowHeight = self.innerHeight;
+    } else if (document.documentElement  &&  document.documentElement.clientHeight) {
+        windowWidth = document.documentElement.clientWidth;
+        windowHeight = document.documentElement.clientHeight;
+    } else if (document.body) {
+        windowWidth = document.body.clientWidth;
+        windowHeight = document.body.clientHeight;
+    } 
+    if(yScroll < windowHeight){
+        pageHeight = windowHeight;
+    } else { 
+        pageHeight = yScroll;
+    }
+    if(xScroll < windowWidth){ 
+        pageWidth = windowWidth;
+    } else {
+        pageWidth = xScroll;
+    }
+    arrayPageSize = new Array(pageWidth,pageHeight,windowWidth,windowHeight) 
+    return arrayPageSize;
+}
+
+var AdMoveConfig=new Object();
+AdMoveConfig.IsInitialized=false;
+AdMoveConfig.ScrollX=0;
+AdMoveConfig.ScrollY=0;
+AdMoveConfig.MoveWidth=0;
+AdMoveConfig.MoveHeight=0;
+AdMoveConfig.Resize=function(){
+    var winsize=GetPageSize();
+    AdMoveConfig.MoveWidth=winsize[2];
+    AdMoveConfig.MoveHeight=winsize[3];
+    AdMoveConfig.Scroll();
+}
+AdMoveConfig.Scroll=function(){
+    var winscroll=getPageScroll();
+    AdMoveConfig.ScrollX=winscroll[0];
+    AdMoveConfig.ScrollY=winscroll[1];
+}
+addEvent(window,"resize",AdMoveConfig.Resize);
+addEvent(window,"scroll",AdMoveConfig.Scroll);
+function AdMove(id){
+    if(!AdMoveConfig.IsInitialized){
+        AdMoveConfig.Resize();
+        AdMoveConfig.IsInitialized=true;
+    }
+    var obj=document.getElementById(id);
+    obj.style.position="absolute";
+    var W=AdMoveConfig.MoveWidth-obj.offsetWidth;
+    var H=AdMoveConfig.MoveHeight-obj.offsetHeight;
+    var x = W*Math.random(),y = H*Math.random();
+    var rad=(Math.random()+1)*Math.PI/6;
+    var kx=Math.sin(rad),ky=Math.cos(rad);
+    var dirx = (Math.random()<0.5?1:-1), diry = (Math.random()<0.5?1:-1);
+    var step = 1;
+    var interval;
+    this.SetLocation=function(vx,vy){x=vx;y=vy;}
+    this.SetDirection=function(vx,vy){dirx=vx;diry=vy;}
+    obj.CustomMethod=function(){
+        obj.style.left = (x + AdMoveConfig.ScrollX) + "px";
+        obj.style.top = (y + AdMoveConfig.ScrollY) + "px";
+        rad=(Math.random()+1)*Math.PI/6;
+        W=AdMoveConfig.MoveWidth-obj.offsetWidth;
+        H=AdMoveConfig.MoveHeight-obj.offsetHeight;
+        x = x + step*kx*dirx;
+        if (x < 0){dirx = 1;x = 0;kx=Math.sin(rad);ky=Math.cos(rad);} 
+        if (x > W){dirx = -1;x = W;kx=Math.sin(rad);ky=Math.cos(rad);}
+        y = y + step*ky*diry;
+        if (y < 0){diry = 1;y = 0;kx=Math.sin(rad);ky=Math.cos(rad);} 
+        if (y > H){diry = -1;y = H;kx=Math.sin(rad);ky=Math.cos(rad);}
+    }
+    this.Run=function(){
+        var delay = 10;
+        interval=setInterval(obj.CustomMethod,delay);
+        obj.onmouseover=function(){clearInterval(interval);}
+        obj.onmouseout=function(){interval=setInterval(obj.CustomMethod, delay);}
+    }
+}
+ //-->
+ </script></head>
+
+<body>
+    <script type="text/javascript">
+    <!--
+        var ad1=new AdMove("gg1");
+        ad1.Run();
+ var ad2=new AdMove("gg2");
+        ad2.Run();
+ var ad3=new AdMove("gg3");
+        ad3.Run();
+    //-->
+    </script>
+<table width="785" height="556" align="center">
+  <tr ><td colspan="2"   width="750"><table><tr><td  class="s1" bgcolor="#000000"><marquee direction="left" scrollamount="10" scrolldelay="200" behavior="alternate" ><font color="#FFFFFF"><strong>「价值7万日元的商品全部降价销售」的活动正在火爆进行中。　价值398，000日元的商品，活动期间只要333,333日元。另外，在以旧换新活动中还能以330,000日元的更低价格购得商品。<font color="#FFFF00">※请确认必须是以旧换新的商品！</font></strong></font>																																																																																																																				</marquee></td></tr></table></td></tr>
+  <tr>
+    <td width="327" height="490"><table width="325" height=493>
+      <tr>
+        <td width="341" height="284"  ><img src="images/commodity grain base.jpg" width="320" height="280" /></td>
+      </tr>
+      <tr>
+        <td height="175" width="341" background="images/information.jpg" ><img src="images/information.jpg"></td>
+      </tr>
+    </table></td>
+    <td width="446"><table width="446" height="488">
+      <tr>
+        <td width="438" height="315" background="images/transportation of goods.jpg" bgcolor="#094289" >
+          <p><span class="STYLE3"><br />
+  &nbsp;<br />
+  &nbsp;
+  <br />
+  &nbsp;<strong>&nbsp;名称</strong>：3D节能LED液晶电视　VASDA3000（蓝钛）<span class="STYLE22">&nbsp;</span><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+            
+  &nbsp;<strong>&nbsp;型号:</strong>VSDQ3000-33(CB) 60V型    <strong>&nbsp;&nbsp;&nbsp;　颜色</strong>：CB　<strong>&nbsp;&nbsp;&nbsp;比率</strong>:16:9<br />
+  <br />
+  &nbsp;&nbsp;<strong>S/N&nbsp;</strong>:1234567890<br />
+  <br />
+  &nbsp;&nbsp;<strong>分辨率</strong>:1920×1080<span class="STYLE22">&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="STYLE3">&nbsp;<strong>&nbsp;&nbsp;&nbsp;总重量</strong>:４６ｋｇ<br />
+              <br />
+&nbsp;&nbsp;<strong>功能</strong>: 可以连接网络&nbsp;&nbsp;&nbsp;　　　　       连接WEB摄像头、IP摄像头 <br />
+　　　　可以注册自己的频道 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LED逆光照明<br>
+&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; ３D效果
+<br />
+            <br />
+            &nbsp;<strong>&nbsp;接口</strong>：HDMI　　光数字终端　D接口　S接口　USB　　<br />
+            　　　　
+            DOLBY　　WiFi　      地上/CS/BS数字</span><br />
+            <br />		
+            </p>
+          </td>
+      </tr>
+      <tr>
+        <td height="165" background="images/touch.jpg">
+		&nbsp;<br />
+		&nbsp;<br />
+		&nbsp;&nbsp;<span class="STYLE3"><strong>VASDA客户服务（面向店铺）</strong>：０３-xxxx-xxxx
+		</span><br />
+		<br />
+		&nbsp;<strong>&nbsp;<span class="STYLE3">VASDA修理</span></strong><span class="STYLE3">&nbsp;&nbsp;：０３-xxxx-xxxx
+		</span><br />
+		<br />
+		&nbsp;&nbsp;<span class="STYLE3"><strong>VASDA销售部</strong>：０３-xxxx-xxxx&nbsp;080-xxxx-xxxx　<strong>负责</strong>：鈴木</span>
+		<br />		</td>
+      </tr>
+	  
+    </table></td>
+  </tr><tr ><td height="28" colspan="2"><table><tr><td  class="s1" bgcolor="#000000"><marquee direction="left" scrollamount="10" scrolldelay="200" behavior="alternate" ><font color="#FFFFFF" ><strong><font color="#FFFF00">销售成功案例：</font>顾客关于3D功能的问题增多，为了能够及时并专业的解决问题，我们需要事先整理并调查好问题。　<font color="#FFFFFF" >必须注意点:</font><font color="#333399">销售时请确认好颜色。※是CB(蓝钛)！</font>　</strong>																																																													</font>																																																																																																																				</marquee></td></tr></table></td></tr>
+</table>
+</body>
+</html>

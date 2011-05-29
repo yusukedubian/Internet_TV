@@ -1,0 +1,30 @@
+
+
+.title_name{
+border:1px solid #cccccc;
+padding:3px;
+}
+
+.title{
+height: 40%;
+border-bottom:1px solid #cccccc;
+border-right:1px solid #cccccc;
+border-left:1px solid #cccccc;
+padding:5px;
+}
+
+.content_name{
+height: 10%;
+background:#f5f5f5;
+padding:2px;
+}
+
+.content{
+height: 98%;
+background:#f5f5f5;
+padding:3px 3px 3px 3px;
+}
+
+.qatitle{
+/*border-bottom:dotted 2px #cccccc;*/
+}

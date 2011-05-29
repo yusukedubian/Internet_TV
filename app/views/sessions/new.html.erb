@@ -1,0 +1,17 @@
+<div id="Area">
+<h1><%= image_tag("./welcome/icon/h1_mospeng.gif")%><%= _("VASDAQ.TVにログイン") %></h1>
+<div class="account" style="width:230px;padding-left:10px;">
+
+<% form_tag session_path do %>
+<p><label for="login"><%= _("ログインID") %></label><br/>
+<%= text_field_tag 'login' %></p>
+
+<p><label for="password"><%= _("パスワード") %></label><br/>
+<%= password_field_tag 'password' %></p>
+
+<p><%= submit_tag _("ログイン") %></p>
+<p><%= link_to _("サインアップ >>"), new_user_path %></p>
+<p><%= link_to _("パスワードを忘れた方はこちら >>"), new_forgot_password_path %></p>
+<% end %>
+</div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container" id="container">
+	<div class="account" style="margin-bottom:15px;">
+		<table width="100%">
+			<tr>
+				<td colspan="1">
+					<h2>
+						<b>
+							<%= _("YAMLフォーム テキスト編集") %>
+						</b>
+					</h2><br>
+				</td>
+				<td align="right">
+					<div style="text-align:right; margin-right:35px;">
+						<%= link_to _("GUI編集モード＞＞"), {:action=>'edit',:id=>@yaml_db_forms[:id]} %>
+					</div>
+				</td>
+			</tr>
+		</table>	
+		<% form_tag({:action=>'text_modify', :id=>@yaml_db_forms[:id]}, {:multipart=>true}) do %>
+			<table>
+				<tr>
+					<td>
+						<%= text_area_tag "yaml_db_forms[form_data]", @yaml_db_forms[:form_data],
+						{:onKeyUp => "limitChars(this, 64000)",:style => "width:890px; height:300px;"} %>
+						</td>
+				</tr>
+			</table>
+			<table>	
+				<tr>
+					<td>
+						<%= submit_tag _("保存") %>
+					</td>
+					<td>
+						<a href="javascript:history.back();"><%="戻る"%></a>
+					</td>
+				</tr>
+			</table>
+			<div style="text-align:right; margin-right:35px;">
+				<%="YAMLファイルの編集には、<a href='/welcome/channel_pro'>VASDAQ.TV Pro（eclipseアドイン）</a>を使うと便利です"%>
+			</div>
+		<% end %>
+	</div>
+
+	<%= render :partial => 'text_edit_help' %>
+</div>
+
+<style type="text/css">
+	div.container {list-style-type: none; margin:10px 0px 0px 10px;}
+</style>
+
+<script type="text/javascript">
+	function limitChars(target,maxlength) {
+    	if ( target.value.length > maxlength ) {
+			target.value = target.value.substr(0,maxlength);
+    	}
+	}
+</script>

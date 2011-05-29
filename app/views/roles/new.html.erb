@@ -1,0 +1,11 @@
+<div class="admin">
+<% form_for(@role) do |f| %>
+  <%= render :partial=>f , :locals=>{:f =>f}%>
+
+  <%= f.submit _("Create") %>
+<% end %>
+
+<p>
+  <%= link_to _('Back'), roles_path %>
+</p>
+</div>

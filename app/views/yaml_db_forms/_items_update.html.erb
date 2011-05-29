@@ -1,0 +1,108 @@
+<ul id="items">
+	<% i = 0 %>
+	<% while i < @yaml_db_forms["items_count"].to_i do %>
+		<% @name = "item_" + i.to_s %>
+		<% option = @name + "_option" %>
+		<div id="<%= @name %>" class="html_item" style="margin-bottom:15px;" onmouseover="this.style.backgroundColor='lightyellow'" onmouseout="this.style.backgroundColor=''">
+			<table>
+				<tr>
+					<td align='center'>
+						<%= _("項目の名前") %>
+						<font color=red>*</font>
+					</td>
+					<td>
+						<%= text_field_tag "yaml_db_form[#{@name}_name]",
+											@yaml_db_forms["#{@name}_name"],
+											{:maxlength => ConstYamlDbForm::ITEM_NAME_MAX, :style => "width:200px;"} %>
+					</td>
+					<td align='center'>
+						<%= _("項目の種別") %>
+					</td>
+					<td>
+						<%=  yaml_db_form_type_select_tag "yaml_db_form[#{@name}_type]",
+															@yaml_db_forms["#{@name}_type"] %>
+															
+						<%= observe_field "yaml_db_form[#{@name}_type]",
+											:update=>option,
+											:with=>"'type='+value+'&'+'name=#{@name}'",
+											:url=>{:action=>"option_update"} %>
+					</td>
+					<td align='right'>
+						<a id="<%= @name %>_fold_menu" onclick="fold_menu('<%= @name %>_sub', '<%= @name %>_fold_menu');return false">
+							<%= _("詳細設定を開く") %>
+						</a>
+					</td>	
+				</tr>
+			</table>
+			
+			<div id="<%= @name %>_sub" style="display:none">			
+				<table>					
+					<tr>
+						<td align='center'>
+							<%= _("項目の説明") %>
+						</td>
+						<td colspan='5'>
+							<%= text_area_tag "yaml_db_form[#{@name}_desc]",
+												@yaml_db_forms["#{@name}_desc"],
+												{:onKeyUp => "limitChars(this, #{ConstYamlDbForm::ITEM_DESC_MAX})", :style => "width:700px; height:50px;"} %>
+						</td>
+					</tr>
+				</table>	
+					
+				<table>	
+					<tr>
+						<td align='center'>
+							<%= _("メールの本文に載せる項目名") %>
+						</td>
+						<td>
+							<%= text_field_tag "yaml_db_form[#{@name}_column]",
+												@yaml_db_forms["#{@name}_column"],
+												{:maxlength => ConstYamlDbForm::DB_COLUMN_MAX, :style => "width:200px;"} %>
+						</td>
+					</tr>						
+				</table>
+			
+				<div id="<%= option %>">
+					<%- case @yaml_db_forms["#{@name}_type"] -%>
+					<%- when "text" -%>
+						<%= render :partial => 'text_option' %>
+					<%- when "list" -%>
+						<%= render :partial => 'list_option' %>
+					<%- when "radio" -%>
+						<%= render :partial => 'radio_option' %>
+					<%- when "check" -%>
+						<%= render :partial => 'check_option' %>
+					<%- when "textarea" -%>
+						<%= render :partial => 'textarea_option' %>																				
+					<%- end -%>
+				</div>			
+			</div>
+		</div>
+		<% i += 1 %>
+	<% end %>
+</ul>
+
+<%= sortable_element "items",
+						:tag=>"div",
+						:containment=>"items",
+						:url=>{:action=>"sort_update"},
+						:update=>"sort_order" %>
+<div id="sort_order">
+	<%= hidden_field_tag "yaml_db_form[sort_order][0]", 0 %>
+</div>
+
+<script type="text/javascript">
+	function fold_menu(id, menu_id) {
+		obj=(document.all)?document.all(id):((document.getElementById)?document.getElementById(id):null);
+		
+		if(obj){
+			if(obj.style.display=="none"){
+				obj.style.display="block";
+				$(menu_id).innerHTML=_("詳細設定を閉じる");
+			}else{
+				obj.style.display="none";
+				$(menu_id).innerHTML=_("詳細設定を開く");
+			}
+		}
+	}
+</script>

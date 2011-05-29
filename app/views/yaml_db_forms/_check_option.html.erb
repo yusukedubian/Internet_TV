@@ -1,0 +1,21 @@
+<table>
+	<tr>
+		<td align='center'>
+			<%= _("メールの本文に載せる値") %>
+			<font color=red>*</font>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[#{@name}_value]",
+								@yaml_db_forms["#{@name}_value"],
+								{:maxlength => ConstYamlDbForm::CHECK_VALUE_MAX, :style => "width:200px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("初期状態のチェック") %>
+		</td>
+		<td>
+			<%= check_box_tag "yaml_db_form[#{@name}_checked]", true, true %>
+		</td>
+	</tr>			
+</table>	

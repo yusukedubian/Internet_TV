@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <%= javascript_include_tag 'jquery-1.5.1' %>
+   <title>VASDAQ.TV</title>
+   <style type="text/css">
+		div.container {list-style-type: none; margin:10px 0px 0px 10px;}
+		* {
+			margin:0;
+			padding:0;
+		}
+		body {
+			background-repeat: repeat-x;
+			font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+			color: #333333;
+			font-size:80%;
+			
+		}
+		div.account_form {
+		border-radius: 10px;         /* CSS3 */
+		-moz-border-radius: 5px;    /* Firefox */
+		-webkit-border-radius: 10px; /* Safari,Chrome */
+		
+		border: 1px #ccc solid;     /* 枠線の装飾 */
+		background-color: #f5f5f5;   /* 背景色 */
+		width:630px;
+		padding-top:15px;
+		padding-bottom:15px;
+		}
+		.couch_form{
+			position:relative;
+			margin:15px 5px 0px 5px;
+			padding:10px 3px 3px 3px;
+			border:1px solid #ccc;
+		}
+		.couch_form_title{
+			width:110px;
+			display: -moz-inline-box; /*for Firefox 2*/
+			display: inline-block; /*for modern*/
+			/display: inline; /*for ie5～7*/
+			/zoom: 1; /*for ie5～7*/
+		}
+		.couch_input{
+			display: -moz-inline-box; /*for Firefox 2*/
+			display: inline-block; /*for modern*/
+			/display: inline; /*for ie5～7*/
+			/zoom: 1; /*for ie5～7*/
+		}
+		.bt1{
+			cursor: pointer;
+			margin-right:5px;
+		}
+	</style>
+</head>
+<body>
+	<%if !flash[:notice].blank? || !flash[:alert].blank?-%>
+			<div style="height:20px"></div>
+			<p id="notice_message", style="color: green;background: lightgreen;"><%= flash[:notice] -%></p>
+			<p id="alert_messege", style="color: red;background: pink;"><%= flash[:alert] -%></p>
+	<%end-%>
+	
+<%
+	@yaml_db_forms[:form_data].each do |key, value|
+		case key
+		when "name"
+			@form_name = value
+		when "desc"
+			@form_desc = value
+		when "button"
+			@form_button = value
+		when "items"
+			@items = value
+		else
+		end
+	end
+%>
+
+<div class="container" id="container">
+	<% form_tag({:action=> 'yaml_send', :id=>@yaml_db_forms[:id]}, {:multipart=>true}) do %>
+		<div class="account_form" style="margin-bottom:15px;">
+			<table>
+				<tr>
+					<td colspan="2">
+						<h2>
+							<b>
+								<%= h @form_name %>
+							</b>
+						</h2><br>
+					</td>
+				</tr>
+			</table>
+			<%= render :partial => 'input_mail_info' %>
+			<%= render :partial => 'input_user_form' %>
+	<% end %>
+			<%if !@couch_view.blank?
+				if @couch_view == true
+			%>
+			<!--couchDB setting-->
+			<div class="couch_form">
+				<div style="position:absolute;top:-10px;background:#f5f5f5;"><h3><%="couchDB詳細設定"%></h3></div>
+				<div id="layout_guide_on" style="padding:5px 0px 5px 5px; height:23px;">
+					<span class="bt1">
+						<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+					</span>
+					<span><%="couchDB設定画面を開く"%></span>
+				</div>
+				<div id="layout_guide_off" style="display:none;padding:5px 0px 5px 5px; ">
+					<span id="layout_guide_offbt" class="bt1">
+						<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+					</span>
+					<span><%="設定画面を閉じる"%></span><br/><br/>
+						<div class="couch_form_title">プロキシサーバー: </div><div class="couch_input"><input type="text" id="proxy" value="http://localhost:3001"></div><br/>
+						<div class="couch_form_title">サーバーアドレス: </div><div class="couch_input"><input type="text" id="sv" value="192.168.1.100:5984"></div><br/>
+						<div class="couch_form_title">データベース名: </div><div class="couch_input"><input type="text" id="db" value="relax_reader"></div><br/>
+						<input type="button" value="couchDBに保存" onclick="newDoc();" />
+				</div>
+			</div>
+			<%	end
+			end%>
+		</div>	
+
+	<%= render :partial => 'input_help' %>
+</div>
+
+<script type="text/javascript">
+	function limitChars(target,maxlength) {
+    	if ( target.value.length > maxlength ) {
+			target.value = target.value.substr(0,maxlength);
+    	}
+	}
+</script>
+
+<script type="text/javascript">
+	function input_data(){
+		$(function(){
+			tocouch_hash = {};
+			//yaml_items = [];
+			var items = <%=@items.length.to_i%>;
+		//set input items
+			yamldata = {};
+			for (var i=0; i<items; i+=1){
+				
+				yamldata["inputdata"+i] = document.getElementsByName("yaml_db_forms["+i+"]")[0].value;
+				//yaml_items.push(yamldata);
+			}
+		});
+		tocouch_hash["yaml_items"] = yamldata;
+		//set mail items
+		//mail_items = [];
+		maildata = {};
+		maildata["to"] = document.getElementById("mail_info[to]").value;
+		maildata["cc"] = document.getElementById("mail_info[cc]").value;
+		maildata["bcc"] = document.getElementById("mail_info[bcc]").value;
+		maildata["subject"] = document.getElementById("mail_info[subject]").value;
+		//mail_items.push(maildata);
+		tocouch_hash["mail_items"] = maildata;
+		return tocouch_hash;
+	}
+</script>
+
+<script type="application/javascript">
+
+//postJSON Request type: POST
+$.extend({
+  "postJSON" : function (url, data, url1, success, error) {
+    error = error || function() {}; 
+      return $.ajax({
+        url : url,
+        data : {'data' : data, 'url' : url1},
+        dataType : 'jsonp',
+        type : 'POST',
+        success : success,
+        error : error
+    });
+  }
+});
+
+function newDoc(){
+  //質問設定
+	input_data_obj = input_data();
+	url = $("#proxy").val(); 
+	aa = 'http://' + $("#sv").val() +'/' + $("#db").val();
+	$.postJSON(
+	    url,
+	    JSON.stringify(input_data_obj), aa,  
+		function(data, text_status){
+			if(data.id == null){
+				alert("couchDB設定を見直してください。");
+			}
+			else if(data.id != null){
+				alert("couchDBに保存されました。");
+			}
+		},
+	    function(data, text_status, error_thrown){
+	      //alert("送信に失敗しました" + JSON.stringify(data) + '!!!status:' + text_status);
+		  alert(data.toSource());
+			alert("couchDB設定を見直してください。")
+	    }
+	);
+}
+</script>
+
+<script type="text/javascript">
+function layout_guide(str){
+	if (str == "on"){
+		document.getElementById("layout_guide_on").style.display = "none";
+		$("#layout_guide_offbt").fadeIn(1000);
+		$('#layout_guide_off').slideDown('slow');
+	}
+	else{
+		document.getElementById("layout_guide_offbt").style.display = "none";
+		$('#layout_guide_off').slideUp('slow')
+		$("#layout_guide_on").fadeIn(1000);
+	}
+}
+</script>
+
+</body>
+</html>

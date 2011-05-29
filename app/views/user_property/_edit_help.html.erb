@@ -1,0 +1,43 @@
+<div class="account" padding-left:10px;">
+	<table>
+		<tr>
+			<td align="left"><%= image_tag("./imagefile/point.png")%><%= "&nbsp;" %><%= _("説明") %></td>
+		</tr>
+	</table>
+	<table frame="void" rules="none">
+		<tr>
+			<td>
+				<table frame="border" rules="all" bordercolor="#cccccc">
+					<tr>
+						<td align="center" width="110px">
+							<%= _("ニックネーム") %><br>
+						</td>
+						<td align="left"><%= _("チャンネル公開時に表示される作成者の名前です。") %></td>
+					</tr>
+					<tr>
+						<td align="center" ><%= _("メールアドレス") %></td>
+						<td align="left">
+							<%= _("[VASDAQ.TV]からのお知らせをお送りするためのメールアドレスです。") %>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" ><%= _("新パスワード") %></td>
+						<td align="left">
+							<%= _("ログイン時に使用するパスワードを変更できます。") %><br>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" ><%= _("設定ボタン") %></td>
+						<td align="left">
+							<%=_("ニックネーム・パスワード・メールアドレス、<br>それぞれの変更を適応させたい場所の設定ボタンを押下すると反映されます。")%>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><font color=red>*</font><%= _("マークがついているものは必須項目です。") %></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>				
+</div>

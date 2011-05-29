@@ -1,0 +1,352 @@
+<style type="text/css">
+.text_guide_text{
+        width:810px;
+        height:80px;
+        word-break:break-all
+}
+.text_guide_title{
+        height:50px;
+        width:100px;
+        padding-top:30px;
+        text-align:center;
+}
+</style>
+<div>
+	<table>
+		<tr>
+			<td><%= "表示タイプ"%><font color=red>*</font></td>
+			<td>
+					<%= radio_button_tag("contents_setting[viewtype]", "classic", false, options ={:onclick=>"viewtype('classic');"})%><%="クラシック  "%>
+					<%= radio_button_tag("contents_setting[viewtype]", "billboard", true, options ={:onclick=>"viewtype('billboard');"})%><%="電光掲示板風  "%>
+					<%= radio_button_tag("contents_setting[viewtype]", "clock", false, options ={:onclick=>"viewtype('clock');"})%><%="クロック"%>
+			</td>
+		</tr>
+	</table>
+
+	<div id="classic">
+		<table>
+			<tr>
+				<td colspan="3">
+					<%= _("本文")%><font color=red>*</font>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= text_area_tag("contents_setting[text_content]", h(settings["text_content"]),:rows=>"10",:cols=>"100",:maxlength=>"1024")%>
+					<br>
+					<br>
+				</td>
+			</tr>
+		</table>
+	
+		<table style="float:left;">
+			<tr>
+				<td></td>
+				<td>
+					<%= _("背景色")%>
+				</td>
+				<td>
+					<%= text_field_tag("contents_setting[back_color]", settings["back_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7)%>
+					<%if settings["font_color"] != nil %>
+						  <script>document.getElementById("contents_setting[back_color]").value="<%=settings['back_color']%>"</script>
+				  	<%end%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= _("フォントサイズ")%>
+					<%= select_tag("contents_setting[font_size]", 
+						options_for_select(font_size_for_select, settings["font_size"]
+						))
+					%>
+					<%="px"%>
+				</td>
+				<td>
+					<%= _("フォントカラー")%>
+				</td>
+				<td>
+					<%= text_field_tag("contents_setting[font_color]", settings["font_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7)%>
+					<%if settings["font_color"] != nil %>
+						  <script>document.getElementById("contents_setting[font_color]").value="<%=settings['font_color']%>"</script>
+				  	<%end%>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					<%= _("表示タイプ")%>
+					<%= select_tag("contents_setting[control_type]", 
+						options_for_select(scroll_type_for_select, settings["control_type"]
+						),{html_options = { :onchange =>"" },{:scrolltype =>"();"}})
+					%>
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<table id="scrollproperty">
+						<tr>
+							<td>
+								<%= _("スクロール方向")%>
+								<%= select_tag("contents_setting[scroll_direction]", 
+									options_for_select(scroll_direction_for_select, settings["scroll_direction"]
+									))
+								%>
+							</td>
+							<td>
+								<%= _("スクロール速度")%>
+								<%= select_tag("contents_setting[scroll_speed]", 
+									options_for_select(scroll_speed_for_select, settings["scroll_speed"]
+									))
+								%>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<div id="picker" style="float:left;"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="billboard" style="display:none;">
+		<table>
+			<tr>
+				<td colspan="3">
+					<%= _("本文")%><font color=red>*</font>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= text_area_tag("contents_setting[billboard_text_content]", h(settings["billboard_text_content"]),:rows=>"10",:cols=>"100",:maxlength=>"1024")%>
+					<br>
+					<br>
+				</td>
+			</tr>
+		</table>
+
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+					<%= _("フォントサイズ")%>
+					<%= select_tag("contents_setting[billboard_font_size]", 
+						options_for_select(string_font_size_select, settings["billboard_font_size"]
+						))
+					%>
+				</td>
+				<td>
+	                <%=_("フォント色")%>
+					<%= select_tag("contents_setting[billboard_font_color]", 
+						options_for_select(string_font_color_select, settings["billboard_font_color"]
+						))
+					%>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<table>
+						<tr>
+							<td>
+								<%= _("スクロール方向")%>
+								<%= select_tag("contents_setting[billboard_scroll_direction]", 
+									options_for_select(scroll_direction_for_select, settings["billboard_scroll_direction"]
+									))
+								%>
+							</td>
+							<td>
+								<%= _("スクロール速度")%>
+								<%= select_tag("contents_setting[billboard_scroll_speed]", 
+									options_for_select(string_player_scroll_speed_for_select, settings["billboard_scroll_speed"]
+									))
+								%>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td><br>
+								<b><%= _("※表示できる情報量が最大8000pixで表現できる量を超えると、最後までテキストが表示されません。")%><br>
+								　<%= _("フォントサイズ２０を指定した場合、表示できるテキストは約７６０文字までです。") %></b>
+							</td>
+						</tr>
+					</table>
+					<br>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="clock" style="display:none;">
+		<table frame="void" rules="none">
+			<tr>
+				<td></td>
+				<td>
+					<%=_("背景色")%>
+				</td>
+				<td>
+					<%= text_field_tag("contents_setting[clock_back_color]", settings["clock_back_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+					<%if settings["clock_back_color"] != nil %>
+						  <script>document.getElementById("contents_setting[clock_back_color]").value="<%=settings['clock_back_color']%>"</script>
+				  	<%end%>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<%=_("フォントサイズ")%>
+					<%= select_tag("contents_setting[clock_font_size]", 
+						options_for_select(font_size_for_select, settings["clock_font_size"]
+						))
+					%>	
+					<%="px"%>	  
+				</td>
+				<td valign="top">
+					<%=_("フォントカラー")%>
+				</td>
+				<td valign="top">
+				  	<%= text_field_tag("contents_setting[clock_font_color]", settings["clock_font_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7,:onclick=>"picker('picker')")%>
+				  	<%if settings["clock_font_color"] != nil %>
+						  <script>document.getElementById("contents_setting[clock_font_color]").value="<%=settings['clock_font_color']%>"</script>
+				  	<%end%>
+				</td>
+				<td>
+					<div id="picker_clock" style="float: right;"></div>
+				</td>
+			</tr>
+		</table>
+	</div>	
+	
+	<input type="hidden" name="contents_setting[billboard_local_url]" value=<%= request.env["HTTP_HOST"] %>>
+</div>
+<br/>
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="text_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="text_guide_text">
+				<%="好きなテキストを、クラシック/電光掲示板の２タイプから選択し、動的に表示可能です。"%><br/>
+				<%="日付時刻を表示する事も出来ます。"%><br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if settings["viewtype"] == "classic" %>
+   <script>
+	 document.getElementById("contents_setting_viewtype_classic").checked = "checked";
+     document.getElementById("classic").style.display = "block";
+     document.getElementById("billboard").style.display = "none";
+     document.getElementById("clock").style.display = "none";
+   </script>
+<% end %>   
+<% if settings["viewtype"] == "billboard" %>
+   <script>
+	 document.getElementById("contents_setting_viewtype_billboard").checked = "checked";
+     document.getElementById("classic").style.display = "none";
+     document.getElementById("billboard").style.display = "block";
+     document.getElementById("clock").style.display = "none";
+   </script>
+<% end %>
+<% if settings["viewtype"] == "clock" %>
+   <script>
+	 document.getElementById("contents_setting_viewtype_clock").checked = "checked";
+     document.getElementById("classic").style.display = "none";
+     document.getElementById("billboard").style.display = "none";
+     document.getElementById("clock").style.display = "block";
+   </script>
+<% end %>
+<% if settings["viewtype"] == nil %>
+   <script>
+	 document.getElementById("contents_setting_viewtype_classic").checked = "checked";
+     document.getElementById("classic").style.display = "block";
+     document.getElementById("billboard").style.display = "none";
+     document.getElementById("clock").style.display = "none";
+   </script>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+function viewtype(str){
+	var type = str;
+	if (type =="classic"){
+		document.getElementById("classic").style.display = "block";
+		document.getElementById("billboard").style.display = "none";
+		document.getElementById("clock").style.display = "none";
+	}
+	else if(type =="billboard"){
+		document.getElementById("classic").style.display = "none";
+		document.getElementById("billboard").style.display = "block";
+		document.getElementById("clock").style.display = "none";
+	}
+	else if(type =="clock"){
+		document.getElementById("classic").style.display = "none";
+		document.getElementById("billboard").style.display = "none";
+		document.getElementById("clock").style.display = "block";	
+	}
+}
+</script>
+
+
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker_clock');
+	 var p = jQuery('#picker_clock').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+	});
+</script>
+<script type="text/javascript" charset="utf-8">
+	jQuery(document).ready(function() {
+	 var f = jQuery.farbtastic('#picker');
+	 var p = jQuery('#picker').css('opacity', 0.25);
+	 var selected;
+	 jQuery('.colorwell')
+	  .each(function () { f.linkTo(this); jQuery(this).css('opacity', 0.75); })
+	  .focus(function() {
+	    if (selected) {
+	      jQuery(selected).css('opacity', 0.75).removeClass('colorwell-selected');
+	    }
+	    f.linkTo(this);
+	    p.css('opacity', 1);
+	    jQuery(selected = this).css('opacity', 1).addClass('colorwell-selected');
+	  });
+	});
+</script>
+<script>
+	var t = document.getElementById("contents_setting[control_type]").selectedIndex;
+	if (t == "0" || t == "2"){
+			document.getElementById("scrollproperty").style.display = "block"
+		}
+	else{
+			document.getElementById("scrollproperty").style.display = "none"
+		}
+</script>

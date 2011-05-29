@@ -1,0 +1,110 @@
+<table>
+	<tr>
+		<td align='center'>
+			<%= _("フォームの名前") %>
+			<font color=red>*</font>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[form_name]",
+								@yaml_db_forms["form_name"],
+								{:maxlength => ConstYamlDbForm::FORM_NAME_MAX, :style => "width:200px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("フォームの説明") %>
+		</td>
+		<td colspan='5'>
+			<%= text_area_tag "yaml_db_form[form_desc]",
+								@yaml_db_forms["form_desc"],
+								{:onKeyUp => "limitChars(this, #{ConstYamlDbForm::FORM_DESC_MAX})", :style => "width:700px; height:50px;", :wrap => "virtual"} %>							
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("メールの本文に載せるフォーム名") %>
+			<font color=red>*</font>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[table_name]",
+								@yaml_db_forms["table_name"],
+								{:maxlength => ConstYamlDbForm::DB_TABLE_MAX, :style => "width:200px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("このフォームを公開する（ログインしていなくても表示できるようにする）") %>
+		</td>
+		<td>
+			<%= check_box_tag "yaml_db_form[public_flag]", "1", @yaml_db_forms["public_flag"]%>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("メール宛先（TO）の初期値") %>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[mail_to_default]",
+								@yaml_db_forms["mail_to_default"],
+								{:maxlength => ConstYamlDbForm::MAIL_TO_MAX, :style => "width:200px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("メール宛先（CC）の初期値") %>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[mail_cc_default]",
+								@yaml_db_forms["mail_cc_default"],
+								{:maxlength => ConstYamlDbForm::MAIL_TO_MAX, :style => "width:200px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("メール宛先（BCC）の初期値") %>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[mail_bcc_default]",
+								@yaml_db_forms["mail_bcc_default"],
+								{:maxlength => ConstYamlDbForm::MAIL_TO_MAX, :style => "width:200px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("メール件名の初期値") %>
+		</td>
+		<td>
+			<%= text_field_tag "yaml_db_form[mail_subject_default]",
+								@yaml_db_forms["mail_subject_default"],
+								{:maxlength => ConstYamlDbForm::MAIL_SUBJECT_MAX, :style => "width:200px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("CauchDBの接続設定をフォームに表示する") %>
+		</td>
+		<td>
+			<%= check_box_tag "yaml_db_form[couchdb_set_view_flag]", "1", @yaml_db_forms["couchdb_set_view_flag"]%>
+		</td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<%= _("フォームの項目数") %>
+		</td>
+		<td>
+			<%= yaml_db_form_num_select_tag "yaml_db_form[items_count]",
+											ConstYamlDbForm::FORM_ITEMS_MIN,
+											ConstYamlDbForm::FORM_ITEMS_MAX,
+											@yaml_db_forms["items_count"] %>
+											
+			<%= observe_field "yaml_db_form[items_count]",
+								:update=>"html_items",
+								:url=>{:action=>"items_update"},
+								:submit=>"container" %>
+		</td>	
+	</tr>
+</table><br>
+	
+<div id="html_items">
+	<%= render :partial => 'items_update' %>
+</div>

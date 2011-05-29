@@ -1,0 +1,162 @@
+name: VASDAQ TV アンケート
+desc: |
+  アンケート
+  
+table: VASDAQ TV アンケート
+button: 送信
+items:
+- name: 御社名　部署
+  desc: |
+    社名と出来れば部署名もご記入して下さい
+  type: textarea
+  column: 社名と出来れば部署名もご記入して下さい
+  option:
+  - width: 500
+    hight: 30
+- name: 氏名
+  desc: |
+    氏名をご記入してください
+    
+  type: text
+  column: 氏名をご記入してください
+  option:
+  - validate:
+    - is_blank: true
+
+- name: 役職
+  desc: |
+    役職を選択して下さい
+    
+  type: radio
+  column: 役職
+  option:
+  - name: 担当
+    value: 担当
+    checked: true
+  - name: 係長相当
+    value: 係長相当
+    checked: false
+  - name: 課長相当
+    value: 課長相当
+    checked: false
+  - name: 部長相当
+    value: 部長相当
+    checked: false
+  - name: 役員相当
+    value: 役員相当
+    checked: false
+  - name: 代表取締役社長
+    value: 代表取締役社長
+    checked: false
+- name: メールアドレス
+  desc: |
+    メールアドレスをご記入して下さい
+    
+  type: textarea
+  column: メール
+  option:
+  - width: 400
+    hight: 20
+- name: １．お越し頂いた理由
+  desc: |
+    選択して下さい
+    
+  type: radio
+  column: 理由
+  option:
+  - name: 目的があって立ち寄った
+    value: 目的があって立ち寄った
+    checked: true
+  - name: 出展の案内をもらい立ち寄った
+    value: 出展の案内をもらい立ち寄った
+    checked: false
+  - name: 人から聞いて立ち寄った
+    value: 人から聞いて立ち寄った
+    checked: false
+  - name: 興味をそそられ立ち寄った
+    value: 興味をそそられ立ち寄った
+    checked: false
+  - name: たまたま通りすがりで立ち寄った
+    value: たまたま通りすがりで立ち寄った
+    checked: false
+- name: ２．VASDSAQ TVのご感想をお聞かせ下さい
+  desc: |
+    選択して下さい
+    
+  type: radio
+  column: 感想
+  option:
+  - name: 購入を検討している
+    value: 購入を検討している
+    checked: true
+  - name: 将来的に購入を検討している
+    value: 将来的に購入を検討している
+    checked: false
+  - name: 協業を考えている
+    value: 協業を考えている
+    checked: false
+  - name: 後日説明を聞きたい
+    value: 後日説明を聞きたい
+    checked: false
+  - name: 興味がない
+    value: 興味がない
+    checked: false
+- name: ３．機能についてご感想をお聞かせ下さい
+  desc: |
+    選択して下さい
+    
+  type: radio
+  column: 機能感想
+  option:
+  - name: 使ってみたい
+    value: 使ってみたい
+    checked: true
+  - name: 面白そう
+    value: 面白そう
+    checked: false
+  - name: 画面を作成してみたい
+    value: 画面を作成してみたい
+    checked: false
+  - name: やってみたいが難しそう
+    value: やってみたいが難しそう
+    checked: false
+  - name: めんどくさそう
+    value: めんどくさそう
+    checked: false
+  - name: 使いたくない
+    value: 使いたくない
+    checked: false
+- name: ４．今後弊社からの対応について
+  desc: |
+    選択して下さい
+    
+  type: radio
+  column: 弊社対応
+  option:
+  - name: 電子メールによる情報配信
+    value: 電子メールによる情報配信製品資料の送付
+    checked: true
+  - name: 製品資料の送付
+    value: 製品資料の送付
+    checked: false
+  - name: 営業コンタクトが欲しい
+    value: 営業コンタクトがほしい
+    checked: false
+  - name: 製品詳細説明が欲しい
+    value: 製品詳細説明が欲しい
+    checked: false
+  - name: 見積もり作成
+    value: 見積もり作成
+    checked: false
+  - name: 情報提供はいらない
+    value: 情報提供はいらない
+    checked: false
+- name: １．２．３．４についてその他ご意見など
+  desc: |
+    その他　ご意見などございましたら　ご記入下さい
+    
+  type: textarea
+  column: その他
+  option:
+  - width: 600
+    hight: 90

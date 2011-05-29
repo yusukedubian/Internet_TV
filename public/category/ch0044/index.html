@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> </title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-Type" content="text/html; charset=iso-8859-1">
+
+<!-- スタイルシート ここから -->
+<link rel="stylesheet" href="css/master.css" type="text/css" media="all" />
+<link rel="stylesheet" href="stylesheets/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="stylesheets/coda-slider-2.0.css" type="text/css" media="screen" />
+<!-- スタイルシート ここまで -->
+
+<!-- 時計 ここから -->
+<script src="clock/scroll.js"></script>
+<script src="clock/clock.js"></script>	
+<!-- 時計 ここまで -->
+
+<!-- テキストスライド ここから -->
+<script type="text/javascript" src="javascripts/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="javascripts/jquery.coda-slider-2.0.js"></script>
+<script type="text/javascript">
+    	$().ready(function() {
+            $('#coda-slider-1').codaSlider({
+                autoSlide: true,
+                autoSlideInterval: 8000,
+                autoSlideStopWhenClicked: true
+            });
+        });
+</script>
+
+<!-- テキストショー ここから -->
+<script type="text/javascript">
+         function slideSwitch() {
+             var $active = $('#slideshow img.active');
+             if ( $active.length == 0 ) $active = $('#slideshow img:last');
+             var $next =  $active.next().length ? $active.next() : $('#slideshow img:first');
+             $active.addClass('last-active');
+             $next.css({opacity: 0.0})
+                 .addClass('active')
+                 .animate({opacity: 1.0}, 1000, function() {
+                     $active.removeClass('active last-active');
+               });
+         }
+         $(function() {
+             setInterval( "slideSwitch()", 6000 );
+         });
+        
+</script>
+<!-- テキストショー ここまで -->
+
+</head>
+<body class="coda-slider-no-js" onload="clock();">
+<div id="Area">
+<div id="Box">
+
+
+<table>
+<tr>
+<td>
+<img src="img/title01.png" style="margin:0px 0px 5px 5px;">
+</td>
+<td>
+<!-- 時計 ここから --> 
+<h1><div id="clock">loading</div></h1>
+<!-- 時計 ここまで --> 
+</td>
+</tr>
+</table>
+
+<div id="twitter_bg">
+
+<table>
+<tr>
+<td>
+<!-- 01ここから -->
+<table style="margin-left:5px;">
+<tr>
+<td align="center" style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw1.html" Width="130px" Height="180px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw2.html" Width="130px" Height="100px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td>
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw3.html" Width="130px" Height="105px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+</table>
+<!-- 01ここまで -->
+</td>
+<td>
+<!-- 02ここから -->
+<table style="margin-left:30px;">
+<tr>
+<td align="center" style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw4.html" Width="130px" Height="180px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw5.html" Width="130px" Height="100px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td>
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw6.html" Width="130px" Height="105px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+</table>
+<!-- 02ここまで -->
+</td>
+<td>
+<!-- 03ここから -->
+<table style="margin-left:30px;">
+<tr>
+<td align="center" style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw7.html" Width="130px" Height="180px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw8.html" Width="130px" Height="100px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td>
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw9.html" Width="130px" Height="105px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+</table>
+<!-- 03ここまで -->
+</td>
+<td>
+<!-- 04ここから -->
+<table style="margin-left:28px;">
+<tr>
+<td align="center" style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw10.html" Width="130px" Height="180px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw11.html" Width="130px" Height="100px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td>
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw12.html" Width="130px" Height="105px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+</table>
+<!-- 04ここまで -->
+</td>
+<td>
+<!-- 05ここから -->
+<table style="margin-left:25px;">
+<tr>
+<td align="center" style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw13.html" Width="130px" Height="180px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td style="border-bottom:1px #cecece solid;">
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw14.html" Width="130px" Height="100px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+<tr>
+<td>
+<!-- twitter ここから -->
+<Iframe Src="twitter/tw15.html" Width="130px" Height="105px" Frameborder="no" Scrolling="no">
+このページはインラインフレームを使用しております。<Br>
+未対応ブラウザは閲覧できませんのでご了承下さい。
+</Iframe>
+<!-- twitter ここまで -->
+</td>
+</tr>
+</table>
+<!-- 05ここまで -->
+</td>
+</tr>
+</table>
+
+</div>
+
+
+<table>
+<tr>
+
+<td>
+<div id="message_bg">
+<img src="img/message_tit.png" style="padding:10px 0px 0px 10px;">
+<div style="width:426px;">
+<!-- テキストスライド ここから -->
+<div class="coda-slider-wrapper" style="margin:5px 10px 0px 10px;">
+<div class="coda-slider preload" id="coda-slider-1">
+<div class="panel">
+<div class="panel-wrapper">
+<h2>今日の営業会議は<br>19時からです。</h2>
+</div>
+</div>
+<div class="panel">
+<div class="panel-wrapper">
+<h2>経理　報告</h2>
+</div>
+</div>
+<div class="panel">
+<div class="panel-wrapper">
+<h2>ＱＩＴチーム　進捗報告</h2>
+</div>
+</div>
+<div class="panel">
+<div class="panel-wrapper">
+<h2>ＶＡＳＤＡＱ-ＩＴ営業　進捗報告</h2>
+</div>
+</div>
+<div class="panel">
+<div class="panel-wrapper">
+<h2>営業　情報交換</h2>
+</div>
+</div>
+</div>
+</div>
+<!-- テキストスライド ここまで -->
+</div>
+</div>
+</td>
+
+<td>
+<!-- 路線状況 ここから -->
+<div id="slideshow">
+<img src="img/chiyoda_slide.gif" alt="" />
+<img src="img/fukutoshin_slide.gif" alt="" />
+<img src="img/ginza_slide.gif" alt="" />
+<img src="img/hanzoumon_slide.gif" alt="" />
+<img src="img/hibiya_slide.gif" alt="" />
+<img src="img/marunouchi_slide.gif" alt="" />
+<img src="img/nanboku_slide.gif" alt="" />
+<img src="img/touzai_slide.gif" alt="" />
+<img src="img/yuurakucyou_slide.gif" alt="" />
+</div>
+<!-- 路線状況 ここまで -->
+</td>
+
+<td>
+<!-- 天気予報 ここから -->
+<div id="weather_slideshow">
+
+<img src="img/fine.png" alt="" />
+
+</div>
+<!-- 天気予報 ここまで -->
+</td>
+
+</tr>
+</table>
+
+
+
+
+
+
+</div>
+</div>
+</body>
+
+</html>

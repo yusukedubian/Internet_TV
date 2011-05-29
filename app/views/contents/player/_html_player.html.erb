@@ -1,0 +1,116 @@
+<style type="text/css">
+.url_frame{
+	display: -moz-inline-box; /*for Firefox 2*/
+    display: inline-block; /*for modern*/
+    /display: inline; /*for ie5～7*/
+    /zoom: 1; /*for ie5～7*/
+	
+	padding:2px;
+	vertical-align: top;
+}
+.url_frame div{
+	width:40px;
+}
+.minitu_frame{
+	margin:10px 0px 5px 0px;
+}
+.html_guide_text{
+        width:810px;
+        height:50px;
+        word-break:break-all
+}
+.html_guide_title{
+        height:35px;
+        width:100px;
+        padding-top:15px;
+        text-align:center;
+}
+</style>
+
+<font color=red><%= _("※著作権法に関して…") %>
+   <b><a href="/welcome/privacy_policy#AtCL" target="_blank">
+  	 <%= _("「番組を公開する前に！（重要）」") %>
+   </a></b>
+ <%= _("を必ずお読み下さい。") %>
+</font>
+
+<br>
+<br>
+
+<div class="url_frame"><div>URL<font color=red>*</font></div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_0]", h(settings["outurl_0"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL2</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_1]", h(settings["outurl_1"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL3</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_2]", h(settings["outurl_2"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL4</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_3]", h(settings["outurl_3"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL5</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_4]", h(settings["outurl_4"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL6</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_5]", h(settings["outurl_5"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL7</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_6]", h(settings["outurl_6"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL8</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_7]", h(settings["outurl_7"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL9</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_8]", h(settings["outurl_8"]),:maxlength => 2048, :size => 80)%></div>
+<br>
+<div class="url_frame"><div>URL10</div></div>
+<div class="url_frame"><%= text_field_tag("contents_setting[outurl_9]", h(settings["outurl_9"]),:maxlength => 2048, :size => 80)%></div>
+<input type="button" value="URLクリア" onClick="urlClear();">
+
+<div class="minitu_frame">
+<%="ページをリフレッシュする秒数を入れて下さい"%>
+</div>
+⇒
+<%= text_field_tag("contents_setting[refreshtime]", h(settings["refreshtime"]),:maxlength => 4,:size=> 4)%>秒
+<br/><br/>
+<div class="select">
+	<div id="layout_guide_on" style="padding:5px 0px 5px 15px; height:23px;">
+		<span class="bt1">
+			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
+		</span>
+		<span><%=@player.view_name+" 説明を開く"%></span>
+	</div>
+	<div id="layout_guide_off" class="layout_guide">
+		<span id="layout_guide_offbt" class="bt1">
+			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
+		</span>
+		<span><%="説明を閉じる"%></span>
+		<div style="clear:both;"></div>
+		<div class="guide_box">
+			<div class="html_guide_title">
+				<%=@player.view_name%>
+			</div>
+		</div>
+		<div class="guide_box">
+			<div class="html_guide_text">
+				<%="好きなページを、指定した間隔で、順番に切り替え表示します。"%><br/>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script language="JavaScript">
+	function urlClear(){
+	    document.getElementById("contents_setting[outurl_0]").value = "";
+	    document.getElementById("contents_setting[outurl_1]").value = "";
+	    document.getElementById("contents_setting[outurl_2]").value = "";
+	    document.getElementById("contents_setting[outurl_3]").value = "";
+	    document.getElementById("contents_setting[outurl_4]").value = "";
+	    document.getElementById("contents_setting[outurl_5]").value = "";
+	    document.getElementById("contents_setting[outurl_6]").value = "";
+	    document.getElementById("contents_setting[outurl_7]").value = "";
+	    document.getElementById("contents_setting[outurl_8]").value = "";
+	    document.getElementById("contents_setting[outurl_9]").value = "";
+    }
+</script>

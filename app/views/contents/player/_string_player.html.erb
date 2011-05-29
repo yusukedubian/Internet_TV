@@ -1,0 +1,95 @@
+<%= render :partial=> "contents/player/border_editor", :locals => { :settings => settings, :picker => true } %>
+
+<br>
+<div style="margin-left:0px;">
+	<table>
+		<tr>
+			<td colspan="2">
+				<%= radio_button_tag("contents_setting[radio]", "rss", true, options ={:onclick=>"stringtype('rss');"})%><%=_("Rss")%>
+				<%= radio_button_tag("contents_setting[radio]", "txt", false, options ={:onclick=>"stringtype('txt');"})%><%=_("本文")%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="Rss">
+					<%=_("Rss")%><font color=red>*</font>
+				</div>
+				<div id="Txt" style="display:none;">
+					<%=_("本文")%><font color=red>*</font>
+				</div>
+			</td>
+			<td>
+				<div id="urlpath1">
+					<%= text_field_tag("contents_setting[urlpath1]", h(settings["urlpath1"]),:size=>"80",:maxlength=>"1024")%>
+				</div>
+				<div id="text_content" style="display:none;">
+					<%= text_area_tag("contents_setting[text_content]", h(settings["text_content"]),:rows=>"10",:cols=>"100",:maxlength=>"1024")%>
+				</div>
+			</td>
+		</tr> 
+	</table>
+<%  if settings["radio"] == "txt"  
+%>
+<script>document.getElementById("contents_setting_radio_txt").checked = "checked";</script>
+<%  end
+%>
+	<br>
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<%= _("フォントサイズ")%>
+				<%= select_tag("contents_setting[font_size]", 
+					options_for_select(string_font_size_select, settings["font_size"]
+					))
+				%>
+			</td>
+			<td>
+                <%=_("フォント色")%>
+				<%= select_tag("contents_setting[font_color]", 
+					options_for_select(string_font_color_select, settings["font_color"]
+					))
+				%>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<table>
+					<tr>
+						<td>
+							<%= _("スクロール方向")%>
+							<%= select_tag("contents_setting[scroll_direction]", 
+								options_for_select(scroll_direction_for_select, settings["scroll_direction"]
+								))
+							%>
+						</td>
+						<td>
+							<%= _("スクロール速度")%>
+							<%= select_tag("contents_setting[scroll_speed]", 
+								options_for_select(string_player_scroll_speed_for_select, settings["scroll_speed"]
+								))
+							%>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><br>
+							<b><%= _("※表示できる情報量が最大8000pixで表現できる量を超えると、最後までテキストが表示されません。")%><br>
+							　<%= _("フォントサイズ２０を指定した場合、表示できるテキストは約７６０文字までです。") %></b>
+						</td>
+					</tr>
+				</table>
+				<br>
+			</td>
+		</tr>
+	</table>
+</div>
+<input type="hidden" name="contents_setting[local_url]" value=<%= request.env["HTTP_HOST"] %>>
+<script>
+if (document.getElementById('contents_setting_radio_txt').checked == true) {
+	document.getElementById("Rss").style.display = "none";
+	document.getElementById("urlpath1").style.display = "none";
+	document.getElementById("Txt").style.display = "block";
+	document.getElementById("text_content").style.display = "block";
+}
+</script>

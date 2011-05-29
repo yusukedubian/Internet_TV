@@ -1,0 +1,60 @@
+<div class="account_form" style="margin-bottom:15px;">
+	<table>
+		<tr>
+			<td>
+				<%= image_tag("./imagefile/point.png")%>
+				<%= "&nbsp;" %>
+				<%= _("説明") %>
+			</td>
+		</tr>			
+	</table>
+	<table frame="void" rules="none">
+		<tr>
+			<td>
+				<table frame="border" rules="all" bordercolor="#cccccc" width="623px">
+					<tr>
+						<td align="center" width="130px">
+							<%= _("To") %><br>
+							<%= _("Cc") %><br>
+							<%= _("Bcc") %>
+						</td>
+						<td>
+							<%= _("メール送信先アドレスを指定して下さい。") %>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" width="130px">
+							<%= _("件名") %>
+						</td>
+						<td>
+							<%= _("メールの件名を指定して下さい。") %>
+						</td>
+					</tr>					
+					
+					<%- @items.each do |item| -%>
+						<% if item.has_key?("desc") %>
+							<tr>
+								<td align="center" width="130px">
+									<%= h item["name"] %>
+								</td>
+								<td>
+									<%= h item["desc"] %>
+								</td>
+							</tr>	
+						<% end %>
+					<%- end -%>
+					
+					<tr>
+						<td align="center" width="130px">
+							<%= _("送信ボタン") %>
+						</td>
+						<td>
+							<%= _("メール送信を行います。") %>
+						</td>
+					</tr>						
+					
+				</table>
+			</td>
+		</tr>
+	</table>				
+</div>

@@ -1,0 +1,80 @@
+log4r_config:
+  
+  pre_config:
+    global: "DEBUG"
+  
+  loggers:
+    - name: "APLLOG"
+      type: "Log4r::Logger"
+      level: "DEBUG"
+      trace: "true"
+      outputters:
+        - "APLLOG"
+        - "APLERRLOG"
+        - "STDOUT"
+
+    - name: "BTRACE"
+      type: "Log4r::Logger"
+      level: "ERROR"
+      trace: "true"
+      outputters:
+        - "APLERRLOG"
+        - "STDERR"
+        
+    - name: "RAILSLOG"
+      type: "Log4r::Logger"
+      level: "DEBUG"
+      trace: "true"
+      outputters:
+        - "RAILSLOG"
+        - "RAILSERR"
+  
+  outputters:
+    - name: "STDOUT"
+      type: "Log4r::StdoutOutputter"
+      formatter:
+        name: "P1"
+        type: "Log4r::AplicationFormatter"
+
+    - name: "STDERR"
+      type: "Log4r::StderrOutputter"
+      formatter:
+        name: "P2"
+        type: "Log4r::AplicationFormatter"
+        
+    - name: "APLLOG"
+      type: "Log4r::FileOutputter"
+      level: "DEBUG"
+      filename: "log/development_apl.log"
+      trunc: "false"
+      formatter:
+        name: "P3"
+        type: "Log4r::AplicationFormatter"
+
+    - name: "APLERRLOG"
+      type: "Log4r::FileOutputter"
+      level: "ERROR"
+      filename: "log/development_aplerr.log"
+      trunc: "false"
+      formatter:
+        name: "P4"
+        type: "Log4r::AplicationFormatter"
+
+    - name: "RAILSLOG"
+      type: "Log4r::FileOutputter"
+      level: "DEBUG"
+      filename: "log/development_rails.log"
+      trunc: "false"
+      formatter:
+        name: "P3"
+        type: "Log4r::AplicationFormatter"
+
+    - name: "RAILSERR"
+      type: "Log4r::FileOutputter"
+      level: "ERROR"
+      filename: "log/development_rails_err.log"
+      trunc: "false"
+      formatter:
+        name: "P4"
+        type: "Log4r::AplicationFormatter"
+        

@@ -1,0 +1,338 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+
+# rake db:import:development
+
+
+#template1
+template_contents_1:
+    id : 1
+    player_id : 104332058
+    template_page_id : 1
+    width : 385
+    height : 280
+    x_pos : 24
+    y_pos : 10
+    contents_seq : 
+    
+template_contents_2:
+    id : 2
+    player_id : 104332058
+    template_page_id : 1
+    width : 385
+    height : 280
+    x_pos : 24
+    y_pos : 300
+    contents_seq : 
+    
+template_contents_3:
+    id : 3
+    player_id : 104332058
+    template_page_id : 1
+    width : 350
+    height : 474
+    x_pos : 427
+    y_pos : 10
+    contents_seq : 
+    
+template_contents_4:
+    id : 4
+    player_id : 104332053
+    template_page_id : 1
+    width : 350
+    height : 90
+    x_pos : 427
+    y_pos : 490
+    contents_seq : 
+ 
+#template2   
+template_contents_5:
+    id : 5
+    player_id : 104332052
+    template_page_id : 2
+    width : 320
+    height : 240
+    x_pos : 49
+    y_pos : 3
+    contents_seq : 
+    
+template_contents_6:
+    id : 6
+    player_id : 104332057
+    template_page_id : 2
+    width : 363
+    height : 336
+    x_pos : 29
+    y_pos : 249
+    contents_seq : 
+    
+template_contents_7:
+    id : 7
+    player_id : 104332052
+    template_page_id : 2
+    width : 320
+    height : 240
+    x_pos : 431
+    y_pos : 3
+    contents_seq : 
+    
+template_contents_8:
+    id : 8
+    player_id : 104332057
+    template_page_id : 2
+    width : 362
+    height : 336
+    x_pos : 410
+    y_pos : 249
+    contents_seq : 
+
+#template3   
+template_contents_9:
+    id : 9
+    player_id : 104332056
+    template_page_id : 3
+    width : 767
+    height : 83
+    x_pos : 15
+    y_pos : 10
+    contents_seq : 
+    
+template_contents_10:
+    id : 10
+    player_id : 104332056
+    template_page_id : 3
+    width : 399
+    height : 371
+    x_pos : 17
+    y_pos : 103
+    contents_seq : 
+    
+template_contents_11:
+    id : 11
+    player_id : 104332053
+    template_page_id : 3
+    width : 399
+    height : 96
+    x_pos : 17
+    y_pos : 486
+    contents_seq : 
+    
+template_contents_12:
+    id : 12
+    player_id : 104332055
+    template_page_id : 3
+    width : 352
+    height : 230
+    x_pos : 431
+    y_pos : 103
+    contents_seq : 
+    
+template_contents_13:
+    id : 13
+    player_id : 104332055
+    template_page_id : 3
+    width : 352
+    height : 230
+    x_pos : 431
+    y_pos : 351
+    contents_seq : 
+
+#template4    
+template_contents_14:
+    id : 14
+    player_id : 987777812
+    template_page_id : 4
+    width : 285
+    height : 288
+    x_pos : 16
+    y_pos : 8
+    contents_seq : 
+    
+template_contents_15:
+    id : 15
+    player_id : 104332056
+    template_page_id : 4
+    width : 459
+    height : 268
+    x_pos : 16
+    y_pos : 310
+    contents_seq : 
+    
+template_contents_16:
+    id : 16
+    player_id : 104332056
+    template_page_id : 4
+    width : 459
+    height : 288
+    x_pos : 318
+    y_pos : 8
+    contents_seq : 
+    
+template_contents_17:
+    id : 17
+    player_id : 987777812
+    template_page_id : 4
+    width : 287
+    height : 269
+    x_pos : 490
+    y_pos : 310
+    contents_seq : 
+
+#template5    
+template_contents_18:
+    id : 18
+    player_id : 104332055
+    template_page_id : 5
+    width : 432
+    height : 188
+    x_pos : 16
+    y_pos : 20
+    contents_seq : 
+    
+template_contents_19:
+    id : 19
+    player_id : 104332055
+    template_page_id : 5
+    width : 432
+    height : 188
+    x_pos : 16
+    y_pos : 216
+    contents_seq : 
+    
+template_contents_20:
+    id : 20
+    player_id : 104332055
+    template_page_id : 5
+    width : 432
+    height : 168
+    x_pos : 16
+    y_pos : 413
+    contents_seq : 
+    
+template_contents_21:
+    id : 21
+    player_id : 104332055
+    template_page_id : 5
+    width : 320
+    height : 240
+    x_pos : 464
+    y_pos : 20
+    contents_seq : 
+    
+template_contents_22:
+    id : 22
+    player_id : 104332056
+    template_page_id : 5
+    width : 320
+    height : 308
+    x_pos : 464
+    y_pos : 273
+    contents_seq : 
+    
+#template6
+template_contents_23:
+    id : 23
+    player_id : 987777813
+    template_page_id : 6
+    width : 429
+    height : 269
+    x_pos : 17
+    y_pos : 20
+    contents_seq : 
+    
+template_contents_24:
+    id : 24
+    player_id : 987777813
+    template_page_id : 6
+    width : 429
+    height : 269
+    x_pos : 17
+    y_pos : 306
+    contents_seq : 
+    
+template_contents_25:
+    id : 25
+    player_id : 104332053
+    template_page_id : 6
+    width : 322
+    height : 84
+    x_pos : 461
+    y_pos : 20
+    contents_seq : 
+    
+template_contents_26:
+    id : 26
+    player_id : 104332056
+    template_page_id : 6
+    width : 322
+    height : 452
+    x_pos : 461
+    y_pos : 113
+    contents_seq : 
+    
+#template7
+template_contents_27:
+    id : 27
+    player_id : 987777812
+    template_page_id : 7
+    width : 370
+    height : 180
+    x_pos : 19
+    y_pos : 8
+    contents_seq : 
+    
+template_contents_28:
+    id : 28
+    player_id : 987777812
+    template_page_id : 7
+    width : 370
+    height : 180
+    x_pos : 19
+    y_pos : 203
+    contents_seq : 
+    
+template_contents_29:
+    id : 29
+    player_id : 987777812
+    template_page_id : 7
+    width : 370
+    height : 180
+    x_pos : 19
+    y_pos : 398
+    contents_seq : 
+    
+template_contents_30:
+    id : 30
+    player_id : 987777812
+    template_page_id : 7
+    width : 370
+    height : 180
+    x_pos : 409
+    y_pos : 8
+    contents_seq : 
+    
+template_contents_31:
+    id : 31
+    player_id : 987777812
+    template_page_id : 7
+    width : 370
+    height : 180
+    x_pos : 409
+    y_pos : 203
+    contents_seq : 
+    
+template_contents_32:
+    id : 32
+    player_id : 987777812
+    template_page_id : 7
+    width : 370
+    height : 180
+    x_pos : 409
+    y_pos : 398
+    contents_seq : 
+    

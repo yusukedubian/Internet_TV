@@ -1,0 +1,96 @@
+<div id="Area">
+	<h1><%= image_tag("./welcome/icon/h1_search.gif")%><%= _("検索結果")%></h1>
+
+	<% if @channels.length == 0 %>
+		<%= _("検索条件に該当するチャンネルは見つかりませんでした。")%>
+	<% else %>
+	
+		<% i=0 %>
+		<% for channel in @channels %>
+			<%
+				page = channel.pages.find(:first, :order=>"page_no")
+				p page
+				if !page
+					next
+				end
+			%>
+			<!-- サムネイルここから -->
+			<h3><%=h channel.name %></h3>
+			<table>
+			<tr>
+			<td valign="top">
+			<% 
+                if channel.thumbnail_filename == nil
+                    thumbnail_path = "./welcome/icon/noimage.gif"
+                else
+	                thumbnail_path = "/"+RuntimeSystem.channel_save_dir(channel)+channel.thumbnail_filename
+                end
+                preview_url = root_path+RuntimeSystem.page_save_dir(page)+"preview.html"
+            %>
+            <%= link_to(image_tag(thumbnail_path, :width=>199, :height=>149), preview_url) %>
+			</td>
+			<td align="left" valign="top">
+			<table border bordercolor="#ffcc66">
+			<tr>
+			<td bgcolor="#ffff99" width="100px" align="center">
+			
+			<%= _("説明")%>
+			</td>
+			<td bgcolor="#ffffcc" width="600px" align="left">
+			<%=h channel.description %>
+			</tr>
+			<tr>
+			<td bgcolor="#ffff99" width="100px" align="center">
+			<%= _("ページ数")%>
+			</td>
+			<td bgcolor="#ffffcc" width="600px" align="left">
+			<%=h channel.pages.count %>
+			</td>
+			</tr>
+			<tr>
+			<td bgcolor="#ffff99" width="100px" align="center">
+			
+			<%= _("画面サイズ")%><%=_("px")%>
+			</td>
+			<td bgcolor="#ffffcc" width="600px" align="left">
+			<%=h channel.width %>×<%=h channel.height %>
+			</td>
+			</tr>
+			<tr>
+			<td bgcolor="#ffff99" width="100px" align="center">
+			<%= _("作成者")%>
+			</td>
+			<td bgcolor="#ffffcc" width="600px" align="left">
+			<%=h channel.user.user_name %>
+			</td>
+			</tr>
+			<tr>
+			<td bgcolor="#ffff99" width="100px" align="center">
+			<%= _("リンク先情報")%>
+			
+			</td>
+			<td bgcolor="#ffffcc" width="600px" align="left">
+			<%=h channel.link_info %>
+			</td>
+			</tr>
+			<tr>
+			<td bgcolor="#ffff99" width="100px" align="center">
+			<%= _("その他情報")%>
+			</td>
+			<td bgcolor="#ffffcc" width="600px" align="left">
+			<%=h channel.other_info %>
+			</td>
+			</tr>
+			</table>
+			</td>
+			</tr>
+			</table>
+			
+			<!-- サムネイルここまで -->
+			
+		<% end %>
+		<%= will_paginate @channels %>
+		<br>
+		<br>
+	<% end %>
+</div>

@@ -1,0 +1,46 @@
+<table>
+	<% i = 0 %>
+	<% @items.each do |item| -%>
+		<tr>
+			<td>
+				<%=  h item["name"] %>
+			</td>
+		</tr>
+		<tr>
+			<%- case item["type"] -%>
+			<%- when "text" -%>
+				<td>
+					<%= yaml_db_form_text_field_tag "yaml_db_forms[#{i}]", item, @form_data[i.to_s] %>
+				</td>
+			<%- when "textarea" -%>	
+				<td>
+					<%= yaml_db_form_text_area_tag "yaml_db_forms[#{i}]", item, @form_data[i.to_s] %>
+				</td>
+			<%- when "check" -%>
+				<td>
+					<%= yaml_db_form_check_box_tag "yaml_db_forms[#{i}]", item, @form_data[i.to_s] %>
+				</td>
+			<%- when "list" -%>
+				<td>
+					<%= yaml_db_form_select_tag "yaml_db_forms[#{i}]", item, @form_data[i.to_s] %>
+				</td>
+			<%- when "radio" -%>
+				<td>
+					<%= yaml_db_form_radio_button_tag "yaml_db_forms[#{i}]", item, @form_data[i.to_s] %>
+				</td>
+			<%- end -%>
+		</tr>					
+		<% i += 1 %>	
+	<% end -%>
+</table><br>
+
+<table>				
+	<tr>
+		<td>
+			<%= submit_tag @form_button %>
+		<% if @create_yaml_form_user_flag %>
+			<a href="javascript:history.back();"><%="戻る"%></a>
+		<% end %>
+		</td>
+	</tr>
+</table>

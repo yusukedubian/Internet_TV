@@ -1,0 +1,42 @@
+<table>
+	<tr>
+		<td>
+			<%= _("To:") %>
+		</td>
+		<td>
+			<%= text_field_tag "mail_info[to]",
+								@mailinfo["to"],
+								{:maxlength => "2000", :style => "width:500px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= _("Cc:") %>
+		</td>
+		<td>
+			<%= text_field_tag "mail_info[cc]",
+								@mailinfo["cc"],
+								{:maxlength => "2000", :style => "width:500px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= _("Bcc:") %>
+		</td>
+		<td>
+			<%= text_field_tag "mail_info[bcc]",
+								@mailinfo["bcc"],
+								{:maxlength => "2000", :style => "width:500px;"} %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= _("件名:") %>
+		</td>
+		<td>
+			<%= text_field_tag "mail_info[subject]",
+								@mailinfo["subject"],
+								{:maxlength => "2000", :style => "width:500px;"} %>
+		</td>
+	</tr>
+</table><br>

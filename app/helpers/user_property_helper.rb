@@ -1,0 +1,2 @@
+module UserPropertyHelper
+end

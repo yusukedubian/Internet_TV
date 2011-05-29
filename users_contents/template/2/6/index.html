@@ -1,0 +1,83 @@
+<body style='margin:0px;'>
+<script type='text/javascript' src='../../../../../../javascripts/jquery-1.2.6.pack.js'></script>
+<table style='width:100%; height:100%;' cellspacing='0' cellpadding='0'>
+  <tr>
+    <td height='100%' valign='middle'>
+<marquee height='100%'Direction='up'scrolldelay = '50 scrollamount='2' >
+<div id='yamlmail'></div>
+</marquee>
+<script type='text/javascript'>
+var temp='';
+loadXML = function(fileRoute)
+{
+  xmlDoc=null;
+  if (window.ActiveXObject)
+  {
+    xmlDoc = new ActiveXObject('Msxml2.DOMDocument');
+    xmlDoc.async=false;
+    xmlDoc.load(fileRoute);
+  }
+  else if (document.implementation && document.implementation.createDocument)
+  {
+    var xmlhttp = new window.XMLHttpRequest();
+    xmlhttp.open('GET',fileRoute,false);
+    xmlhttp.send(null);
+    var xmlDoc = xmlhttp.responseXML.documentElement;
+  }
+  else
+  {
+    xmlDoc=null;
+  }  
+  return xmlDoc;
+}
+</script>
+<script type='text/javascript'> 
+var title='';
+var description='';
+var yamlmail='';
+var xmlDoc=loadXML('15.xml');
+var cNodes = xmlDoc.getElementsByTagName("item");
+for(j=0;j<cNodes.length;j++)
+{
+   title = cNodes[j].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+   description = cNodes[j].getElementsByTagName("content:encoded")[0].childNodes[0].nodeValue;
+   yamlmail += '<font '; 
+   yamlmail += 'color="#ffffff"'; 
+   yamlmail += 'style="font-size:20px;">&nbsp;&nbsp;'; 
+   yamlmail += "<b>●&nbsp;"+title+'</b>';  
+   yamlmail += '<br>'; 
+   yamlmail += '&nbsp;&nbsp;'+description; 
+   yamlmail += '</font>'; 
+   yamlmail += '<br><br>'; 
+}
+$("document").ready(function(){
+   $('#yamlmail').html(yamlmail);
+});
+setInterval('update()', 60000);
+function update(){
+var title='';
+var description='';
+var yamlmail='';
+var xmlDoc=loadXML('15.xml');
+var cNodes = xmlDoc.getElementsByTagName("item");
+for(j=0;j<cNodes.length;j++)
+{
+   title = cNodes[j].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+   description = cNodes[j].getElementsByTagName("content:encoded")[0].childNodes[0].nodeValue;
+   yamlmail += '<font '; 
+   yamlmail += 'color="#ffffff"'; 
+   yamlmail += 'style="font-size:20px;">&nbsp;&nbsp;'; 
+   yamlmail += "<b>●&nbsp;"+title+'</b>';  
+   yamlmail += '<br>'; 
+   yamlmail += '&nbsp;&nbsp;'+description; 
+   yamlmail += '</font>'; 
+   yamlmail += '<br><br>'; 
+}
+$('#yamlmail').empty();
+$('#yamlmail').html(yamlmail);
+}
+</script>
+    </td>
+  <tr>
+</table>
+</body>

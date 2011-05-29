@@ -1,0 +1,46 @@
+<div class="account" style="width:400px;padding-left:10px;">
+	<table>
+		<tr>
+			<td align="left"><%= image_tag("./imagefile/point.png")%><%= "&nbsp;" %><%= _("説明") %></td>
+		</tr>			
+	</table>
+	<table frame="void" rules="none">
+		<tr>
+			<td>
+				<table frame="border" rules="all" bordercolor="#cccccc" width="600px">
+					<tr>
+						<td align="center" width="110px">
+							<%= _("ニックネーム") %><br>
+						</td>
+						<td align="left"><%= _("チャンネル公開時に使用される名前です。")%><br><%=_("登録後の変更ができます。") %></td>
+					</tr>
+					<tr>
+						<td align="center" ><%= _("ログインID") %></td>
+						<td align="left"><%= _("ログイン時に使用するIDです。<br/>登録後の変更はできません。") %></td>
+					</tr>
+					<tr>
+						<td align="center" ><%= _("メールアドレス") %></td>
+						<td align="left">
+							<%= _("[VASDAQ.TV]からのお知らせを受けとるためのメールアドレスです。<br/>") %>
+							<%= _("また、YAMLメールの送信時の送り元として使われるメールアドレスです。<br/>") %>
+							<%= _("登録後の変更ができます。") %>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" ><%= _("パスワード") %></td>
+						<td align="left">
+							<%= _("ログイン時に使用するパスワードです。<br/>") %>
+							<%= _("登録後の変更ができます。") %>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" "><%= _("パスワード再入力") %></td>
+						<td align="left">
+							<%= _("確認のためもう一度パスワードを入力してください。") %>
+						</td>
+					</tr>																				
+				</table>
+			</td>
+		</tr>
+	</table>				
+</div>

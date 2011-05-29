@@ -1,0 +1,82 @@
+<div id="Area">
+<h1><%= image_tag("./welcome/icon/h1_mospeng.gif")%><%= _("リアルタイムWebウィジェット")%></h1>
+<ul>
+<li class="disc">
+<%= _("VASDAQ.TVでは、リアルタイムに情報を発信し続けるタイプのリアルタイムWebウィジェットと、その開発環境を提供しています。")%>
+</li>
+</ul>
+<br>
+
+<!-- 文章ここから -->
+<h3><%= _("リアルタイムWebウィジェットサンプル")%></h3>
+<div style="text-align:right; font-size:11px;"><%="※下記アイコンをクリックすると設定画面を表示します。"%></div>
+<div style="height:90px;">
+	<a href='../player/qaPlayer/QAPlayer/index.html'>
+		<img alt="test" title="Q&Aウィジェット設定画面へ" src='../images/players/q&a.png' />
+		<div class="icon_name" style="width:45px; text-align:center;"><%="Q&A"%></div>
+	</a>
+</div>
+<%="Q&Aウィジェットは、クイズやなぞなぞ、Q&Aなどを、質問と回答を自動で表示し続けるリアルタイムWebウィジェットです。"%><br>
+<%="質問と回答を登録する事が可能です。　作成者 VASDAQホールディングス"%><br>
+
+<br>
+
+<h3><%= _(" リアルタイムWebウィジェットについて")%></h3>
+<%="VASDAQ.TVが提唱する「リアルタイムWebウィジェット(以下RTWW)」は、従来のブログパーツやiGoogleなどと違い、リアルタイムに情報を発信し続ける次世代型Webウィジェット(ガジェット)の総称です。"%><br>
+<%="VASDAQ.TVでは、RTWW開発を促進するため、RTWW開発環境をクラウド形式で、提供しています。"%><br>
+<%="RTWWには、堅牢で高速なサーバと信頼出来る開発環境が必要です。"%><br>
+<%="VASDAQ.TVのRTWW開発環境は、HTML5に完全対応し、双方向通信を実現するWebSocketや、サーバサイドスクリプト環境であるNode.js、ドキュメント型NoSQLデータベースのCouchDB等をご利用になれます。"%><br>
+<%="RTWW開発をVASDAQ.TVクラウド上で行いたい方は、VASDAQ.TVのアカウントを作成し、下記までお問い合わせください。法人様向け有料サービス以外に、無料で開発出来るメニューも用意しています。問い合わせ承認後リアリタイムWeb開発に必要な情報をお知らせします。"%><br>
+<%="<a href='http://www.vasdaq.tv/yaml_db_forms/input/100005'>お問い合わせ</a>"%><br>
+<%="今後、業界の動向を見据え、W3Cのウィジェット標準規格やCommonJSに準拠した開発環境、ApacheWookie等をリリースしていく予定ですのでご期待下さい。"%><br>
+<br>
+
+<h3><%= _("WebSocketとは？")%></h3>
+<%="HTML5の一規格として提唱されたWebSocketは、HTTPによるサーバ、クライアント間の常時接続(永続セッション)と双方向通信を実現します。"%><br>
+<%="従来のAjax方式、Comet方式よりも遅延なく、サーバ、クライアントの負荷も軽くなります。"%><br>
+<%="リアルタイムWebでは２４時間サーバの情報を素早くリアルタイムにクライアントに送信する為にもこの規格は重要です。（WebSocketにはNode.jsのSocket.ioライブラリを提供しています）"%><br>
+<br>
+
+<h3><%= _("Node.jsとは？")%></h3>
+<%= _("サーバサイドJavaScript環境(JavaScriptでサーバ側開発が出来る事)で、GoogleV8 JavaScriptエンジンを元に開発されています。")%><br>
+<%= _("マルチスレッドの代わりにイベントループ方式を用い、最速で効率的な非同期処理を実現させています。")%><br>
+<%= _("Node.jsは、リアルタイムWebでのサーバへの負荷を減らし、JavaScriptでクライアント／サーバ双方の統一開発環境を実現します。")%><br>
+<br>
+
+<h3><%= _(" Apache CouchDBとは？")%></h3>
+<%="CouchDBは、ドキュメント指向データベースで、NoSQLデータベースに分類され、様々な形式のドキュメントを柔軟に扱う事が出来るデータベースです。"%><br>
+<%="データへのアクセスにはRESTful HTTPが用いられ、JavaScriptを主要インターフェース言語としてMapReduce等を実現しています。"%><br>
+<%="また、データ交換にはJSONが用いられ、VASDAQ.TVが提供するYAMLデータベースとも相性が抜群です。(YAMLはJSONのスーパーセットです)"%><br>
+<br>
+
+<h3><%= _("その他の提供ライブラリ")%></h3>
+<%="Express、EJS、Socket.io、Node-oauth、Node-mysql、Node-couchdb、jsdom等"%><br>
+<br>
+
+<h3><%= _("関連リンク")%></h3>
+<ul>
+	<li class="disc"><a href='http://www.ibm.com/developerworks/jp/web/library/wa-w3cwidget/index.html'><%="W3Cウィジェットの構成とパッケージ化"%></a></li>
+	<li class="disc"><a href='http://nodejs.jp/'><%="node.js日本ユーザグループ"%></a></li>
+	<li class="disc"><a href='http://ja.wikipedia.org/wiki/WebSocket'><%="WebSocket wiki"%></a></li>
+	<li class="disc"><a href='http://wiki.apache.org/couchdb/フロントページ'><%="Couchdb Wiki"%></a></li>
+</ul>
+<br>
+<br>
+
+<h3><%= _("その他のウィジェットリンク")%></h3>
+<ul>
+	<li class="disc"><a href='http://www.google.com/ig/directory?hl=ja&synd=open'><%="Googleウェブガジェット"%></a></li>
+	<li class="disc"><a href='http://www.floq.jp/'><%="FLO:Q"%></a></li>
+	<li class="disc"><a href='http://www.blog-parts.com/'><%="ブログパーツドットコム"%></a></li>
+	<li class="disc"><a href='http://www.widgetbox.com/'><%="WidgetBox"%></a></li>
+	<li class="disc"><a href='http://www.netvibes.com/ja-jp'><%="Netvibes"%></a></li>
+</ul>
+<br>
+
+<br>
+
+<!-- 文章ここまで -->
+
+</div>
+
+

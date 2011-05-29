@@ -1,0 +1,23 @@
+<% option = @name + "_list_option" %>
+<table>
+	<tr>
+		<td align='center'>
+			<%= _("リストの数") %>
+		</td>
+		<td>
+			<%= yaml_db_form_num_select_tag "yaml_db_form[#{@name}_count]",
+											ConstYamlDbForm::LIST_COUNT_MIN,
+											ConstYamlDbForm::LIST_COUNT_MAX,
+											@yaml_db_forms["#{@name}_count"] %>
+											
+			<%= observe_field "yaml_db_form[#{@name}_count]",
+								:update=>option,
+								:url=>{:action=>"list_option_update"},
+								:submit=>"#{@name}" %>
+		</td>
+	</tr>
+</table>	
+	
+<div id="<%= option %>">
+	<%= render :partial => 'list_option_update' %>
+</div>

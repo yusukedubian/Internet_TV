@@ -1,0 +1,29 @@
+<%- case @yaml_db_forms["#{@validate}_validate"] -%>
+<%- when "range" -%>
+	<%= _("最小値") %>
+	<font color=red>*</font>
+	<%= text_field_tag "yaml_db_form[#{@validate}_min]",
+						@yaml_db_forms["#{@validate}_min"],
+						{:maxlength => ConstYamlDbForm::RANGE_MIN.to_s.length, :style => "width:100px;"} %>
+						
+	<%= _("最大値") %>
+	<font color=red>*</font>
+	<%= text_field_tag "yaml_db_form[#{@validate}_max]",
+						@yaml_db_forms["#{@validate}_max"],
+						{:maxlength => ConstYamlDbForm::RANGE_MAX.to_s.length, :style => "width:100px;"} %>
+
+<%- when "prohibit" -%>
+	<%= _("禁止文字") %>
+	<font color=red>*</font>
+	<%= text_field_tag "yaml_db_form[#{@validate}_prohibit]",
+						@yaml_db_forms["#{@validate}_prohibit"],
+						{:maxlength => ConstYamlDbForm::PROHIBIT_MAX, :style => "width:200px;"} %>
+<%- end -%>
+
+
+
+
+
+
+
+
