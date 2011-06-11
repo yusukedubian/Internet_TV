@@ -124,7 +124,7 @@ class ContentsController < ApplicationController
         conattributes.each{|conseq|
           conseq.contents_seq = @page.contents.length
           conseq.save
-        }
+         }
       else
         content = @page.contents.find(params[:id])
         content = set_content(content,params)
@@ -422,6 +422,123 @@ class ContentsController < ApplicationController
     aplog.debug("END   #{CLASS_NAME}#contentseq")
   end
   
+  def player_copy
+    contents = Content.find(params[:id])
+    contents_propertiess = contents.contents_propertiess.find(:all)
+    
+    player = Player.find(contents.player_id)
+    html = ""
+    html <<  "current copy : #{player.name.to_s}"
+=begin
+    html <<  "  <div class='copy_deteal'>"
+    html <<  "      <span onclick='copy_deteal_onoff(\"block\")'>詳細</span>"
+    html <<  "      <div id='deteal_player'>"
+    html <<  "        <span class='link_copy' onclick='copy_deteal_onoff(\"none\")'>close</span><br/>"
+    html <<  "        <span class='title_copy'>width</span>"
+    html <<  "        <input class='copy_data' disabled='disabled' maxlength='3' type='text' value='345' />" 
+    html <<  "        <span class='title_copy'>height</span>" 
+    html <<  "        <input class='copy_data' disabled='disabled' maxlength='3' type='text' value='509' />" 
+    html <<  "      </div>" 
+    html <<  "  </div>"
+=end
+    html <<  "  <div style='text-align:right;'>" 
+    html <<  "    <a href='/channels/#{params[:channel_id]}/pages/#{params[:page_id]}/contents/#{contents.player_id}/player_paste'>Paste</a>" 
+    html <<  "    </div><div align='right' id='lists_save' style='display:none;'>"           
+    html <<  "    <input type='hidden' name='li_name'  id='list_items' >" 
+    html <<  "    <input name='commit' type='submit' value='プレーヤの順番を保存' />" 
+    html <<  "  </div> "
+     
+    content_copy = @page.channel.copy_contents.find_by_id(params[:channel_id])
+    content_copy.page_no = @page.page_no
+    content_copy.player_id = contents.player_id
+    content_copy.width = contents.width
+    content_copy.height = contents.height
+    content_copy.line_width = contents.line_width
+    content_copy.line_color = contents.line_color
+    content_copy.line_type = contents.line_type
+    
+    content_copy.save
+    
+    #test 複数コピーがある状態で下指定の1レコードのみ取れるか
+    if copy_property = CopyContentsProperties.find(:all,:conditions=>["copy_content_id=?",content_copy.id])
+      CopyContentsProperties.destroy(copy_property)
+    end
+    
+    contents_propertiess.each{|content_property|
+      conf = CopyContentsProperties.new
+      conf.copy_content_id = content_copy.id
+      conf.property_key = content_property.property_key
+      conf.property_value = content_property.property_value
+      @page.channel.copy_contents.find(content_copy.id).copy_contents_propertiess << conf
+      current_user.save!
+    }
+    
+    path = RuntimeSystem.content_save_dir(contents)
+    send_path = RuntimeSystem.channel_save_dir(@page.channel)+"copy_receive/"
+    zip_path = send_path + "copy.zip"
+    #zip
+    ArchiveUtil::ZipUtil.zip_file(zip_path,path)
+    
+    #unzip
+    ArchiveUtil::ZipUtil.unzip_file(send_path+"copy.zip", send_path)
+    
+    rename_path = send_path+"copy_content"
+    send_path+contents.id.to_s
+    File::rename(send_path.to_s+contents.id.to_s,rename_path)
+    #send_file(zip_path)
+    
+    
+    
+    render :text => html
+    #redirect_to edit_channel_page_path(params[:channel_id],params[:page_id])
+  end
+  
+  def player_paste
+    # make content
+    content = Content.new(:player_id=>params[:id])
+    copy_params = CopyContent.find(params[:channel_id])
+
+    content = set_copy_content(content,copy_params)
+    @page.contents << content
+    contents_id = content.id
+    conattributes = @page.contents.find(:all,:conditions=>["id=?",contents_id])
+    conattributes.each{|conseq|
+      conseq.contents_seq = @page.contents.length
+      conseq.save
+     }
+     
+     # make content_property
+     content_properties = ContentsProperties.new(:content_id=>contents_id)
+     copy_properties_params = CopyContentsProperties.find(:all,:conditions=>["copy_content_id=?",copy_params.id])
+     
+     save_copy_properties_content(content_properties.content_id,copy_properties_params)
+     
+     content = @page.contents.find(contents_id)
+     @page.contents.find(:all,:conditions=>["id=?",contents_id])
+     path = RuntimeSystem.channel_save_dir(@page.channel)+"copy_receive/copy_content/"
+     zip_path= RuntimeSystem.channel_save_dir(@page.channel)+"zipsave/test.zip"
+     #zip
+     ArchiveUtil::ZipUtil.zip_file(zip_path,path)
+
+     #zipfileをコピーして移動する
+     recieve_path = RuntimeSystem.copy_content_save_dir(content)
+     send_path = recieve_path+"copy.zip"
+     
+     open(zip_path){|input|
+       open(send_path, "w"){|output|
+        output.write(input.read)
+        }
+      }
+     
+     #unzip
+     ArchiveUtil::ZipUtil.unzip_file(send_path, recieve_path)
+     
+     #directry change name
+     File::rename(recieve_path+"copy_content",recieve_path+content.id.to_s)
+     
+     redirect_to edit_channel_page_path(params[:channel_id],params[:page_id])
+  end
+
   private
   def find_pages
     aplog.debug("START #{CLASS_NAME}#find_pages")
@@ -443,5 +560,26 @@ class ContentsController < ApplicationController
       content[:line_color] = params["contents"]["line_color"]
       content[:line_type] = params["contents"]["line_type"]
       return content
+  end
+  
+  def set_copy_content(content,params)
+    content[:width] = params.width
+    content[:height] = params.height
+    content[:x_pos] = 5
+    content[:y_pos] = 5
+    content[:line_width] = params.line_width
+    content[:line_color] = params.line_color
+    content[:line_type] = params.line_type
+    return content
+  end
+  
+  def save_copy_properties_content(content_id,params)
+    params.each{|param|
+        conf = ContentsProperties.new(:content_id=>content_id)
+        conf[:property_key] = param.property_key
+        conf[:property_value]= param.property_value
+        conf.save
+     }
+     return
   end
 end

@@ -625,7 +625,37 @@ div.play_page a{
 #ul_list .handle:hover{background:url(../images/imagefile/arrow.png) no-repeat;}
 #ul_list .player_name{float:left; width:115px; overflow:hidden;}
 #ul_list .player_del{float:right;}
+#ul_list .player_copy{float:right; cursor: pointer;}
 #ul_list .space{margin:0 0 2px 2px;}
+.copy_deteal{
+	cursor:pointer;
+	position:relative;
+}
+#deteal_player{
+	position:absolute;
+	width:150px;
+	height:45px;
+	display:none;
+	background:#FFFFFF;
+	border:1px solid #d5d9dd;
+	z-index:33;
+	color:black;
+}
+.link_copy{color:#003cff;}
+.title_copy{font-size:10px;}
+
+#current_copy{
+	display:none;
+	height:78px;
+	padding:5px;
+	border:1px solid #ccc;
+}
+.copy_data{
+	width:30px;
+	background-color: #eff0f0;
+	border-style:none;
+	text-align:right;
+}
 
 /*Select Player*/
 .player_icon_list{

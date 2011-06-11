@@ -52,6 +52,15 @@ module RuntimeSystem
     content_id = content.id.to_s
     return "users_contents/" << divkey << "/" << uid << "/" << channel_no << "/" << page_no << "/" << content_id << "/"
   end
+  
+  def self.copy_content_save_dir(content)
+    uid = content.page.channel.user.id.to_s
+    divkey = (uid.to_i/300).to_s
+    channel_no = content.page.channel.channel_no.to_s
+    page_no = content.page.page_no.to_s
+    content_id = content.id.to_s
+    return "users_contents/" << divkey << "/" << uid << "/" << channel_no << "/" << page_no << "/"
+  end
 
   def self.page_save_dir(page)
     uid = page.channel.user.id.to_s

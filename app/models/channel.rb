@@ -9,7 +9,7 @@ class Channel < ActiveRecord::Base
   belongs_to :channels_type
   has_many :pages, :dependent => :destroy
   has_many :mypages, :dependent => :destroy
-
+  has_many :copy_contents, :dependent => :destroy
   
   def before_save
     aplog.debug("START #{CLASS_NAME}#before_save")

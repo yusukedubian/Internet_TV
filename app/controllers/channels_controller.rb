@@ -42,6 +42,16 @@ class ChannelsController < ApplicationController
           page.background_display_type = "0"
         end
         page.save
+         
+        #make playercopy record
+        copy_record = CopyContent.new(:channel_id=>channel.id)
+        channel.copy_contents << copy_record
+        copy_record.save
+        
+        #make copy folder
+        user_contents_path = RuntimeSystem.channel_save_dir(channel)
+        FileUtils.mkdir_p(user_contents_path+"copy_receive")
+        FileUtils.mkdir_p(user_contents_path+"zipsave")
         
         redirect_to edit_channel_page_path(channel.id,  page)
       else

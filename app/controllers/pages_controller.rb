@@ -61,6 +61,10 @@ class PagesController < ApplicationController
         @players = Player.find(:all, :order => "player_no asc")
       else
         @pages = @channel.pages
+        @content_copy = @channel.copy_contents.find_by_id(@channel.id)
+        if !@content_copy.player_id.blank?
+          @copy_properties = @content_copy.copy_contents_propertiess
+        end
         if !@pages.blank?
           @page = @pages.find(params[:id])
         else
@@ -641,8 +645,10 @@ class PagesController < ApplicationController
     list_html << "<li id='"+content.id.to_s+"'>\n"
     list_html << "   <span class='handle'>NO,"+i.to_s+" - </span>\n"
     
+    list_html << "   <span class='player_copy'><img alt='copy' title='copy' src='/images/./imagefile/copy.png' onclick='copyplayer("+channel_id.to_s+","+page_id.to_s+","+content.id.to_s+")' /></span>"
+    
     list_html << "   <span class='player_del'>
-                  <a href='/channels/"+channel_id.to_s+"/pages/"+page_id.to_s+"/contents/"+content.id.to_s+"/contentdelete' onclick='gard_player_delete()'>削除</a>
+                  <a href='/channels/"+channel_id.to_s+"/pages/"+page_id.to_s+"/contents/"+content.id.to_s+"/contentdelete' onclick='gard_player_delete()'><img alt='delete' src='/images/./imagefile/blue_delete.png' /></a>
                 </span>\n"
     list_html << "   <span class='space'></span>\n"
     list_html << "   <div class='player_name'>

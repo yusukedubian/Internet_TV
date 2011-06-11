@@ -132,7 +132,7 @@
 			%>
 			<table frame="border" rules="all" style="margin-bottom:5px;" bordercolor="#cccccc">
 				<tr><td>
-					<%list_height = iframeheight-33%>
+					<%list_height = iframeheight-85%>
 					<% form_tag(contentseq_channel_page_content_path(params[:channel_id],id)) do -%>
 					<div id="player_list" style="height:<%=list_height%>px;">
 						<span id="on_player_list">
@@ -156,7 +156,9 @@
 								<%@contents.each{|content|%>
 								<li id="<%=content.id%>"> 
 							     	 <span class="handle">NO,<%=i.to_s%><%=" - "%></span>
-									 <span class="player_del"><%= link_to(_("削除"), contentdelete_channel_page_content_path(params[:channel_id],params[:id],content.id),:onclick=>"gard_player_delete()")%></span>
+									 <!--<span class="player_copy"><%= link_to(image_tag("./imagefile/copy.png",:alt=>"copy",:title=>"copy"), player_copy_channel_page_content_path(params[:channel_id],params[:id],content.id))%></span>-->
+									 <span class="player_copy"><%= image_tag("./imagefile/copy.png",:alt=>"copy",:title=>"copy",:onclick=>"copyplayer("+params[:channel_id].to_s+","+params[:id].to_s+","+content.id.to_s+");")%></span>
+									 <span class="player_del"><%= link_to(image_tag("./imagefile/blue_delete.png",:alt=>"delete"), contentdelete_channel_page_content_path(params[:channel_id],params[:id],content.id),:title=>"delete",:onclick=>"gard_player_delete()")%></span>
 									 <span class="space"></span>
 									 <div class="player_name"><%= link_to(content.player.name, edit_channel_page_content_path(@channel,id,content.id))%></div>
 								 </li>
@@ -165,10 +167,43 @@
 							</ul>
 						</div>
 					</div>
-					<div style="position:relative; height:33px;">
-						<div align="right" id="lists_save" style="position:absolute;bottom:5px;right:5px;display:none;">						
-							<input type="hidden" name="li_name"  id="list_items" >
-							<%= submit_tag( _("プレーヤの順番を保存")) %>
+					<div style="height:85px;">
+						<div id="current_copy">
+							<%=_("current copy : ")%>
+							<%if !@content_copy.player_id.blank?%>
+							<%player_id = @content_copy.player_id
+								@players.each{|player|
+									if player.id == player_id
+										@current_player = player.name
+									end 
+								}
+							%>
+								<%=@current_player.to_s%>
+							<!--
+							<div class="copy_deteal">
+								<span class="link_copy" onclick="copy_deteal_onoff('block')"><%=_("詳細")%></span>
+								<div id="deteal_player">
+									<span class="link_copy" onclick="copy_deteal_onoff('none')"><%=_("close")%></span><br/>
+									<span class="title_copy"><%=_("width")%></span>
+									<%= text_field_tag("","",:class=>"copy_data",:value=>@content_copy.width,:maxlength=>"3",:disabled=>"true")%>
+									<span class="title_copy"><%=_("height")%></span>
+									<%= text_field_tag("","",:class=>"copy_data",:value=>@content_copy.height,:maxlength=>"3",:disabled=>"true")%>
+									<br/>
+									<span class="title_copy"><%=_("from")%></span>
+									<%=_("Page ")%><%=@content_copy.page_no.to_s%>
+								</div>
+							</div>
+							-->
+							<div style="text-align:right;">
+								<%= link_to(_("Paste"), player_paste_channel_page_content_path(@channel,id,@content_copy.player_id))%>
+							</div>
+							<%else%>
+								<%=_("no-data")%>
+							<%end%>
+							<div align="right" id="lists_save" style="display:none;">						
+								<input type="hidden" name="li_name"  id="list_items" >
+								<%= submit_tag( _("プレーヤの順番を保存")) %>
+							</div>
 						</div>
 					</div>
 					<%end%>
@@ -190,7 +225,7 @@
 			end
 			iframeheight = @channel.height+70
 			%>
-			<%list_height = iframeheight-33%>
+			<%list_height = iframeheight-85%>
 			<table frame="border" rules="all" style="margin-bottom:5px;" bordercolor="#cccccc">
 				<tr><td>
 					<% form_tag(contentseq_channel_page_content_path(params[:channel_id],id)) do -%>
@@ -215,10 +250,39 @@
 							</ul>
 						</div>
 					</div>
-					<div style="position:relative; height:33px;">
-						<div align="right" id="lists_save" style="position:absolute;bottom:5px;display:none;">						
-							<input type="hidden" name="li_name"  id="list_items" >
-							<%= submit_tag( _("プレーヤの順番を保存")) %>
+					<div style="height:85px;">
+						<div id="current_copy">
+							<%=_("current copy : ")%>
+							<%if !@content_copy.player_id.blank?%>
+							<%player_id = @content_copy.player_id
+								@players.each{|player|
+									if player.id == player_id
+										@current_player = player.name
+									end 
+								}
+							%>
+								<%=@current_player.to_s%>
+							<br/>
+							<div class="copy_deteal">
+								<span onclick="copy_deteal_onoff('block')"><%=_("詳細")%></span>
+								<div id="deteal_player">
+									<p onclick="copy_deteal_onoff('none')"><%=_("close")%></p>
+									<span><%=_("width")%></span>
+									<%= text_field_tag("","",:class=>"copy_data",:value=>@content_copy.width,:maxlength=>"3",:disabled=>"true")%>
+									<span><%=_("height")%></span>
+									<%= text_field_tag("","",:class=>"copy_data",:value=>@content_copy.height,:maxlength=>"3",:disabled=>"true")%>
+								</div>
+							</div>
+							<div style="text-align:right; float:left;">
+								<%= link_to(_("Paste"), player_paste_channel_page_content_path(@channel,id,@content_copy.player_id))%>
+							</div>
+							<%else%>
+								<%=_("no-data")%>
+							<%end%>
+							<div align="right" id="lists_save" style="display:none;">						
+								<input type="hidden" name="li_name"  id="list_items" >
+								<%= submit_tag( _("プレーヤの順番を保存")) %>
+							</div>
 						</div>
 					</div>
 					<%end%>
