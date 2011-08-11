@@ -185,9 +185,9 @@ function player_size(id,width,height,playerid,x_pos,y_pos){
 }
 
 function dragposition(id,width,height,playerid,x_pos,y_pos) {
-	y = document.getElementById(id + 'y').value;
-	x = document.getElementById(id + 'x').value;
-	h = document.getElementById(id + 'height').value;
+	y = document.getElementById(playerid + 'y').value;
+	x = document.getElementById(playerid + 'x').value;
+	h = document.getElementById(playerid + 'height').value;
 	document.getElementById('yoko').style.pixelTop = y;
 	document.getElementById('yoko').style.width = document.body.clientWidth;
 	document.getElementById('yoko_u').style.pixelTop = parseInt(y) + parseInt(h);
