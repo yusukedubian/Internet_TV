@@ -185,6 +185,19 @@ function player_size(id,width,height,playerid,x_pos,y_pos){
 }
 
 function dragposition(id,width,height,playerid,x_pos,y_pos) {
+	y = document.getElementById(id + 'y').value;
+	x = document.getElementById(id + 'x').value;
+	h = document.getElementById(id + 'height').value;
+	document.getElementById('yoko').style.pixelTop = y;
+	document.getElementById('yoko').style.width = document.body.clientWidth;
+	document.getElementById('yoko_u').style.pixelTop = parseInt(y) + parseInt(h);
+	document.getElementById('yoko_u').style.width = document.body.clientWidth;
+	document.getElementById('tate').style.pixelLeft = x;
+	document.getElementById('tate').style.height = document.body.clientHeight;
+	
+	document.getElementById('mouse_down_flg').value = "run";
+	document.getElementById('fst_line_pos_y').value = event.y;
+	document.getElementById('fst_line_pos_x').value = event.x;
 	var length = document.getElementById("content_length").value;
 	for(i=1; i<=length; i=i+1){
 		if (i==id){
@@ -591,4 +604,39 @@ function submitflag(str){
 
 function copy_deteal_onoff(str){
 	document.getElementById('deteal_player').style.display=str;
+}
+
+function drawline(corrent_id){
+	var line_flg = document.getElementById('mouse_down_flg').value;
+	if (line_flg == "run") {
+		document.getElementById('line_pos').value = event.y
+		line_pos_y = event.y;
+		line_pos_x = event.x;
+		fst_pos_y = document.getElementById('fst_line_pos_y').value;
+		fst_pos_x = document.getElementById('fst_line_pos_x').value;
+		differ_y = parseInt(line_pos_y) - parseInt(fst_pos_y);
+		differ_x = parseInt(line_pos_x) - parseInt(fst_pos_x);
+		y = parseInt(document.getElementById(corrent_id + 'y').value) + parseInt(differ_y);
+		x = parseInt(document.getElementById(corrent_id + 'x').value) + parseInt(differ_x);
+		h = document.getElementById(corrent_id + 'height').value;
+		document.getElementById('yoko').style.pixelTop = y;
+		document.getElementById('yoko').style.width = document.body.clientWidth;
+		document.getElementById('yoko_u').style.pixelTop = parseInt(y) + parseInt(h);
+		document.getElementById('yoko_u').style.width = document.body.clientWidth;
+		document.getElementById('tate').style.pixelLeft = x;
+		document.getElementById('tate').style.height = document.body.clientHeight;
+		/*
+		document.getElementById('yoko').style.pixelTop = event.y;
+		document.getElementById('yoko').style.width = document.body.clientWidth;
+		document.getElementById('tate').style.pixelLeft = event.x;
+		document.getElementById('tate').style.height = document.body.clientHeight;
+		*/
+	}
+}
+
+function line_flg_com(){
+	document.getElementById('mouse_down_flg').value = "stop";
+	document.getElementById('yoko').style.width = 1;
+	document.getElementById('yoko_u').style.width = 1;
+	document.getElementById('tate').style.height = 1;
 }

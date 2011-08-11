@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -30,6 +29,13 @@ if @page.contents.length != 0
 	<table id="test" width="<%=layoutwidth.to_s%>px" height="<%=@channel.height+70%>" cellpadding="0" cellspacing="0">
 		<tr>
 			<td>
+				<input type="hidden" id="fst_line_pos_y" value="" />
+				<input type="hidden" id="fst_line_pos_x" value="" />
+				<input type="hidden" id="line_pos" value="" />
+				<input type="hidden" id="mouse_down_flg" value="stop" />
+				<img src="../../../../images/imagefile/line.png" id="yoko" name="line_y" style="position:absolute; width:1px; height:1px; z-index:33;">
+				<img src="../../../../images/imagefile/line.png" id="yoko_u" name="line_yu" style="position:absolute; width:1px; height:1px; z-index:33;">
+				<img src="../../../../images/imagefile/line.png" id="tate" name="line_t" style="position:absolute; width:1px; height:1px; z-index:33;">
 				<%
 				screenwidth = @channel.width - 2
 				screenheight = @channel.height - 2
@@ -65,7 +71,7 @@ if @page.contents.length != 0
 				%>
 				<div id="player<%=@i%>" class="jqDnR" style="width:<%=width%>px; height:<%=height%>px; position:absolute; top:<%=ypos%>px; left:<%=xpos%>px; overflow:hidden;">
 					<span class="popchecker" onMouseOver="mousepop(['over','<%=@i%>']);" onMouseOut="mousepop(['out','<%=@i%>']);"></span>  
-					<table id="pname<%=@i%>" border="0" cellspacing="0" cellpadding="0" onMouseOver="player_drag(<%=@i%>,<%=content.id%>);" onMouseDown="dragposition(<%=@i%>,<%=content.width%>,<%=content.height%>,<%=content.id%>,<%=content.x_pos%>,<%=content.y_pos%>);">   
+					<table id="pname<%=@i%>" border="0" cellspacing="0" cellpadding="0" onMouseOver="player_drag(<%=@i%>,<%=content.id%>)" onMouseDown="dragposition(<%=@i%>,<%=content.width%>,<%=content.height%>,<%=content.id%>,<%=content.x_pos%>,<%=content.y_pos%>)" onMouseUp="line_flg_com()" onmousemove="drawline(<%=content.id%>)">   
 						<tr>
 							<td align="center" valign="middle">
 								<div class="player_no" id="pop<%=@i%>"><%="NO."+@i.to_s %></div>
