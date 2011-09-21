@@ -43,13 +43,13 @@
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="camera_guide_title">
@@ -58,7 +58,7 @@
 		</div>
 		<div class="guide_box">
 			<div class="camera_guide_text">
-				<%="IPカメラの動画画像をリアルタイム表示するプレーヤです。（COREGA社製のIPカメラのみ対応しています。他社のカメラ対応はご相談下さい。）"%>
+				<%=_("IPカメラの動画画像をリアルタイム表示するプレーヤです。（COREGA社製のIPカメラのみ対応しています。他社のカメラ対応はご相談下さい。）")%>
 			</div>
 		</div>
 	</div>

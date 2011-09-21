@@ -400,10 +400,10 @@ class PagesController < ApplicationController
       contents.each{|content|
         adjustment_width = content.width - (content.line_width*2)
         adjustment_height = content.height - (content.line_width*2)
-        html << "<div id='"+content.id.to_s+"' style='position: absolute;top:"+content.y_pos.to_s+"px;left:"+content.x_pos.to_s+"px;width:"+content.width.to_s+"px;height:"+content.height.to_s+"px;'> \n"
-        html << "  <iframe class='flame_"+content.id.to_s+"' style='width:"+adjustment_width.to_s+"px;height:"+adjustment_height.to_s+"px;' src='"+content.id.to_s+"/index.html' scrolling='no' frameborder='0' allowtransparency='true'> \n"
-        html << "  </iframe> \n"
-        html << "</div> \n"
+        html << "     <div id='"+content.id.to_s+"' style='position: absolute;top:"+content.y_pos.to_s+"px;left:"+content.x_pos.to_s+"px;width:"+content.width.to_s+"px;height:"+content.height.to_s+"px;'> \n"
+        html << "       <iframe class='flame_"+content.id.to_s+"' style='width:"+adjustment_width.to_s+"px;height:"+adjustment_height.to_s+"px;' src='"+content.id.to_s+"/index.html' scrolling='no' frameborder='0' allowtransparency='true'> \n"
+        html << "       </iframe> \n"
+        html << "     </div> \n"
       }
       html << "    </div> \n"
       html << "</div> \n"
@@ -487,7 +487,7 @@ class PagesController < ApplicationController
       # プレビュー画面を作ります
       PagesController.make_page(@channel,page)
   
-      html = layout_html(content,page.contents,check_content)
+      html = layout_html(content,page.contents,check_content,@channel.width,@channel.height)
     else
       html = player_list(page.contents,channel_id,page_id)
       html << "<script type='text/javascript'>\n"
@@ -502,7 +502,7 @@ class PagesController < ApplicationController
   end
   
   
-  def layout_html(new_content,page_contents,check_content)
+  def layout_html(new_content,page_contents,check_content,channel_width,channel_height)
     aplog.debug("START #{CLASS_NAME}#layout_html")
     add_player_no = page_contents.size
     channel_id = new_content.page.channel.id
@@ -561,12 +561,12 @@ class PagesController < ApplicationController
                                   + 'left:"+new_content.x_pos.to_s+"px;'
                                   + 'background:white;'\n
         add_HTML =\"<span class='popchecker' onMouseOver='mousepop([&quot;over&quot;,&quot;"+add_player_no.to_s+"&quot;]);' onMouseOut='mousepop([&quot;out&quot;,&quot;"+add_player_no.to_s+"&quot;]);'></span>\";
-        add_HTML +=\" <table id='pname"+add_player_no.to_s+"' border='0' cellspacing='0' cellpadding='0'  onMouseOver='player_drag("+add_player_no.to_s+","+new_content.id.to_s+");' onMouseDown='dragposition("+add_player_no.to_s+","+new_content.width.to_s+","+new_content.height.to_s+","+new_content.id.to_s+","+new_content.x_pos.to_s+","+new_content.y_pos.to_s+");'>\"
+        add_HTML +=\" <table id='pname"+add_player_no.to_s+"' border='0' cellspacing='0' cellpadding='0'  onMouseOver='player_drag("+add_player_no.to_s+","+new_content.id.to_s+");' onMouseDown='dragposition("+add_player_no.to_s+","+new_content.id.to_s+","+channel_width.to_s+","+channel_height.to_s+");'  onMouseUp='line_flg_com()'>\"
         add_HTML +=\" <tr>\"
         add_HTML +=\"   <td align='center' valign='middle'>\"
         add_HTML +=\"     <div class='player_no' id='pop"+add_player_no.to_s+"'>NO."+add_player_no.to_s+"</div>\"
         add_HTML +=\"     <span class='a_player_no' id='a_pop"+add_player_no.to_s+"'>NO."+add_player_no.to_s+"</span>\"
-        add_HTML +=\"     <img alt='' width='43px' height='43px' style='cursor: pointer;' onDblClick='to_setting("+channel_id.to_s+","+page_id.to_s+","+new_content.id.to_s+")' src='/images/../../../../images/players/"+player_logo.to_s+"' /> \"
+        add_HTML +=\"     <img id='img"+add_player_no.to_s+"' alt='' width='43px' height='43px' style='cursor: pointer;' src='/images/../../../../images/players/"+player_logo.to_s+"' /> \"
         add_HTML +=\"   </td>\"
         add_HTML +=\" </tr>\"
         add_HTML +=\" </table>\"
@@ -589,6 +589,9 @@ class PagesController < ApplicationController
         add_script +=\"element.onclick = new Function('reservedate(["+idobj.to_s+"],"+flag.to_s+");'); \"
         add_script +=\"element_no.onclick = new Function('no_btn(["+page_contents.length.to_s+"]);'); \"
         add_script +=\"document.getElementById('content_length').value = "+add_player_no.to_s+"; \"
+        add_script +=\"$('#player"+add_player_no.to_s+"').click(function(){layout_save_flag()}); \"
+        add_script +=\"$('#img"+add_player_no.to_s+"').dblclick(function(){if (check_layout('edit_player','"+channel_id.to_s+"*"+page_id.to_s+"*"+new_content.id.to_s+"') == true){to_setting(["+channel_id.to_s+"*"+page_id.to_s+"*"+new_content.id.to_s+"])}}); \"
+        
         appendChild(script_container,add_script);        
         script_container.textContent = add_script;
 

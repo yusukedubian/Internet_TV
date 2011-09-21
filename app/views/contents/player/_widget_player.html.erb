@@ -22,7 +22,7 @@
 	<tr>
 		<td colspan='2'>
 		 <span>
-		 	<%="ページをリフレッシュする秒数を入れて下さい"%><font color=red>*</font>
+		 	<%=_("ページをリフレッシュする秒数を入れて下さい")%><font color=red>*</font>
 			</span>⇒
 			<%= text_field_tag("contents_setting[refreshtime]", h(settings["refreshtime"]),:maxlength => 4,:size=> 4)%>秒
 		</td>
@@ -34,13 +34,13 @@
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="widget_guide_title">
@@ -49,10 +49,10 @@
 		</div>
 		<div class="guide_box">
 			<div class="widget_guide_text">
-				<%="Web版Googleガジェットやブログパーツを、一定間隔で更新しながら表示します。"%><br/><br>
-				<%="自作ウィジェットの追加も出来ます。"%><br/><br>
-				<%="<b>下記リアルタイムWEBウィジェットのリンクから、リアルタイムWebウィジェットサンプル、その他のウィジェットリンクにあるサイト等を参照し、ウィジェットコードを貼り付けて下さい。</b>"%><br/>
-				<a href="/welcome/web_widget"><%="リアルタイムWEBウィジェット"%></a>
+				<%=_("Web版Googleガジェットやブログパーツを、一定間隔で更新しながら表示します。")%><br/><br>
+				<%=_("自作ウィジェットの追加も出来ます。")%><br/><br>
+				<%=_("<b>下記リアルタイムWEBウィジェットのリンクから、リアルタイムWebウィジェットサンプル、その他のウィジェットリンクにあるサイト等を参照し、ウィジェットコードを貼り付けて下さい。</b>")%><br/>
+				<a href="/welcome/web_widget"><%=_("リアルタイムWEBウィジェット")%></a>
 			</div>
 		</div>
 	</div>

@@ -195,9 +195,9 @@
 
 	<div class="audio_select">
 		<div class="audio_select_info">
-		<%= "設定タイプ："%>
-		<%= radio_button_tag("contents_setting[audio_set_type]", "audio_upload", true, options ={:onclick=>"view_setting_type('audio_upload');"})%><%="アップロード"%>
-		<%= radio_button_tag("contents_setting[audio_set_type]", "audio_url", false, options ={:onclick=>"view_setting_type('audio_url');"})%><%="URL指定"%>
+		<%=_("設定タイプ：")%>
+		<%= radio_button_tag("contents_setting[audio_set_type]", "audio_upload", true, options ={:onclick=>"view_setting_type('audio_upload');"})%><%=_("アップロード")%>
+		<%= radio_button_tag("contents_setting[audio_set_type]", "audio_url", false, options ={:onclick=>"view_setting_type('audio_url');"})%><%=_("URL指定")%>
 		</div>
 	</div>
 	
@@ -267,11 +267,11 @@
 
 <table class="audio_list" cellpadding="0" cellspacing="0" border="0">
 	<tr><td colspan="2">
-	<div class="audio_title"><div class="audio_title_no"><%="曲"%></div></div>
-	<div class="audio_title"><div class="audio_title_name"><%="設定したファイル"%></div></div>
-	<div class="audio_title"><div class="audio_title_file"><%="ファイルタイプ"%></div></div>
-	<div class="audio_title"><div class="audio_title_type"><%="設定タイプ"%></div></div>
-	<div id="title_right" class="audio_title"><div class="audio_title_delete"><%="削除"%></div></div>
+	<div class="audio_title"><div class="audio_title_no"><%=_("曲")%></div></div>
+	<div class="audio_title"><div class="audio_title_name"><%=_("設定したファイル")%></div></div>
+	<div class="audio_title"><div class="audio_title_file"><%=_("ファイルタイプ")%></div></div>
+	<div class="audio_title"><div class="audio_title_type"><%=_("設定タイプ")%></div></div>
+	<div id="title_right" class="audio_title"><div class="audio_title_delete"><%=_("削除")%></div></div>
 	</td></tr>
 	<tr><td>
 <% music_length.times do |i|-%>
@@ -382,24 +382,24 @@
 			<%end%>
 			
 			<%if !settings["audio"+i.to_s+"_audio_file_mp3"].blank?%>
-				<div id="<%=i.to_s%>del_mp3" class="file_del"><%="削除"%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_mp3", false, options = {:id=>i.to_s+"_file_mp3", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+				<div id="<%=i.to_s%>del_mp3" class="file_del"><%=_("削除")%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_mp3", false, options = {:id=>i.to_s+"_file_mp3", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
 			<%else
 				if !settings["audio"+i.to_s+"_audio_url_mp3"].blank?%>
-					<div class="file_del"><%="削除"%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_mp3", false, options = {:id=>i.to_s+"_url_mp3", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+					<div class="file_del"><%=_("削除")%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_mp3", false, options = {:id=>i.to_s+"_url_mp3", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
 				<%end
 			end%>
 			<%if !settings["audio"+i.to_s+"_audio_file_ogg"].blank?%>
-				<div id="<%=i.to_s%>del_ogg" class="file_del"><%="削除"%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_ogg", false, options = {:id=>i.to_s+"_file_ogg",:onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+				<div id="<%=i.to_s%>del_ogg" class="file_del"><%=_("削除")%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_ogg", false, options = {:id=>i.to_s+"_file_ogg",:onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
 			<%else
 				if !settings["audio"+i.to_s+"_audio_url_ogg"].blank?%>
-					<div class="file_del"><%="削除"%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_ogg", false, options = {:id=>i.to_s+"_url_ogg", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+					<div class="file_del"><%=_("削除")%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_ogg", false, options = {:id=>i.to_s+"_url_ogg", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
 				<%end
 			end%>
 			<%if !settings["audio"+i.to_s+"_audio_file_wav"].blank?%>
-				<div id="<%=i.to_s%>del_wav" class="file_del"><%="削除"%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_wav", false, options = {:id=>i.to_s+"_file_wav", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+				<div id="<%=i.to_s%>del_wav" class="file_del"><%=_("削除")%><%= check_box_tag("delfile[]","audio"+i.to_s+"_audio_file_wav", false, options = {:id=>i.to_s+"_file_wav", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
 			<%else
 				if !settings["audio"+i.to_s+"_audio_url_wav"].blank?%>
-					<div class="file_del"><%="削除"%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_wav", false, options = {:id=>i.to_s+"_url_wav", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
+					<div class="file_del"><%=_("削除")%><%= check_box_tag("delurl[]","audio"+i.to_s+"_audio_url_wav", false, options = {:id=>i.to_s+"_url_wav", :onclick =>"box_obj('"+i.to_s+"','"+file_count.to_s+"');" })%></div>
 				<%end
 			end%>
 			<%=hidden_field_tag("file_count["+i.to_s+"]",file_count)%>
@@ -430,13 +430,13 @@ document.getElementById("file_wav_form").disabled = true;
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="audio_guide_title">

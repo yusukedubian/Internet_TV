@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
       page.resources :previews
       page.resources :players 
       page.resources :template_pages
-      page.resources :contents, :member=>{:update=> :post, :preview=> :get, :drag=> :post ,:contentdelete=> :get,:contentseq => :post,:player_copy => :get,:player_paste => :get}
+      page.resources :contents, :member=>{:update=> :post, :preview=> :get, :drag=> :post ,:contentdelete=> :get,:contentseq => :post,:player_copy => :get,:player_paste => :get,:image_text_new => :get,:image_text_edit => :get}
     end
   end
   map.resources :index_messages, :member => {:enable => :put, :disable=>:put }

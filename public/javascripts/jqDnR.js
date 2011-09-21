@@ -13,21 +13,32 @@ $.fn.jqDrag=function(h){return i(this,h,'d');};
 $.fn.jqResize=function(h){return i(this,h,'r');};
 $.jqDnR={dnr:{},e:0,
 drag:function(v){
- remaxwidth = (parseInt(document.getElementById("remaxwidth").value) - parseInt(document.getElementById(document.getElementById('current_player_id').value+"x").value)) - 2;
- remaxheight = (parseInt(document.getElementById("remaxheight").value) - parseInt(document.getElementById(document.getElementById('current_player_id').value+"y").value)) - 2;
+ var current_player_id = document.getElementById('current_player_id').value;
+ remaxwidth = (parseInt(document.getElementById("remaxwidth").value) - parseInt(document.getElementById(current_player_id+"x").value)) - 2;
+ remaxheight = (parseInt(document.getElementById("remaxheight").value) - parseInt(document.getElementById(current_player_id+"y").value)) - 2;
  newwidth = v.pageX-M.pX+M.W;
  newheight = v.pageY-M.pY+M.H;
  if(M.k == 'd')E.css({left:M.X+v.pageX-M.pX,top:M.Y+v.pageY-M.pY});
  if(M.k != 'd') E.css({
- 	width:Math.max(newwidth,48),
-	height:Math.max(newheight,48)
+ 	width:Math.max(newwidth,28),
+	height:Math.max(newheight,28)
  });
+ if (newwidth<= 48){document.getElementById("playerImg"+current_player_id).style.width = "90%";};
+ if (newwidth>= 48){document.getElementById("playerImg"+current_player_id).style.width = "48px";};
+ if (newheight<= 48){document.getElementById("playerImg"+current_player_id).style.height = "70%";};
+ if (newheight>= 48){document.getElementById("playerImg"+current_player_id).style.height = "48px";};
  if(M.k != 'd' && newwidth>remaxwidth) E.css({
 	width:Math.min(newwidth,remaxwidth)
  });
  if(M.k != 'd' && newheight>remaxheight) E.css({
 	height:Math.min(newheight,remaxheight)
  });
+ document.getElementById("dragwidth").value = newwidth+2;
+ document.getElementById("dragheight").value = newheight+2;
+ document.getElementById(current_player_id+"width").value = newwidth+2;
+ document.getElementById(current_player_id+"height").value = newheight+2; 
+			document.getElementById('yoko_u'+current_player_id).style.top = newheight+1;
+			document.getElementById('tate_R'+current_player_id).style.left = newwidth+1;
   return false;},
 stop:function(){E.css('opacity',M.o);$().unbind('mousemove',J.drag).unbind('mouseup',J.stop);
 }
@@ -39,7 +50,7 @@ i=function(e,h,k){return e.each(function(){h=(h)?$(h,e):e;
  if(E.css('position') != 'relative'){try{E.position(p);}catch(e){}}
  M={X:p.left||f('left')||0,Y:p.top||f('top')||0,W:f('width')||E[0].scrollWidth||0,H:f('height')||E[0].scrollHeight||0,pX:v.pageX,pY:v.pageY,k:d.k,o:E.css('opacity')};
  E.css({opacity:0.8});$().mousemove($.jqDnR.drag).mouseup($.jqDnR.stop);
- $(".jqResize").mouseout(function(){
+ $(".jqResize").mouseup(function(){
 			var browser = document.getElementById('browsercheck').value; 
 			if (browser == "IE") {
 				layoutwidth = E[0].scrollWidth+2;

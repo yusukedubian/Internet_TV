@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   CLASS_NAME = self.name
   before_filter :login_required, :except => :preview
   before_filter :find_pages, :except => :ajax_update
-  layout "application", :except=> :preview
+  layout "application", :except=> [:preview,:image_text_new,:image_text_edit]
   include PlayerSystem
   skip_before_filter :verify_authenticity_token ,:only=>[:ajax_update]
   
@@ -25,6 +25,7 @@ class ContentsController < ApplicationController
   end
   
   def update
+    p params
     aplog.debug("START #{CLASS_NAME}#update")
     contents_id = ""
     prmContents = params["contents"]
@@ -269,11 +270,21 @@ class ContentsController < ApplicationController
     rescue AplInfomationException => e
       alert(e.message)
       player = Player.find_by_id(params[:player_id])
-      if params[:id] == "new"
-        next_action = new_channel_page_content_path(params[:channel_id], params[:page_id], {:player_no => player.player_no})
+#update 11/08/24 [jing an qu] begin
+      if !params["exception_player"].blank?
+        if params[:id] == "new"
+          next_action = eval(params["exception_player"]["name"]+"_new_channel_page_content_path(params[:channel_id], params[:page_id],'new',{:player_no => player.player_no})")
+        else
+          next_action = edit_channel_page_content_path(params[:channel_id],params[:page_id],params[:id])
+        end
       else
-        next_action = edit_channel_page_content_path(params[:channel_id],params[:page_id],params[:id])
+        if params[:id] == "new"
+          next_action = new_channel_page_content_path(params[:channel_id], params[:page_id], {:player_no => player.player_no})
+        else
+          next_action = edit_channel_page_content_path(params[:channel_id],params[:page_id],params[:id])
+        end
       end
+#update 11/08/24 [jing an qu] end
     else
       notice("MSG_0x00000017")
       if !params["submit"].blank?
@@ -346,6 +357,7 @@ class ContentsController < ApplicationController
     contents.each{|content|
       contentid = content.id
       dragupdates = @page.contents.find(:all,:conditions=>["id=?",content.id])
+      f = 0
       dragupdates.each{|dragupdate|
         if dragupdate.width.to_s != params["width"+contentid.to_s] || dragupdate.height.to_s != params["height"+contentid.to_s]
           dragupdate.width = params["width"+contentid.to_s]
@@ -361,18 +373,43 @@ class ContentsController < ApplicationController
           contentsetting["channel_id"] = params[:channel_id]
           contentsetting["page_id"] = params[:page_id]
           ContentsController.make_player(dragupdate,player_module,@current_user,contentsetting)
+          f = 1
         end
         if dragupdate.x_pos.to_s != params["x_pos"+contentid.to_s] || dragupdate.y_pos.to_s != params["y_pos"+contentid.to_s]
           dragupdate.x_pos = params["x_pos"+contentid.to_s]
           dragupdate.y_pos = params["y_pos"+contentid.to_s]
+          f = 1
         end
-        dragupdate.save!
+        if f == 1
+          dragupdate.save!
+        end
        }
     }
     # プレビュー画面を作ります
     @channel = Channel.find(params[:channel_id])
     PagesController.make_page(@channel,@page)
-    redirect_to layout_channel_page_path(params[:channel_id],params[:page_id])
+    save_params = params[:save_type_params].split("*")
+    if params[:save_type] == "page_select"
+      if save_params[0] == "edit"
+        html = "<script>parent.location.href='/channels/"+params[:channel_id]+"/pages/"+save_params[1].to_s+"/edit';</script>"
+        render :text => html
+      elsif save_params[0] == "new"
+        html = "<script>parent.location.href='/channels/"+params[:channel_id]+"/pages/new?page_no="+save_params[1].to_s+"';</script>"
+        render :text => html
+      end
+    elsif params[:save_type] == "new_player" 
+      html = "<script>parent.location.href='/channels/"+params[:channel_id]+"/pages/"+params[:page_id]+"/contents/new?player_no="+params[:save_type_params]+"';</script>"
+      render :text => html
+    elsif params[:save_type] == "edit_player"||params[:save_type] == "list_edit_player"
+      html = "<script>parent.location.href='/channels/"+save_params[0].to_s+"/pages/"+save_params[1].to_s+"/contents/"+save_params[2].to_s+"/edit';</script>"
+      render :text => html
+    elsif params[:save_type] == "delete_player"
+      #html = "<script>parent.location.href='/channels/"+save_params[0].to_s+"/pages/"+save_params[1].to_s+"/contents/"+save_params[2].to_s+"/contentdelete';</script>"
+      #render :text => html
+      redirect_to layout_channel_page_path(params[:channel_id],params[:page_id])
+    elsif params[:save_type] == "normal"
+      redirect_to layout_channel_page_path(params[:channel_id],params[:page_id])
+    end
     aplog.debug("END   #{CLASS_NAME}#drag")
   end
   
@@ -538,6 +575,30 @@ class ContentsController < ApplicationController
      
      redirect_to edit_channel_page_path(params[:channel_id],params[:page_id])
   end
+  
+  def image_text_new
+    p params
+    if params[:id] != "new"
+      @player = Player.find(:first,:conditions=>["id =?",@content.player_id ])
+      @content = @page.contents.find(params[:id], :include => :contents_propertiess)
+      @contents_properties = @content.contents_propertiess.find(:all)
+    else
+      @channel = @page.channel
+      @player = Player.find(:first,:conditions=>["player_no =?",params[:player_no]])
+    end
+     p "kkkkkkkk"
+  end
+  
+  def image_text_edit
+    if params[:id] != "new"
+      @player = Player.find(:first,:conditions=>["id =?",@content.player_id ])
+      @content = @page.contents.find(params[:id], :include => :contents_propertiess)
+      @contents_properties = @content.contents_propertiess.find(:all)
+    else
+      @channel = @page.channel
+      @player = Player.find(:first,:conditions=>["player_no =?",params[:player_no]])
+    end
+  end
 
   private
   def find_pages
@@ -581,5 +642,5 @@ class ContentsController < ApplicationController
         conf.save
      }
      return
-  end
+ end
 end

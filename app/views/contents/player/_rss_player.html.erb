@@ -31,10 +31,10 @@
                   <b><%= _("画面右上「設定▼」→「アカウント設定」→「Google API Key」の設定をして下さい。") %></b>
                 <% end %>
 				<tr>
-					<td><%= "表示タイプ"%><font color=red>*</font></td>
+					<td><%=_("表示タイプ")%><font color="red">*</font></td>
 					<td>
-						<%= radio_button_tag("contents_setting[viewtype]", "classic", false, options ={:onclick=>"viewtype('classic');"})%><%="クラシック  "%>
-						<%= radio_button_tag("contents_setting[viewtype]", "billboard", true, options ={:onclick=>"viewtype('billboard');"})%><%="電光掲示板風  "%>
+						<%= radio_button_tag("contents_setting[viewtype]", "classic", false, options ={:onclick=>"viewtype('classic');"})%><%=_("クラシック  ")%>
+						<%= radio_button_tag("contents_setting[viewtype]", "billboard", true, options ={:onclick=>"viewtype('billboard');"})%><%=_("電光掲示板風  ")%>
 					</td>
 				</tr>
 	        	<tr>
@@ -257,13 +257,13 @@
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="rss_guide_title">
@@ -272,8 +272,8 @@
 		</div>
 		<div class="guide_box">
 			<div class="rss_guide_text">
-				<%="ニュースやブログなどの最新情報をリアルタイムに表示させる事が出来ます。"%><br/>
-				<%="ご希望サイトのRss用URLを入力してください。"%><br/>
+				<%=_("ニュースやブログなどの最新情報をリアルタイムに表示させる事が出来ます。")%><br/>
+				<%=_("ご希望サイトのRss用URLを入力してください。")%><br/>
 			</div>
 		</div>
 	</div>

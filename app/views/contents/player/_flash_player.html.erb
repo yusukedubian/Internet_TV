@@ -35,13 +35,13 @@
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="flash_guide_title">
@@ -50,16 +50,16 @@
 		</div>
 		<div class="guide_box">
 			<div class="flash_guide_text">
-              <%="FLASHファイルを再生するプレーヤです。"%><br/><br/>
-              <%="《FlashURL》"%><br/>
-              <%="youtubeやニコニコ動画などの動画共有サイト等で閲覧出来る"%><br/>
-              <%="動画（Flash Videoファイル）の埋め込み用URLを入力してください。"%><br/><br/>
-              <%="《埋め込み用URL》"%><br/>
-              <%="Flash埋め込み用ソース内「src="..."」の「""」内にあるURLを使用してください。"%><br/><br/>
-              <%="《ファイルパス》"%><br/>
-              <%="拡張子がswfのファイルを選択し、アップロードしてください。"%><br/><br/>
-              <%="※iPhone等のFlash非対応OSでは、このプレーヤを使用すると画面が表示出来ない事があります。"%><br/>
-              <%="※VASDAQ.TVはVideoプレーヤを推奨しています。"%><br/>
+              <%=_("FLASHファイルを再生するプレーヤです。")%><br/><br/>
+              <%=_("《FlashURL》")%><br/>
+              <%=_("youtubeやニコニコ動画などの動画共有サイト等で閲覧出来る")%><br/>
+                <%=_("動画（Flash Videoファイル）の埋め込み用URLを入力してください。")%><br/><br/>
+              	<%=_("《埋め込み用URL》")%><br/>
+              <%=_("Flash埋め込み用ソース内「src=\"...\"」の「\"\"」内にあるURLを使用してください。")%><br/><br/>
+              	<%=_("《ファイルパス》")%><br/>
+              	<%=_("拡張子がswfのファイルを選択し、アップロードしてください。")%><br/><br/>
+              <%=_("※iPhone等のFlash非対応OSでは、このプレーヤを使用すると画面が表示出来ない事があります。")%><br/>
+              <%=_("※VASDAQ.TVはVideoプレーヤを推奨しています。")%><br/>
 			</div>
 		</div>
 	</div>

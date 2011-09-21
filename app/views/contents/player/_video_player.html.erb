@@ -30,11 +30,11 @@
 
 	<table>
 		<tr>
-			<td><%= "動画の設定方法"%><font color=red>*</font></td>
+			<td><%=_("動画の設定方法")%><font color=red>*</font></td>
 			<td>
-					<%= radio_button_tag("contents_setting[video_set_type]", "video_upload", true, options ={:onclick=>"view_setting_type('video_upload');"})%><%="自分でアップロードする"%>
-					<%= radio_button_tag("contents_setting[video_set_type]", "youtube_keyword_search", false, options ={:onclick=>"view_setting_type('youtube_keyword_search');"})%><%="youtubeで動画を検索"%>
-					<%= radio_button_tag("contents_setting[video_set_type]", "embed_tag", false, options ={:onclick=>"view_setting_type('embed_tag');"})%><%="埋め込みタグを設定"%>
+					<%= radio_button_tag("contents_setting[video_set_type]", "video_upload", true, options ={:onclick=>"view_setting_type('video_upload');"})%><%=_("自分でアップロードする")%>
+					<%= radio_button_tag("contents_setting[video_set_type]", "youtube_keyword_search", false, options ={:onclick=>"view_setting_type('youtube_keyword_search');"})%><%=_("youtubeで動画を検索")%>
+					<%= radio_button_tag("contents_setting[video_set_type]", "embed_tag", false, options ={:onclick=>"view_setting_type('embed_tag');"})%><%=_("埋め込みタグを設定")%>
 			</td>
 		</tr>
 	</table>
@@ -100,13 +100,13 @@
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="video_guide_title">
@@ -115,17 +115,17 @@
 		</div>
 		<div class="guide_box">
 			<div class="video_guide_text">
-             <%="動画を再生するプレーヤです。"%><br/><br/>
-             <%="《自分でアップロードする》"%><br/>
-             <%="HTML5対応のブラウザで再生できます(IEはバージョン9以降)。"%><br/>
-             <%="mp4、webm、ogvの3つの動画ファイル形式の中で、"%><br/>
-             <%="ご利用されるブラウザの推奨形式が不明の場合は、"%><br/>
-             <%="3つとも設定して下さい。"%><br/><br/>
-             <%="《youtubeで動画を検索》"%><br/>
-             <%="指定したキーワードで動画を検索し、表示させます。"%><br/><br/>
-             <%="《埋め込みタグを設定》"%><br/>
-             <%="youtubeやニコニコ動画等の動画共有サイトから、"%><br/>
-             <%="動画の埋め込み用URLを入力してください。"%> 
+             <%=_("動画を再生するプレーヤです。")%><br/><br/>
+             <%=_("《自分でアップロードする》")%><br/>
+             <%=_("HTML5対応のブラウザで再生できます(IEはバージョン9以降)。")%><br/>
+             <%=_("mp4、webm、ogvの3つの動画ファイル形式の中で、")%><br/>
+             <%=_("ご利用されるブラウザの推奨形式が不明の場合は、")%><br/>
+             <%=_("3つとも設定して下さい。")%><br/><br/>
+             <%=_("《youtubeで動画を検索》")%><br/>
+             <%=_("指定したキーワードで動画を検索し、表示させます。")%><br/><br/>
+             <%=_("《埋め込みタグを設定》")%><br/>
+             <%=_("youtubeやニコニコ動画等の動画共有サイトから、")%><br/>
+             <%=_("動画の埋め込み用URLを入力してください。")%> 
 			</div>
 		</div>
 	</div>

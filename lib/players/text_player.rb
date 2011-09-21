@@ -20,13 +20,14 @@ module Players
     def default(content)
       aplog.debug("START #{CLASS_NAME}#default")
       player_params ={
-      "contents_setting" => {"viewtype"=>"billboard",
+      "contents_setting" => {"viewtype"=>"classic",
                              "billboard_text_content"=>"Welcome to VASDAQ.TV",
                              "text_content"=>"Welcome to VASDAQ.TV",
                              "back_color"=>"#123456",
-                             "font_size"=>"60",
-                             "font_color"=>"#4AE821",
-                             "control_type"=>"1",
+                             "background_type"=>"no_backcolor",
+                             "font_size"=>"10",
+                             "font_color"=>"#2e130a",
+                             "control_type"=>"4",
                              "scroll_direction"=>"Left",
                              "scroll_speed"=>"70",
                              "billboard_font_size"=>"15",
@@ -37,11 +38,11 @@ module Players
                              },
                         
               "contents" => {"x_pos"=>"5",
-                             "line_width"=>"5",
+                             "line_width"=>"0",
                              "y_pos"=>"5",
                              "line_color"=>"#38382e",
-                             "height"=>"120",
-                             "width"=>"700"},
+                             "height"=>"100",
+                             "width"=>"300"},
 
       "channel_id"=>content.page.channel_id,
       "page_id"=>content.page_id
@@ -90,11 +91,12 @@ module Players
           aplog.warn("ERR_0x01025204")
           raise AplInfomationException.new("ERR_0x01025204")
         end
-
+=begin
         if is_empty(params["contents_setting"]["text_content"])
           aplog.warn("ERR_0x01025205")
           raise AplInfomationException.new("ERR_0x01025205")
         end
+=end
         if check_length(params["contents_setting"]["text_content"], 2049, Compare::MORE_THAN)
           aplog.warn("ERR_0x01025211")
           raise AplInfomationException.new("ERR_0x01025211")
@@ -168,16 +170,26 @@ module Players
     def get_classic_html
       aplog.debug("START #{CLASS_NAME}#get_classic_html")
       # create_classic_html
+      if @content_properties["background_type"] == "backcolor"
+        back_color = @content_properties["back_color"].to_s
+      else
+        back_color = ""
+      end
       html=""
       speed = ""
       controltype = @content.contents_propertiess.find(:first,:conditions=>["property_key=?","control_type"])
       html << "<head>\n"
       html << "<meta http-equiv='content-type' content='text/html;charset=UTF-8' />\n"
       html << "<meta http-equiv='cache-control' content='non-cache' /> \n"
+            
+      html << "<style>"
+      html << "body {background-color: transparent;}"
+      html << "</style>"
+      
       html << "</head>\n"
       html << "<body style='margin:0px;'>\n"
       if controltype.property_value == "4" || controltype.property_value == "2"
-        html << "<table style='width:"+@content['width'].to_s+"px; height:"+@content['height'].to_s+"px; background:"+@content_properties["back_color"].to_s+";' cellpadding=0 cellspacing=0>\n"
+        html << "<table style='width:"+@content['width'].to_s+"px; height:"+@content['height'].to_s+"px; background:"+back_color+";' cellpadding=0 cellspacing=0>\n"
         html << " <tr>"
         html << "   <td valign='top'>"
         html << "     <div>\n"
@@ -211,7 +223,7 @@ module Players
         elsif @content_properties["scroll_speed"] == "30"
           speed = " scrolldelay = '120' scrollamount='1'"
         end
-        html << "<div style='width:"+@content['width'].to_s+"px; height:"+@content['height'].to_s+"px; background:"+@content_properties["back_color"].to_s+";'>\n"
+        html << "<div style='width:"+@content['width'].to_s+"px; height:"+@content['height'].to_s+"px; background:"+back_color+";'>\n"
         if controltype.property_value == "1" || controltype.property_value == "3"
         html << "<Marquee height='"+@content['height'].to_s+"px' Direction = '"+ @content_properties["scroll_direction"]+"' "+speed+">\n"
         end

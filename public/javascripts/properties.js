@@ -184,58 +184,63 @@ function player_size(id,width,height,playerid,x_pos,y_pos){
 	}
 }
 
-function dragposition(id,width,height,playerid,x_pos,y_pos) {
+function dragposition(playerid,screen_width,screen_height) {
 	y = document.getElementById(playerid + 'y').value;
 	x = document.getElementById(playerid + 'x').value;
 	h = document.getElementById(playerid + 'height').value;
-	document.getElementById('yoko').style.pixelTop = y;
-	document.getElementById('yoko').style.width = document.body.clientWidth;
-	document.getElementById('yoko_u').style.pixelTop = parseInt(y) + parseInt(h);
-	document.getElementById('yoko_u').style.width = document.body.clientWidth;
-	document.getElementById('tate').style.pixelLeft = x;
-	document.getElementById('tate').style.height = document.body.clientHeight;
+	w = document.getElementById(playerid + 'width').value;
+	yoko = document.getElementById('yoko'+playerid);
+	yoko_u = document.getElementById('yoko_u'+playerid);
+	tate_L = document.getElementById('tate_L'+playerid);
+	tate_R = document.getElementById('tate_R'+playerid);
+	
+	yoko.style.top = -1;
+	yoko.style.left = -x;
+	yoko.style.width = screen_width;
+	yoko_u.style.top = +(parseInt(h)-1);
+	yoko_u.style.left = -x;
+	yoko_u.style.width = screen_width;
+	tate_L.style.top = -y;
+	tate_L.style.left = -1;
+	tate_L.style.height = screen_height;
+	tate_R.style.top = -y;
+	tate_R.style.left = +(parseInt(w)-1);
+	tate_R.style.height = screen_height;
 	
 	document.getElementById('mouse_down_flg').value = "run";
-	document.getElementById('fst_line_pos_y').value = event.y;
-	document.getElementById('fst_line_pos_x').value = event.x;
-	var length = document.getElementById("content_length").value;
-	for(i=1; i<=length; i=i+1){
-		if (i==id){
-			$("#player"+i).css("border-color","#020b6e");
-		}
-		else{
-			$("#player"+i).css("border-color","#ccc");
-		}
-	}
-	var layoutwidth = document.getElementById(playerid+"width").value;
-	var layoutheight = document.getElementById(playerid+"height").value;
-	var layoutxpos = document.getElementById(playerid+"x").value;
-	var layoutypos = document.getElementById(playerid+"y").value;
+	begin_pos_y = document.getElementById("cursor_y").value;
+	begin_pos_x = document.getElementById("cursor_x").value;
 	
-	if(width == layoutwidth){
-		document.getElementById("dragwidth").value = width;
-	}
-	else{
-		document.getElementById("dragwidth").value = layoutwidth;
-	}
-	if(height == layoutheight){
-		document.getElementById("dragheight").value = height;
-	}
-	else{
-		document.getElementById("dragheight").value = layoutheight;
-	}
-	if(x_pos == layoutxpos){
-		document.getElementById("x_setting").value = x_pos;
-	}
-	else{
-		document.getElementById("x_setting").value = layoutxpos;
-	}
-	if(y_pos == layoutypos){
-		document.getElementById("y_setting").value = y_pos;
-	}
-	else{
-		document.getElementById("y_setting").value = layoutypos;
-	}
+	document.getElementById("dragwidth").value = w;
+	document.getElementById("dragheight").value = h;
+	document.getElementById("x_setting").value = x;
+	document.getElementById("y_setting").value = y;
+	
+	$("div").mousemove(function(){drawline(playerid,begin_pos_y,begin_pos_x,screen_width,screen_height)});
+}
+
+function resizeposition(playerid,screen_width,screen_height){
+	y = document.getElementById(playerid + 'y').value;
+	x = document.getElementById(playerid + 'x').value;
+	h = document.getElementById(playerid + 'height').value;
+	w = document.getElementById(playerid + 'width').value;
+	yoko = document.getElementById('yoko'+playerid);
+	yoko_u = document.getElementById('yoko_u'+playerid);
+	tate_L = document.getElementById('tate_L'+playerid);
+	tate_R = document.getElementById('tate_R'+playerid);
+	
+	yoko.style.top = -1;
+	yoko.style.left = -x;
+	yoko.style.width = screen_width;
+	yoko_u.style.top = +(parseInt(h)-1);
+	yoko_u.style.left = -x;
+	yoko_u.style.width = screen_width;
+	tate_L.style.top = -y;
+	tate_L.style.left = -1;
+	tate_L.style.height = screen_height;
+	tate_R.style.top = -y;
+	tate_R.style.left = +(parseInt(w)-1);
+	tate_R.style.height = screen_height;
 }
 
 function player_drag(id,playerid){
@@ -287,6 +292,7 @@ function reservedate(id,flag){
 			n++;
 		}
 	}
+	parent.document.getElementById('layout_save_flag').value = "true";
 }
 
 function reservepage(){
@@ -352,6 +358,42 @@ function reservepage(){
 		document.pagesetting.backgroundtype[0].checked = true;
 		document.getElementById('Color').style.display = 'block';
 		document.getElementById('Image').style.display = 'none';
+	}
+}
+
+function layout_save_flag(){
+	parent.document.getElementById('layout_save_flag').value = "false";
+}
+
+function check_layout(type,params){
+	if (type == "edit_player"){var flag = parent.document.getElementById('layout_save_flag').value;}
+	//edit_playerの場合dbclickするため、flagがfalseになってしまう。
+	else {var flag = document.getElementById('layout_save_flag').value;}
+	if (flag == "true"){
+		return true;
+	}
+	if (flag == "false"){
+		if(type == "edit_player"){
+			document.getElementById("save_type").value = type;
+			document.getElementById("save_type_params").value = params;
+			document.getElementById("layout_save").click();
+		}
+		else{
+			var doc = iframeDoc('layout_frame');
+			doc.getElementById("save_type").value = type;
+			doc.getElementById("save_type_params").value = params;
+			doc.getElementById("layout_save").click();
+		}
+	}
+}
+
+function iframeDoc(id){
+	if (document.all) {
+		// IE
+		return frames[id].document;
+	} else {
+		// Mozilla
+		return document.getElementById(id).contentDocument;
 	}
 }
 
@@ -585,8 +627,9 @@ function copyplayer(channel_id,page_id,content_id){
 	$("#current_copy").load("/channels/"+channel_id+"/pages/"+page_id+"/contents/"+content_id+"/player_copy");
 }
 
-function to_setting(chid,pgid,ctid){
-	parent.location.href="/channels/"+chid+"/pages/"+pgid+"/contents/"+ctid+"/edit";
+function to_setting(param){
+	var params = param.split("*");
+	parent.location.href="/channels/"+params[0]+"/pages/"+params[1]+"/contents/"+params[2]+"/edit";
 }
 
 function gard_player_delete(){
@@ -606,37 +649,54 @@ function copy_deteal_onoff(str){
 	document.getElementById('deteal_player').style.display=str;
 }
 
-function drawline(corrent_id){
+function drawline(corrent_id,begin_pos_y,begin_pos_x,screen_width,screen_height){
 	var line_flg = document.getElementById('mouse_down_flg').value;
 	if (line_flg == "run") {
-		document.getElementById('line_pos').value = event.y
-		line_pos_y = event.y;
-		line_pos_x = event.x;
-		fst_pos_y = document.getElementById('fst_line_pos_y').value;
-		fst_pos_x = document.getElementById('fst_line_pos_x').value;
-		differ_y = parseInt(line_pos_y) - parseInt(fst_pos_y);
-		differ_x = parseInt(line_pos_x) - parseInt(fst_pos_x);
+		document.getElementById('line_pos').value = document.getElementById("cursor_y").value;
+		differ_y = parseInt(document.getElementById("cursor_y").value) - parseInt(begin_pos_y);
+		differ_x = parseInt(document.getElementById("cursor_x").value) - parseInt(begin_pos_x);
 		y = parseInt(document.getElementById(corrent_id + 'y').value) + parseInt(differ_y);
 		x = parseInt(document.getElementById(corrent_id + 'x').value) + parseInt(differ_x);
 		h = document.getElementById(corrent_id + 'height').value;
-		document.getElementById('yoko').style.pixelTop = y;
-		document.getElementById('yoko').style.width = document.body.clientWidth;
-		document.getElementById('yoko_u').style.pixelTop = parseInt(y) + parseInt(h);
-		document.getElementById('yoko_u').style.width = document.body.clientWidth;
-		document.getElementById('tate').style.pixelLeft = x;
-		document.getElementById('tate').style.height = document.body.clientHeight;
-		/*
-		document.getElementById('yoko').style.pixelTop = event.y;
-		document.getElementById('yoko').style.width = document.body.clientWidth;
-		document.getElementById('tate').style.pixelLeft = event.x;
-		document.getElementById('tate').style.height = document.body.clientHeight;
-		*/
+		w = document.getElementById(corrent_id + 'width').value;
+		document.getElementById('yoko_u'+corrent_id).style.top = +(parseInt(h)-1);
+		document.getElementById('yoko'+corrent_id).style.left = -x;
+		document.getElementById('yoko_u'+corrent_id).style.left = -x;
+		document.getElementById('tate_L'+corrent_id).style.top = -(parseInt(y)-2);
+		document.getElementById('tate_L'+corrent_id).style.left = -1;
+		document.getElementById('tate_R'+corrent_id).style.top = -(parseInt(y)-2);
+		document.getElementById('tate_R'+corrent_id).style.left = +(parseInt(w)-1);
 	}
 }
 
-function line_flg_com(){
+function line_flg_com(id){
 	document.getElementById('mouse_down_flg').value = "stop";
-	document.getElementById('yoko').style.width = 1;
-	document.getElementById('yoko_u').style.width = 1;
-	document.getElementById('tate').style.height = 1;
+	var yoko = document.getElementById('yoko'+id);
+	var yoko_u = document.getElementById('yoko_u'+id);
+	var tate_L = document.getElementById('tate_L'+id);
+	var tate_R = document.getElementById('tate_R'+id);
+	yoko.style.width = 1;
+	yoko.style.top = 0;
+	yoko.style.left = 0;
+	yoko_u.style.width = 1;
+	yoko_u.style.top = 0;
+	yoko_u.style.left = 0;
+	tate_L.style.height = 1;
+	tate_L.style.top = 0;
+	tate_L.style.left = 0;
+	tate_R.style.height = 1;
+	tate_R.style.top = 0;
+	tate_R.style.left = 0;
+}
+
+function back_type(){
+	back_color_type = document.getElementById("contents_setting_background_type_backcolor");
+	check = back_color_type.checked;
+	color_field = document.getElementById("contents_setting[back_color]");
+	if (check == true){
+		color_field.style.display = "block";
+	}
+	else if (check == false){
+		color_field.style.display = "none";
+	}
 }

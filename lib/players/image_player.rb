@@ -20,21 +20,24 @@ module Players
       "contents_setting" => {"time"=>"3000",
                              "effecttime"=>"3000",
                              "effect_type"=>"fade",
-                             "picture_path1"=>"sample-001.jpg",
+                             "picture_path1"=>"sample-001.jpg"
+=begin
+,
                              "picture_path2"=>"sample-002.jpg",
                              "picture_path3"=>"sample-003.jpg",
                              "picture_path4"=>"sample-004.jpg",
                              "picture_path5"=>"sample-005.jpg",
                              "picture_path6"=>"sample-006.jpg",
                              "picture_path7"=>"sample-007.jpg",
-                             "picture_path8"=>"sample-008.jpg"},
-
+                             "picture_path8"=>"sample-008.jpg"
+=end
+                                  },
               "contents" => {"x_pos"=>"5",
-                             "line_width"=>"5",
+                             "line_width"=>"0",
                              "y_pos"=>"5",
                              "line_color"=>"#38382e",
-                             "height"=>"300",
-                             "width"=>"400"},
+                             "height"=>"100",
+                             "width"=>"200"},
 
       "channel_id"=>content.page.channel_id,
       "page_id"=>content.page_id
@@ -44,7 +47,7 @@ module Players
       store_path = RuntimeSystem.content_save_dir(content)
       FileUtils.mkdir_p(store_path)
       FileUtils.cp(sample_img_path,store_path)
-
+=begin
       sample_img_path = RuntimeSystem.default_content_save_dir() << "sample-002.jpg"
       store_path = RuntimeSystem.content_save_dir(content)
       FileUtils.mkdir_p(store_path)
@@ -80,6 +83,7 @@ module Players
       FileUtils.mkdir_p(store_path)
       FileUtils.cp(sample_img_path,store_path)
       aplog.debug("END   #{CLASS_NAME}#default")
+=end
       return player_params
     end
     
@@ -129,6 +133,10 @@ module Players
         aplog.warn("ERR_0x01026002")
         raise AplInfomationException.new("ERR_0x01026002")
       end
+      if params["contents_setting"]["time"].to_i < 300 || params["contents_setting"]["effecttime"].to_i < 300
+        aplog.warn("ERR_0x01026008")
+        raise AplInfomationException.new("ERR_0x01026008")
+      end
 
       check_count = 0
       new_count = 0
@@ -155,13 +163,19 @@ module Players
     #コンフィグデータが必要な場合
     def config_create
 
-    end
+   end
+
+   
 
     #出力用HTML
     def get_html
       aplog.debug("START #{CLASS_NAME}#get_html")
+      FileUtils.copy_file("./public/javascripts/" + "jquery-1.3.2.js", RuntimeSystem.content_save_dir(@content) + "jquery-1.3.2.js")
+      FileUtils.copy_file("./public/javascripts/" + "jquery.aslideshow.js", RuntimeSystem.content_save_dir(@content) + "jquery.aslideshow.js")
       html=""
+      
       imagehtml = ""
+      
 =begin
       if is_empty(@params["contents_setting"]["time"])
         raise "ERR_0x01026003"
@@ -188,6 +202,7 @@ module Players
       
       width = @content["width"]
       height = @content["height"]
+     
       time = @content_properties["time"]
       effecttime = @content_properties["effecttime"]
       effecttype = @content_properties["effect_type"]
@@ -198,7 +213,7 @@ module Players
       if (effecttime =~/^\d+$/) != 0
         effecttime = "1000"
       end
-      
+     
       if @params["contents_upload"] != "flag"
 =begin
         if @params["contents_uploaded"] != nil
@@ -226,10 +241,11 @@ module Players
        }
        
       for i in 1..order_key.length
+      
         j = i - 1
         imagehtml << "    <img src=\""+ ERB::Util.h(order_value[j]) + "\" width=\""+width.to_s+"\" height=\""+height.to_s+"\">"
-      end
-
+       end
+      if j==0
       html << "<head> \n"
       html << "<meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n "
       html << "<meta http-equiv='cache-control' content='non-cache' />\n"
@@ -239,23 +255,43 @@ module Players
       html << "position:relative; \n"      
       html << "} \n"
       html << "</style> \n"      
-      html << "<script src=\"/javascripts/jquery-1.3.2.js\" type=\"text/javascript\"></script> \n"
-      html << "<script src=\"/javascripts/jquery.aslideshow.js\" type=\"text/javascript\"></script> \n"
+     
       html << "</head> \n"
       html << "<body style='margin:0px;'>\n"
       html << "<div id=\"MySlideshow\"> \n"
       html << imagehtml
       html << "</div>"
-      html << "</body>"          
+      html << "</body>" 
+      aplog.debug("END   #{CLASS_NAME}#get_html")
+      return html 
+      else
+      
+      html << "<head> \n"
+      html << "<meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n "
+      html << "<meta http-equiv='cache-control' content='non-cache' />\n"
+      html << "<style type=\"text/css\"> \n"
+      html << ".slideshow-content{ \n"      
+      html << "overflow:hidden; \n"      
+      html << "position:relative; \n"      
+      html << "} \n"
+      html << "</style> \n"      
+      html << "<script src=\"./jquery-1.3.2.js\" type=\"text/javascript\"></script> \n"
+      html << "<script src=\"./jquery.aslideshow.js\" type=\"text/javascript\"></script> \n"
+      html << "</head> \n"
+      html << "<body style='margin:0px;'>\n"
+      html << "<div id=\"MySlideshow\"> \n"
+      html << imagehtml
+      html << "</div>"
+      html << "</body>" 
       html << "<script type=\"text/javascript\">"
       html << "  $(document).ready(function(){"
       html << "    $('#MySlideshow').slideshow({effect:'"+effecttype.to_s+"',time:"+ERB::Util.h(time.to_s)+",effecttime:"+ERB::Util.h(effecttime.to_s)+",title:false,panel:false,playframe:false,play:true,width:"+width.to_s+",height:"+height.to_s+"});"
       html << "  });"
-      html << "</script>"
+      html << "</script>"   
       aplog.debug("END   #{CLASS_NAME}#get_html")
-      return html
+      return html 
     end
-
+    end
     def checkbox_ceck(item)
       aplog.debug("START #{CLASS_NAME}#checkbox_ceck")
        # 配列かチェック

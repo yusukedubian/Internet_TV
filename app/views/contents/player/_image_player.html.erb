@@ -125,13 +125,13 @@ if maxlength == 0
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="image_guide_title">
@@ -140,10 +140,10 @@ if maxlength == 0
 		</div>
 		<div class="guide_box">
 			<div class="image_guide_text">
-				<%="画像ファイル（gif,jpg,png）を動的に表示します。デジタルフォトフレーム風の表示も可能です。"%><br/>
-				<%="切り替えタイムで画像変更の間隔を指定し、"%><br/>
-				<%="エフェクトタイムで、画像へ与える効果の間隔を指定します。"%><br/>
-				<%="最大10個の画像を設定出来ます。"%>
+				<%=_("画像ファイル（gif,jpg,png）を動的に表示します。デジタルフォトフレーム風の表示も可能です。")%><br/>
+				<%=_("切り替えタイムで画像変更の間隔を指定し、")%><br/>
+				<%=_("エフェクトタイムで、画像へ与える効果の間隔を指定します。")%><br/>
+				<%=_("最大10個の画像を設定出来ます。")%>
 			</div>
 		</div>
 	</div>

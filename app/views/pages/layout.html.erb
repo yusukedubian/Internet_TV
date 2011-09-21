@@ -6,8 +6,40 @@
 		<meta http-equiv='cache-control' content='non-cache' />
 		<title>Untitled Document</title>
 		<%= stylesheet_link_tag "layoutcontroller"%>
+		<%= javascript_include_tag 'jquery-1.4.2' %>
+		<script type="text/javascript"><!--
+		window.document.onmousemove = getMouseXY;
+		function getMouseXY(evt)
+		{
+		// x,yとpageX,Y
+			if (window.createPopup)
+			{
+				x = event.x + document.body.scrollLeft;
+				y = event.y + document.body.scrollTop;
+			}else{
+				x = evt.pageX;
+				y = evt.pageY;
+			}
+			document.getElementById("cursor_x").value = x;
+			document.getElementById("cursor_y").value = y;
+		// offsetX,YとlayerX,Y
+/*
+			if (document.all)
+			{
+				cx = event.offsetX;
+				cy = event.offsetY;
+			}else{
+				cx = evt.layerX;
+				cy = evt.layerY;
+			}
+			document.getElementById("result2").innerHTML = "(offsetX,offsetY) = "+cx + ", "+cy;
+*/
+		}
+		// --></script>
 	</head>
 	<body style="margin:0px;">
+	<%=hidden_field_tag("cursor_x", value = "")%>
+	<%=hidden_field_tag("cursor_y", value = "")%>
 <%
 if @page.contents.length != 0
 %>
@@ -20,11 +52,11 @@ if @page.contents.length != 0
 	@reserveid.pop
 %>
 	<!-- Preview Screen & drag & drop -->
-	<% form_tag(drag_channel_page_content_path(params[:channel_id],params[:id]), :action=>"drag", :multipart=>true) do -%>
+	<% form_tag(drag_channel_page_content_path(params[:channel_id],params[:id]),:id=>"layout_form", :action=>"drag", :multipart=>true) do -%>
 	<%if @channel.width < 750 
-		layoutwidth = 750
+		layoutwidth = 760
 	else
-		layoutwidth = @channel.width
+		layoutwidth = @channel.width+10
 	end%>
 	<table id="test" width="<%=layoutwidth.to_s%>px" height="<%=@channel.height+70%>" cellpadding="0" cellspacing="0">
 		<tr>
@@ -33,9 +65,8 @@ if @page.contents.length != 0
 				<input type="hidden" id="fst_line_pos_x" value="" />
 				<input type="hidden" id="line_pos" value="" />
 				<input type="hidden" id="mouse_down_flg" value="stop" />
-				<img src="../../../../images/imagefile/line.png" id="yoko" name="line_y" style="position:absolute; width:1px; height:1px; z-index:33;">
-				<img src="../../../../images/imagefile/line.png" id="yoko_u" name="line_yu" style="position:absolute; width:1px; height:1px; z-index:33;">
-				<img src="../../../../images/imagefile/line.png" id="tate" name="line_t" style="position:absolute; width:1px; height:1px; z-index:33;">
+				<%=hidden_field_tag("save_type", value = "normal")%>
+				<%=hidden_field_tag("save_type_params", value = "")%>
 				<%
 				screenwidth = @channel.width - 2
 				screenheight = @channel.height - 2
@@ -60,6 +91,7 @@ if @page.contents.length != 0
 				ypos = 0
 				width = 0
 				height = 0
+				content_id = content.id
 				@player_id = content.player_id
 				img_obj = Player.find(:first,:conditions=>["id=?",@player_id])
 				xpos = content.x_pos
@@ -69,18 +101,23 @@ if @page.contents.length != 0
 				height = content.height - 2
 					@i +=1
 				%>
-				<div id="player<%=@i%>" class="jqDnR" style="width:<%=width%>px; height:<%=height%>px; position:absolute; top:<%=ypos%>px; left:<%=xpos%>px; overflow:hidden;">
+				<div id="player<%=@i%>" class="jqDnR" style="width:<%=width%>px; height:<%=height%>px; position:absolute; top:<%=ypos%>px; left:<%=xpos%>px; " onclick="layout_save_flag()">
+					<img src="../../../../images/imagefile/line.png" id="yoko<%=content_id%>" name="line_y" style="position:absolute; width:1px; height:1px; z-index:33;">
+					<img src="../../../../images/imagefile/line.png" id="yoko_u<%=content_id%>" name="line_yu" style="position:absolute; width:1px; height:1px; z-index:33;">
+					<img src="../../../../images/imagefile/line.png" id="tate_L<%=content_id%>" name="line_t" style="position:absolute; width:1px; height:1px; z-index:33;">
+					<img src="../../../../images/imagefile/line.png" id="tate_R<%=content_id%>" name="line_t" style="position:absolute; width:1px; height:1px; z-index:33;">
 					<span class="popchecker" onMouseOver="mousepop(['over','<%=@i%>']);" onMouseOut="mousepop(['out','<%=@i%>']);"></span>  
-					<table id="pname<%=@i%>" border="0" cellspacing="0" cellpadding="0" onMouseOver="player_drag(<%=@i%>,<%=content.id%>)" onMouseDown="dragposition(<%=@i%>,<%=content.width%>,<%=content.height%>,<%=content.id%>,<%=content.x_pos%>,<%=content.y_pos%>)" onMouseUp="line_flg_com()" onmousemove="drawline(<%=content.id%>)">   
+					<table id="pname<%=@i%>" border="0" cellspacing="0" cellpadding="0" onMouseOver="player_drag(<%=@i%>,<%=content.id%>)" onMouseDown="dragposition('<%=content.id%>','<%=@channel.width%>','<%=@channel.height%>')" onMouseUp="line_flg_com('<%=content_id%>')">   
 						<tr>
 							<td align="center" valign="middle">
 								<div class="player_no" id="pop<%=@i%>"><%="NO."+@i.to_s %></div>
 								<span class="a_player_no" id="a_pop<%=@i%>"><%="NO."+@i.to_s %></span>
-								<%= image_tag("../../../../images/players/" + img_obj.logo_img,:width=>"43px",:height=>"43px",:style=>"cursor: pointer;",:onDblClick=>"to_setting("+params[:channel_id].to_s+","+params[:id].to_s+","+content.id.to_s+")") %>
+								<%= image_tag("../../../../images/players/" + img_obj.logo_img,:id=>"playerImg"+content.id.to_s,:width=>"43px",:height=>"43px",:style=>"cursor: pointer;",:onDblClick=>"if (check_layout('edit_player','"+params[:channel_id].to_s+"*"+params[:id].to_s+"*"+content.id.to_s+"') == true){to_setting("+params[:channel_id].to_s+"*"+params[:id].to_s+"*"+content.id.to_s+")}") %>
+								<!--:onDblClick=>"if (check_layout() == true){to_setting("+params[:channel_id].to_s+","+params[:id].to_s+","+content.id.to_s+")}"-->
 							</td>
 						</tr>
 					</table>
-					<div class="jqResize" onMouseOver="player_size(<%=@i%>,<%=content.width%>,<%=content.height%>,<%=content.id%>,<%=content.x_pos%>,<%=content.y_pos%>);" onMouseDown="dragresize(<%=@i%>,<%=content.id%>)"></div>  
+					<div class="jqResize" onMouseOver="player_size('<%=@i%>','<%=content.width%>','<%=content.height%>','<%=content.id%>','<%=content.x_pos%>','<%=content.y_pos%>');" onMouseDown="dragresize('<%=@i%>','<%=content.id%>'); resizeposition('<%=content.id%>','<%=@channel.width%>','<%=@channel.height%>')" onMouseUp="line_flg_com('<%=content_id%>')"></div>  
 				</div>
 						<%=hidden_field_tag("current_player_id", value = nil, options = {})%>
 						<%=hidden_field_tag(content.id.to_s+"reserve", value = content.width.to_s+"*"+content.height.to_s, options = {})%>
@@ -123,11 +160,11 @@ if @page.contents.length != 0
 					<%="px"%>
 				</div>
 				<div style="clear:both;"></div>
-				<%= submit_tag _("レイアウトを保存")%>
+				<%= submit_tag _("レイアウトを保存"),:id=>"layout_save"%>
 				<input id="return_params" type="button" value=<%= _("レイアウトを戻す")%> onclick="reservedate('<%=@reserveid%>');">
 				<%=hidden_field_tag("no_flag","off")%>
 				<input id="players_no" type="button" value="<%=_("プレーヤNO表示")%>" onclick="no_btn('<%=contentlength%>');">
-				<input type="button" class="preview_bt" onClick="javascript:window.open('<%=playpage_channel_page_path(params[:channel_id],params[:id])%>','_blank'); return true;" value="プレビューを表示＞＞"/>	
+				<input type="button" class="preview_bt" onClick="javascript:window.open('<%=playpage_channel_page_path(params[:channel_id],params[:id])%>','_blank'); return true;" value="<%=_('プレビューを表示＞＞')%>"/>	
 			</td>
 		</tr>
 	</table>
@@ -150,7 +187,7 @@ if @page.contents.length != 0
 	<%elsif @page["background_display_type"] == 2 %>
 	    <div id="drag_frame" style="border:1px solid #ccc; background:<%=screenground%>; width:<%=screenwidth%>px; height:<%=screenheight%>px; -moz-background-size: 100% 100%;   -o-background-size: 100% 100%; -webkit-background-size: 100% 100%; -khtml-background-size: 100% 100%;   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(Src=<%=screenground%>,SizingMethod=scale); -ms-filter: 'progid:DXImageTransform.Microsoft.AlphaImageLoader(Src=<%= screenground %>,SizingMethod=scale)'; ">
 	<%end%>
-			<span class="layout_guide">プレーヤがありません。プレーヤを追加してください。</span>
+			<span class="layout_guide"><%=_("プレーヤがありません。プレーヤを追加してください。")%></span>
 		</div>
 <%end%>
 <input type="hidden" id="browsercheck">

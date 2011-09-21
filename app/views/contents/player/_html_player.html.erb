@@ -66,10 +66,10 @@
 <br>
 <div class="url_frame"><div>URL10</div></div>
 <div class="url_frame"><%= text_field_tag("contents_setting[outurl_9]", h(settings["outurl_9"]),:maxlength => 2048, :size => 80)%></div>
-<input type="button" value="URLクリア" onClick="urlClear();">
+<input type="button" value='<%=_("URLクリア")%>' onClick="urlClear();">
 
 <div class="minitu_frame">
-<%="ページをリフレッシュする秒数を入れて下さい"%>
+<%=_("ページをリフレッシュする秒数を入れて下さい")%>
 </div>
 ⇒
 <%= text_field_tag("contents_setting[refreshtime]", h(settings["refreshtime"]),:maxlength => 4,:size=> 4)%>秒
@@ -79,13 +79,13 @@
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="html_guide_title">
@@ -94,7 +94,7 @@
 		</div>
 		<div class="guide_box">
 			<div class="html_guide_text">
-				<%="好きなページを、指定した間隔で、順番に切り替え表示します。"%><br/>
+				<%=_("好きなページを、指定した間隔で、順番に切り替え表示します。")%><br/>
 			</div>
 		</div>
 	</div>

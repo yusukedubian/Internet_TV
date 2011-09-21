@@ -235,6 +235,9 @@ class ChannelsController < ApplicationController
   def download
     aplog.debug("START #{CLASS_NAME}#download")
     channel = @user.channels.find(params[:id])
+    p pages = channel.pages.find(:all)
+    p pages.length
+    fewfew
     channel_no = channel.channel_no.to_s
     send_dir = RuntimeSystem.send_client_channel_save_dir(channel)
     file_dir = RuntimeSystem.channel_save_dir(channel)

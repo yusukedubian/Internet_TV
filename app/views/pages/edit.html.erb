@@ -9,7 +9,7 @@
 	id = params[:page_id]
 	id ||=params[:id]
 %>
-<h4><%="プレーヤ設定"%></h4>
+<h4><%=_("プレーヤ設定")%></h4>
 <!-- Select Player -->
 	<%if !@channel.uploaded_flg %>
 		<div class="box">
@@ -158,9 +158,9 @@
 							     	 <span class="handle">NO,<%=i.to_s%><%=" - "%></span>
 									 <!--<span class="player_copy"><%= link_to(image_tag("./imagefile/copy.png",:alt=>"copy",:title=>"copy"), player_copy_channel_page_content_path(params[:channel_id],params[:id],content.id))%></span>-->
 									 <span class="player_copy"><%= image_tag("./imagefile/copy.png",:alt=>"copy",:title=>"copy",:onclick=>"copyplayer("+params[:channel_id].to_s+","+params[:id].to_s+","+content.id.to_s+");")%></span>
-									 <span class="player_del"><%= link_to(image_tag("./imagefile/blue_delete.png",:alt=>"delete"), contentdelete_channel_page_content_path(params[:channel_id],params[:id],content.id),:title=>"delete",:onclick=>"gard_player_delete()")%></span>
+									 <span class="player_del"><%= link_to(image_tag("./imagefile/blue_delete.png",:alt=>"delete"), contentdelete_channel_page_content_path(params[:channel_id],params[:id],content.id),:title=>"delete",:onclick=>"gard_player_delete();return check_layout('delete_player','"+params[:channel_id].to_s+"*"+params[:id].to_s+"*"+content.id.to_s+"')")%></span>
 									 <span class="space"></span>
-									 <div class="player_name"><%= link_to(content.player.name, edit_channel_page_content_path(@channel,id,content.id))%></div>
+									 <div class="player_name"><%= link_to(content.player.name, edit_channel_page_content_path(@channel,id,content.id),:onclick=>"return check_layout('list_edit_player','"+params[:channel_id].to_s+"*"+params[:id].to_s+"*"+content.id.to_s+"')")%></div>
 								 </li>
 								 <%i += 1%>
 								<%}%>
@@ -307,13 +307,13 @@
 			<span class="bt1">
 				<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 			</span>
-			<span><%="Player / Layout 説明を開く"%></span>
+			<span><%=_("Player / Layout 説明を開く")%></span>
 		</div>
 		<div id="layout_guide_off" class="layout_guide">
 			<span id="layout_guide_offbt" class="bt1">
 				<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 			</span>
-			<span><%="説明を閉じる"%></span>
+			<span><%=_("説明を閉じる")%></span>
 			<div style="clear:both;"></div>
 			<div class="guide_box">
 				<div class="player_guide_title">
@@ -341,7 +341,7 @@
 				<div class="layout_guide_text">
 					<%=_("レイアウトは、プレーヤのサイズ、位置を修正することが出来ます。")%><br/>
 					<%=_("プレーヤ位置変更は、マウスをプレーヤ上に持っていきドラッグ＆ドロップしてください。")%><br/>
-					<%=_("プレーヤサイズ変更は"+image_tag('./imagefile/resizepoint.png')+"のアイコン上にカーソルを持っていき、ドラッグしてください。")%><br/>
+					<%=_("プレーヤサイズ変更は")%><%="#{image_tag('./imagefile/resizepoint.png')}"%><%=_("のアイコン上にカーソルを持っていき、ドラッグしてください。")%><br/>
 					<%=_("プレーヤ設定内容を確認、修正するには、プレーヤのアイコンをダブルクリックするとプレーヤ設定画面を表示します。") %>
 				</div>
 			</div>
@@ -398,23 +398,23 @@
 					<% } -%>
 					<% if temp_page==nil -%>
 						<td height="42px" width="58px"align="center" valign="center">
-						<%= link_to(image_tag("./pages/off/" + (i+1).to_s + ".gif"),new_channel_page_path(:page_no=>(i+1)),:popup => false) %>
+						<%= link_to(image_tag("./pages/off/" + (i+1).to_s + ".gif"),new_channel_page_path(:page_no=>(i+1)),:popup => false,:onclick=>"return check_layout('page_select','new*"+(i+1).to_s+"');") %>
 						</td>
 					<% else -%>
 						<% if current_page_flag==true -%>
 							<td height="40px" width="56px"align="center" valign="center" style="border-left:2px solid #d1d1d2; border-top:2px solid #d1d1d2; border-right:1px solid #696969; border-bottom:1px solid #949a9e; background-color:#fb835b;">	
 							<% if current_page.contents.size !=0 -%>
-								<%= link_to(image_tag("./pages/on/" + (i+1).to_s + ".gif"),edit_channel_page_path(@channel, current_page),:popup => false) -%>
+								<%= link_to(image_tag("./pages/on/" + (i+1).to_s + ".gif"),edit_channel_page_path(@channel, current_page),:popup => false,:onclick=>"return check_layout('page_select','edit*"+current_page.id.to_s+"');") -%>
 							<% else -%>
-								<%= link_to(image_tag("./pages/off/" + (i+1).to_s + ".gif"),new_channel_page_path(:page_no=>(i+1)),:popup => false) -%>
+								<%= link_to(image_tag("./pages/off/" + (i+1).to_s + ".gif"),new_channel_page_path(:page_no=>(i+1)),:popup => false,:onclick=>"return check_layout('page_select','new*"+(i+1).to_s+"');") -%>
 							<% end -%>
 							</td>
 						<% else -%>
 							<td height="42px" width="58px"align="center" valign="center">	
 							<% if temp_page.contents.size !=0 -%>
-								<%= link_to(image_tag("./pages/on/" + (i+1).to_s + ".gif"),edit_channel_page_path(@channel, temp_page),:popup => false) %>
+								<%= link_to(image_tag("./pages/on/" + (i+1).to_s + ".gif"),edit_channel_page_path(@channel, temp_page),:popup => false,:onclick=>"return check_layout('page_select','edit*"+temp_page.id.to_s+"');") %>
 							<% else -%>
-								<%= link_to(image_tag("./pages/off/" + (i+1).to_s + ".gif"),new_channel_page_path(:page_no=>(i+1)),:popup => false) %>
+								<%= link_to(image_tag("./pages/off/" + (i+1).to_s + ".gif"),new_channel_page_path(:page_no=>(i+1)),:popup => false,:onclick=>"return check_layout('page_select','new*"+(i+1).to_s+"');") %>
 							<% end -%>
 							</td>
 						<% end -%>
@@ -430,7 +430,7 @@
 <!-- Select Page End -->
 
 <!-- channel Setting -->
-	<h4><%="詳細設定"%></h4>
+	<h4><%=_("詳細設定")%></h4>
 	<%if !@channel.uploaded_flg %>
 		<div class="box">
 			<div style="width:<%=iframewidth.to_s%>px; height:<%=iframeheight.to_s%>px;">
@@ -697,32 +697,23 @@
 								            <td align="right">
 								            	<%if !@page["backgroundfile"].blank?
 													if @backvalue[0]=="background"%>
-													<div id="off-alert">
-										            	<div id="upload" style="height:25px; display:block;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
-														<div id="select" style="height:25px; display:none; padding-right:55px;"><%=link_to(_("画像選択>>"),backimages_channel_page_path(params[:channel_id],params[:id]))%></div>
-													</div>
-													<div id="on-alert" style="display:none;">
-														<div id="upload1" style="height:25px; display:block;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
-														<div id="select1" style="height:25px; display:none; padding-right:55px;"><%=link_to("画像選択>>",backimages_channel_page_path(params[:channel_id],params[:id]),:confirm=>"他の設定が保存されていません。画像選択へ進みますか？")%></div>
+									            	<div id="upload" style="height:25px; display:block;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
+													<div id="select" style="height:25px; display:none; padding-right:55px;">
+														<div id="off-alert"><%=link_to(_("画像選択>>"),backimages_channel_page_path(params[:channel_id],params[:id]))%></div>
+														<div id="on-alert" style="display:none;"><%=link_to(_("画像選択>>"),backimages_channel_page_path(params[:channel_id],params[:id]),:confirm=>"他の設定が保存されていません。画像選択へ進みますか？")%></div>
 													</div>
 												<%	else%>
-													<div id="off-alert" style="display:block;">
-														<div id="upload" style="height:25px; display:none;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
-														<div id="select" style="height:25px; display:block; padding-right:55px;"><%=link_to("画像選択>>",backimages_channel_page_path(params[:channel_id],params[:id]))%></div>
-													</div>
-													<div id="on-alert" style="display:none;">
-														<div id="upload1" style="height:25px; display:none;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
-														<div id="select1" style="height:25px; display:block; padding-right:55px;"><%=link_to("画像選択>>",backimages_channel_page_path(params[:channel_id],params[:id]),:confirm=>"他の設定が保存されていません。画像選択へ進みますか？")%></div>
+													<div id="upload" style="height:25px; display:none;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
+													<div id="select" style="height:25px; display:block; padding-right:55px;">
+														<div id="off-alert"><%=link_to(_("画像選択>>"),backimages_channel_page_path(params[:channel_id],params[:id]))%></div>
+														<div id="on-alert" style="display:none;"><%=link_to(_("画像選択>>"),backimages_channel_page_path(params[:channel_id],params[:id]),:confirm=>"他の設定が保存されていません。画像選択へ進みますか？")%></div>
 													</div>
 												<%	end%>
 												<%else%>
-													<div id="off-alert" style="display:block;">
-														<div id="upload" style="height:25px; display:block;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
-														<div id="select" style="height:25px; display:none; padding-right:55px;"><%=link_to("画像選択>>",backimages_channel_page_path(params[:channel_id],params[:id]))%></div>
-													</div>
-													<div id="on-alert" style="display:none;">
-														<div id="upload1" style="height:25px; display:block;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
-														<div id="select1" style="height:25px; display:none; padding-right:55px;"><%=link_to("画像選択>>",backimages_channel_page_path(params[:channel_id],params[:id]),:confirm=>"他の設定が保存されていません。画像選択へ進みますか？")%></div>
+													<div id="upload" style="height:25px; display:block;"><%= file_field_tag("upload_object[backgroundfile]")%></div>
+													<div id="select" style="height:25px; display:none; padding-right:55px;">
+														<div id="off-alert"><%=link_to(_("画像選択>>"),backimages_channel_page_path(params[:channel_id],params[:id]))%></div>
+														<div id="on-alert" style="display:none;"><%=link_to(_("画像選択>>"),backimages_channel_page_path(params[:channel_id],params[:id]),:confirm=>"他の設定が保存されていません。画像選択へ進みますか？")%></div>
 													</div>
 												<%end%>
 								            </td>
@@ -745,6 +736,7 @@
 					</div>
 					<%=hidden_field_tag("retouch_flag",value=1,options = {})%>
 					<%=hidden_field_tag("browsercheck",value=nil,options = {})%>
+					<%=hidden_field_tag("layout_save_flag",value="true",options = {})%>
 					<%if @channel["background"] != nil %>
 						<script>document.getElementById("channel_propertie[background]").value="<%=@channel['background']%>"</script>
 					<%end%>
@@ -791,7 +783,7 @@
 			<span id="page_guide_offbt" class="bt1">
 				<%=image_tag("./imagefile/close.png",:onclick=>"page_guide('off')") %>
 			</span>
-			<span><%="説明を閉じる"%></span>
+			<span><%=_("説明を閉じる")%></span>
 			<div style="clear:both;"></div>
 			<div class="guide_box">
 				<div class="page_guide_title">
@@ -846,7 +838,7 @@
 					<td width="100px"><%= _("ダウンロード")%></td>
 					<td>
 						<%if content_flg-%>
-							<input type="button" value="ダウンロード" onClick="location.href='<%= download_channel_path(@channel)%>'">
+							<input type="button" value="<%=_('ダウンロード')%>" onClick="location.href='<%= download_channel_path(@channel)%>'">
 						<%else-%>
 							<%= _("ページを作成後、ダウンロード可能になります。")%>
 						<%end-%>
@@ -897,7 +889,7 @@
 			<span id="updown_guide_offbt" class="bt1">
 				<%=image_tag("./imagefile/close.png",:onclick=>"updown_guide('off')") %>
 			</span>
-			<span><%="説明を閉じる"%></span>
+			<span><%=_("説明を閉じる")%></span>
 			<div style="clear:both;"></div>
 			<div class="guide_box">
 				<div class="updown_guide_title">
@@ -1010,7 +1002,14 @@ $(document).ready(function() {
 <%if @channel.uploaded_flg %>
 <script type="text/javascript">
 <% @players.each do |player|%>
-		$("#<%=player.name%>").dblclick(function fresh(){location.href="<%=new_channel_page_content_path(@channel,id,{:player_no => player.player_no})%>";  });
+		<%if player.name == "ImageTextPlayer"%>
+		$("#<%=player.name%>").dblclick(function fresh(){location.href="<%=image_text_new_channel_page_content_path(@channel.id,id,'new',{:player_no => player.player_no})%>";  });
+		<%else%>
+		//$("#<%=player.name%>").dblclick(function fresh(){location.href="<%=new_channel_page_content_path(@channel,id,{:player_no => player.player_no})%>";  });
+		$("#<%=player.name%>").dblclick(function (){
+			if (check_layout("new_player","<%=player.player_no.to_s%>") == true){location.href="<%=new_channel_page_content_path(@channel,id,{:player_no => player.player_no})%>";}
+		});
+		<%end%>
 <%end-%>
 </script>
 <%end-%>

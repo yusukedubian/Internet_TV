@@ -10,15 +10,16 @@
         padding-top:30px;
         text-align:center;
 }
+textarea{width:960px;height:160px;}
 </style>
 <div>
 	<table>
 		<tr>
-			<td><%= "表示タイプ"%><font color=red>*</font></td>
+			<td><%=_("表示タイプ")%><font color=red>*</font></td>
 			<td>
-					<%= radio_button_tag("contents_setting[viewtype]", "classic", false, options ={:onclick=>"viewtype('classic');"})%><%="クラシック  "%>
-					<%= radio_button_tag("contents_setting[viewtype]", "billboard", true, options ={:onclick=>"viewtype('billboard');"})%><%="電光掲示板風  "%>
-					<%= radio_button_tag("contents_setting[viewtype]", "clock", false, options ={:onclick=>"viewtype('clock');"})%><%="クロック"%>
+					<%= radio_button_tag("contents_setting[viewtype]", "classic", false, options ={:onclick=>"viewtype('classic');"})%><%=_("クラシック  ")%>
+					<%= radio_button_tag("contents_setting[viewtype]", "billboard", true, options ={:onclick=>"viewtype('billboard');"})%><%=_("電光掲示板風  ")%>
+					<%= radio_button_tag("contents_setting[viewtype]", "clock", false, options ={:onclick=>"viewtype('clock');"})%><%=_("クロック")%>
 			</td>
 		</tr>
 	</table>
@@ -27,12 +28,13 @@
 		<table>
 			<tr>
 				<td colspan="3">
-					<%= _("本文")%><font color=red>*</font>
+					<%= _("本文")%><font color="red">*</font>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<%= text_area_tag("contents_setting[text_content]", h(settings["text_content"]),:rows=>"10",:cols=>"100",:maxlength=>"1024")%>
+					<img src="/images/./imagefile/line.png" id="line" name="line_t" style="position:absolute; width:1px; height:1px; z-index:33;">
+					<%= text_area_tag("contents_setting[text_content]", h(settings["text_content"]),:maxlength=>"1024",:onclick=>"take_width()")%>
 					<br>
 					<br>
 				</td>
@@ -41,13 +43,31 @@
 	
 		<table style="float:left;">
 			<tr>
-				<td></td>
-				<td>
+				<td colspan="2" align="right" height="20px">
+					<%=radio_button_tag("font-weight","bold",checked=false,options ={:onclick=>"font_weight('bold')"})%><%=_("Bold")%>
+					<%=radio_button_tag("font-weight","normal",checked=false,options ={:onclick=>"font_weight('normal')"})%><%=_("Normal")%>
+					&nbsp;&nbsp;&nbsp;
 					<%= _("背景色")%>
+					<%=radio_button_tag("contents_setting[background_type]","backcolor",checked=true,options ={:onclick=>"back_type()"})%><%=_("あり")%>
+					<%=radio_button_tag("contents_setting[background_type]","no_backcolor",checked=false,options ={:onclick=>"back_type()"})%><%=_("なし")%>
 				</td>
 				<td>
 					<%= text_field_tag("contents_setting[back_color]", settings["back_color"],:class=>"colorwell",:value=>"#123456",:maxlength => 7)%>
-					<%if settings["font_color"] != nil %>
+					<%if settings["background_type"] != nil%>
+						<%if settings["background_type"] == "backcolor"
+					%>
+						<script>
+							document.getElementById("contents_setting_background_type_backcolor").checked = true;
+							document.getElementById("contents_setting[back_color]").style.display = "block";
+						</script>
+					<%	else%>
+						<script>
+							document.getElementById("contents_setting_background_type_no_backcolor").checked = true;
+							document.getElementById("contents_setting[back_color]").style.display = "none";
+						</script>
+					<%	end%>
+				  	<%end%>
+					<%if settings["back_color"] != nil %>
 						  <script>document.getElementById("contents_setting[back_color]").value="<%=settings['back_color']%>"</script>
 				  	<%end%>
 				</td>
@@ -230,13 +250,13 @@
 		<span class="bt1">
 			<%=image_tag("./imagefile/open.png",:onclick=>"layout_guide('on')") %>
 		</span>
-		<span><%=@player.view_name+" 説明を開く"%></span>
+		<span><%=@player.view_name%><%=_(" 説明を開く")%></span>
 	</div>
 	<div id="layout_guide_off" class="layout_guide">
 		<span id="layout_guide_offbt" class="bt1">
 			<%=image_tag("./imagefile/close.png",:onclick=>"layout_guide('off')") %>
 		</span>
-		<span><%="説明を閉じる"%></span>
+		<span><%=_("説明を閉じる")%></span>
 		<div style="clear:both;"></div>
 		<div class="guide_box">
 			<div class="text_guide_title">
@@ -245,8 +265,8 @@
 		</div>
 		<div class="guide_box">
 			<div class="text_guide_text">
-				<%="好きなテキストを、クラシック/電光掲示板の２タイプから選択し、動的に表示可能です。"%><br/>
-				<%="日付時刻を表示する事も出来ます。"%><br/>
+				<%=_("好きなテキストを、クラシック/電光掲示板の２タイプから選択し、動的に表示可能です。")%><br/>
+				<%=_("日付時刻を表示する事も出来ます。")%><br/>
 			</div>
 		</div>
 	</div>
@@ -349,4 +369,19 @@ function viewtype(str){
 	else{
 			document.getElementById("scrollproperty").style.display = "none"
 		}
+</script>
+<script>
+	function take_width(){
+		var top = document.getElementById('classic').offsetTop;
+		var left = document.getElementById('classic').offsetLeft;
+		var width = document.getElementById('contents[width]').value;
+		var font = document.getElementById('contents_setting[font_size]').value;
+		document.getElementById('line').style.left = 75+parseInt(width)+"px";
+		document.getElementById('line').style.height = "160px";
+		document.getElementById('contents_setting[text_content]').style.fontSize = font+"px";
+	}
+	
+	function font_weight(str){
+		document.getElementById('contents_setting[text_content]').style.fontWeight = str;
+	}
 </script>
