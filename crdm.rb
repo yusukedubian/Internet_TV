@@ -3,7 +3,7 @@
 require "./crdm/getMailControll"
 require "./crdm/ch0001"
 require "./crdm/ch0002"
-
+#tes
 while true
   pid = fork{
       begin
